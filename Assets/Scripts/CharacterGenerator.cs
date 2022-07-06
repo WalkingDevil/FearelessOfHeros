@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterGenerator : MonoBehaviour
 {
     [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
-    [SerializeField] List<Transform> genePos;//生成する位置
+    [SerializeField] List<Vector3> genePos;//生成する位置
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,6 @@ public class CharacterGenerator : MonoBehaviour
 
     public void GenerateChara(int num)
     {
-
+        Instantiate(geneObject[num], genePos[num], Quaternion.identity);
     }
 }
