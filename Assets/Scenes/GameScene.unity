@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4113,6 +4113,7 @@ GameObject:
   - component: {fileID: 155653517}
   - component: {fileID: 155653516}
   - component: {fileID: 155653515}
+  - component: {fileID: 155653518}
   m_Layer: 5
   m_Name: card (3)
   m_TagString: Untagged
@@ -4196,6 +4197,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 155653518}
+        m_TargetAssemblyTypeName: WaitTime, Assembly-CSharp
+        m_MethodName: CardClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 872238258}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &155653516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4234,6 +4247,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155653513}
   m_CullTransparentMesh: 1
+--- !u!114 &155653518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155653513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardButton: {fileID: 155653515}
+  time: 15
 --- !u!1 &164198137
 GameObject:
   m_ObjectHideFlags: 0
@@ -9473,6 +9500,7 @@ GameObject:
   - component: {fileID: 393775650}
   - component: {fileID: 393775649}
   - component: {fileID: 393775648}
+  - component: {fileID: 393775651}
   m_Layer: 5
   m_Name: card
   m_TagString: Untagged
@@ -9556,6 +9584,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 393775651}
+        m_TargetAssemblyTypeName: WaitTime, Assembly-CSharp
+        m_MethodName: CardClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 393011652}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &393775649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9594,6 +9634,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393775646}
   m_CullTransparentMesh: 1
+--- !u!114 &393775651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393775646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardButton: {fileID: 393775648}
+  time: 1
 --- !u!1 &397059150
 GameObject:
   m_ObjectHideFlags: 0
@@ -27893,6 +27947,7 @@ GameObject:
   - component: {fileID: 1088706935}
   - component: {fileID: 1088706934}
   - component: {fileID: 1088706933}
+  - component: {fileID: 1088706936}
   m_Layer: 5
   m_Name: card (2)
   m_TagString: Untagged
@@ -27976,6 +28031,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1088706936}
+        m_TargetAssemblyTypeName: WaitTime, Assembly-CSharp
+        m_MethodName: CardClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 604213659}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088706934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28014,6 +28081,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088706931}
   m_CullTransparentMesh: 1
+--- !u!114 &1088706936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088706931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardButton: {fileID: 1088706933}
+  time: 10
 --- !u!1 &1090151676
 GameObject:
   m_ObjectHideFlags: 0
@@ -54483,6 +54564,7 @@ GameObject:
   - component: {fileID: 2010225962}
   - component: {fileID: 2010225961}
   - component: {fileID: 2010225960}
+  - component: {fileID: 2010225963}
   m_Layer: 5
   m_Name: card (1)
   m_TagString: Untagged
@@ -54566,6 +54648,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2010225963}
+        m_TargetAssemblyTypeName: WaitTime, Assembly-CSharp
+        m_MethodName: CardClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 329789621}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010225961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54604,6 +54698,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010225958}
   m_CullTransparentMesh: 1
+--- !u!114 &2010225963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010225958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardButton: {fileID: 2010225960}
+  time: 5
 --- !u!1 &2016313630
 GameObject:
   m_ObjectHideFlags: 0
