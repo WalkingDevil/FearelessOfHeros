@@ -5,8 +5,9 @@ using UnityEngine.AI;
 
 public class CharacterTest : MonoBehaviour
 {
-    [SerializeField] Transform castle;
+    private Transform castle;
     [SerializeField] string enemyTag;
+    [SerializeField] string tower;
     private NavMeshAgent agent;
     [SerializeField] private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
@@ -15,6 +16,7 @@ public class CharacterTest : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        castle = GameObject.Find(tower).GetComponent<Transform>();
         target = castle;
     }
 
@@ -30,7 +32,6 @@ public class CharacterTest : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            Debug.Log("ì¸Ç¡ÇΩ");
             targets.Add(other.gameObject.transform);
         }
     }
@@ -48,7 +49,6 @@ public class CharacterTest : MonoBehaviour
 
         if (target == null)
         {
-            Debug.Log("èÈ");
             target = castle;
         }
     }
