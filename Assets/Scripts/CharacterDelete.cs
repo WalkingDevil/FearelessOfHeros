@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CharacterDelete : MonoBehaviour
 {
+    [SerializeField] string enemyWeapon;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == enemyWeapon)
         {
-             Destroy(other.gameObject);
-        }
-        
+            Debug.Log("Ž€‚ñ‚¾");
+             Destroy(other.transform.root.gameObject);
+        }  
     }
 }
