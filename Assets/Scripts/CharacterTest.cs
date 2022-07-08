@@ -8,6 +8,8 @@ public class CharacterTest : MonoBehaviour
     private Transform castle;
     [SerializeField] string enemyTag;
     [SerializeField] string tower;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float stopDistance;
     private NavMeshAgent agent;
     [SerializeField] private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
@@ -50,6 +52,21 @@ public class CharacterTest : MonoBehaviour
         if (target == null)
         {
             target = castle;
+        }
+
+        if (agent.remainingDistance < stopDistance)
+        {
+            if (agent.speed != 0f)
+            {
+                agent.speed = 0f;
+            }
+        }
+        else
+        {
+            if (agent.speed != moveSpeed)
+            {
+                agent.speed = moveSpeed;
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ public class CharacterController : MonoBehaviour
     private Transform castle;
     [SerializeField] string enemyTag;
     [SerializeField] string tower;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float stopDistance;
     private NavMeshAgent agent;
     [SerializeField] private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
@@ -52,6 +54,23 @@ public class CharacterController : MonoBehaviour
         if (target == null)
         {
             target = castle;
+        }
+
+        if (agent.remainingDistance < stopDistance)
+        {
+            if (agent.speed != 0f)
+            {
+                agent.speed = 0f;
+                anime.TransitionAnime("attack");
+            }
+        }
+        else
+        {
+            if (agent.speed != moveSpeed)
+            {
+                agent.speed = moveSpeed;
+                anime.TransitionAnime("run");
+            }
         }
     }
 }
