@@ -30,7 +30,12 @@ public class WaitTime : MonoBehaviour
             1,
             time
             )
-            .OnComplete(() => cardButton.interactable = true) 
-            .OnComplete(() => clock.fillAmount = 0);
+            .OnComplete(() => ResetButton(clock));
+    }
+
+    private void ResetButton(Image clock)
+    {
+        cardButton.interactable = true;
+        clock.fillAmount = 0;
     }
 }
