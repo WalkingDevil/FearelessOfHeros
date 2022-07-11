@@ -63183,7 +63183,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226366875}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 29.38, y: 25, z: 38.2}
@@ -73084,8 +73084,8 @@ MonoBehaviour:
   - {x: -5, y: 2, z: 0}
   - {x: 0, y: 2, z: -5}
   - {x: 0, y: 2, z: 5}
-  _coolTime: 1
-  maxCoolTime: 1
+  _coolTime: 0
+  maxCoolTime: 0
 --- !u!4 &1384673860
 Transform:
   m_ObjectHideFlags: 0
