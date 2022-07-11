@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class UserInterface : MonoBehaviour
 {
-   // [SerializeField] GameDirector.GameState overState;//ゲームオーバー
+
     StatusManeger statusManeger;
     [SerializeField] Slider slider;
     [SerializeField] int maxHp;
     [SerializeField] int attack;
     [SerializeField] int defence;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         statusManeger = new StatusManeger(maxHp, attack, defence);

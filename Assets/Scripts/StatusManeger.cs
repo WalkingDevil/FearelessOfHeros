@@ -66,9 +66,9 @@ public class StatusManeger
         }
     }
 
-    public int MinusHp(int damege)
+    public int DamageCalculation(int damege)
     {
-        return hp -= damege;
+        return hp -= damege / defence;
     }
 
     public int PlusHp(int heel)

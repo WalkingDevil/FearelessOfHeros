@@ -32,6 +32,15 @@ public class CharacterController : MonoBehaviour
             agent.SetDestination(target.position);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == enemyTag)
+        {
+            
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == enemyTag)
@@ -39,6 +48,7 @@ public class CharacterController : MonoBehaviour
             targets.Add(other.gameObject.transform);
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == enemyTag)
