@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     private Transform castle;
     [SerializeField] string enemyTag;
+    [SerializeField] string damageTag;
     [SerializeField] string tower;
     [SerializeField] float moveSpeed;
     [SerializeField] float stopDistance;

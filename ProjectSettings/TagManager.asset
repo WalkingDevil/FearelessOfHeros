@@ -9,6 +9,8 @@ TagManager:
   - ally
   - enemyWeapon
   - allyWeapon
+  - enemyAttack
+  - allyAttack
   layers:
   - Default
   - TransparentFX
