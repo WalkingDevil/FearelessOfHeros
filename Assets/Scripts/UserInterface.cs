@@ -10,6 +10,7 @@ public class UserInterface : MonoBehaviour
     [SerializeField] int maxHp;
     [SerializeField] int attack;
     [SerializeField] int defence;
+    [SerializeField] bool cameraLook = true;//ÉJÉÅÉâÇå©Ç≥ÇπÇÈÇ©
 
 
     void Start()
@@ -17,6 +18,14 @@ public class UserInterface : MonoBehaviour
         statusManeger = new StatusManeger(maxHp, attack, defence);
         slider.maxValue = maxHp;
         slider.value = maxHp;
+    }
+
+    void Update()
+    {
+        if (cameraLook)
+        {
+            transform.LookAt(Camera.main.transform.position);
+        }
     }
 
     public int GetDamege()

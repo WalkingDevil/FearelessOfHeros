@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] UserInterface userInterface;
+    [SerializeField] string damageTag;
+
+
+    private bool _dieCheck;
+    public bool dieCheck
+    {
+        get { return _dieCheck; }
+        set
+        {
+            if (_dieCheck != value)
+            {
+                _dieCheck = value;
+
+                if (_dieCheck)
+                {
+
+                }
+            }
+        }
+
+    }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == damageTag)
+        {
+            GameObject root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+            UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            dieCheck = userInterface.DamegeValue(user.GetDamege());
+        }
     }
 }

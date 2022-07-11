@@ -46,10 +46,8 @@ public class CharacterController : MonoBehaviour
         target = castle;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // anime.TransitionAnime("attack");
         if (target != null)
         {
             agent.SetDestination(target.position);
