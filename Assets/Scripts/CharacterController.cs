@@ -68,7 +68,13 @@ public class CharacterController : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            targets.Add(other.gameObject.transform);
+            if (other.isTrigger)
+            {
+                if (!targets.Contains(other.gameObject.transform))
+                {
+                    targets.Add(other.gameObject.transform);
+                }
+            }
         }
     }
 
