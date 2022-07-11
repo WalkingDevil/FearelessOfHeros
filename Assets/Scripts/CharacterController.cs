@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] AnimeController anime;
+    [SerializeField] UserInterface userInterface;
     private Transform castle;
     [SerializeField] string enemyTag;
     [SerializeField] string tower;
@@ -14,6 +16,25 @@ public class CharacterController : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
+
+    private bool _dieCheck;
+    public bool dieCheck
+    {
+        get { return _dieCheck; }
+        set
+        {
+            if (_dieCheck != value)
+            {
+                _dieCheck = value;
+
+                if(_dieCheck)
+                {
+
+                }
+            }
+        }
+
+    }
 
     void Start()
     {
@@ -37,7 +58,9 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == enemyTag)
         {
-            
+            GameObject root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+            UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            dieCheck = userInterface.DamegeValue(user.GetDamege());
         }
     }
 

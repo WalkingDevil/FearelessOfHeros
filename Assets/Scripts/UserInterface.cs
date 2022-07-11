@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UserInterface : MonoBehaviour
 {
-
     StatusManeger statusManeger;
     [SerializeField] Slider slider;
     [SerializeField] int maxHp;
@@ -20,13 +19,15 @@ public class UserInterface : MonoBehaviour
         slider.value = maxHp;
     }
 
-    public void DamegeValue(int damege)
+    public int GetDamege()
     {
-      /*  playerSlider.value = hpManager.MinusHp(damege);
-        if (hpManager.MinusHp(damege) <= 0)
-        {
-            GameDirector.LoadState = overState;
-        }*/
+        return attack;
+    }
+
+    public bool DamegeValue(int damege)
+    {
+        slider.value = statusManeger.DamageCalculation(damege);
+        return slider.value <= 0;
     }
 
     public void HeelValue(int heel)
