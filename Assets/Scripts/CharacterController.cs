@@ -58,7 +58,7 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == enemyTag)
+        if (collision.gameObject.tag == damageTag)
         {
             GameObject root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
             UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
