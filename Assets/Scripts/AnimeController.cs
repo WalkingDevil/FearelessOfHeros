@@ -14,4 +14,9 @@ public class AnimeController : MonoBehaviour
     {
         animator.SetTrigger(parame);
     }
+
+    public void DieIvent()
+    {
+        Destroy(this.gameObject.transform.root.gameObject);
+    }
 }

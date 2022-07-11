@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7660147587088290920}
   - component: {fileID: 7660147588428620127}
+  - component: {fileID: 8897572965394321150}
   m_Layer: 0
   m_Name: CATRigLArmPalm
   m_TagString: allyAttack
@@ -93,6 +94,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5.25
   m_Center: {x: -6.45, y: -2.16, z: 0}
+--- !u!54 &8897572965394321150
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660147587087999040}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &7660147587087999042
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7660147587088290922}
   - component: {fileID: 7660147586423951888}
+  - component: {fileID: 2594004533672621577}
   m_Layer: 0
   m_Name: CATRigLArm2
   m_TagString: allyAttack
@@ -139,6 +157,22 @@ CapsuleCollider:
   m_Height: 25.43
   m_Direction: 0
   m_Center: {x: -12.09, y: 0, z: 0}
+--- !u!54 &2594004533672621577
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660147587087999042}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &7660147587087999044
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7660147587088290942}
   - component: {fileID: 7660147586463406539}
+  - component: {fileID: 8327574231334860429}
   m_Layer: 0
   m_Name: CATRigHub001Bone001
   m_TagString: ally
@@ -603,6 +638,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 33.1, y: 13.52, z: 29.7}
   m_Center: {x: -21.57, y: 3.25, z: 0}
+--- !u!54 &8327574231334860429
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660147587087999070}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &7660147587087999080
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +762,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1433798777904525595
 MonoBehaviour:
@@ -740,11 +791,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anime: {fileID: 1433798777904525595}
   userInterface: {fileID: 7660147586619809832}
+  myRigidbody: {fileID: 7660147586361392012}
   enemyTag: enemy
   damageTag: enemyAttack
   tower: enemyTower
   moveSpeed: 6.5
-  stopDistance: 10
+  stopDistance: 5
   target: {fileID: 0}
   targets: []
 --- !u!65 &-4926367201335304040
@@ -779,7 +831,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7660147587087999104
@@ -1442,6 +1494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7660147587088290996}
   - component: {fileID: 7660147586315617147}
+  - component: {fileID: 8859915445252293904}
   m_Layer: 0
   m_Name: CATRigRArmPalm
   m_TagString: allyAttack
@@ -1481,6 +1534,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5.25
   m_Center: {x: -6.45, y: -2.16, z: 0}
+--- !u!54 &8859915445252293904
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660147587087999146}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &7660147587087999148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7660147587088290998}
   - component: {fileID: 7660147587309905154}
+  - component: {fileID: 1694392614367094469}
   m_Layer: 0
   m_Name: CATRigRArm2
   m_TagString: allyAttack
@@ -1527,6 +1597,22 @@ CapsuleCollider:
   m_Height: 25.43
   m_Direction: 0
   m_Center: {x: -12.09, y: 0, z: 0}
+--- !u!54 &1694392614367094469
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660147587087999148}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &7660147587087999150
 GameObject:
   m_ObjectHideFlags: 0

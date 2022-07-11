@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] AnimeController anime;
     [SerializeField] UserInterface userInterface;
+    [SerializeField] Rigidbody myRigidbody;
     private Transform castle;
     [SerializeField] string enemyTag;
     [SerializeField] string damageTag;
@@ -30,7 +31,7 @@ public class CharacterController : MonoBehaviour
 
                 if(_dieCheck)
                 {
-
+                    anime.TransitionAnime("die");
                 }
             }
         }
@@ -101,6 +102,7 @@ public class CharacterController : MonoBehaviour
             if (agent.speed != 0f)
             {
                 agent.speed = 0f;
+               // myRigidbody.isKinematic = false;
                 anime.TransitionAnime("attack");
             }
         }
@@ -109,6 +111,7 @@ public class CharacterController : MonoBehaviour
             if (agent.speed != moveSpeed)
             {
                 agent.speed = moveSpeed;
+               // myRigidbody.isKinematic = true;
                 anime.TransitionAnime("run");
             }
         }

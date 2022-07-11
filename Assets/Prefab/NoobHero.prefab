@@ -1062,6 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anime: {fileID: 3066127877276554106}
   userInterface: {fileID: 8662356203678545670}
+  myRigidbody: {fileID: 3066127877276554104}
   enemyTag: ally
   damageTag: allyAttack
   tower: allyTower
@@ -1441,7 +1442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3066127877464366252}
   - component: {fileID: 3066127877464366253}
-  - component: {fileID: 2569893680108488905}
+  - component: {fileID: 4991653077599199909}
   m_Layer: 0
   m_Name: pelvis
   m_TagString: enemy
@@ -1480,7 +1481,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!54 &2569893680108488905
+--- !u!54 &4991653077599199909
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3145,6 +3146,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3066127877276554110}
     m_Modifications:
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: maxHp
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: attack
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797724, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Name
       value: HpCanvas
