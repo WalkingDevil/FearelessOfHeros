@@ -807,7 +807,7 @@ MonoBehaviour:
   damageTag: enemyAttack
   tower: enemyTower
   moveSpeed: 10
-  stopDistance: 5
+  stopDistance: 10
   target: {fileID: 0}
   targets: []
 --- !u!114 &8081376019020259270

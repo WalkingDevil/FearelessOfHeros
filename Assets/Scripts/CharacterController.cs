@@ -51,6 +51,7 @@ public class CharacterController : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
+            transform.LookAt(target.position);
         }
     }
 
