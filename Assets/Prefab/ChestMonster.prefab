@@ -808,7 +808,6 @@ MonoBehaviour:
   tower: enemyTower
   moveSpeed: 10
   stopDistance: 10
-  target: {fileID: 0}
   targets: []
 --- !u!114 &8081376019020259270
 MonoBehaviour:
@@ -1060,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: defence
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797724, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Name

@@ -18,7 +18,7 @@ public class CharacterGenerator : MonoBehaviour
             if(_coolTime <= 0)
             {
                 _coolTime = maxCoolTime;
-                GenerateChara(GetRandom(genePos.Count));
+                GenerateChara(GetRandom(geneObject.Count));
             }
         }
     }
