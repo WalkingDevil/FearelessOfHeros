@@ -51,7 +51,6 @@ public class CharacterController : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-            transform.LookAt(target.position);
         }
     }
 
@@ -94,6 +93,10 @@ public class CharacterController : MonoBehaviour
         if (target == null)
         {
             target = castle;
+        }
+        else
+        {
+            transform.LookAt(target.position);
         }
 
         if (agent.remainingDistance < stopDistance)

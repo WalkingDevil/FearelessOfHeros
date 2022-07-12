@@ -778,7 +778,7 @@ MonoBehaviour:
   enemyTag: enemy
   damageTag: enemyAttack
   tower: enemyTower
-  moveSpeed: 50
+  moveSpeed: 20
   stopDistance: 5
   target: {fileID: 0}
   targets: []
