@@ -10,13 +10,13 @@ public class CharacterController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     [SerializeField] Rigidbody myRigidbody;
     private Transform castle;
-    [SerializeField] string enemyTag;
-    [SerializeField] string damageTag;
-    [SerializeField] string tower;
-    [SerializeField] float moveSpeed;
-    [SerializeField] float stopDistance;
+    [SerializeField] string enemyTag;  //敵のタグ
+    [SerializeField] string damageTag;  //敵の攻撃タグ
+    [SerializeField] string tower;  //敵の城のタグ
+    [SerializeField] float moveSpeed;  //移動速度
+    [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
     private NavMeshAgent agent;
-    [SerializeField] private Transform target;
+    private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
 
     private bool _dieCheck;
@@ -72,7 +72,7 @@ public class CharacterController : MonoBehaviour
             {
                 if (!targets.Contains(other.gameObject.transform))
                 {
-                    targets.Add(other.gameObject.transform);
+                    targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
                 }
             }
         }
@@ -87,10 +87,10 @@ public class CharacterController : MonoBehaviour
                 targets.RemoveAt(0);
             }
 
-            target = targets[0];
+            target = targets[0];  //リストの0番目の敵をターゲットに設定
         }
 
-        if (target == null)
+        if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
             target = castle;
         }
@@ -99,9 +99,9 @@ public class CharacterController : MonoBehaviour
             transform.LookAt(target.position);
         }
 
-        if (agent.remainingDistance < stopDistance)
+        if (agent.remainingDistance < stopDistance)  //敵に一定距離近づいたら
         {
-            if (agent.speed != 0f)
+            if (agent.speed != 0f)  //止まって攻撃
             {
                 agent.speed = 0f;
                // myRigidbody.isKinematic = false;
@@ -110,7 +110,7 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            if (agent.speed != moveSpeed)
+            if (agent.speed != moveSpeed)  //敵がいなくなったらターゲットに向かって移動
             {
                 agent.speed = moveSpeed;
                // myRigidbody.isKinematic = true;
