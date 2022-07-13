@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 445364272779064299}
   m_Layer: 0
   m_Name: Spine
-  m_TagString: ally
+  m_TagString: allyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: attack
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: defence

@@ -7,9 +7,9 @@ public class UserInterface : MonoBehaviour
 {
     StatusManeger statusManeger;
     [SerializeField] Slider slider;
-    [SerializeField] int maxHp;
-    [SerializeField] int attack;
-    [SerializeField] int defence;
+    public int maxHp;
+    public int attack;
+    public int defence;
     [SerializeField] bool cameraLook = true;//ƒJƒƒ‰‚ğŒ©‚³‚¹‚é‚©
 
 

@@ -68,7 +68,16 @@ public class StatusManeger
 
     public int DamageCalculation(int damege)
     {
-        return hp -= damege / defence;
+        var num = damege / defence;
+
+        if(num != 0)
+        {
+            return hp -= num;
+        }
+        else
+        {
+            return hp -= 1;
+        }
     }
 
     public int PlusHp(int heel)

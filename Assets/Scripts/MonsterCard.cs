@@ -4,14 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class WaitTime : MonoBehaviour
+public class MonsterCard : MonoBehaviour
 {
+    private UserInterface user;
+    [SerializeField] GameObject monster;
     [SerializeField] Button cardButton;
+    [SerializeField] Text statasText;
+
     public int time;
 
     void Start()
     {
-        
+        user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
+        statasText.text = "HP：" + user.maxHp.ToString("D4") + "\nAT：" + user.attack.ToString("D4") + "\nDF：" + user.defence.ToString("D4");//ステータス表示
     }
 
     /*Update is called once per frame
@@ -20,7 +25,7 @@ public class WaitTime : MonoBehaviour
         
     }*/
 
-    public void CardClick(Image clock)
+    public void CardClick(Image clock)//クールタイム
     {
         cardButton.interactable = false;
         DOTween.To

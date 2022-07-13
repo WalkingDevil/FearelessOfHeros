@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5385,7 +5385,7 @@ GameObject:
   - component: {fileID: 155653515}
   - component: {fileID: 155653518}
   m_Layer: 5
-  m_Name: card (3)
+  m_Name: gorem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5530,7 +5530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 445165010422245356, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
   cardButton: {fileID: 155653515}
+  statasText: {fileID: 892180304}
   time: 50
 --- !u!1 &157698510
 GameObject:
@@ -15295,7 +15297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &393775647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15311,10 +15313,10 @@ RectTransform:
   m_Father: {fileID: 1418455039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 343.69998, y: -72.95}
+  m_SizeDelta: {x: 98.2, y: 145.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393775648
 MonoBehaviour:
@@ -15434,7 +15436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 0}
   cardButton: {fileID: 393775648}
+  statasText: {fileID: 0}
   time: 1
 --- !u!1 &394157187
 GameObject:
@@ -39496,7 +39500,7 @@ GameObject:
   - component: {fileID: 1088706933}
   - component: {fileID: 1088706936}
   m_Layer: 5
-  m_Name: card (2)
+  m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39641,7 +39645,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 7552744252707857145, guid: 426f34ba3edefd5458a06e71e6d6d869, type: 3}
   cardButton: {fileID: 1088706933}
+  statasText: {fileID: 1438854348}
   time: 10
 --- !u!1 &1091063236
 GameObject:
@@ -72136,7 +72142,7 @@ GameObject:
   - component: {fileID: 2010225960}
   - component: {fileID: 2010225963}
   m_Layer: 5
-  m_Name: card (1)
+  m_Name: mino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72281,7 +72287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01d59745e5704ca4d8d70b2897dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 7660147587087999082, guid: c65be83d6eb37fd459938417eeaac396, type: 3}
   cardButton: {fileID: 2010225960}
+  statasText: {fileID: 834785662}
   time: 5
 --- !u!1 &2012685110
 GameObject:
