@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     private NavMeshAgent agent;
     private Transform target;
     [SerializeField] private List<Transform> targets = new List<Transform>();
+    [SerializeField] GameObject firePrefab;//‰“‹——£Œ^—p
 
     private bool _dieCheck;
     public bool dieCheck
@@ -52,6 +53,12 @@ public class CharacterController : MonoBehaviour
         {
             agent.SetDestination(target.position);
         }
+    }
+
+    public void FireBall()
+    {
+        GameObject ball = Instantiate(firePrefab, transform.position, Quaternion.identity);
+       // ball.
     }
 
     private void OnCollisionEnter(Collision collision)

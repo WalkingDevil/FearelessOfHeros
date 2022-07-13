@@ -19,4 +19,5 @@ public class AnimeController : MonoBehaviour
     {
         Destroy(this.gameObject.transform.root.gameObject);
     }
+
 }
