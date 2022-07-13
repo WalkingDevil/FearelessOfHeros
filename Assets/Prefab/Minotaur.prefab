@@ -780,8 +780,9 @@ MonoBehaviour:
   tower: enemyTower
   moveSpeed: 20
   stopDistance: 5
-  target: {fileID: 0}
   targets: []
+  firePrefab: {fileID: 0}
+  throwSpeed: 0
 --- !u!65 &-4926367201335304040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2759,6 +2760,10 @@ PrefabInstance:
     - target: {fileID: 4413076559478797720, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: defence
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797724, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Name
