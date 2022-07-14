@@ -775,9 +775,14 @@ MonoBehaviour:
   anime: {fileID: 1433798777904525595}
   userInterface: {fileID: 7660147586619809832}
   myRigidbody: {fileID: 7660147586361392012}
+  castle: []
   enemyTag: enemy
   damageTag: enemyAttack
-  tower: enemyTower
+  tower:
+  - Cube
+  - Cube1
+  - Cube2
+  - enemyTower
   moveSpeed: 20
   stopDistance: 5
   targets: []

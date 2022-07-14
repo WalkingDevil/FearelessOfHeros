@@ -9,10 +9,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] AnimeController anime;
     [SerializeField] UserInterface userInterface;
     [SerializeField] Rigidbody myRigidbody;
-    private Transform castle;
+    [SerializeField] List<Transform> castle = new List<Transform>();
     [SerializeField] string enemyTag;  //敵のタグ
     [SerializeField] string damageTag;  //敵の攻撃タグ
-    [SerializeField] string tower;  //敵の城のタグ
+    [SerializeField] List<string> tower = new List<string>();  //敵の城のオブジェクト名
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
     private NavMeshAgent agent;
@@ -46,8 +46,11 @@ public class CharacterController : MonoBehaviour
     {
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
-        castle = GameObject.Find(tower).GetComponent<Transform>();
-        target = castle;
+        for(int i = 0; i < tower.Count - 1; i++)
+        {
+            castle.Add(GameObject.Find(tower[i]).GetComponent<Transform>());
+        }
+        target = castle[0];
     }
 
     void Update()
@@ -98,12 +101,17 @@ public class CharacterController : MonoBehaviour
                 targets.RemoveAt(0);
             }
 
+            if (castle[0] == null)
+            {
+                castle.RemoveAt(0);
+            }
+
             target = targets[0];  //リストの0番目の敵をターゲットに設定
         }
 
         if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
-            target = castle;
+            target = castle[0];
         }
         else
         {
