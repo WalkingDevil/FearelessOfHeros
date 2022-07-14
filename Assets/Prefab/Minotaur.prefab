@@ -778,10 +778,8 @@ MonoBehaviour:
   castle: []
   enemyTag: enemy
   damageTag: enemyAttack
+  fireBallTag: 
   tower:
-  - Cube
-  - Cube1
-  - Cube2
   - enemyTower
   moveSpeed: 20
   stopDistance: 5

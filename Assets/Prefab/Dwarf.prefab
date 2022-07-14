@@ -3170,10 +3170,12 @@ MonoBehaviour:
   anime: {fileID: 839590090474467204}
   userInterface: {fileID: 3934095497867247369}
   myRigidbody: {fileID: 839590090474467170}
+  castle: []
   enemyTag: ally
   damageTag: allyAttack
-  tower: allyTower
   fireBallTag: fire
+  tower:
+  - allyTower
   moveSpeed: 10
   stopDistance: 10
   targets: []

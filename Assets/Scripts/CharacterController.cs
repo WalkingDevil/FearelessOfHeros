@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour
     {
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
-        for(int i = 0; i < tower.Count - 1; i++)
+        for(int i = 0; i < tower.Count; i++)
         {
             castle.Add(GameObject.Find(tower[i]).GetComponent<Transform>());
         }

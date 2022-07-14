@@ -5101,10 +5101,12 @@ MonoBehaviour:
   anime: {fileID: 8544843368201371795}
   userInterface: {fileID: 5452456698828896864}
   myRigidbody: {fileID: 8544843368201371793}
+  castle: []
   enemyTag: enemy
   damageTag: enemyAttack
-  tower: enemyTower
   fireBallTag: 
+  tower:
+  - enemyTower
   moveSpeed: 10
   stopDistance: 75
   targets: []

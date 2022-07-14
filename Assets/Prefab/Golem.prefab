@@ -811,12 +811,17 @@ MonoBehaviour:
   anime: {fileID: 445364273073369279}
   userInterface: {fileID: 4255943214335932749}
   myRigidbody: {fileID: 445364273073369275}
+  castle: []
   enemyTag: enemy
   damageTag: enemyAttack
-  tower: enemyTower
+  fireBallTag: 
+  tower:
+  - enemyTower
   moveSpeed: 2.5
   stopDistance: 10
   targets: []
+  firePrefab: {fileID: 0}
+  throwSpeed: 0
 --- !u!195 &445364273073369274
 NavMeshAgent:
   m_ObjectHideFlags: 0
