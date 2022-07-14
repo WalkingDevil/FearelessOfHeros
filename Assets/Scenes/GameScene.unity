@@ -78845,6 +78845,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4233217218635080917, guid: f1b9b652e82e29e478f0624da78e3b3e, type: 3}
+      propertyPath: maxDestoyTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8517105643767722313, guid: f1b9b652e82e29e478f0624da78e3b3e, type: 3}
       propertyPath: m_Name
       value: freme
