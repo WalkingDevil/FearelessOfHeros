@@ -69,7 +69,8 @@ public class CharacterController : MonoBehaviour
     /// <param name="collider">コライダーがトリガーの場合</param>
     private void HitDamage(Collision collision = null, Collider collider = null)
     {
-        GameObject root = null;
+        GameObject root = null;//一番親のオブジェクト
+        FremeAttack fremeAttack = null;//火弾の
         if (collision != null)
         {
             root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
@@ -77,16 +78,23 @@ public class CharacterController : MonoBehaviour
         else if (collider != null)
         {
             root = collider.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+            if(root.GetComponent<FremeAttack>() != null)//FremeAttackがあるかどうか
+            {
+                fremeAttack = root.GetComponent<FremeAttack>();
+            }
         }
         UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
         dieCheck = userInterface.DamegeValue(user.GetDamege());
+        if(fremeAttack != null)
+        {
+          //  fremeAttack.DestroyBall();
+        }
     }
 
     public void FireBall()
     {
-        GameObject ball = Instantiate(firePrefab, transform.position, Quaternion.identity);
-        ball.transform.LookAt(target);
-        ball.GetComponent<Rigidbody>().AddForce(target.position * 5, ForceMode.Impulse);
+        GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
+        ball.GetComponent<Rigidbody>().AddForce(target.position * 0.5f, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
