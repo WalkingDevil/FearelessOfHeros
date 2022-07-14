@@ -3173,9 +3173,12 @@ MonoBehaviour:
   enemyTag: ally
   damageTag: allyAttack
   tower: allyTower
+  fireBallTag: fire
   moveSpeed: 10
   stopDistance: 10
   targets: []
+  firePrefab: {fileID: 0}
+  throwSpeed: 0
 --- !u!114 &839590090474467204
 MonoBehaviour:
   m_ObjectHideFlags: 0

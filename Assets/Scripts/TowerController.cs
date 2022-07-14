@@ -6,7 +6,7 @@ public class TowerController : MonoBehaviour
 {
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
-
+    [SerializeField] string fireBallTag;
 
     private bool _dieCheck;
     public bool dieCheck
@@ -28,23 +28,48 @@ public class TowerController : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
 
     void Update()
     {
-        
+
     }
 
+    /// <summary>
+    /// 受けるダメージ
+    /// </summary>
+    /// <param name="collision">コライダーがトリガーではない場合</param>
+    /// <param name="collider">コライダーがトリガーの場合</param>
+    private void HitDamage(Collision collision = null, Collider collider = null)
+    {
+        GameObject root = null;
+        if (collision != null)
+        {
+            root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+        }
+        else if (collider != null)
+        {
+            root = collider.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+        }
+        UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+        dieCheck = userInterface.DamegeValue(user.GetDamege());
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == damageTag)
         {
-            GameObject root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
-            UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-            dieCheck = userInterface.DamegeValue(user.GetDamege());
+            HitDamage(collision);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == fireBallTag)
+        {
+            HitDamage(null, other);
         }
     }
 }

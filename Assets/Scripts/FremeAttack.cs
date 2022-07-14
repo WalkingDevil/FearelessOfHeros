@@ -29,26 +29,25 @@ public class FremeAttack : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-       /* if(collision.gameObject.tag == floorTag || collision.gameObject.tag == enemyTag)
-        {
-            StartCoroutine("Hit");
-        }*/
-
-        if(collision != null)
-        {
-            StartCoroutine("Hit");
-        }
-    }
-
-    IEnumerable Hit()
+    public void DestroyBall()
     {
         fire.SetActive(false);
         hit.SetActive(true);
         Destroy(this.gameObject);
-        yield return new WaitForSeconds(stopTime);
-
-        
     }
+
+  /*  private void OnCollisionEnter(Collision collision)
+    {
+        if(collision != null)
+        {
+            Debug.Log("ddd");
+
+        }  
+
+        if(collision.gameObject.tag == floorTag || collision.gameObject.tag == enemyTag)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("ddaaaw");
+        }
+    }*/
 }
