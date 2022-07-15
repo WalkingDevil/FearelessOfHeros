@@ -68,34 +68,25 @@ public class CharacterController : MonoBehaviour
     /// </summary>
     /// <param name="collision">コライダーがトリガーではない場合</param>
     /// <param name="collider">コライダーがトリガーの場合</param>
-    private void HitDamage(Collision collision = null, Collider collider = null)
+    private void HitDamage(Collision collision = null, GameObject ob = null)
     {
         GameObject root = null;//一番親のオブジェクト
-        FremeAttack fremeAttack = null;//火弾の
         if (collision != null)
         {
             root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
         }
-        else if (collider != null)
+        else if (ob != null)
         {
-            root = collider.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
-            if(root.GetComponent<FremeAttack>() != null)//FremeAttackがあるかどうか
-            {
-                fremeAttack = root.GetComponent<FremeAttack>();
-            }
+            root = ob.transform.root.gameObject;//一番親のオブジェクトを渡す
         }
         UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
         dieCheck = userInterface.DamegeValue(user.GetDamege());
-        if(fremeAttack != null)
-        {
-          //  fremeAttack.DestroyBall();
-        }
     }
 
     public void FireBall()
     {
         GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
-        ball.GetComponent<Rigidbody>().AddForce(target.position * 0.5f, ForceMode.Impulse);
+        ball.GetComponent<Rigidbody>().AddForce(target.position * throwSpeed, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -106,12 +97,22 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.tag == fireBallTag)
+        Debug.Log("dd123");
+        if (other.tag == fireBallTag)
         {
+            Debug.Log("ddddd");
             HitDamage(null, other);
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+      /*  if (other.gameObject.tag == fireBallTag)
+        {
+            HitDamage(null, other);
+        }*/
 
         if (other.gameObject.tag == enemyTag)
         {
@@ -133,6 +134,7 @@ public class CharacterController : MonoBehaviour
             {
                 targets.RemoveAt(0);
             }
+
 
             //castle.RemoveAll(null);
 

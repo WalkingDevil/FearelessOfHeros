@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class FremeAttack : MonoBehaviour
 {
-    [SerializeField] GameObject fire;
-    [SerializeField] GameObject hit;
     [SerializeField] string floorTag;
     [SerializeField] string enemyTag;
     [SerializeField] float stopTime;
     private float destoyTime;
     [SerializeField] float maxDestoyTime;
-
-    private void Awake()
-    {
-        fire.SetActive(true);
-    }
 
     private void Update()
     {
@@ -31,8 +24,6 @@ public class FremeAttack : MonoBehaviour
 
     public void DestroyBall()
     {
-        fire.SetActive(false);
-        hit.SetActive(true);
         Destroy(this.gameObject);
     }
 
