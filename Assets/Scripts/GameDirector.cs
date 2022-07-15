@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] int _towerCount = 0;
+    public int towerCount
     {
-        
+        get { return _towerCount; }
+        set
+        {
+            if(_towerCount != value)
+            {
+                _towerCount = value;
+            }
+        }
     }
 }

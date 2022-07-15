@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
+
+    [SerializeField] bool enemy;
 
     private bool _dieCheck;
     public bool dieCheck
@@ -20,7 +23,21 @@ public class TowerController : MonoBehaviour
 
                 if (_dieCheck)
                 {
+                    if(enemy)
+                    {
+                        if(gameDirector.towerCount != 0)
+                        {
+                            gameDirector.towerCount--;
+                        }
+                        else
+                        {
 
+                        }
+                    }
+                    else
+                    {
+
+                    }
                 }
             }
         }

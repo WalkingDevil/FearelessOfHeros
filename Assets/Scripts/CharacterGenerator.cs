@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterGenerator : MonoBehaviour
 {
+    [SerializeField] GameDirector gameDirector;
     [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
 
@@ -18,7 +19,7 @@ public class CharacterGenerator : MonoBehaviour
             if(_coolTime <= 0)
             {
                 _coolTime = maxCoolTime;
-                GenerateChara(GetRandom(geneObject.Count));
+                GenerateChara(GetRandom(gameDirector.towerCount));
             }
         }
     }
