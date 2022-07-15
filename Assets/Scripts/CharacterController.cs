@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
@@ -56,6 +57,10 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        if(castle.Any(n => n == null))
+        {
+            castle.RemoveAt(0);
+        }
         if (target != null)
         {
             agent.SetDestination(target.position);
@@ -128,15 +133,17 @@ public class CharacterController : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (targets[0] == null)
+            if (targets.Any(n => n == null))
             {
                 targets.RemoveAt(0);
             }
 
-            if (castle[0] == null)
+            if (castle.Any(n => n == null))
             {
                 castle.RemoveAt(0);
             }
+
+            //castle.RemoveAll(null);
 
             target = targets[0];  //リストの0番目の敵をターゲットに設定
         }
