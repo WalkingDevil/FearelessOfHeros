@@ -17448,6 +17448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotatorPS2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1330431047984359540, guid: 37f8e63e15d64bc469b80bb1773c9955, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1331394428527303040, guid: 37f8e63e15d64bc469b80bb1773c9955, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -56008,7 +56012,7 @@ MonoBehaviour:
   moveSpeed: 10
   stopDistance: 80
   targets: []
-  firePrefab: {fileID: 0}
+  firePrefab: {fileID: 1330431047984359540, guid: 37f8e63e15d64bc469b80bb1773c9955, type: 3}
   throwSpeed: 0
 --- !u!54 &1522764504
 Rigidbody:
@@ -56024,7 +56028,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!65 &1522764505
 BoxCollider:

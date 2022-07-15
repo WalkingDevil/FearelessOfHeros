@@ -13,6 +13,7 @@ TagManager:
   - allyAttack
   - floor
   - fire
+  - fireEnemy
   layers:
   - Default
   - TransparentFX

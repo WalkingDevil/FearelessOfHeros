@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1202733666076762014}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 1204202316369838078}
   m_Layer: 0
   m_Name: SubFire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9645,7 +9645,7 @@ GameObject:
   - component: {fileID: 1204264952524933240}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14461,7 +14461,7 @@ GameObject:
   - component: {fileID: 1202885608472952624}
   m_Layer: 0
   m_Name: FireDark
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19277,7 +19277,7 @@ GameObject:
   - component: {fileID: 1203318760215001646}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24093,7 +24093,7 @@ GameObject:
   - component: {fileID: 1202570988522735610}
   m_Layer: 0
   m_Name: FireDark
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28909,7 +28909,7 @@ GameObject:
   - component: {fileID: 1202941565035377094}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33726,7 +33726,7 @@ GameObject:
   - component: {fileID: 1437792382984886730}
   m_Layer: 0
   m_Name: Magic fire pro green
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38699,7 +38699,7 @@ GameObject:
   - component: {fileID: 1202813251185063428}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43516,7 +43516,7 @@ GameObject:
   - component: {fileID: 1438851962376096584}
   m_Layer: 0
   m_Name: Magic fire pro blue
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48489,7 +48489,7 @@ GameObject:
   - component: {fileID: 1202685501388612892}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53305,7 +53305,7 @@ GameObject:
   - component: {fileID: 1203330380463475784}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58121,7 +58121,7 @@ GameObject:
   - component: {fileID: 1202747810979307704}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62937,7 +62937,7 @@ GameObject:
   - component: {fileID: 1202873694968910568}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67753,7 +67753,7 @@ GameObject:
   - component: {fileID: 1204333618084716678}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72569,7 +72569,7 @@ GameObject:
   - component: {fileID: 1204236985916734788}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77385,7 +77385,7 @@ GameObject:
   - component: {fileID: 1202736922384945584}
   m_Layer: 0
   m_Name: FireDark
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82201,7 +82201,7 @@ GameObject:
   - component: {fileID: 1202703525794198088}
   m_Layer: 0
   m_Name: FireDark
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87017,7 +87017,7 @@ GameObject:
   - component: {fileID: 1203457603920928940}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91833,7 +91833,7 @@ GameObject:
   - component: {fileID: 1204261556565802418}
   m_Layer: 0
   m_Name: FireDark
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96650,7 +96650,7 @@ GameObject:
   - component: {fileID: 1438792110008448744}
   m_Layer: 0
   m_Name: Magic fire pro violet
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101624,7 +101624,7 @@ GameObject:
   - component: {fileID: 1438314335592106074}
   m_Layer: 0
   m_Name: Magic fire pro red
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106597,7 +106597,7 @@ GameObject:
   - component: {fileID: 1202932971792770368}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111411,10 +111411,11 @@ GameObject:
   - component: {fileID: 1331394428527303040}
   - component: {fileID: 1203945676884704204}
   - component: {fileID: 1204224653760126924}
-  - component: {fileID: 1341046042979135828}
+  - component: {fileID: 2740569303931667466}
+  - component: {fileID: 8564983989550639124}
   m_Layer: 0
-  m_Name: RotatorPS2
-  m_TagString: Untagged
+  m_Name: Rotator
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111426,7 +111427,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330431047984359540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -111439,7 +111440,7 @@ Transform:
   - {fileID: 7774620041799887217}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!198 &1203945676884704204
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -116224,19 +116225,38 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!65 &1341046042979135828
-BoxCollider:
+--- !u!114 &2740569303931667466
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330431047984359540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037c52e05f7eb4e4589ef2d1b53238c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTag: 
+  enemyTag: 
+  stopTime: 0
+  maxDestoyTime: 100
+--- !u!54 &8564983989550639124
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330431047984359540}
   serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
-  m_Center: {x: 0, y: -1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!1 &1330438981458174284
 GameObject:
   m_ObjectHideFlags: 0
@@ -116251,7 +116271,7 @@ GameObject:
   - component: {fileID: 1438724665250056588}
   m_Layer: 0
   m_Name: Magic fire pro orange
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121225,7 +121245,7 @@ GameObject:
   - component: {fileID: 1438130622103744284}
   m_Layer: 0
   m_Name: FireWhite
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126162,7 +126182,7 @@ GameObject:
   - component: {fileID: 1203418855225103216}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130978,7 +130998,7 @@ GameObject:
   - component: {fileID: 1203012703895084252}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: fireEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135795,6 +135815,10 @@ PrefabInstance:
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: maxHp
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: attack
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: defence
