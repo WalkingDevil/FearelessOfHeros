@@ -57,10 +57,6 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        if(castle.Any(n => n == null))
-        {
-            castle.RemoveAt(0);
-        }
         if (target != null)
         {
             agent.SetDestination(target.position);
@@ -138,11 +134,6 @@ public class CharacterController : MonoBehaviour
                 targets.RemoveAt(0);
             }
 
-            if (castle.Any(n => n == null))
-            {
-                castle.RemoveAt(0);
-            }
-
             //castle.RemoveAll(null);
 
             target = targets[0];  //リストの0番目の敵をターゲットに設定
@@ -174,6 +165,13 @@ public class CharacterController : MonoBehaviour
                // myRigidbody.isKinematic = true;
                 anime.TransitionAnime("run");
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (castle.Any(n => n == null))
+        {
+            castle.RemoveAt(0);
         }
     }
 }
