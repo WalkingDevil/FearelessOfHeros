@@ -130,7 +130,7 @@ public class CharacterController : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (targets.Any(n => n == null))
+            if (targets[0] == null)
             {
                 targets.RemoveAt(0);
             }
