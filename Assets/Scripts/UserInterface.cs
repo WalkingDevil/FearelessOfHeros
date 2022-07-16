@@ -11,13 +11,17 @@ public class UserInterface : MonoBehaviour
     public int attack;
     public int defence;
     [SerializeField] bool cameraLook = true;//カメラを見させるか
+    [SerializeField] bool tower = false;//このHPがタワーであるかどうか
 
 
     void Start()
     {
-        statusManeger = new StatusManeger(maxHp, attack, defence);
-        slider.maxValue = maxHp;
-        slider.value = maxHp;
+        if(!tower)
+        {
+            statusManeger = new StatusManeger(maxHp, attack, defence);
+            slider.maxValue = maxHp;
+            slider.value = maxHp;
+        }
     }
 
     void Update()
@@ -42,5 +46,16 @@ public class UserInterface : MonoBehaviour
     public void HeelValue(int heel)
     {
        // playerSlider.value = hpManager.PlusHp(heel);
+    }
+
+    public void SetSlider()//スライダーをセットする
+    {
+        statusManeger = new StatusManeger(maxHp, attack, defence);
+        slider.maxValue = maxHp;
+        slider.value = maxHp;
+        if(slider.value == 0)//セットされていなかったときの保険
+        {
+            slider.value = slider.maxValue;
+        }
     }
 }

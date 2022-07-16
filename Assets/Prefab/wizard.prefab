@@ -4969,7 +4969,6 @@ GameObject:
   - component: {fileID: 8546517320517776199}
   - component: {fileID: 8544843368201371793}
   - component: {fileID: 8544843368201371799}
-  - component: {fileID: 8544843368201371822}
   - component: {fileID: 8544843368201371820}
   - component: {fileID: 8544843368201371792}
   - component: {fileID: 8544843368201371794}
@@ -5031,20 +5030,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.78, y: 5.52, z: 56.4}
   m_Center: {x: -2.34, y: 1.72, z: 26.2}
---- !u!136 &8544843368201371822
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8545277120174106075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 6.43
-  m_Direction: 1
-  m_Center: {x: 0, y: 3.68, z: 0}
 --- !u!95 &8544843368201371820
 Animator:
   serializedVersion: 3
@@ -5104,14 +5089,17 @@ MonoBehaviour:
   castle: []
   enemyTag: enemy
   damageTag: enemyAttack
-  fireBallTag: 
+  fireBallTag: fireEnemy
   tower:
+  - Fortrees1
+  - Fortrees2
+  - Fortrees3
   - enemyTower
-  moveSpeed: 10
+  moveSpeed: 20
   stopDistance: 75
   targets: []
   firePrefab: {fileID: 6038934085425190197, guid: 66da75402e796b545a8fa4a133cae23b, type: 3}
-  throwSpeed: 0.5
+  throwSpeed: 0.1
 --- !u!114 &8544843368201371795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5442,6 +5430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8546517320563416207}
   - component: {fileID: 8544843367284676010}
+  - component: {fileID: 1739999177238147825}
   m_Layer: 0
   m_Name: Bip001
   m_TagString: ally
@@ -5481,6 +5470,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!136 &1739999177238147825
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545277120847293865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.08
+  m_Height: 6.26
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8545277120945812567
 GameObject:
   m_ObjectHideFlags: 0

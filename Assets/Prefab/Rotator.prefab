@@ -111427,8 +111427,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330431047984359540}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1331760682816062578}
@@ -111440,7 +111440,7 @@ Transform:
   - {fileID: 7774620041799887217}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1203945676884704204
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -116240,7 +116240,7 @@ MonoBehaviour:
   floorTag: 
   enemyTag: 
   stopTime: 0
-  maxDestoyTime: 100
+  maxDestoyTime: 1
 --- !u!54 &8564983989550639124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116255,7 +116255,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!1 &1330438981458174284
 GameObject:

@@ -1070,7 +1070,7 @@ MonoBehaviour:
   fireBallTag: fire
   tower:
   - allyTower
-  moveSpeed: 15
+  moveSpeed: 30
   stopDistance: 10
   targets: []
   firePrefab: {fileID: 0}

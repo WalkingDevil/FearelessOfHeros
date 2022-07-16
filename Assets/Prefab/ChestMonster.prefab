@@ -806,10 +806,13 @@ MonoBehaviour:
   castle: []
   enemyTag: enemy
   damageTag: enemyAttack
-  fireBallTag: 
+  fireBallTag: fireEnemy
   tower:
+  - Fortrees1
+  - Fortrees2
+  - Fortrees3
   - enemyTower
-  moveSpeed: 10
+  moveSpeed: 20
   stopDistance: 10
   targets: []
   firePrefab: {fileID: 0}

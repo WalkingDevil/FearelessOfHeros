@@ -28,6 +28,7 @@ public class TowerController : MonoBehaviour
                         if(gameDirector.towerCount != 0)
                         {
                             gameDirector.towerCount--;
+                            Destroy(this.gameObject);
                         }
                         else
                         {
@@ -48,11 +49,6 @@ public class TowerController : MonoBehaviour
 
     }
 
-
-    void Update()
-    {
-
-    }
 
     /// <summary>
     /// éÛÇØÇÈÉ_ÉÅÅ[ÉW

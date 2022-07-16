@@ -19,7 +19,7 @@ public class CharacterGenerator : MonoBehaviour
             if(_coolTime <= 0)
             {
                 _coolTime = maxCoolTime;
-                GenerateChara(GetRandom(gameDirector.towerCount));
+                GenerateChara(GetRandom(geneObject.Count));
             }
         }
     }
@@ -36,9 +36,14 @@ public class CharacterGenerator : MonoBehaviour
         }
     }
 
-    public void GenerateChara(int num)
+    public void GenerateChara(int obNum)
     {
-        Instantiate(geneObject[num], genePos[0], Quaternion.identity);
+        int genNum = 0;
+        if(maxCoolTime != 0)
+        {
+            genNum = gameDirector.towerCount;
+        }
+        Instantiate(geneObject[obNum], genePos[genNum], Quaternion.identity);
     }
 
     private int GetRandom(int length)
