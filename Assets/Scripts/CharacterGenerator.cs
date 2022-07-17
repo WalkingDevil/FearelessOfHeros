@@ -19,12 +19,14 @@ public class CharacterGenerator : MonoBehaviour
             if(_coolTime <= 0)
             {
                 _coolTime = maxCoolTime;
-                GenerateChara(GetRandom(geneObject.Count));
+                GenerateChara(GetRandom(0, geneObject.Count));
             }
         }
     }
 
-    [SerializeField] float maxCoolTime;
+    [SerializeField] float maxCoolTime;//最大値のクールタイム
+    [SerializeField] int maxGenePosX;//最大値の生成位置のX座標
+    [SerializeField] int minGenePosX;//最小値の生成位置のX座標
     void Update()
     {
         if (maxCoolTime != 0)
@@ -39,15 +41,20 @@ public class CharacterGenerator : MonoBehaviour
     public void GenerateChara(int obNum)
     {
         int genNum = 0;
-        if(maxCoolTime != 0)
+
+        if(maxCoolTime != 0)//敵である場合
         {
             genNum = gameDirector.towerCount;
         }
-        Instantiate(geneObject[obNum], genePos[genNum], Quaternion.identity);
+
+        //生成位置をX座標ランダムで決める
+        Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
+
+        Instantiate(geneObject[obNum], gene, Quaternion.identity);
     }
 
-    private int GetRandom(int length)
+    private int GetRandom(int min, int max)
     {
-        return Random.Range(0, length);
+        return Random.Range(min, max);
     }
 }

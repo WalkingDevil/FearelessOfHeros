@@ -116240,7 +116240,7 @@ MonoBehaviour:
   floorTag: 
   enemyTag: 
   stopTime: 0
-  maxDestoyTime: 1
+  maxDestoyTime: 2.5
 --- !u!54 &8564983989550639124
 Rigidbody:
   m_ObjectHideFlags: 0
