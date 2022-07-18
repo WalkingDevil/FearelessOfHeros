@@ -55,16 +55,16 @@ public class TowerController : MonoBehaviour
     /// </summary>
     /// <param name="collision">コライダーがトリガーではない場合</param>
     /// <param name="collider">コライダーがトリガーの場合</param>
-    private void HitDamage(Collision collision = null, Collider collider = null)
+    private void HitDamage(Collision collision = null, GameObject ob = null)
     {
-        GameObject root = null;
+        GameObject root = null;//一番親のオブジェクト
         if (collision != null)
         {
             root = collision.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
         }
-        else if (collider != null)
+        else if (ob != null)
         {
-            root = collider.gameObject.transform.root.gameObject;//一番親のオブジェクトを渡す
+            root = ob.transform.root.gameObject;//一番親のオブジェクトを渡す
         }
         UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
         dieCheck = userInterface.DamegeValue(user.GetDamege());
@@ -78,9 +78,9 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.tag == fireBallTag)
+        if (other.tag == fireBallTag)
         {
             HitDamage(null, other);
         }
