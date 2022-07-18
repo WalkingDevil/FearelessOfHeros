@@ -2726,6 +2726,30 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4413076559566956388, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559566956388, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559566956388, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076560045342692, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076560045342692, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076560045342692, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9529412
+      objectReference: {fileID: 0}
     - target: {fileID: 4413076560045342715, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

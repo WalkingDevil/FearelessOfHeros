@@ -24,14 +24,7 @@ public class CameraController : MonoBehaviour
         float proportion = 0;
         if (transform.position.z >= criteriaZ)
         {
-            if(slider.value < maxCriteriaPro)
-            {
-                proportion = defPosY + (maxHeight * ((slider.value - criteriaPro) * (one / (one - criteriaPro))));
-            }
-            else
-            {
-                proportion = defPosY + (maxHeight * ((maxCriteriaPro - criteriaPro) * (one / (one - criteriaPro))));
-            }
+            proportion = GetCoordinates(slider.value < maxCriteriaPro, slider.value, defPosY);
         }
         else
         {
@@ -39,5 +32,24 @@ public class CameraController : MonoBehaviour
         }
 
         transform.position = new Vector3(transform.position.x, proportion, defPosZ + slider.value * maxRange);
+    }
+
+    /// <summary>
+    /// スライダーの値の割合を変換して値を返す
+    /// </summary>
+    /// <param name="check">座標を超えているか</param>
+    /// <param name="value">スライダーの値</param>
+    /// <param name="def">基準の座標値</param>
+    /// <returns></returns>
+    private float GetCoordinates(bool check ,float value, float def)
+    {
+        if(check)
+        {
+            return def + (maxHeight * ((value - criteriaPro) * (one / (one - criteriaPro))));
+        }
+        else
+        {
+            return def + (maxHeight * ((maxCriteriaPro - criteriaPro) * (one / (one - criteriaPro))));
+        }
     }
 }

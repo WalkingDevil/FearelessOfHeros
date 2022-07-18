@@ -10,6 +10,8 @@ public class UserInterface : MonoBehaviour
     public int maxHp;
     public int attack;
     public int defence;
+    public int cost;
+   // public List<int> state;
     [SerializeField] bool cameraLook = true;//ƒJƒƒ‰‚ğŒ©‚³‚¹‚é‚©
     [SerializeField] bool tower = false;//‚±‚ÌHP‚ªƒ^ƒ[‚Å‚ ‚é‚©‚Ç‚¤‚©
 
@@ -18,7 +20,7 @@ public class UserInterface : MonoBehaviour
     {
         if(!tower)
         {
-            statusManeger = new StatusManeger(maxHp, attack, defence);
+            statusManeger = new StatusManeger(maxHp, attack, defence, cost);
             slider.maxValue = maxHp;
             slider.value = maxHp;
         }

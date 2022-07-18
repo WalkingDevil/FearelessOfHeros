@@ -105,10 +105,8 @@ public class CharacterController : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("dd123");
         if (other.tag == fireBallTag)
         {
-            Debug.Log("ddddd");
             HitDamage(null, other);
         }
     }

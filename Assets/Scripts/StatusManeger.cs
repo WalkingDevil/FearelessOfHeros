@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class StatusManeger
 {
-    public StatusManeger(int maxhp, int attack, int defence)
+    public StatusManeger(int maxhp, int attack, int defence, int cost = 0)
     {
         this.maxHp = maxhp;
         this.attack = attack;
         this.defence = defence;
+        this.cost = cost;
     }
 
     private int _maxHp;
@@ -65,6 +66,20 @@ public class StatusManeger
             }
         }
     }
+
+    private int _cost;
+    public int cost
+    {
+        get { return _cost; }
+        set
+        {
+            if(_cost != value)
+            {
+                _cost = value;
+            }
+        }
+    }
+
 
     public int DamageCalculation(int damege)
     {

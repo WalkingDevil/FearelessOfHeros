@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterGenerator : MonoBehaviour
 {
     [SerializeField] GameDirector gameDirector;
     [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
+    [SerializeField] List<Slider> costSliders;//生成する位置
 
     [SerializeField] float _coolTime;
     public float coolTime
@@ -46,6 +49,31 @@ public class CharacterGenerator : MonoBehaviour
         {
             genNum = gameDirector.towerCount;
         }
+        else
+        {
+            UserInterface user = geneObject[obNum].GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            if (!CheckeCost(user.cost))//所持しているコストと必要コストが足りているか
+            {
+                return;
+            }
+            else
+            {
+                var count = 0;
+                foreach (Slider s in costSliders)
+                {
+                    if (s.value == s.maxValue)
+                    {
+                        s.value -= s.maxValue;
+                        count++;
+                    }
+
+                    if(count == user.cost)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
 
         //生成位置をX座標ランダムで決める
         Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
@@ -56,5 +84,20 @@ public class CharacterGenerator : MonoBehaviour
     private int GetRandom(int min, int max)
     {
         return Random.Range(min, max);
+    }
+
+    private bool CheckeCost(int cost)
+    {
+        var totalValue = 0;
+
+        foreach(Slider s in costSliders)
+        {
+            if(s.value == s.maxValue)
+            {
+                totalValue++;//最大コスト数を計算する
+            }
+        }
+        Debug.Log(totalValue);
+        return cost <= totalValue;
     }
 }
