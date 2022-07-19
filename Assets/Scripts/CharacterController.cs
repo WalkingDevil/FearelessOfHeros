@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] AnimeController anime;
     [SerializeField] UserInterface userInterface;
+    private GameDirector gameDirector;
     [SerializeField] Rigidbody myRigidbody;
     [SerializeField] List<Transform> castle = new List<Transform>();
     [SerializeField] string enemyTag;  //敵のタグ
@@ -25,6 +26,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] GameObject firePrefab;
     [SerializeField] float throwSpeed;
 
+    [SerializeField] int plusCost = 2;//コストの増量
     private bool _dieCheck;
     public bool dieCheck
     {
@@ -38,6 +40,7 @@ public class CharacterController : MonoBehaviour
                 if(_dieCheck)
                 {
                     anime.TransitionAnime("die");
+                    gameDirector.cost = plusCost;
                 }
             }
         }
@@ -48,6 +51,7 @@ public class CharacterController : MonoBehaviour
     {
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
+        gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         for(int i = 0; i < tower.Count; i++)
         {
             if (GameObject.Find(tower[i]))

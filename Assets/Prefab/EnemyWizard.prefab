@@ -1396,6 +1396,7 @@ MonoBehaviour:
   targets: []
   firePrefab: {fileID: 1330431047984359540, guid: 37f8e63e15d64bc469b80bb1773c9955, type: 3}
   throwSpeed: 0.1
+  plusCost: 2
 --- !u!195 &4249351364625337529
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2624,11 +2625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: maxHp
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: attack
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: defence

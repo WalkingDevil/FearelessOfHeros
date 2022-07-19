@@ -8,6 +8,7 @@ public class TowerController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
+    [SerializeField] int plusCost;
 
     [SerializeField] bool enemy;
 
@@ -28,6 +29,7 @@ public class TowerController : MonoBehaviour
                         if(gameDirector.towerCount != 0)
                         {
                             gameDirector.towerCount--;
+                            gameDirector.cost += plusCost;
                             Destroy(this.gameObject);
                         }
                         else

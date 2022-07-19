@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameDirector : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class GameDirector : MonoBehaviour
 
     [SerializeField] List<Slider> costSliders;//生成する位置
     private int maxCost = 0;
+    private int plusCost = 0;
     private int _cost;
     public int cost
     {
@@ -47,11 +49,11 @@ public class GameDirector : MonoBehaviour
         {
             if (_cost != value)
             {
-                var plus = value;
                 _cost = value;
-                if (plus < 0)
-                {
-                    if (maxCost > _cost + value)
+                if(plusCost < value)
+                { 
+                    var plus = value - plusCost;
+                    if (maxCost >= _cost + value)//maxの値に達していなかったら
                     {
                         foreach (Slider s in costSliders)
                         {
@@ -67,7 +69,7 @@ public class GameDirector : MonoBehaviour
                             }
                         }
                     }
-                    else
+                    else//maxの値だったら
                     {
                         _cost = maxCost;
                         foreach (Slider s in costSliders)
@@ -79,7 +81,12 @@ public class GameDirector : MonoBehaviour
                         }
                     }
                 }
-                
+                plusCost = value;
+
+                if(_cost != maxCost)
+                {
+                    StartCoroutine(CostSlider());
+                }
             }
 
         } 
@@ -98,16 +105,30 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    IEnumerator CostSlider()
+    {
+        foreach (Slider s in costSliders)
+        {
+            if (s.value == s.minValue)
+            {
+                yield return new WaitForSeconds(1);
+                DOTween.To(() => s.value, (t) => s.value = t, 1, 5f);
+                // .OnComplete(() => ResetButton(clock));
+            }
+        }
+    }
+
     private void Start()
     {
         towerUser[0].SetSlider();
         maxCost = costSliders.Count;
         cost = maxCost;
+        plusCost = maxCost;
     }
 
     private void Update()
     {
-        Debug.Log(cost);
+     //   Debug.Log(cost);
     }
 
     private void ChangeState()
