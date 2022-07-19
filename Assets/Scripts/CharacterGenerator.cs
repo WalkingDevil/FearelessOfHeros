@@ -9,7 +9,7 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] GameDirector gameDirector;
     [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
-    [SerializeField] List<Slider> costSliders;//生成する位置
+    [SerializeField] Slider costSlider;
 
     [SerializeField] float _coolTime;
     public float coolTime
@@ -52,44 +52,13 @@ public class CharacterGenerator : MonoBehaviour
         else
         {
             UserInterface user = geneObject[obNum].GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-            if (!CheckeCost(user.cost))//所持しているコストと必要コストが足りているか
+            if (costSlider.value < user.cost)//所持しているコストと必要コストが足りているか
             {
                 return;
             }
             else
             {
-                var count = 0f;
-                var diff = 8f;
-                foreach (Slider s in costSliders)
-                {
-                    if (s.value == s.maxValue)
-                    {
-                        if(diff < s.maxValue)
-                        {
-                            s.value -= diff;
-                            count += diff;
-                        }
-                        else
-                        {
-                            s.value -= s.maxValue;
-                            count++;
-                        }
-                    }
-                    else if (s.value <= s.maxValue)
-                    {
-                        count += s.value;
-                        s.value = s.minValue;
-                    }
-
-                    if(count == user.cost)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        diff = user.cost - count;
-                    }
-                }
+                costSlider.value -= user.cost;
             }
         }
 
@@ -107,15 +76,10 @@ public class CharacterGenerator : MonoBehaviour
     private bool CheckeCost(int cost)
     {
         var totalValue = 0;
-
-        foreach(Slider s in costSliders)
+        if (costSlider.value == costSlider.maxValue)
         {
-            if(s.value == s.maxValue)
-            {
-                totalValue++;//最大コスト数を計算する
-            }
+            totalValue++;//最大コスト数を計算する
         }
-        Debug.Log(totalValue);
         return cost <= totalValue;
     }
 }

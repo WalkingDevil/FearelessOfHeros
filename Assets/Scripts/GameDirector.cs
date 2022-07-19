@@ -37,9 +37,9 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
-
+    [SerializeField] Slider costSlider;
     [SerializeField] List<Slider> costSliders;//生成する位置
-    private int maxCost = 0;
+    [SerializeField] int maxCost = 0;
     private int plusCost = 0;
     private int _cost;
     public int cost
@@ -53,40 +53,18 @@ public class GameDirector : MonoBehaviour
                 if(plusCost < value)
                 { 
                     var plus = value - plusCost;
-                    if (maxCost >= _cost + value)//maxの値に達していなかったら
+                    if (maxCost > _cost + value)//maxの値に達していなかったら
                     {
-                        foreach (Slider s in costSliders)
-                        {
-                            if (s.value < s.maxValue)
-                            {
-                                s.value += s.maxValue;
-                                plus--;
-                            }
-
-                            if (plus == 0)
-                            {
-                                break;
-                            }
-                        }
+                        _cost = plus;
+                        costSlider.value = plus;
                     }
                     else//maxの値だったら
                     {
                         _cost = maxCost;
-                        foreach (Slider s in costSliders)
-                        {
-                            if (s.value < s.maxValue)
-                            {
-                                s.value += s.maxValue;
-                            }
-                        }
+                        costSlider.value = maxCost;
                     }
                 }
                 plusCost = value;
-
-                if(_cost != maxCost)
-                {
-                    StartCoroutine(CostSlider());
-                }
             }
 
         } 
@@ -105,30 +83,30 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    IEnumerator CostSlider()
+    private void CostSlider()
     {
-        foreach (Slider s in costSliders)
+        if (costSlider.value < costSlider.maxValue)
         {
-            if (s.value < s.maxValue)
-            {   
-                DOTween.To(() => s.value, (t) => s.value = t, 1, 5f);
-                yield return new WaitForSeconds(5.5f);
-                // .OnComplete(() => ResetButton(clock));
-            }
+            costSlider.value += 0.01f;
         }
     }
 
     private void Start()
     {
         towerUser[0].SetSlider();
-        maxCost = costSliders.Count;
+        costSlider.maxValue = maxCost;
+        costSlider.value = maxCost;
         cost = maxCost;
         plusCost = maxCost;
     }
 
     private void Update()
     {
-     //   Debug.Log(cost);
+        Debug.Log(cost);
+        if (_cost != maxCost)
+        {
+            CostSlider();
+        }
     }
 
     private void ChangeState()
