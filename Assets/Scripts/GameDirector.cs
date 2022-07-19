@@ -57,7 +57,7 @@ public class GameDirector : MonoBehaviour
                     {
                         foreach (Slider s in costSliders)
                         {
-                            if (s.value == s.minValue)
+                            if (s.value < s.maxValue)
                             {
                                 s.value += s.maxValue;
                                 plus--;
@@ -74,7 +74,7 @@ public class GameDirector : MonoBehaviour
                         _cost = maxCost;
                         foreach (Slider s in costSliders)
                         {
-                            if (s.value == s.minValue)
+                            if (s.value < s.maxValue)
                             {
                                 s.value += s.maxValue;
                             }
@@ -109,10 +109,10 @@ public class GameDirector : MonoBehaviour
     {
         foreach (Slider s in costSliders)
         {
-            if (s.value == s.minValue)
-            {
-                yield return new WaitForSeconds(1);
+            if (s.value < s.maxValue)
+            {   
                 DOTween.To(() => s.value, (t) => s.value = t, 1, 5f);
+                yield return new WaitForSeconds(5.5f);
                 // .OnComplete(() => ResetButton(clock));
             }
         }

@@ -58,18 +58,36 @@ public class CharacterGenerator : MonoBehaviour
             }
             else
             {
-                var count = 0;
+                var count = 0f;
+                var diff = 8f;
                 foreach (Slider s in costSliders)
                 {
                     if (s.value == s.maxValue)
                     {
-                        s.value -= s.maxValue;
-                        count++;
+                        if(diff < s.maxValue)
+                        {
+                            s.value -= diff;
+                            count += diff;
+                        }
+                        else
+                        {
+                            s.value -= s.maxValue;
+                            count++;
+                        }
+                    }
+                    else if (s.value <= s.maxValue)
+                    {
+                        count += s.value;
+                        s.value = s.minValue;
                     }
 
                     if(count == user.cost)
                     {
                         break;
+                    }
+                    else
+                    {
+                        diff = user.cost - count;
                     }
                 }
             }

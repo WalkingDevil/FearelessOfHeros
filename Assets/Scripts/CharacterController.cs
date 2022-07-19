@@ -92,11 +92,15 @@ public class CharacterController : MonoBehaviour
 
     public void FireBall()
     {
-        var worldTarget = transform.TransformDirection(target.localPosition);
-        GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
-        //ball.transform.LookAt(target);
-        ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);
-       // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
+        if (target != null)
+        {
+            var worldTarget = transform.TransformDirection(target.localPosition);
+            GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
+            //ball.transform.LookAt(target);
+            ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);
+            // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
