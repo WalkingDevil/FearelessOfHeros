@@ -117,7 +117,7 @@ public class GameDirector : MonoBehaviour
     private void Update()
     {
         Debug.Log(cost);
-        if (_cost != maxCost)
+        if (cost != maxCost)
         {
             CostSlider();
         }
