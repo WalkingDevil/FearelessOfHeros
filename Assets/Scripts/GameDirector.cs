@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -20,8 +21,12 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
+    [SerializeField] CharacterGenerator enemyGene;
 
 
+
+    Action towerAction = null;
+    [SerializeField] Slider towerSlider;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
     [SerializeField] int _towerCount = 0;
     public int towerCount
@@ -34,6 +39,7 @@ public class GameDirector : MonoBehaviour
                 _towerCount = value;
                 towerUser.RemoveAt(0);
                 towerUser[0].SetSlider();
+                towerAction = enemyGene.GenerateBs;
             }
         }
     }
@@ -99,14 +105,12 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     private void CostSlider()
     {
-        if (costSlider.value < costSlider.maxValue)
-        {
-            costSlider.value += costSpeed;
-        }
+        costSlider.value += costSpeed;
     }
 
     private void Start()
     {
+        towerAction = enemyGene.GenerateBs;
         towerUser[0].SetSlider();
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
@@ -117,7 +121,7 @@ public class GameDirector : MonoBehaviour
     private void Update()
     {
         Debug.Log(cost);
-        if (cost != maxCost)
+        if (costSlider.value < costSlider.maxValue)
         {
             CostSlider();
         }
@@ -126,5 +130,21 @@ public class GameDirector : MonoBehaviour
     private void ChangeState()
     {
 
+    }
+
+    /// <summary>
+    /// 敵タワーのスライダー状況を受け取る
+    /// </summary>
+    /// <param name="slider">タワースライダー</param>
+    public void GetTowerValue(Slider slider)
+    {
+        if(slider.value < slider.maxValue / 2)
+        {
+            if(towerAction != null)
+            {
+                towerAction();
+                towerAction = null;
+            }
+        }
     }
 }

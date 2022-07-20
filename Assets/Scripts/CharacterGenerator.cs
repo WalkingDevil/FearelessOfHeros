@@ -8,6 +8,7 @@ public class CharacterGenerator : MonoBehaviour
 {
     [SerializeField] GameDirector gameDirector;
     [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
+    [SerializeField] List<GameObject> bsObject;//ボスの生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
     [SerializeField] Slider costSlider;
 
@@ -68,18 +69,17 @@ public class CharacterGenerator : MonoBehaviour
         Instantiate(geneObject[obNum], gene, Quaternion.identity);
     }
 
+    /// <summary>
+    /// ボスの生成
+    /// </summary>
+    public void GenerateBs()
+    {
+        var count = gameDirector.towerCount;
+        Instantiate(bsObject[count], genePos[count], Quaternion.identity);
+    }
+
     private int GetRandom(int min, int max)
     {
         return Random.Range(min, max);
-    }
-
-    private bool CheckeCost(int cost)
-    {
-        var totalValue = 0;
-        if (costSlider.value == costSlider.maxValue)
-        {
-            totalValue++;//最大コスト数を計算する
-        }
-        return cost <= totalValue;
     }
 }

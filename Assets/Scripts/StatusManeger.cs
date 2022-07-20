@@ -26,8 +26,8 @@ public class StatusManeger
         }
     }
 
-    private int _hp;
-    public int hp
+    private float _hp;
+    public float hp
     {
         get
         {
@@ -117,7 +117,7 @@ public class StatusManeger
         }
     }
 
-    public int DamageCalculation(int damege)
+    public float DamageCalculation(int damege)
     {
         var num = damege / defence;
 
@@ -127,11 +127,11 @@ public class StatusManeger
         }
         else
         {
-            return hp -= 1;
+            return hp -= 0.1f;
         }
     }
 
-    public int PlusHp(int heel)
+    public float PlusHp(int heel)
     {
         return hp += heel;
     }
