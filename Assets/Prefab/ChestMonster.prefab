@@ -817,6 +817,7 @@ MonoBehaviour:
   targets: []
   firePrefab: {fileID: 0}
   throwSpeed: 0
+  plusCost: 2
 --- !u!114 &8081376019020259270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,12 +1067,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: maxHp
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: attack
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: defence
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797724, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Name

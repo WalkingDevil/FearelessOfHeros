@@ -38,9 +38,20 @@ public class GameDirector : MonoBehaviour
         }
     }
     [SerializeField] Slider costSlider;
-    [SerializeField] List<Slider> costSliders;//生成する位置
-    [SerializeField] int maxCost = 0;
-    private int plusCost = 0;
+    [SerializeField] float _costSpeed = 0.001f;//コストを増やすスピード値
+    public float costSpeed
+    {
+        get { return _costSpeed; }
+        set
+        {
+            if(costSpeed != value)
+            {
+                costSpeed = value;
+            }
+        }
+    }
+    [SerializeField] int maxCost = 0;//コストのMax値
+    private int plusCost = 0; //現在の値の差を入れる
     private int _cost;
     public int cost
     {
@@ -52,7 +63,7 @@ public class GameDirector : MonoBehaviour
                 _cost = value;
                 if(plusCost < value)
                 { 
-                    var plus = value - plusCost;
+                    var plus = value - plusCost;//現在の値の差
                     if (maxCost > _cost + value)//maxの値に達していなかったら
                     {
                         _cost = plus;
@@ -83,11 +94,14 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// コストのスライダーの値を変える
+    /// </summary>
     private void CostSlider()
     {
         if (costSlider.value < costSlider.maxValue)
         {
-            costSlider.value += 0.01f;
+            costSlider.value += costSpeed;
         }
     }
 

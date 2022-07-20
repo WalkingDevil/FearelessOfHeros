@@ -5100,7 +5100,8 @@ MonoBehaviour:
   stopDistance: 75
   targets: []
   firePrefab: {fileID: 6038934085425190197, guid: 66da75402e796b545a8fa4a133cae23b, type: 3}
-  throwSpeed: 0.1
+  throwSpeed: 0.25
+  plusCost: 2
 --- !u!114 &8544843368201371795
 MonoBehaviour:
   m_ObjectHideFlags: 0
