@@ -54,6 +54,7 @@ public class CharacterController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         agent.speed = moveSpeed;
+        agent.acceleration = moveSpeed;
         for(int i = 0; i < tower.Count; i++)
         {
             if (GameObject.Find(tower[i]))
