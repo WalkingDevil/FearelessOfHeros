@@ -7957,8 +7957,8 @@ MonoBehaviour:
   slider: {fileID: 182872692}
   maxHp: 50000
   attack: 1
-  defence: 100
-  cost: 0
+  defence: 150
+  cost: 1
   cameraLook: 0
   tower: 0
 --- !u!1 &184357845
@@ -8525,6 +8525,8 @@ MonoBehaviour:
   costSlider: {fileID: 603209034}
   _costSpeed: 0.001
   maxCost: 8
+  expSlider: {fileID: 1350364988}
+  _maxExp: 50
 --- !u!4 &191557871
 Transform:
   m_ObjectHideFlags: 0
@@ -62713,7 +62715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1420761164}
-  maxHp: 100000
+  maxHp: 500000
   attack: 0
   defence: 150
   cost: 0
