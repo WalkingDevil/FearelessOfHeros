@@ -110,6 +110,7 @@ public class GameDirector : MonoBehaviour
             if (maxExp != value)
             {
                 _maxExp = value;
+                expSlider.maxValue = _maxExp;
             }
         }
     }
@@ -125,7 +126,9 @@ public class GameDirector : MonoBehaviour
                 _exp = value;
                 if (_maxExp <= _exp)
                 {
-                    _exp = _exp - _maxExp;
+                    _exp = _exp - maxExp;
+                    float halfMaxHp = maxExp / 2;
+                    maxExp = (int)halfMaxHp * halfMaxHp;
                 }
                 expSlider.value = _exp;
             }
@@ -158,6 +161,7 @@ public class GameDirector : MonoBehaviour
         towerUser[0].SetSlider();
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
+        expSlider.maxValue = maxExp;
         cost = maxCost;
         plusCost = maxCost;
     }
