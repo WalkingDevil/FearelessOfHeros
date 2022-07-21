@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour
                 if(_dieCheck)
                 {
                     anime.TransitionAnime("die");
-                    gameDirector.cost = plusCost;
+                    gameDirector.cost += plusCost;
                 }
             }
         }
@@ -52,6 +52,7 @@ public class CharacterController : MonoBehaviour
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
+        agent.speed = moveSpeed;
         for(int i = 0; i < tower.Count; i++)
         {
             if (GameObject.Find(tower[i]))
@@ -164,21 +165,15 @@ public class CharacterController : MonoBehaviour
 
         if (agent.remainingDistance < stopDistance)  //“G‚Éˆê’è‹——£‹ß‚Ã‚¢‚½‚ç
         {
-            if (agent.speed != 0f)  //Ž~‚Ü‚Á‚ÄUŒ‚
-            {
-                agent.speed = 0f;
-               // myRigidbody.isKinematic = false;
-                anime.TransitionAnime("attack");
-            }
+            agent.isStopped = true;
+            // myRigidbody.isKinematic = false;
+            anime.TransitionAnime("attack");
         }
         else
         {
-            if (agent.speed != moveSpeed)  //“G‚ª‚¢‚È‚­‚È‚Á‚½‚çƒ^[ƒQƒbƒg‚ÉŒü‚©‚Á‚ÄˆÚ“®
-            {
-                agent.speed = moveSpeed;
-               // myRigidbody.isKinematic = true;
-                anime.TransitionAnime("run");
-            }
+            agent.isStopped = false;
+            // myRigidbody.isKinematic = true;
+            anime.TransitionAnime("run");
         }
     }
     private void OnTriggerExit(Collider other)
