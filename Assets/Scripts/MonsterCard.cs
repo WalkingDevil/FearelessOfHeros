@@ -18,8 +18,8 @@ public class MonsterCard : MonoBehaviour
     void Start()
     {
         user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
-        statasText.text = "HP：" + user.maxHp.ToString("D4") + "\nAT：" + user.attack.ToString("D4") + "\nDF：" + user.defence.ToString("D4");//ステータス表示
-        costText.text = user.cost.ToString();//コストを表示
+        statasText.text = "HP：" + user.GetState(0).ToString("D4") + "\nAT：" + user.GetState(1).ToString("D4") + "\nDF：" + user.GetState(2).ToString("D4");//ステータス表示
+        costText.text = user.GetState(3).ToString();//コストを表示
     }
 
     /*Update is called once per frame
@@ -30,10 +30,10 @@ public class MonsterCard : MonoBehaviour
 
     public void CardClick(Image clock)//クールタイム
     {
-        if (gameDirector.cost >= user.cost)
+        if (gameDirector.cost >= user.GetState(3))
         {
             cardButton.interactable = false;
-            gameDirector.cost -= user.cost;
+            gameDirector.cost -= user.GetState(3);
             DOTween.To
                 (
                 () => clock.fillAmount,

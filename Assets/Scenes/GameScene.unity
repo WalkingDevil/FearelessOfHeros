@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5476781, g: 0.8551411, b: 0.9225128, a: 1}
+  m_IndirectSpecularColor: {r: 0.5485666, g: 0.85513043, b: 0.9221765, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7957,7 +7957,7 @@ MonoBehaviour:
   slider: {fileID: 182872692}
   maxHp: 50000
   attack: 1
-  defence: 200
+  defence: 100
   cost: 0
   cameraLook: 0
   tower: 0
@@ -58671,7 +58671,7 @@ PrefabInstance:
       objectReference: {fileID: 1420761164}
     - target: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
       propertyPath: defence
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
       propertyPath: cameraLook

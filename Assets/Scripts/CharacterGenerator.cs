@@ -53,13 +53,13 @@ public class CharacterGenerator : MonoBehaviour
         else
         {
             UserInterface user = geneObject[obNum].GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-            if (costSlider.value < user.cost)//所持しているコストと必要コストが足りているか
+            if (costSlider.value < user.GetState(3))//所持しているコストと必要コストが足りているか
             {
                 return;
             }
             else
             {
-                costSlider.value -= user.cost;
+                costSlider.value -= user.GetState(3);
             }
         }
 

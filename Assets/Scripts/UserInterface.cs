@@ -7,10 +7,10 @@ public class UserInterface : MonoBehaviour
 {
     StatusManeger statusManeger;
     [SerializeField] Slider slider;
-    public int maxHp;
-    public int attack;
-    public int defence;
-    public int cost;
+    [SerializeField] int maxHp;
+    [SerializeField] int attack;
+    [SerializeField] int defence;
+    [SerializeField] int cost;
    // public List<int> state;
     [SerializeField] bool cameraLook = true;//カメラを見させるか
     [SerializeField] bool tower = false;//このHPがタワーであるかどうか
@@ -33,10 +33,30 @@ public class UserInterface : MonoBehaviour
             transform.LookAt(Camera.main.transform.position);
         }
     }
-
-    public int GetDamege()
+    /// <summary>
+    /// ステータスを返す
+    /// 0:HP
+    /// 1:攻撃力
+    /// 2:防御力
+    /// 3:コスト
+    /// </summary>
+    /// <param name="stateNum"></param>
+    /// <returns></returns>
+    public int GetState(int stateNum = 0)
     {
-        return attack;
+        switch(stateNum)
+        {
+            case 0:
+                return maxHp;
+            case 1:
+                return attack;
+            case 2:
+                return defence;
+            case 3:
+                return cost;
+                default:
+                return 1;
+        }  
     }
 
     public bool DamegeValue(int damege)

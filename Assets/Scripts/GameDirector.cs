@@ -87,6 +87,19 @@ public class GameDirector : MonoBehaviour
         } 
     }
 
+    private int _level = 1;
+    public int level
+    {
+        get { return _level; }
+        set
+        {
+            if(level != value)
+            {
+                _level = value;
+            }
+        }
+    }
+
     static GameDirector gameDire = null;
     private void Awake()
     {

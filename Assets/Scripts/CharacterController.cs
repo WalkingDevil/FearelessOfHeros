@@ -87,7 +87,7 @@ public class CharacterController : MonoBehaviour
             root = ob.transform.root.gameObject;//一番親のオブジェクトを渡す
         }
         UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-        dieCheck = userInterface.DamegeValue(user.GetDamege());
+        dieCheck = userInterface.DamegeValue(user.GetState(1));
     }
 
     public void FireBall()
