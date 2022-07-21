@@ -87,6 +87,7 @@ public class GameDirector : MonoBehaviour
         } 
     }
 
+    [SerializeField] Slider expSlider;
     private int _level = 1;
     public int level
     {
@@ -100,6 +101,34 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    [SerializeField] float _maxExp;
+    public float maxExp
+    {
+        get { return _maxExp; }
+        set
+        {
+            if (maxExp != value)
+            {
+                _maxExp = value;
+            }
+        }
+    private float _exp;
+    public float exp
+    {
+        get { return _exp; }
+        set
+        {
+            if(exp != value)
+            {
+                _exp = value;
+                if (_maxExp <= _exp)
+                {
+                    _exp = _exp - _maxExp;
+                }
+                expSlider.value = _exp;
+            }
+        }
+    }
     static GameDirector gameDire = null;
     private void Awake()
     {

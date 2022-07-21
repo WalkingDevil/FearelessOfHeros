@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class StatusManeger
 {
-    public StatusManeger(int maxhp, int attack, int defence, int cost = 0, int maxExp = 0)
+    public StatusManeger(int maxhp, int attack, int defence, int cost = 0)
     {
         this.maxHp = maxhp;
         this.attack = attack;
         this.defence = defence;
         this.cost = cost;
-        this.maxExp = maxExp;
     }
+
 
     private int _maxHp;
     public int maxHp
@@ -81,42 +81,6 @@ public class StatusManeger
         }
     }
 
-    private int _maxExp;  //最大経験値
-    public int maxExp
-    {
-        get
-        {
-            return _maxExp;
-        }
-        private set
-        {
-            if (_maxExp != value)
-            {
-                _maxExp = value;
-            }
-        }
-    }
-    private int _exp;  //経験値
-
-    public int exp
-    {
-        get
-        {
-            return _exp;
-        }
-        private set
-        {
-            if (_exp != value)
-            {
-                _exp = value;
-                if (_maxExp <= _exp)
-                {
-                    _exp = _exp - _maxExp;
-                }
-            }
-        }
-    }
-
     public float DamageCalculation(int damege)
     {
         var num = damege / defence;
@@ -136,14 +100,7 @@ public class StatusManeger
         return hp += heel;
     }
 
-    /// <summary>
-    /// 経験値を取得した時の処理
-    /// </summary>
-    /// <param name="exp">取得した経験値</param>
-    public void UpExp(int exp)
-    {
-        this.exp += exp;
-    }
+/*
     /// <summary>
     /// レベルアップするために必要な経験値の上限を変える
     /// </summary>
@@ -152,4 +109,6 @@ public class StatusManeger
     {
         this.maxExp += maxExp;
     }
+
+    */
 }

@@ -16,6 +16,7 @@ public class UserInterface : MonoBehaviour
     [SerializeField] bool tower = false;//Ç±ÇÃHPÇ™É^ÉèÅ[Ç≈Ç†ÇÈÇ©Ç«Ç§Ç©
 
 
+    private int expRate = 5;
     void Start()
     {
         if(!tower)
@@ -79,5 +80,10 @@ public class UserInterface : MonoBehaviour
         {
             slider.value = slider.maxValue;
         }
+    }
+
+    public int ExpCalculation()
+    {
+        return maxHp / expRate;
     }
 }
