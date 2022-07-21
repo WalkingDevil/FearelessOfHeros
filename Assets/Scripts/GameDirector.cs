@@ -112,6 +112,8 @@ public class GameDirector : MonoBehaviour
                 _maxExp = value;
             }
         }
+    }
+
     private float _exp;
     public float exp
     {
