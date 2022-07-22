@@ -20,6 +20,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
     private NavMeshAgent agent;
     private Transform target;
+    private Vector3 latestPos;
+    private Vector3 diff;
+    private bool detection = false;
     [SerializeField] private List<Transform> targets = new List<Transform>();
 
     //遠距離型用
@@ -60,6 +63,7 @@ public class CharacterController : MonoBehaviour
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         agent.speed = moveSpeed;
         agent.acceleration = moveSpeed;
+        agent.angularSpeed = 0;
         for(int i = 0; i < tower.Count; i++)
         {
             if (GameObject.Find(tower[i]))
@@ -75,6 +79,16 @@ public class CharacterController : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
+        }
+
+        if (!detection)
+        {
+            diff = transform.position - latestPos;   //前回からどこに進んだかをベクトルで取得
+            latestPos = transform.position;  //前回のPositionの更新
+            if (diff.magnitude > 0.01f)
+            {
+                transform.rotation = Quaternion.LookRotation(diff); //向きを変更する
+            }
         }
     }
 
@@ -103,6 +117,7 @@ public class CharacterController : MonoBehaviour
         if (target != null)
         {
             var worldTarget = transform.TransformDirection(target.localPosition);
+            worldTarget.y += 5;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
             //ball.transform.LookAt(target);
             ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);
@@ -136,6 +151,7 @@ public class CharacterController : MonoBehaviour
 
         if (other.gameObject.tag == enemyTag)
         {
+
             if (other.isTrigger)
             {
                 if (!targets.Contains(other.gameObject.transform))
@@ -155,6 +171,8 @@ public class CharacterController : MonoBehaviour
                 targets.RemoveAt(0);
             }
 
+            agent.angularSpeed = 120;
+            detection = true;
 
             //castle.RemoveAll(null);
 
@@ -164,6 +182,12 @@ public class CharacterController : MonoBehaviour
         if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
             target = castle[0];
+            detection = false;
+            agent.angularSpeed = 0;
+        }
+        else
+        {
+            transform.LookAt(target);
         }
 
         if (agent.remainingDistance < stopDistance)  //敵に一定距離近づいたら
@@ -189,10 +213,6 @@ public class CharacterController : MonoBehaviour
         if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
             target = castle[0];
-        }
-        else
-        {
-            transform.LookAt(target.position);
         }
     }
 }
