@@ -160,10 +160,6 @@ public class CharacterController : MonoBehaviour
         {
             target = castle[0];
         }
-        else
-        {
-            transform.LookAt(target.position);
-        }
 
         if (agent.remainingDistance < stopDistance)  //“G‚Éˆê’è‹——£‹ß‚Ã‚¢‚½‚ç
         {
