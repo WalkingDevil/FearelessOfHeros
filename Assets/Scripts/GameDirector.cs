@@ -67,21 +67,11 @@ public class GameDirector : MonoBehaviour
             if (_cost != value)
             {
                 _cost = value;
-                if(plusCost < value)
-                { 
-                    var plus = value - plusCost;//現在の値の差
-                    if (maxCost > _cost + value)//maxの値に達していなかったら
-                    {
-                        _cost = plus;
-                        costSlider.value = plus;
-                    }
-                    else//maxの値だったら
-                    {
-                        _cost = maxCost;
-                        costSlider.value = maxCost;
-                    }
+                if(_cost > maxCost)
+                {
+                    _cost = maxCost;
                 }
-                plusCost = value;
+                costSlider.value = _cost;
             }
 
         } 
@@ -97,10 +87,15 @@ public class GameDirector : MonoBehaviour
             if(level != value)
             {
                 _level = value;
+                levelText.text = lv + _level.ToString();
+
             }
         }
     }
 
+    [SerializeField] Text levelText;
+    [SerializeField] string lv;
+    [SerializeField] float chengeMaxHp;
     [SerializeField] float _maxExp;
     public float maxExp
     {
@@ -126,9 +121,14 @@ public class GameDirector : MonoBehaviour
                 _exp = value;
                 if (_maxExp <= _exp)
                 {
+                    level++;
                     _exp = _exp - maxExp;
                     float halfMaxHp = maxExp / 2;
-                    maxExp = (int)halfMaxHp * halfMaxHp;
+                    maxExp = (int)halfMaxHp * chengeMaxHp;
+                    if(_exp / maxExp >= 1)
+                    {
+                        exp = _exp;
+                    }
                 }
                 expSlider.value = _exp;
             }
@@ -162,6 +162,7 @@ public class GameDirector : MonoBehaviour
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
         expSlider.maxValue = maxExp;
+        levelText.text = levelText.text = lv + level.ToString();
         cost = maxCost;
         plusCost = maxCost;
     }
