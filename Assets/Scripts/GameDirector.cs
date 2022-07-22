@@ -7,8 +7,8 @@ using DG.Tweening;
 
 public class GameDirector : MonoBehaviour
 {
-    public enum GameState { InGame, Pouse, OutGame };
-    private GameState _loadState = GameState.InGame;
+    public enum GameState { Ready,Å@InGame, Pouse, OutGame };
+    private GameState _loadState = GameState.Ready;
     static public GameState loadState
     {
         get { return gameDire._loadState; }
