@@ -6780,6 +6780,9 @@ MonoBehaviour:
   cardButton: {fileID: 155653515}
   statasText: {fileID: 892180304}
   costText: {fileID: 83625923}
+  maxHp: 0
+  attack: 0
+  defence: 0
   time: 50
 --- !u!1 &157698510
 GameObject:
@@ -7959,6 +7962,7 @@ MonoBehaviour:
   attack: 1
   defence: 150
   cost: 1
+  magnification: 1.1
   cameraLook: 0
   tower: 0
 --- !u!1 &184357845
@@ -8515,6 +8519,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyGene: {fileID: 1384673859}
+  charaPrefabs:
+  - {fileID: 8081376019020259269, guid: 426f34ba3edefd5458a06e71e6d6d869, type: 3}
+  - {fileID: 839590090474467169, guid: 4ab07aa3a4c8bd6409ef7ecb3a2c0dcd, type: 3}
+  - {fileID: 4249351364625337524, guid: eab59219d8830aa4d92c84d4b7b6267a, type: 3}
+  - {fileID: 5150568867661170662, guid: a8225754086f8fc40be4468d9dca16b3, type: 3}
+  - {fileID: 445364273073369272, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+  - {fileID: 7156632168108045556, guid: 997f18daa81568e479425ab2ac26cd4c, type: 3}
+  - {fileID: 6451378865444747388, guid: c65be83d6eb37fd459938417eeaac396, type: 3}
+  - {fileID: 3066127877276554107, guid: 6ddeb6fdd233d9943b89601a5f23a867, type: 3}
+  - {fileID: 8544843368201371794, guid: 9b3ce84a5a1b734419f06e0fbbee09fe, type: 3}
   towerSlider: {fileID: 1420761164}
   towerUser:
   - {fileID: 477571387}
@@ -18519,6 +18533,9 @@ MonoBehaviour:
   cardButton: {fileID: 393775648}
   statasText: {fileID: 0}
   costText: {fileID: 0}
+  maxHp: 0
+  attack: 0
+  defence: 0
   time: 1
 --- !u!1 &394157187
 GameObject:
@@ -47987,6 +48004,9 @@ MonoBehaviour:
   cardButton: {fileID: 1088706933}
   statasText: {fileID: 1438854348}
   costText: {fileID: 662466178}
+  maxHp: 0
+  attack: 0
+  defence: 0
   time: 5
 --- !u!1 &1091063236
 GameObject:
@@ -52520,6 +52540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 510860908}
     m_Modifications:
+    - target: {fileID: 2359921895398052057, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
       propertyPath: cost
       value: 8
@@ -62802,6 +62826,7 @@ MonoBehaviour:
   attack: 0
   defence: 150
   cost: 0
+  magnification: 1.1
   cameraLook: 0
   tower: 1
 --- !u!4 &1420802022 stripped
@@ -67499,6 +67524,9 @@ MonoBehaviour:
   cardButton: {fileID: 1525147086}
   statasText: {fileID: 1816861624}
   costText: {fileID: 2098226284}
+  maxHp: 0
+  attack: 0
+  defence: 0
   time: 7
 --- !u!114 &1525147086
 MonoBehaviour:
@@ -88557,6 +88585,9 @@ MonoBehaviour:
   cardButton: {fileID: 2010225960}
   statasText: {fileID: 834785662}
   costText: {fileID: 1315423326}
+  maxHp: 0
+  attack: 0
+  defence: 0
   time: 10
 --- !u!1 &2011361608
 GameObject:

@@ -57,10 +57,14 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] bool enemy = false;//“G‚Å‚ ‚é‚©‚Ç‚¤‚©
     void Start()
-    {
+    { 
+        gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
+        if(!enemy)
+        {
+            userInterface.ChengeState(gameDirector.level);
+        }
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
-        gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         agent.speed = moveSpeed;
         agent.acceleration = moveSpeed;
         agent.angularSpeed = 0;

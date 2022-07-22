@@ -172,7 +172,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4413076559478797726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,9 @@ MonoBehaviour:
   maxHp: 50
   attack: 30
   defence: 10
+  cost: 0
   cameraLook: 1
+  tower: 0
 --- !u!1 &4413076559566956410
 GameObject:
   m_ObjectHideFlags: 0

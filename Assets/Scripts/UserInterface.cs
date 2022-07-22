@@ -11,6 +11,8 @@ public class UserInterface : MonoBehaviour
     [SerializeField] int attack;
     [SerializeField] int defence;
     [SerializeField] int cost;
+    private int level = 1;
+    [SerializeField] float magnification = 1.1f;
    // public List<int> state;
     [SerializeField] bool cameraLook = true;//カメラを見させるか
     [SerializeField] bool tower = false;//このHPがタワーであるかどうか
@@ -64,6 +66,21 @@ public class UserInterface : MonoBehaviour
     {
         slider.value = statusManeger.DamageCalculation(damege);
         return slider.value <= 0;
+    }
+
+    /// <summary>
+    /// レベルに応じてステータスを更新する
+    /// </summary>
+    /// <param name="level">現在のレべル</param>
+    public void ChengeState(int level)
+    {
+        if (level != this.level)
+        {
+            maxHp = (int)(maxHp * magnification * level);
+            attack = (int)(attack * magnification * level);
+            defence = (int)(defence * magnification * level);
+            this.level = level;
+        }
     }
 
     public void HeelValue(int heel)

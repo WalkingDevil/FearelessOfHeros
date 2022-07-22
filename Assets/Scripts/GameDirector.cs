@@ -22,7 +22,7 @@ public class GameDirector : MonoBehaviour
         }
     }
     [SerializeField] CharacterGenerator enemyGene;
-
+    [SerializeField] List<CharacterController> charaPrefabs;
 
 
     Action towerAction = null;
@@ -144,6 +144,12 @@ public class GameDirector : MonoBehaviour
         else
         {
             Destroy(this);
+        }
+
+        foreach(CharacterController character in charaPrefabs)
+        {
+            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            user.ChengeState(level);
         }
     }
 
