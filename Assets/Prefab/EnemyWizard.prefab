@@ -1397,6 +1397,7 @@ MonoBehaviour:
   firePrefab: {fileID: 1330431047984359540, guid: 37f8e63e15d64bc469b80bb1773c9955, type: 3}
   throwSpeed: 0.1
   plusCost: 2
+  enemy: 1
 --- !u!195 &4249351364625337529
 NavMeshAgent:
   m_ObjectHideFlags: 0

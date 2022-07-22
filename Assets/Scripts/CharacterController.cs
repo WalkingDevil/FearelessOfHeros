@@ -41,13 +41,18 @@ public class CharacterController : MonoBehaviour
                 {
                     anime.TransitionAnime("die");
                     gameDirector.cost += plusCost;
-                    gameDirector.exp += userInterface.ExpCalculation();
+                    if (enemy)
+                    {
+                        gameDirector.exp += userInterface.ExpCalculation();
+                    }
+
                 }
             }
         }
 
     }
 
+    [SerializeField] bool enemy = false;//“G‚Å‚ ‚é‚©‚Ç‚¤‚©
     void Start()
     {
         anime.TransitionAnime("run");

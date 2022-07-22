@@ -849,6 +849,7 @@ MonoBehaviour:
   firePrefab: {fileID: 0}
   throwSpeed: 0
   plusCost: 4
+  enemy: 1
 --- !u!114 &7156632168108045557
 MonoBehaviour:
   m_ObjectHideFlags: 0

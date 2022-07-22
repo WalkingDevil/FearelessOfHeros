@@ -8526,6 +8526,9 @@ MonoBehaviour:
   _costSpeed: 0.001
   maxCost: 8
   expSlider: {fileID: 1350364988}
+  levelText: {fileID: 1318238626}
+  lv: 'Lv. '
+  chengeMaxHp: 5
   _maxExp: 50
 --- !u!4 &191557871
 Transform:
