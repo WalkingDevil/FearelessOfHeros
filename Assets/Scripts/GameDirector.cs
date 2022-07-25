@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using DG.Tweening;
 
 public class GameDirector : MonoBehaviour
 {
     public enum GameState { Ready,　InGame, Pouse, OutGame };
     private GameState _loadState = GameState.Ready;
-    static public GameState loadState
+    public GameState loadState
     {
         get { return gameDire._loadState; }
         set
@@ -21,9 +22,15 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
-    [SerializeField] CharacterGenerator enemyGene;
-    [SerializeField] List<CharacterController> charaPrefabs;
 
+
+    private SaveData saveData = new SaveData();
+    [SerializeField] CharacterGenerator enemyGene;
+    [SerializeField] List<CharacterController> allyPrefabs;//味方用
+    [SerializeField] List<CharacterController> enemyPrefabs;//敵用
+    [SerializeField] List<MonsterCard> deckCards;
+
+    string datapath;
 
     Action towerAction = null;
     [SerializeField] Slider towerSlider;
@@ -88,7 +95,8 @@ public class GameDirector : MonoBehaviour
             {
                 _level = value;
                 levelText.text = lv + _level.ToString();
-
+                StateUpdate(allyPrefabs);
+                DisplayUpdate();
             }
         }
     }
@@ -145,12 +153,12 @@ public class GameDirector : MonoBehaviour
         {
             Destroy(this);
         }
+        datapath = Application.dataPath + "/SaveData.json";
 
-        foreach(CharacterController character in charaPrefabs)
-        {
-            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-            user.ChengeState(level);
-        }
+
+
+        StateUpdate(allyPrefabs);
+        StateUpdate(enemyPrefabs);
     }
 
     /// <summary>
@@ -168,7 +176,7 @@ public class GameDirector : MonoBehaviour
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
         expSlider.maxValue = maxExp;
-        levelText.text = levelText.text = lv + level.ToString();
+        levelText.text = lv + level.ToString();
         cost = maxCost;
         plusCost = maxCost;
     }
@@ -184,7 +192,19 @@ public class GameDirector : MonoBehaviour
 
     private void ChangeState()
     {
-
+        switch(loadState)
+        {
+            case GameState.Ready:
+                break;
+            case GameState.InGame:
+                break;
+            case GameState.Pouse:
+                break;
+            case GameState.OutGame:
+                break;
+            default:
+                break;
+        }
     }
 
     /// <summary>
@@ -200,6 +220,23 @@ public class GameDirector : MonoBehaviour
                 towerAction();
                 towerAction = null;
             }
+        }
+    }
+
+    private void StateUpdate(List<CharacterController> characters)
+    {
+        foreach (CharacterController character in characters)
+        {
+            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            user.ChengeState(level);
+        }
+    }
+
+    private void DisplayUpdate()
+    {
+        foreach(MonsterCard monsterCard in deckCards)
+        {
+            monsterCard.ResetDisplay();
         }
     }
 }

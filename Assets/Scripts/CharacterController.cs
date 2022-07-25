@@ -28,6 +28,7 @@ public class CharacterController : MonoBehaviour
     //遠距離型用
     [SerializeField] GameObject firePrefab;
     [SerializeField] float throwSpeed;
+    [SerializeField] float throwPos = 5f;
 
     [SerializeField] int plusCost = 2;//コストの増量
     private bool _dieCheck;
@@ -48,7 +49,6 @@ public class CharacterController : MonoBehaviour
                     {
                         gameDirector.exp += userInterface.ExpCalculation();
                     }
-
                 }
             }
         }
@@ -121,7 +121,7 @@ public class CharacterController : MonoBehaviour
         if (target != null)
         {
             var worldTarget = transform.TransformDirection(target.localPosition);
-            worldTarget.y += 5;
+            worldTarget.y += throwPos;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
             //ball.transform.LookAt(target);
             ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);

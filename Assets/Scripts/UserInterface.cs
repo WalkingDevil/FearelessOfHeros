@@ -7,9 +7,12 @@ public class UserInterface : MonoBehaviour
 {
     StatusManeger statusManeger;
     [SerializeField] Slider slider;
-    [SerializeField] int maxHp;
-    [SerializeField] int attack;
-    [SerializeField] int defence;
+    [SerializeField] int earlyMaxHp;
+    private int maxHp;
+    [SerializeField] int earlyAttack;
+    private int attack;
+    [SerializeField] int earlyDefence;
+    private int defence;
     [SerializeField] int cost;
     private int level = 1;
     [SerializeField] float magnification = 1.1f;
@@ -19,13 +22,21 @@ public class UserInterface : MonoBehaviour
 
 
     private int expRate = 5;
+
+    private void Awake()
+    {
+        maxHp = earlyMaxHp;
+        attack = earlyAttack;
+        defence = earlyDefence;
+    }
+
     void Start()
     {
-        if(!tower)
+        if (!tower)
         {
-            statusManeger = new StatusManeger(maxHp, attack, defence, cost);
-            slider.maxValue = maxHp;
-            slider.value = maxHp;
+            statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
+            slider.maxValue = earlyMaxHp;
+            slider.value = earlyMaxHp;
         }
     }
 
@@ -47,19 +58,21 @@ public class UserInterface : MonoBehaviour
     /// <returns></returns>
     public int GetState(int stateNum = 0)
     {
-        switch(stateNum)
+        switch (stateNum)
         {
             case 0:
-                return maxHp;
+                return earlyMaxHp;
             case 1:
                 return attack;
             case 2:
                 return defence;
             case 3:
                 return cost;
-                default:
+            case 4:
+                return maxHp;
+            default:
                 return 1;
-        }  
+        }
     }
 
     public bool DamegeValue(int damege)
@@ -72,15 +85,21 @@ public class UserInterface : MonoBehaviour
     /// レベルに応じてステータスを更新する
     /// </summary>
     /// <param name="level">現在のレべル</param>
-    public void ChengeState(int level)
+    public void ChengeState(int level = 1)
     {
-        if (level != this.level)
+        if (level != 1)
         {
-            maxHp = (int)(maxHp * magnification * level);
-            attack = (int)(attack * magnification * level);
-            defence = (int)(defence * magnification * level);
-            this.level = level;
+            maxHp = (int)(earlyMaxHp + magnification * level);
+            attack = (int)(earlyAttack + magnification * level);
+            defence = (int)(earlyDefence + magnification * level);
         }
+        else
+        {
+            maxHp = earlyMaxHp;
+            attack = earlyAttack;
+            defence = earlyDefence;
+        }
+
     }
 
     public void HeelValue(int heel)
@@ -90,9 +109,19 @@ public class UserInterface : MonoBehaviour
 
     public void SetSlider()//スライダーをセットする
     {
-        statusManeger = new StatusManeger(maxHp, attack, defence);
-        slider.maxValue = maxHp;
-        slider.value = maxHp;
+        if (!tower)
+        {
+            statusManeger = new StatusManeger(maxHp, attack, defence);
+            slider.maxValue = maxHp;
+            slider.value = maxHp;
+        }
+        else
+        {
+            statusManeger = new StatusManeger(earlyMaxHp, attack, defence);
+            slider.maxValue = earlyMaxHp;
+            slider.value = earlyMaxHp;
+        }
+
         if(slider.value == 0)//セットされていなかったときの保険
         {
             slider.value = slider.maxValue;

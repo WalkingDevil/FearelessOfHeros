@@ -12,6 +12,15 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] List<Vector3> genePos;//生成する位置
     [SerializeField] Slider costSlider;
 
+    //生成確立
+    private List<int> generators;
+    [SerializeField] List<int> geneListsPlanLast;
+    [SerializeField] List<int> geneListsPlan1;
+    [SerializeField] List<int> geneListsPlan2;
+    [SerializeField] List<int> geneListsPlan3;
+    [SerializeField] List<List<int>> geneLists;
+
+
     [SerializeField] float _coolTime;
     public float coolTime
     {
@@ -31,6 +40,17 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] float maxCoolTime;//最大値のクールタイム
     [SerializeField] int maxGenePosX;//最大値の生成位置のX座標
     [SerializeField] int minGenePosX;//最小値の生成位置のX座標
+
+    private void Start()
+    {
+        if(geneListsPlan3.Count != 0)
+        {
+            geneLists.Add(geneListsPlanLast);
+            geneLists.Add(geneListsPlan1);
+            geneLists.Add(geneListsPlan2);
+            geneLists.Add(geneListsPlan3);
+        }
+    }
     void Update()
     {
         if (maxCoolTime != 0)

@@ -790,6 +790,7 @@ MonoBehaviour:
   firePrefab: {fileID: 0}
   throwSpeed: 0
   plusCost: 2
+  enemy: 0
 --- !u!65 &-4926367201335304040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2780,6 +2781,22 @@ PrefabInstance:
       propertyPath: defence
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: earlyMaxHp
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: earlyAttack
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: earlyDefence
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: magnification
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797724, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Name
       value: HpCanvas
@@ -2867,6 +2884,10 @@ PrefabInstance:
     - target: {fileID: 4413076559478797725, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797727, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4413076560045342715, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_AnchorMax.x

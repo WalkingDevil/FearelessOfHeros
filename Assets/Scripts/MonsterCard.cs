@@ -12,18 +12,21 @@ public class MonsterCard : MonoBehaviour
     [SerializeField] Button cardButton;
     [SerializeField] Text statasText;
     [SerializeField] Text costText;
-    [SerializeField] int maxHp;
-    [SerializeField] int attack;
-    [SerializeField] int defence;
+    private int maxHp;
+    private int attack;
+    private int defence;
 
     public int time;
 
     void Start()
     {
+        user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
         maxHp = user.GetState(0);
         attack = user.GetState(1);
         defence = user.GetState(2);
-        user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
+        Debug.Log(attack);
+        Debug.Log(defence);
+
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
         costText.text = user.GetState(3).ToString();//コストを表示
     }
@@ -49,5 +52,14 @@ public class MonsterCard : MonoBehaviour
     {
         cardButton.interactable = true;
         clock.fillAmount = 0;
+    }
+
+    public void ResetDisplay()
+    {
+        maxHp = user.GetState(4);
+        attack = user.GetState(1);
+        defence = user.GetState(2);
+
+        statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
     }
 }

@@ -34,7 +34,7 @@ public class TowerController : MonoBehaviour
                         }
                         else
                         {
-
+                            gameDirector.loadState = GameDirector.GameState.OutGame;  
                         }
                     }
                     else
