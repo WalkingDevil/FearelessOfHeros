@@ -12,24 +12,23 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] List<Vector3> genePos;//生成する位置
     [SerializeField] Slider costSlider;
 
-    //生成確立
-    private List<int> generators;
-    [SerializeField] List<int> geneListsPlanLast;
-    [SerializeField] List<int> geneListsPlan1;
-    [SerializeField] List<int> geneListsPlan2;
-    [SerializeField] List<int> geneListsPlan3;
-    [SerializeField] List<List<int>> geneLists;
+    //生成確率
+    [SerializeField] List<int> geneListsPlanLast = new List<int>(7);
+    [SerializeField] List<int> geneListsPlan1 = new List<int>(7);
+    [SerializeField] List<int> geneListsPlan2 = new List<int>(7);
+    [SerializeField] List<int> geneListsPlan3 = new List<int>(7);
+    [SerializeField] List<int> maxValue;
 
 
     [SerializeField] float _coolTime;
     public float coolTime
     {
         get { return _coolTime; }
-        set 
-        { 
-            _coolTime = value; 
+        set
+        {
+            _coolTime = value;
 
-            if(_coolTime <= 0)
+            if (_coolTime <= 0)
             {
                 _coolTime = maxCoolTime;
                 GenerateChara(GetRandom(0, geneObject.Count));
@@ -41,16 +40,6 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] int maxGenePosX;//最大値の生成位置のX座標
     [SerializeField] int minGenePosX;//最小値の生成位置のX座標
 
-    private void Start()
-    {
-        if(geneListsPlan3.Count != 0)
-        {
-            geneLists.Add(geneListsPlanLast);
-            geneLists.Add(geneListsPlan1);
-            geneLists.Add(geneListsPlan2);
-            geneLists.Add(geneListsPlan3);
-        }
-    }
     void Update()
     {
         if (maxCoolTime != 0)
@@ -65,10 +54,12 @@ public class CharacterGenerator : MonoBehaviour
     public void GenerateChara(int obNum)
     {
         int genNum = 0;
-
-        if(maxCoolTime != 0)//敵である場合
+        GameObject ob = geneObject[obNum];
+        Debug.Log(gameDirector.towerCount);
+        if (maxCoolTime != 0)//敵である場合
         {
             genNum = gameDirector.towerCount;
+            ob = GenereationObject(genNum);
         }
         else
         {
@@ -86,7 +77,7 @@ public class CharacterGenerator : MonoBehaviour
         //生成位置をX座標ランダムで決める
         Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
 
-        Instantiate(geneObject[obNum], gene, Quaternion.identity);
+        Instantiate(ob, gene, Quaternion.identity);
     }
 
     /// <summary>
@@ -102,4 +93,76 @@ public class CharacterGenerator : MonoBehaviour
     {
         return Random.Range(min, max);
     }
+
+    /// <summary>
+    /// 生成するオブジェクトの確率を返す
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    private List<int> GetGenereationLists(int num)
+    {
+        switch(num)
+        {
+            case 0:
+                return geneListsPlanLast;
+            case 1:
+                return geneListsPlan1;
+            case 2:
+                return geneListsPlan2;
+            case 3:
+                return geneListsPlan3;
+            default:
+                return null;
+        }
+    }
+
+
+    /// <summary>
+    /// 生成するオブジェクトを返す
+    /// </summary>
+    /// <param name="num">タワーの回数</param>
+    /// <returns></returns>
+    private GameObject GenereationObject(int num)
+    {
+        List<int> generators = null;
+        generators = GetGenereationLists(num);
+        int ran = GetRandom(0, maxValue[num]);
+        Debug.Log(ran);
+
+        if(0 <= ran && ran < generators[0])
+        {
+            return geneObject[0];
+        }
+        else if(generators[0] < ran && ran < generators[1])
+        {
+            return geneObject[1];
+        }
+        else if (generators[1] < ran && ran < generators[2])
+        {
+            return geneObject[2];
+        }
+        else if (generators[2] < ran && ran < generators[3])
+        {
+            return geneObject[3];
+        }
+        else if (generators[3] < ran && ran < generators[4])
+        {
+            return geneObject[4];
+        }
+        else if (generators[4] < ran && ran < generators[5])
+        {
+            return geneObject[5];
+        }
+        else if (generators[5] < ran && ran < generators[6])
+        {
+            return geneObject[6];
+        }
+        else if (generators[0] < ran)
+        {
+            return geneObject[7];
+        }
+
+        return null;
+    }
 }
+

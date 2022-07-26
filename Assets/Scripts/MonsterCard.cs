@@ -24,8 +24,6 @@ public class MonsterCard : MonoBehaviour
         maxHp = user.GetState(0);
         attack = user.GetState(1);
         defence = user.GetState(2);
-        Debug.Log(attack);
-        Debug.Log(defence);
 
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
         costText.text = user.GetState(3).ToString();//コストを表示

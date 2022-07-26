@@ -183,11 +183,11 @@ public class GameDirector : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(cost);
         if (costSlider.value < costSlider.maxValue)
         {
             CostSlider();
         }
+
     }
 
     private void ChangeState()
@@ -220,6 +220,10 @@ public class GameDirector : MonoBehaviour
                 towerAction();
                 towerAction = null;
             }
+        }
+        else if(slider.value <= 0)
+        {
+            towerUser[0].SetSlider();
         }
     }
 
