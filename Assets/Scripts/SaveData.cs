@@ -15,6 +15,7 @@ public class SaveData : MonoBehaviour
         if(savePath.level == 0)
         {
             savePath.level = 1;
+            savePath.exp = 0;
             Save();
         }
     }
@@ -46,4 +47,5 @@ public class SaveData : MonoBehaviour
 public class SavePath
 {
     public int level;
+    public float exp;
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CameraController : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] float maxHeight;//Å‘å‚ÌƒJƒƒ‰‚Ì‚‚³
     [SerializeField] float criteriaZ;//Šî€‚ÌZÀ•W
 
+    [SerializeField] Transform overPosition;
+    [SerializeField] Transform clearPosition;
+    public Action endAction = null;
     int one = 1;
 
     /// <summary>
@@ -52,4 +57,22 @@ public class CameraController : MonoBehaviour
             return def + (maxHeight * ((maxCriteriaPro - criteriaPro) * (one / (one - criteriaPro))));
         }
     }
+
+    public void FinishMove(bool over)
+    {
+        Transform nextTransform = null;
+        if(over)
+        {
+            nextTransform = overPosition;
+        }
+        else
+        {
+            nextTransform = clearPosition;
+        }
+
+        transform.DOMove(nextTransform.position, 1f);
+        transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); }) ;
+    }
+
+
 }

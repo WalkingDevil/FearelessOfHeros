@@ -8,7 +8,7 @@ using DG.Tweening;
 
 public class GameDirector : MonoBehaviour
 {
-    public enum GameState { Ready,　InGame, Pouse, OutGame };
+    public enum GameState { Ready,　InGame, Pouse, Clear, Over };
     private GameState _loadState = GameState.Ready;
     public GameState loadState
     {
@@ -25,7 +25,10 @@ public class GameDirector : MonoBehaviour
 
 
     private SaveData saveData = new SaveData();
+    [SerializeField] ResultManeger resultManeger;
+    [SerializeField] CameraController cameraController;
     [SerializeField] CharacterGenerator enemyGene;
+    [SerializeField] CharacterGenerator allyGene;
     [SerializeField] List<CharacterController> allyPrefabs;//味方用
     [SerializeField] List<CharacterController> enemyPrefabs;//敵用
     [SerializeField] List<MonsterCard> deckCards;
@@ -200,7 +203,17 @@ public class GameDirector : MonoBehaviour
                 break;
             case GameState.Pouse:
                 break;
-            case GameState.OutGame:
+            case GameState.Clear:
+                cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる
+                cameraController.FinishMove(false);         
+                enemyGene.gameObject.SetActive(false);
+                allyGene.gameObject.SetActive(false);
+                break;
+            case GameState.Over:
+                cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
+                cameraController.FinishMove(true);
+                enemyGene.gameObject.SetActive(false);
+                allyGene.gameObject.SetActive(false);
                 break;
             default:
                 break;

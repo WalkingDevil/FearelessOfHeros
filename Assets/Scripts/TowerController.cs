@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    [SerializeField] AnimeController animeController;
     [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
@@ -34,12 +35,12 @@ public class TowerController : MonoBehaviour
                         }
                         else
                         {
-                            gameDirector.loadState = GameDirector.GameState.OutGame;  
+                            gameDirector.loadState = GameDirector.GameState.Clear;  
                         }
                     }
                     else
                     {
-
+                        gameDirector.loadState = GameDirector.GameState.Over;
                     }
                 }
             }

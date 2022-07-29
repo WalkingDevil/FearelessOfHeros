@@ -77,7 +77,11 @@ public class CharacterGenerator : MonoBehaviour
         //生成位置をX座標ランダムで決める
         Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
 
-        Instantiate(ob, gene, Quaternion.identity);
+        if (gene != null)
+        {
+            Instantiate(ob, gene, Quaternion.identity, this.gameObject.transform);
+        }
+
     }
 
     /// <summary>

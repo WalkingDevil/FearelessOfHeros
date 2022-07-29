@@ -17,7 +17,7 @@ public class AnimeController : MonoBehaviour
 
     public void DieIvent()
     {
-        Destroy(this.gameObject.transform.root.gameObject);
+        Destroy(this.gameObject);
     }
 
 }
