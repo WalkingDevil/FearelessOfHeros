@@ -9,6 +9,7 @@ public class TowerController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
+    [SerializeField] string animePara;//アニメのパラメーター
     [SerializeField] int plusCost;
 
     [SerializeField] bool enemy;
@@ -35,11 +36,13 @@ public class TowerController : MonoBehaviour
                         }
                         else
                         {
+                            animeController.TransitionAnime(animePara);
                             gameDirector.loadState = GameDirector.GameState.Clear;  
                         }
                     }
                     else
                     {
+                        animeController.TransitionAnime(animePara);
                         gameDirector.loadState = GameDirector.GameState.Over;
                     }
                 }

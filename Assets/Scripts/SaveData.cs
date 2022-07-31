@@ -48,4 +48,6 @@ public class SavePath
 {
     public int level;
     public float exp;
+    public int maxExp;
+    //public 
 }

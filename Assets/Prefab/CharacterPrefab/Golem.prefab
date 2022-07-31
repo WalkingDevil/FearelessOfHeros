@@ -825,6 +825,7 @@ MonoBehaviour:
   targets: []
   firePrefab: {fileID: 0}
   throwSpeed: 0
+  throwPos: 5
   plusCost: 2
   enemy: 0
 --- !u!195 &445364273073369274
@@ -1148,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: earlyAttack
-      value: 125
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: earlyDefence
