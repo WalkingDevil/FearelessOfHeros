@@ -395,7 +395,8 @@ MonoBehaviour:
   cardButton: {fileID: 668663938319391857}
   statasText: {fileID: 668663938120851114}
   costText: {fileID: 668663938361003577}
-  id: 3
+  id: 4
+  attributes: 3
   time: 50
 --- !u!1 &668663938361003579
 GameObject:

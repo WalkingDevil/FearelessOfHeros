@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class MonsterCard : MonoBehaviour
 {
@@ -13,15 +14,24 @@ public class MonsterCard : MonoBehaviour
     [SerializeField] Button cardButton;
     [SerializeField] Text statasText;
     [SerializeField] Text costText;
-
+    [SerializeField] string gameScene = "GameScene";
     [SerializeField] int id;
+    [SerializeField] int attributes;
     private int maxHp;
     private int attack;
     private int defence;
     private int cost;
     public int time;
 
+    private bool checkScene;
     void Start()
+    {
+        checkScene = SceneManager.GetActiveScene().name == gameScene;
+        GetState();
+        
+    }
+
+    private void GetState()
     {
         user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
         maxHp = user.GetState(0);
@@ -31,24 +41,33 @@ public class MonsterCard : MonoBehaviour
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
         costText.text = cost.ToString();//コストを表示
 
-        monsterId = new MonsterId(id, maxHp, attack, defence, cost);
+        monsterId = new MonsterId(id, attributes, maxHp, attack, defence, cost);
     }
 
+    public int GetId()
+    {
+        GetState();
+        return id;
+    }
     public void CardClick(Image clock)//クールタイム
     {
-        if (gameDirector.cost >= user.GetState(3))
+        if (checkScene)
         {
-            cardButton.interactable = false;
-            gameDirector.cost -= user.GetState(3);
-            DOTween.To
-                (
-                () => clock.fillAmount,
-                (t) => clock.fillAmount = t,
-                1,
-                time
-                )
-                .OnComplete(() => ResetButton(clock));
+            if (gameDirector.cost >= user.GetState(3))
+            {
+                cardButton.interactable = false;
+                gameDirector.cost -= user.GetState(3);
+                DOTween.To
+                    (
+                    () => clock.fillAmount,
+                    (t) => clock.fillAmount = t,
+                    1,
+                    time
+                    )
+                    .OnComplete(() => ResetButton(clock));
+            }
         }
+
     }
 
     private void ResetButton(Image clock)

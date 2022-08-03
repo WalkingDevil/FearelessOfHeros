@@ -8,39 +8,54 @@ public class SaveData : MonoBehaviour
 {
     string dataPath;
     SavePath savePath = new SavePath();
+    [SerializeField] List<int> defIdData;
     private void Awake()
     {
         dataPath = Application.dataPath + "/SaveData.json";
-
-        if(savePath.level == 0)
+        if (savePath.level == 0)
         {
             savePath.level = 1;
             savePath.exp = 0;
-            Save();
+            savePath.idData = defIdData;
+            Save(savePath);
         }
+        Load();
     }
 
 
-    public void Load()
+    public SavePath Load()
     {
-        if (File.Exists(dataPath))
+        /*if (File.Exists(dataPath))
         {
+            dataPath = Application.dataPath + "/SaveData.json";
             StreamReader streamReader;
             streamReader = new StreamReader(dataPath);
             string data = streamReader.ReadToEnd();
             streamReader.Close();
-            savePath = JsonUtility.FromJson<SavePath>(data);
-        }
+            return JsonUtility.FromJson<SavePath>(data);
+        }*/
+        dataPath = Application.dataPath + "/SaveData.json";
+        StreamReader streamReader;
+        streamReader = new StreamReader(dataPath);
+        string data = streamReader.ReadToEnd();
+        streamReader.Close();
+        return JsonUtility.FromJson<SavePath>(data);
     }
 
-    public void Save()
+    public void Save(SavePath newSave)
     {
-        string jsonstr = JsonUtility.ToJson(savePath);//受け取ったPlayerDataをJSONに変換
+        string jsonstr = JsonUtility.ToJson(newSave);//受け取ったPlayerDataをJSONに変換
         StreamWriter writer = new StreamWriter(dataPath, false);//初めに指定したデータの保存先を開く
         writer.WriteLine(jsonstr);//JSONデータを書き込み
         writer.Flush();//バッファをクリアする
         writer.Close();//ファイルをクローズする
     }
+
+  /*  public void SetData(List<MonsterCard> cards)
+    {
+        savePath.myMonsterCards = cards;
+        Save();
+    }*/
 }
 
 [Serializable]
@@ -49,5 +64,5 @@ public class SavePath
     public int level;
     public float exp;
     public int maxExp;
-    //public 
+    public List<int> idData;
 }

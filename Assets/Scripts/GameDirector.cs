@@ -25,6 +25,8 @@ public class GameDirector : MonoBehaviour
 
 
     private SaveData saveData = new SaveData();
+    private SavePath savePath = new SavePath();
+
     [SerializeField] ResultManeger resultManeger;
     [SerializeField] CameraController cameraController;
     [SerializeField] CharacterGenerator enemyGene;
