@@ -16,7 +16,7 @@ public class SearchList : MonoBehaviour
     [SerializeField] List<Button> sortButtons;
     [SerializeField] List<MonsterCard> cardsList;
     [SerializeField] List<int> myCardsId = new List<int>();
-    private List<MonsterCard> monsterCards = new List<MonsterCard>();
+    private List<MonsterCard> defMonsterCards = new List<MonsterCard>();
     string datapath;
     void Start()
     {
@@ -27,7 +27,7 @@ public class SearchList : MonoBehaviour
         {
             if (myCardsId.Contains(card.GetId()))//IDが含まれているかどうか
             {
-                monsterCards.Add(card);
+               defMonsterCards.Add(card);
             }
         }
         //monsterCards = 
@@ -41,9 +41,34 @@ public class SearchList : MonoBehaviour
 
     public void Search()
     {
-        foreach (var card in monsterCards)
+        List<MonsterCard> monsterCards = new List<MonsterCard>();
+        DestroyCards();
+        List<int> attributeses = new List<int>();
+        for (int b = 0; b < refineButtons.Count; b++)//表示する型を入れる
         {
-            Instantiate(card.gameObject, content);
+            if (refineButtons[b].interactable)
+            {
+                attributeses.Add(b);
+            }
+        }
+
+        foreach (MonsterCard card in defMonsterCards)
+        {
+            if (attributeses.Contains(card.GetAttributes()))
+            {
+                monsterCards.Add(card);
+            }
+
+        }
+        foreach (Button b in refineButtons)
+        {
+
+        }
+
+
+        foreach (MonsterCard cards in monsterCards)
+        {
+            Instantiate(cards.gameObject, content);
         }
 
     }
@@ -73,11 +98,27 @@ public class SearchList : MonoBehaviour
     {
         ResetButtons(refineButtons);
         ResetButtons(sortButtons);
+        DestroyCards();
+
+
+       // monsterCards = defMonsterCards;
+    }
+
+
+    private void DestroyCards()
+    {
+        if (content.childCount != 0)
+        {
+            foreach (Transform t in content.gameObject.transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
     }
 
     private void ResetButtons(List<Button> buttons)
     {
-        foreach(Button b in buttons)
+        foreach(Button b in buttons)//OffになっているボタンをOnにする
         {
             if(!b.interactable)
             {

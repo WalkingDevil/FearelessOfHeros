@@ -46,8 +46,12 @@ public class MonsterCard : MonoBehaviour
 
     public int GetId()
     {
-        GetState();
         return id;
+    }
+
+    public int GetAttributes()
+    {
+        return attributes;
     }
     public void CardClick(Image clock)//クールタイム
     {
