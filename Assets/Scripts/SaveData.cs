@@ -12,28 +12,20 @@ public class SaveData : MonoBehaviour
     private void Awake()
     {
         dataPath = Application.dataPath + "/SaveData.json";
+        savePath = Load();
         if (savePath.level == 0)
         {
             savePath.level = 1;
             savePath.exp = 0;
             savePath.idData = defIdData;
+            savePath.myDeckData = defIdData;
             Save(savePath);
         }
-        Load();
     }
 
 
     public SavePath Load()
     {
-        /*if (File.Exists(dataPath))
-        {
-            dataPath = Application.dataPath + "/SaveData.json";
-            StreamReader streamReader;
-            streamReader = new StreamReader(dataPath);
-            string data = streamReader.ReadToEnd();
-            streamReader.Close();
-            return JsonUtility.FromJson<SavePath>(data);
-        }*/
         dataPath = Application.dataPath + "/SaveData.json";
         StreamReader streamReader;
         streamReader = new StreamReader(dataPath);
@@ -65,4 +57,5 @@ public class SavePath
     public float exp;
     public int maxExp;
     public List<int> idData;
+    public List<int> myDeckData;
 }

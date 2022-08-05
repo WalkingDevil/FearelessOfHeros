@@ -12,6 +12,7 @@ public class SearchList : MonoBehaviour
     private SavePath savePath = new SavePath();
     [SerializeField] Scrollbar scrollbar;
     [SerializeField] RectTransform content;
+    [SerializeField] RectTransform selectPanel;
     [SerializeField] List<Button> refineButtons;
     [SerializeField] List<Button> sortButtons;
     [SerializeField] List<MonsterCard> cardsList;
@@ -25,13 +26,15 @@ public class SearchList : MonoBehaviour
         Debug.Log(myCardsId.Count);
         foreach(var card in cardsList)
         {
-            if (myCardsId.Contains(card.GetId()))//IDが含まれているかどうか
+            if (myCardsId.Contains(card.GetState(0)))//IDが含まれているかどうか
             {
                defMonsterCards.Add(card);
             }
         }
+        Search(false);
         //monsterCards = 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -39,10 +42,13 @@ public class SearchList : MonoBehaviour
         
     }
 
-    public void Search()
+    public void Search(bool def = true)
     {
         List<MonsterCard> monsterCards = new List<MonsterCard>();
+        List<int> selects = new List<int>();
         DestroyCards();
+        selects = GetSelectsList();
+
         List<int> attributeses = new List<int>();
         for (int b = 0; b < refineButtons.Count; b++)//表示する型を入れる
         {
@@ -52,15 +58,24 @@ public class SearchList : MonoBehaviour
             }
         }
 
-        foreach (MonsterCard card in defMonsterCards)
+        monsterCards = GenerationMonsters(attributeses, selects);
+
+        if (def)
         {
-            if (attributeses.Contains(card.GetAttributes()))
+            int sortNumber = 0;
+            for (int b = 0; b < sortButtons.Count; b++)
             {
-                monsterCards.Add(card);
+                if (!sortButtons[b].interactable)
+                {
+                    sortNumber = b + 2;
+                    break;
+                }
             }
 
+            monsterCards = SortSearch(monsterCards, sortNumber);
         }
-        foreach (Button b in refineButtons)
+
+        if(selectPanel.childCount != 0)
         {
 
         }
@@ -68,7 +83,8 @@ public class SearchList : MonoBehaviour
 
         foreach (MonsterCard cards in monsterCards)
         {
-            Instantiate(cards.gameObject, content);
+            GameObject ob = Instantiate(cards.gameObject, content);
+            ob.AddComponent<DragObject>();
         }
 
     }
@@ -93,17 +109,44 @@ public class SearchList : MonoBehaviour
         }
     }
 
+    private List<MonsterCard> GenerationMonsters(List<int> attributes, List<int> select)
+    {
+        List<MonsterCard> cards = new List<MonsterCard>();
+        foreach (MonsterCard card in defMonsterCards)
+        {
+            int cardId = card.GetState(0);
+            int cardAtt = card.GetState(1);
+            if (attributes.Contains(cardAtt) && !select.Contains(cardId))
+            {
+                cards.Add(card);
+            }
+        }
+        return cards;
+    }
+    private List<int> GetSelectsList()
+    {
+        List<int> list = new List<int>();
+        for (int s = 0; s < selectPanel.childCount; s++)
+        {
+            list.Add(selectPanel.GetChild(s).GetComponent<MonsterCard>().GetState(0));
+        }
 
+        return list;
+    }
     public void ResetSearch()
     {
         ResetButtons(refineButtons);
         ResetButtons(sortButtons);
         DestroyCards();
 
-
+        Search(false);
        // monsterCards = defMonsterCards;
     }
 
+    private List<MonsterCard> SortSearch(List<MonsterCard> ts, int num = 0)
+    {
+        return ts.OrderBy(x => x.GetState(num)).ToList();
+    }
 
     private void DestroyCards()
     {

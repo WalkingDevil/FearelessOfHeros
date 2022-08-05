@@ -7,16 +7,14 @@ using System.IO;
 public class StartDirector : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
-  //  SavePath savePath = new SavePath();
-
-
+    private SavePath savePath = new SavePath();
+    //  SavePath savePath = new SavePath();
+    [SerializeField] int deckCount = 4;
+    [SerializeField] RectTransform selectPanel;
 
     private void Awake()
     {
-
-        /*  saveData.Load();
-          saveData.SetData(defMonsterCards);*/
-        //
+        savePath = saveData.Load();
     }
 
     // Start is called before the first frame update
@@ -29,5 +27,19 @@ public class StartDirector : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Sortie()
+    {
+        List<int> list = new List<int>();
+        for (int s = 0; s < selectPanel.childCount; s++)
+        {
+            list.Add(selectPanel.GetChild(s).GetComponent<MonsterCard>().GetState(0));
+        }
+
+        if(selectPanel.childCount < deckCount)
+        {
+            savePath.myDeckData = list;
+        }
     }
 }

@@ -27,11 +27,11 @@ public class MonsterCard : MonoBehaviour
     void Start()
     {
         checkScene = SceneManager.GetActiveScene().name == gameScene;
-        GetState();
+        NewState();
         
     }
 
-    private void GetState()
+    private void NewState()
     {
         user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
         maxHp = user.GetState(0);
@@ -44,14 +44,37 @@ public class MonsterCard : MonoBehaviour
         monsterId = new MonsterId(id, attributes, maxHp, attack, defence, cost);
     }
 
-    public int GetId()
+    /// <summary>
+    /// ステータスを返す
+    /// 0：ID
+    /// 1：属性
+    /// 2：攻撃力
+    /// 3：防御力
+    /// 4：ＨＰ
+    /// 5：コスト
+    /// </summary>
+    /// <param name="num"></param>
+    /// <returns></returns>
+    public int GetState(int num)
     {
-        return id;
-    }
-
-    public int GetAttributes()
-    {
-        return attributes;
+        NewState();   
+        switch (num)
+        {
+            case 0:
+                return id;
+            case 1:
+                return attributes;
+            case 2:
+                return attack;
+            case 3:
+                return defence;
+            case 4:
+                return maxHp;
+            case 5:
+                return cost;
+            default:
+                return 0;
+        }
     }
     public void CardClick(Image clock)//クールタイム
     {
@@ -71,7 +94,6 @@ public class MonsterCard : MonoBehaviour
                     .OnComplete(() => ResetButton(clock));
             }
         }
-
     }
 
     private void ResetButton(Image clock)
