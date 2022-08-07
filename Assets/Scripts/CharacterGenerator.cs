@@ -7,10 +7,9 @@ using UnityEngine.UI;
 public class CharacterGenerator : MonoBehaviour
 {
     [SerializeField] GameDirector gameDirector;
-    [SerializeField] List<GameObject> geneObject;//生成するオブジェクト
-    [SerializeField] List<GameObject> bsObject;//ボスの生成するオブジェクト
+    [SerializeField] List<CharacterController> geneObject;//生成するオブジェクト
+    [SerializeField] List<CharacterController> bsObject;//ボスの生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
-    [SerializeField] Slider costSlider;
 
     //生成確率
     [SerializeField] List<int> geneListsPlanLast = new List<int>(7);
@@ -51,11 +50,14 @@ public class CharacterGenerator : MonoBehaviour
         }
     }
 
+    public void GetGenerationObject(CharacterController monsters)
+    {
+        geneObject.Add(monsters);
+    }
     public void GenerateChara(int obNum)
     {
         int genNum = 0;
-        GameObject ob = geneObject[obNum];
-        Debug.Log(gameDirector.towerCount);
+        CharacterController ob = geneObject[obNum];
         if (maxCoolTime != 0)//敵である場合
         {
             genNum = gameDirector.towerCount;
@@ -63,24 +65,24 @@ public class CharacterGenerator : MonoBehaviour
         }
         else
         {
-            UserInterface user = geneObject[obNum].GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-            if (costSlider.value < user.GetState(3))//所持しているコストと必要コストが足りているか
+            UserInterface user = ob.SetMyUserInterface();//UserInterfaceスクリプトを受け取る
+            if (gameDirector.cost < user.GetState(3))//所持しているコストと必要コストが足りているか
             {
+                Debug.Log(98);
                 return;
             }
             else
             {
-                costSlider.value -= user.GetState(3);
+                Debug.Log(98);
+                gameDirector.cost -= user.GetState(3);
             }
         }
 
         //生成位置をX座標ランダムで決める
         Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
 
-        if (gene != null)
-        {
-            Instantiate(ob, gene, Quaternion.identity, this.gameObject.transform);
-        }
+            Instantiate(ob.gameObject, gene, Quaternion.identity, this.gameObject.transform);
+        
 
     }
 
@@ -126,12 +128,12 @@ public class CharacterGenerator : MonoBehaviour
     /// </summary>
     /// <param name="num">タワーの回数</param>
     /// <returns></returns>
-    private GameObject GenereationObject(int num)
+    private CharacterController GenereationObject(int num)
     {
         List<int> generators = null;
         generators = GetGenereationLists(num);
         int ran = GetRandom(0, maxValue[num]);
-        Debug.Log(ran);
+       // Debug.Log(ran);
 
         if(0 <= ran && ran < generators[0])
         {

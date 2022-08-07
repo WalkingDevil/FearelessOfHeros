@@ -31,6 +31,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] CharacterGenerator enemyGene;
     [SerializeField] CharacterGenerator allyGene;
+    [SerializeField] CardsGeneration cardsGeneration;
     [SerializeField] List<CharacterController> allyPrefabs;//味方用
     [SerializeField] List<CharacterController> enemyPrefabs;//敵用
     [SerializeField] List<MonsterCard> deckCards;
@@ -40,7 +41,7 @@ public class GameDirector : MonoBehaviour
     Action towerAction = null;
     [SerializeField] Slider towerSlider;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
-    [SerializeField] int _towerCount = 0;
+    [SerializeField] int _towerCount = 3;
     public int towerCount
     {
         get { return _towerCount; }
@@ -69,9 +70,9 @@ public class GameDirector : MonoBehaviour
         }
     }
     [SerializeField] int maxCost = 0;//コストのMax値
-    private int plusCost = 0; //現在の値の差を入れる
-    private int _cost;
-    public int cost
+
+    private float _cost;
+    public float cost
     {
         get { return _cost; }
         set
@@ -171,7 +172,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     private void CostSlider()
     {
-        costSlider.value += costSpeed;
+        cost += costSpeed;
     }
 
     private void Start()
@@ -183,7 +184,7 @@ public class GameDirector : MonoBehaviour
         expSlider.maxValue = maxExp;
         levelText.text = lv + level.ToString();
         cost = maxCost;
-        plusCost = maxCost;
+
     }
 
     private void Update()
@@ -249,6 +250,11 @@ public class GameDirector : MonoBehaviour
             UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
             user.ChengeState(level);
         }
+    }
+
+    public void SetMonsterCards(MonsterCard card)
+    {
+        deckCards.Add(card);
     }
 
     private void DisplayUpdate()

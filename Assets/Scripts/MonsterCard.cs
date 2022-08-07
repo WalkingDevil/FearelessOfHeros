@@ -9,8 +9,9 @@ public class MonsterCard : MonoBehaviour
 {
     private MonsterId monsterId;
     [SerializeField] GameDirector gameDirector;
+    private CharacterGenerator allyGene;
     private UserInterface user;
-    [SerializeField] GameObject monster;
+    [SerializeField] CharacterController monster;
     [SerializeField] Button cardButton;
     [SerializeField] Text statasText;
     [SerializeField] Text costText;
@@ -21,16 +22,38 @@ public class MonsterCard : MonoBehaviour
     private int attack;
     private int defence;
     private int cost;
-    public int time;
+    private int _geneNumber;
+    public int geneNumber
+    {
+        get { return _geneNumber; }
+        set
+        {
+            _geneNumber = value;
+            allyGene = GameObject.Find(geneName).GetComponent<CharacterGenerator>();
+            this.gameObject.GetComponent<Button>().onClick.AddListener(() => allyGene.GenerateChara(_geneNumber));
+        }
 
+    }
+    public int time;
+    [SerializeField] string director = "GameDirector";
+    [SerializeField] string geneName = "AllyGene";
     private bool checkScene;
     void Start()
     {
         checkScene = SceneManager.GetActiveScene().name == gameScene;
+        if(checkScene)
+        {
+            gameDirector = GameObject.Find(director).GetComponent<GameDirector>();
+
+        }
         NewState();
         
     }
 
+    private void Update()
+    {
+       // Debug.Log(this.gameObject.GetComponent<Button>().onClick.GetPersistentEventCount());
+    }
     private void NewState()
     {
         user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
@@ -83,7 +106,6 @@ public class MonsterCard : MonoBehaviour
             if (gameDirector.cost >= user.GetState(3))
             {
                 cardButton.interactable = false;
-                gameDirector.cost -= user.GetState(3);
                 DOTween.To
                     (
                     () => clock.fillAmount,
@@ -96,6 +118,15 @@ public class MonsterCard : MonoBehaviour
         }
     }
 
+    public void SetNumber(int num)
+    {
+        geneNumber = num;
+    }
+
+    public CharacterController GetObject()
+    {
+        return monster;
+    }
     private void ResetButton(Image clock)
     {
         cardButton.interactable = true;

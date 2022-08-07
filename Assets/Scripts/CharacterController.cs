@@ -130,6 +130,11 @@ public class CharacterController : MonoBehaviour
 
     }
 
+    public UserInterface SetMyUserInterface()
+    {
+        return userInterface;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == damageTag)

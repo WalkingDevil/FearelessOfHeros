@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "HP\uFF1A3000\nAT\uFF1A0000\nDF\uFF1A0000"
+  m_Text: "HP\uFF1A0070\nAT\uFF1A0050\nDF\uFF1A0030"
 --- !u!1 &7191979371285501490
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,20 +278,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterGenerator, Assembly-CSharp
-        m_MethodName: GenerateChara
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7191979371883756458}
-        m_TargetAssemblyTypeName: WaitTime, Assembly-CSharp
+        m_TargetAssemblyTypeName: MonsterCard, Assembly-CSharp
         m_MethodName: CardClick
         m_Mode: 2
         m_Arguments:
@@ -315,13 +303,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDirector: {fileID: 0}
-  monster: {fileID: 7660147587087999082, guid: c65be83d6eb37fd459938417eeaac396, type: 3}
+  monster: {fileID: 6451378865444747388, guid: c65be83d6eb37fd459938417eeaac396, type: 3}
   cardButton: {fileID: 7191979371883756457}
   statasText: {fileID: 7191979370775394303}
   costText: {fileID: 7191979372547875551}
+  gameScene: GameScene
   id: 1
   attributes: 0
   time: 10
+  director: GameDirector
+  geneName: AllyGene
 --- !u!1 &7191979372165599067
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,4 +467,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: 2

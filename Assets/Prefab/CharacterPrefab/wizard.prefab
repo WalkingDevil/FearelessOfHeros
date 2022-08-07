@@ -4989,7 +4989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8545277120174106075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8546517320563416207}
@@ -5101,6 +5101,7 @@ MonoBehaviour:
   targets: []
   firePrefab: {fileID: 6038934085425190197, guid: 66da75402e796b545a8fa4a133cae23b, type: 3}
   throwSpeed: 0.25
+  throwPos: 5
   plusCost: 2
   enemy: 0
 --- !u!114 &8544843368201371795
