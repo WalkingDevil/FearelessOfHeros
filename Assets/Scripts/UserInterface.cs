@@ -122,7 +122,7 @@ public class UserInterface : MonoBehaviour
             slider.value = earlyMaxHp;
         }
 
-        if(slider.value == 0)//セットされていなかったときの保険
+        if(slider.value <= 0)//セットされていなかったときの保険
         {
             slider.value = slider.maxValue;
         }

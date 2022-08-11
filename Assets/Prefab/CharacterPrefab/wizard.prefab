@@ -5097,7 +5097,7 @@ MonoBehaviour:
   - Fortrees3
   - enemyTower
   moveSpeed: 20
-  stopDistance: 75
+  stopDistance: 50
   targets: []
   firePrefab: {fileID: 6038934085425190197, guid: 66da75402e796b545a8fa4a133cae23b, type: 3}
   throwSpeed: 0.25

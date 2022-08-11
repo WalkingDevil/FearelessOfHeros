@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
 using DG.Tweening;
@@ -27,6 +28,7 @@ public class GameDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
+    [SerializeField] LevelUpBonus levelUpBonus;
     [SerializeField] ResultManeger resultManeger;
     [SerializeField] CameraController cameraController;
     [SerializeField] CharacterGenerator enemyGene;
@@ -159,9 +161,15 @@ public class GameDirector : MonoBehaviour
         {
             Destroy(this);
         }
-        datapath = Application.dataPath + "/SaveData.json";
+        savePath = saveData.Load();
+        levelUpBonus = new LevelUpBonus(savePath.level);
+        
 
-
+        if (maxExp != 0)
+        {
+            maxExp = savePath.maxExp;
+            exp = savePath.exp;            
+        }
 
         StateUpdate(allyPrefabs);
         StateUpdate(enemyPrefabs);
@@ -181,6 +189,7 @@ public class GameDirector : MonoBehaviour
         towerUser[0].SetSlider();
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
+        level = savePath.level;
         expSlider.maxValue = maxExp;
         levelText.text = lv + level.ToString();
         cost = maxCost;
@@ -211,6 +220,11 @@ public class GameDirector : MonoBehaviour
                 cameraController.FinishMove(false);         
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
+                levelUpBonus.LevelBonus(level);
+                savePath.level = level;
+                savePath.maxExp = (int)maxExp;
+                savePath.exp = exp;
+                saveData.Save(savePath);
                 break;
             case GameState.Over:
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
@@ -262,6 +276,18 @@ public class GameDirector : MonoBehaviour
         foreach(MonsterCard monsterCard in deckCards)
         {
             monsterCard.ResetDisplay();
+        }
+    }
+
+    public void ChengeScene(bool con)
+    {
+        if(con)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("TitelScene");
         }
     }
 }

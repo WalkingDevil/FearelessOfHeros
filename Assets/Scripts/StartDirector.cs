@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.IO;
 
@@ -37,9 +38,10 @@ public class StartDirector : MonoBehaviour
             list.Add(selectPanel.GetChild(s).GetComponent<MonsterCard>().GetState(0));
         }
 
-        if(selectPanel.childCount < deckCount)
+        if(selectPanel.childCount == deckCount)
         {
             savePath.myDeckData = list;
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

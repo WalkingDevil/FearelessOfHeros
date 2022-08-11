@@ -26,7 +26,7 @@ public class ResultManeger : MonoBehaviour
         else
         {
             display = clearString;
-            animeName = animeParameters[0];
+            animeName = animeParameters[1];
         } 
 
         for(int c = 0;c < chengeTexts.Count; c++)
