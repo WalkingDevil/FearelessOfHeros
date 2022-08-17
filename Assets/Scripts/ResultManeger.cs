@@ -35,5 +35,7 @@ public class ResultManeger : MonoBehaviour
         }
 
         anime.TransitionAnime(animeName);
+        Debug.Log(96);
+
     }
 }

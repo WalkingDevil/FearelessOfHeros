@@ -14485,7 +14485,7 @@ MonoBehaviour:
   floorTag: floor
   enemyTag: enemy
   stopTime: 0.1
-  maxDestoyTime: 1
+  maxDestoyTime: 0.75
 --- !u!1 &6038961847609667949
 GameObject:
   m_ObjectHideFlags: 0

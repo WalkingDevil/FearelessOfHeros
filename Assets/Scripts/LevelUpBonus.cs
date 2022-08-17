@@ -9,10 +9,11 @@ public class LevelUpBonus : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
+    private List<int> idDatas;
     private int startLevel = 0;
     [SerializeField] RectTransform content;
-    [SerializeField] Text resultPrefab;
-    public LevelUpBonus(int startLevel = 0)
+    [SerializeField] RectTransform resultPrefab;
+    public void SetStartLevel(int startLevel = 0)
     {
         this.startLevel = startLevel;
     }
@@ -21,6 +22,7 @@ public class LevelUpBonus : MonoBehaviour
     {
         saveData = new SaveData();
         savePath = saveData.Load();
+        idDatas = savePath.idData;
     }
 
     public void LevelBonus(int endLevel = 0)
@@ -32,29 +34,39 @@ public class LevelUpBonus : MonoBehaviour
             {
                 SetBonus(l);
             }
+            string massege = startLevel + " → " + endLevel + "にレベルアップした";
+            GenerationText(massege);
         }
 
+        
 
     }
 
     private void SetBonus(int num)
     {
-        switch(num)
+        string massege = null;
+        switch (num)
         {
             case 5:
                 List<int> list = new List<int>(){ 5, 6, 7, 8 };
-                savePath.idData.AddRange(list);
-                GenerationText("新たに4キャラ追加されました。");
-                saveData.Save(savePath);
+                idDatas.AddRange(list);
+                massege = "新たに4キャラ追加されました。";
+                GenerationText(massege);
                 break;
             default:
+                Debug.Log(num);
                 break;
         }
     }
 
     private void GenerationText(string r)
     {
-        Text text = Instantiate(resultPrefab, content.transform);
-        text.text = r;
+        GameObject ob = Instantiate(resultPrefab.gameObject, content);
+        ob.GetComponent<Text>().text = r;
+    }
+
+    public List<int> SetIdData()
+    {
+        return idDatas;
     }
 }

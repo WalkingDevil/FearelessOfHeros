@@ -2019,6 +2019,8 @@ MonoBehaviour:
   - {fileID: 5043326826790438303, guid: 8089b5f4050e9ee4ea9c78439f18dccc, type: 3}
   - {fileID: 668663938319391860, guid: 00b0540f8839b2248935d5b0d736fe74, type: 3}
   - {fileID: 6907874816822663019, guid: 12f758243deffe549a8920ceb8e07004, type: 3}
+  - {fileID: 4694697869057934146, guid: bd707f0c41651004db43e1389ca96cf9, type: 3}
+  - {fileID: 2697118209980564079, guid: 09620236b1338c14fa0a9f0c7979de63, type: 3}
   myCardsId: 
 --- !u!1 &1167932853
 GameObject:
@@ -4023,6 +4025,10 @@ PrefabInstance:
     - target: {fileID: 448925101461559009, guid: d454877d1ef4d7745aa1155df6d31bb7, type: 3}
       propertyPath: m_Name
       value: SelectionsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 448925101461559009, guid: d454877d1ef4d7745aa1155df6d31bb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5313542647626297034, guid: d454877d1ef4d7745aa1155df6d31bb7, type: 3}
       propertyPath: m_Color.b

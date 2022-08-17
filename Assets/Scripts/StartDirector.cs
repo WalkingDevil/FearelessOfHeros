@@ -41,6 +41,7 @@ public class StartDirector : MonoBehaviour
         if(selectPanel.childCount == deckCount)
         {
             savePath.myDeckData = list;
+            saveData.Save(savePath);
             SceneManager.LoadScene("GameScene");
         }
     }

@@ -6,27 +6,34 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    string dataPath;
     SavePath savePath = new SavePath();
     [SerializeField] List<int> defIdData;
     private void Awake()
     {
-        dataPath = Application.dataPath + "/SaveData.json";
+        string dataPath = Application.dataPath + "/SaveData.json";
+
+        if(!File.Exists(dataPath))//セーブデータを作成
+        {
+            File.Create(dataPath);
+        }
+        Save(savePath);
         savePath = Load();
-        if (savePath.level == 0)
+        if (savePath.fast)
         {
             savePath.level = 1;
             savePath.exp = 0;
             savePath.idData = defIdData;
             savePath.myDeckData = defIdData;
+            savePath.fast = false;
             Save(savePath);
         }
+        
     }
 
 
     public SavePath Load()
     {
-        dataPath = Application.dataPath + "/SaveData.json";
+        string dataPath = Application.dataPath + "/SaveData.json";
         StreamReader streamReader;
         streamReader = new StreamReader(dataPath);
         string data = streamReader.ReadToEnd();
@@ -36,11 +43,26 @@ public class SaveData : MonoBehaviour
 
     public void Save(SavePath newSave)
     {
+        string dataPath = Application.dataPath + "/SaveData.json";
         string jsonstr = JsonUtility.ToJson(newSave);//受け取ったPlayerDataをJSONに変換
         StreamWriter writer = new StreamWriter(dataPath, false);//初めに指定したデータの保存先を開く
         writer.WriteLine(jsonstr);//JSONデータを書き込み
         writer.Flush();//バッファをクリアする
         writer.Close();//ファイルをクローズする
+        //File.WriteAllText(dataPath, jsonstr);
+        /*
+#if UNITY_EDITOR
+        {
+            StreamWriter writer = new StreamWriter(dataPath, false);//初めに指定したデータの保存先を開く
+            writer.WriteLine(jsonstr);//JSONデータを書き込み
+            writer.Flush();//バッファをクリアする
+            writer.Close();//ファイルをクローズする
+        }
+#endif
+        {
+            File.WriteAllText(dataPath, jsonstr);
+        }*/
+
     }
 
   /*  public void SetData(List<MonsterCard> cards)
@@ -54,8 +76,9 @@ public class SaveData : MonoBehaviour
 public class SavePath
 {
     public int level;
-    public float exp;
-    public int maxExp;
+    public float exp = 0;
+    public int maxExp = 50;
+    public bool fast = true;
     public List<int> idData;
     public List<int> myDeckData;
 }

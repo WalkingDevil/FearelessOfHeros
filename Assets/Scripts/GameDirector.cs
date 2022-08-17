@@ -42,6 +42,7 @@ public class GameDirector : MonoBehaviour
 
     Action towerAction = null;
     [SerializeField] Slider towerSlider;
+    [SerializeField] GameObject scroll;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
     [SerializeField] int _towerCount = 3;
     public int towerCount
@@ -162,7 +163,7 @@ public class GameDirector : MonoBehaviour
             Destroy(this);
         }
         savePath = saveData.Load();
-        levelUpBonus = new LevelUpBonus(savePath.level);
+
         
 
         if (maxExp != 0)
@@ -190,6 +191,7 @@ public class GameDirector : MonoBehaviour
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
         level = savePath.level;
+        levelUpBonus.SetStartLevel(level);
         expSlider.maxValue = maxExp;
         levelText.text = lv + level.ToString();
         cost = maxCost;
@@ -217,14 +219,12 @@ public class GameDirector : MonoBehaviour
                 break;
             case GameState.Clear:
                 cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる
+                levelUpBonus.LevelBonus(level);
+                scroll.SetActive(true);
                 cameraController.FinishMove(false);         
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
-                levelUpBonus.LevelBonus(level);
-                savePath.level = level;
-                savePath.maxExp = (int)maxExp;
-                savePath.exp = exp;
-                saveData.Save(savePath);
+
                 break;
             case GameState.Over:
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
@@ -257,6 +257,16 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    private void NewData()
+    {
+        savePath.level = level;
+        savePath.exp = exp;
+        savePath.maxExp = (int)maxExp;
+        savePath.idData = levelUpBonus.SetIdData();
+        saveData.Save(savePath);
+
+    }
+
     private void StateUpdate(List<CharacterController> characters)
     {
         foreach (CharacterController character in characters)
@@ -283,11 +293,13 @@ public class GameDirector : MonoBehaviour
     {
         if(con)
         {
+            NewData();
             SceneManager.LoadScene("GameScene");
         }
         else
         {
-            SceneManager.LoadScene("TitelScene");
+
+            SceneManager.LoadScene("TitleScene");
         }
     }
 }
