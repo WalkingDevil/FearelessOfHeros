@@ -164,7 +164,7 @@ public class GameDirector : MonoBehaviour
         }
         savePath = saveData.Load();
 
-        
+        cost = maxCost;
 
         if (maxExp != 0)
         {
@@ -194,7 +194,7 @@ public class GameDirector : MonoBehaviour
         levelUpBonus.SetStartLevel(level);
         expSlider.maxValue = maxExp;
         levelText.text = lv + level.ToString();
-        cost = maxCost;
+        
 
     }
 
