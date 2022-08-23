@@ -172,8 +172,7 @@ public class GameDirector : MonoBehaviour
             exp = savePath.exp;            
         }
 
-        StateUpdate(allyPrefabs);
-        StateUpdate(enemyPrefabs);
+        
     }
 
     /// <summary>
@@ -190,7 +189,9 @@ public class GameDirector : MonoBehaviour
         towerUser[0].SetSlider();
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
-        level = savePath.level;
+        _level = savePath.level;
+        StateUpdate(allyPrefabs);
+        StateUpdate(enemyPrefabs);
         levelUpBonus.SetStartLevel(level);
         expSlider.maxValue = maxExp;
         levelText.text = lv + level.ToString();
@@ -224,7 +225,7 @@ public class GameDirector : MonoBehaviour
                 cameraController.FinishMove(false);         
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
-
+                NewData();
                 break;
             case GameState.Over:
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
@@ -293,7 +294,7 @@ public class GameDirector : MonoBehaviour
     {
         if(con)
         {
-            NewData();
+           
             SceneManager.LoadScene("GameScene");
         }
         else

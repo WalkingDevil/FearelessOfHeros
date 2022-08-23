@@ -15,9 +15,11 @@ public class SaveData : MonoBehaviour
         if(!File.Exists(dataPath))//セーブデータを作成
         {
             File.Create(dataPath);
+            Save(savePath);
         }
-        Save(savePath);
+        
         savePath = Load();
+
         if (savePath.fast)
         {
             savePath.level = 1;
