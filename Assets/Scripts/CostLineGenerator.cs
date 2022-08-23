@@ -7,10 +7,12 @@ public class CostLineGenerator : MonoBehaviour
 {
     [SerializeField] GameDirector gameDirector;
     [SerializeField] Image linePrefab;
+    [SerializeField] RectTransform parentRect;
     [SerializeField] RectTransform rect;
-    [SerializeField] float pos;
+    [SerializeField] RectTransform baceRect;
+    private float pos;
     [SerializeField] float diffY;
-    [SerializeField] float diffX;
+    private float diffX;
     private List<float> linePos;
     private int cost;
 
@@ -18,8 +20,9 @@ public class CostLineGenerator : MonoBehaviour
     {
         cost = (int)gameDirector.cost;
         linePos = new List<float>(cost);
+        pos = baceRect.transform.position.x;
+        diffX = rect.sizeDelta.x / cost * rect.transform.lossyScale.x;
         PositionSetting();
-        
     }
 
     private void PositionSetting()
@@ -27,7 +30,6 @@ public class CostLineGenerator : MonoBehaviour
         for(int s = 0; s < cost - 1; s++)
         {
             var num = pos - (diffX * (1 + s));
-            Debug.Log(num);
             linePos.Add(num);
         }
 
@@ -38,7 +40,7 @@ public class CostLineGenerator : MonoBehaviour
     {
         for (int l = 0; l < linePos.Count; l++)
         {
-            Instantiate(linePrefab , new Vector2(linePos[l], this.gameObject.transform.position.y), Quaternion.identity, rect.transform);
+            Instantiate(linePrefab , new Vector2(linePos[l], this.gameObject.transform.position.y), Quaternion.identity, parentRect.transform);
         }
 
     }

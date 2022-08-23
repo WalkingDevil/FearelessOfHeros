@@ -15,13 +15,13 @@ public class StartDirector : MonoBehaviour
 
     private void Awake()
     {
-        savePath = saveData.Load();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        savePath = saveData.Load();
     }
 
     // Update is called once per frame
@@ -44,5 +44,10 @@ public class StartDirector : MonoBehaviour
             saveData.Save(savePath);
             SceneManager.LoadScene("GameScene");
         }
+    }
+
+    public void OnDisplay(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
     }
 }

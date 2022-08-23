@@ -45,12 +45,19 @@ public class LevelUpBonus : MonoBehaviour
     private void SetBonus(int num)
     {
         string massege = null;
+        List<int> list;
         switch (num)
         {
-            case 5:
-                List<int> list = new List<int>(){ 5, 6, 7, 8 };
+            case 3:
+                list = new List<int>() { 5, 6};
                 idDatas.AddRange(list);
-                massege = "新たに4キャラ追加されました。";
+                massege = "新たに2キャラ追加されました。";
+                GenerationText(massege);
+                break;
+            case 5:
+                list = new List<int>(){ 7, 8};
+                idDatas.AddRange(list);
+                massege = "新たに2キャラ追加されました。";
                 GenerationText(massege);
                 break;
             default:

@@ -14,14 +14,7 @@ public class SaveData : MonoBehaviour
 
         if(!File.Exists(dataPath))//セーブデータを作成
         {
-            File.Create(dataPath);
-            Save(savePath);
-        }
-        
-        savePath = Load();
-
-        if (savePath.fast)
-        {
+           // File.Create(dataPath);
             savePath.level = 1;
             savePath.exp = 0;
             savePath.idData = defIdData;
@@ -29,6 +22,9 @@ public class SaveData : MonoBehaviour
             savePath.fast = false;
             Save(savePath);
         }
+        
+        savePath = Load();
+
         
     }
 

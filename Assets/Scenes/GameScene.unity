@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b24b384f4ad8d264899472eba5b82500, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4233,6 +4233,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 603209033}
+  - {fileID: 1311256814}
   - {fileID: 186042437}
   m_Father: {fileID: 1611738206}
   m_RootOrder: 4
@@ -27263,7 +27264,7 @@ GameObject:
   - component: {fileID: 603209034}
   - component: {fileID: 603209035}
   m_Layer: 5
-  m_Name: cost1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27355,10 +27356,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameDirector: {fileID: 191557870}
   linePrefab: {fileID: 2665531783826556369, guid: e58e78900e5519f45bcfc9a04735e1ec, type: 3}
-  rect: {fileID: 92518979}
-  pos: 1071.4
+  parentRect: {fileID: 92518979}
+  rect: {fileID: 603209033}
+  baceRect: {fileID: 1311256814}
   diffY: 10
-  diffX: 37.5
 --- !u!1 &606513274
 GameObject:
   m_ObjectHideFlags: 0
@@ -57847,6 +57848,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311137641}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1311256813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311256814}
+  m_Layer: 5
+  m_Name: 0 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1311256814
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311256813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 92518979}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 45}
+  m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!1 &1312039469
 GameObject:
   m_ObjectHideFlags: 0
@@ -96958,7 +96994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308754563031099671, guid: e58e78900e5519f45bcfc9a04735e1ec, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2308754563031099671, guid: e58e78900e5519f45bcfc9a04735e1ec, type: 3}
       propertyPath: m_AnchorMax.x
