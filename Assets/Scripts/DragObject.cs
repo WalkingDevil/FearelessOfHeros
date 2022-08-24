@@ -8,6 +8,7 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Transform parent;
     private Transform defParent;
     private string hitField = "SelectField";
+    private string serchField = "SerchField";
     public void OnBeginDrag(PointerEventData eventData)
     {
         // ドラッグ前の位置を記憶しておく
@@ -40,6 +41,11 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 {
                     parent = hit.gameObject.transform;
                 }
+            }
+
+            if(hit.gameObject.CompareTag(serchField))
+            {
+                parent = GameObject.Find("Content").transform;
             }
         }
     }
