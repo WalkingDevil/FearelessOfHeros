@@ -19,7 +19,7 @@ public class SaveData : MonoBehaviour
             savePath.exp = 0;
             savePath.idData = defIdData;
             savePath.myDeckData = defIdData;
-            savePath.fast = false;
+            savePath.cost = 6;
             Save(savePath);
         }
         
@@ -73,10 +73,10 @@ public class SaveData : MonoBehaviour
 [Serializable]
 public class SavePath
 {
-    public int level;
+    public int level = 0;
     public float exp = 0;
     public int maxExp = 50;
-    public bool fast = true;
+    public int cost = 6;
     public List<int> idData;
     public List<int> myDeckData;
 }

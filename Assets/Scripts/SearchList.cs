@@ -75,18 +75,14 @@ public class SearchList : MonoBehaviour
             monsterCards = SortSearch(monsterCards, sortNumber);
         }
 
-        if(selectPanel.childCount != 0)
-        {
-
-        }
-
-
         foreach (MonsterCard cards in monsterCards)
         {
             GameObject ob = Instantiate(cards.gameObject, content);
             ob.AddComponent<DragObject>();
         }
 
+
+        scrollbar.value = 1;
     }
 
     //押したボタンを押せなくする

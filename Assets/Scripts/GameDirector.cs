@@ -164,6 +164,7 @@ public class GameDirector : MonoBehaviour
         }
         savePath = saveData.Load();
 
+        maxCost = savePath.cost;
         cost = maxCost;
 
         if (maxExp != 0)
@@ -187,6 +188,7 @@ public class GameDirector : MonoBehaviour
     {
         towerAction = enemyGene.GenerateBs;
         towerUser[0].SetSlider();
+
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
         _level = savePath.level;
