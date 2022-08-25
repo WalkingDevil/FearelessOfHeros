@@ -10,6 +10,7 @@ public class LevelUpBonus : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
     private List<int> idDatas;
+    private int cost;
     private int startLevel = 0;
     [SerializeField] RectTransform content;
     [SerializeField] RectTransform resultPrefab;
@@ -23,6 +24,7 @@ public class LevelUpBonus : MonoBehaviour
         saveData = new SaveData();
         savePath = saveData.Load();
         idDatas = savePath.idData;
+        cost = savePath.cost;
     }
 
     public void LevelBonus(int endLevel = 0)
@@ -59,6 +61,9 @@ public class LevelUpBonus : MonoBehaviour
                 idDatas.AddRange(list);
                 massege = "新たに2キャラ追加されました。";
                 GenerationText(massege);
+                cost++;
+                massege = "コストが１つ増加しました。";
+                GenerationText(massege);
                 break;
             default:
                 Debug.Log(num);
@@ -75,5 +80,10 @@ public class LevelUpBonus : MonoBehaviour
     public List<int> SetIdData()
     {
         return idDatas;
+    }
+
+    public int SetCost()
+    {
+        return cost;
     }
 }

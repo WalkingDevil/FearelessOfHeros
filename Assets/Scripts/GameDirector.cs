@@ -266,6 +266,11 @@ public class GameDirector : MonoBehaviour
         savePath.exp = exp;
         savePath.maxExp = (int)maxExp;
         savePath.idData = levelUpBonus.SetIdData();
+        if (maxCost != levelUpBonus.SetCost())
+        {
+            savePath.cost = levelUpBonus.SetCost();
+        }
+
         saveData.Save(savePath);
 
     }
