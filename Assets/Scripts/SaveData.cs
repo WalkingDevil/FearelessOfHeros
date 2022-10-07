@@ -10,11 +10,11 @@ public class SaveData : MonoBehaviour
     [SerializeField] List<int> defIdData;
     private void Awake()
     {
-        string dataPath = Application.dataPath + "/SaveData.json";
+        string dataPath = DataPath(true);
 
-        if(!File.Exists(dataPath))//セーブデータを作成
+        if (!File.Exists(dataPath))//セーブデータを作成
         {
-           // File.Create(dataPath);
+            // File.Create(dataPath);
             savePath.level = 1;
             savePath.exp = 0;
             savePath.idData = defIdData;
@@ -22,16 +22,16 @@ public class SaveData : MonoBehaviour
             savePath.cost = 6;
             Save(savePath);
         }
-        
+
         savePath = Load();
 
-        
+
     }
 
 
     public SavePath Load()
     {
-        string dataPath = Application.dataPath + "/SaveData.json";
+        string dataPath = DataPath(true);
         StreamReader streamReader;
         streamReader = new StreamReader(dataPath);
         string data = streamReader.ReadToEnd();
@@ -41,7 +41,7 @@ public class SaveData : MonoBehaviour
 
     public void Save(SavePath newSave)
     {
-        string dataPath = Application.dataPath + "/SaveData.json";
+        string dataPath = DataPath();
         string jsonstr = JsonUtility.ToJson(newSave);//受け取ったPlayerDataをJSONに変換
         StreamWriter writer = new StreamWriter(dataPath, false);//初めに指定したデータの保存先を開く
         writer.WriteLine(jsonstr);//JSONデータを書き込み
@@ -63,12 +63,42 @@ public class SaveData : MonoBehaviour
 
     }
 
-  /*  public void SetData(List<MonsterCard> cards)
+    /*  public void SetData(List<MonsterCard> cards)
+      {
+          savePath.myMonsterCards = cards;
+          Save();
+      }*/
+    private String DataPath(bool load = false)
     {
-        savePath.myMonsterCards = cards;
-        Save();
-    }*/
+        string path = null;
+#if UNITY_WEBGL
+        {
+            if (load)
+            {
+                path = Application.streamingAssetsPath + "/SaveData.csv";
+            }
+            else
+            {
+                path = Application.persistentDataPath + "/SaveData.csv";
+            }
+
+        }
+#endif
+
+#if UNITY_EDITOR || UNITY_EDITOR_WIN
+        {
+            {
+                path = Application.dataPath + "/SaveData.json";
+            }
+
+            
+        }
+#endif
+        return path;
+    }
 }
+
+
 
 [Serializable]
 public class SavePath
