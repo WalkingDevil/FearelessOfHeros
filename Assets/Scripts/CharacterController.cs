@@ -19,10 +19,15 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
     private NavMeshAgent agent;
-    private Transform target;
+    [SerializeField] private Transform target;
     private Vector3 latestPos;
     private Vector3 diff;
     private bool detection = false;
+    private float distance = 0;  //ターゲットとの距離
+    private float keepDistance = 10000;  //一番近いターゲットとの距離を保存
+    private float timeCalculate = 1f;  //ターゲットとの距離を再度測りなおすまでの時間
+    private bool timeStart = false;
+    private float timeCount = 0;
     [SerializeField] private List<Transform> targets = new List<Transform>();
 
     //遠距離型用
@@ -94,6 +99,11 @@ public class CharacterController : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(diff); //向きを変更する
             }
         }
+
+        if (timeStart)
+        {
+            timeCount -= Time.deltaTime;
+        }
     }
 
     /// <summary>
@@ -158,7 +168,7 @@ public class CharacterController : MonoBehaviour
             HitDamage(null, other);
         }*/
 
-        if (other.gameObject.tag == enemyTag)
+        if (other.gameObject.tag == enemyTag && other.gameObject != castle[0])
         {
 
             if (other.isTrigger)
@@ -175,29 +185,49 @@ public class CharacterController : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (targets[0] == null)
-            {
-                targets.RemoveAt(0);
-            }
 
+            timeStart = true;
             agent.angularSpeed = 120;
             detection = true;
 
             //castle.RemoveAll(null);
 
-            target = targets[0];  //リストの0番目の敵をターゲットに設定
+            if (timeCount < 0)
+            {
+                for (int i = 0; i < targets.Count; i++)  //敵との距離を測る
+                {
+
+                    if (targets[i] == null)
+                    {
+                        Debug.Log("ミッシング");
+                        targets.RemoveAt(i);
+                    }
+                    else
+                    {
+                        distance = (transform.position - targets[i].position).magnitude;
+
+                        if (distance < keepDistance)  //一番近い敵をターゲットにする
+                        {
+                            target = targets[i];
+                            keepDistance = distance;
+                        }
+                    }
+                }
+                timeCount = timeCalculate;
+            }
+            //target = targets[0];  //リストの0番目の敵をターゲットに設定
         }
 
-        if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
-        {
-            target = castle[0];
-            detection = false;
-            agent.angularSpeed = 0;
-        }
-        else
-        {
-            transform.LookAt(target);
-        }
+        //if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
+        //{
+            //target = castle[0];
+            //detection = false;
+            //agent.angularSpeed = 0;
+        //}
+        //else
+        //{
+            //transform.LookAt(target);
+        //}
 
         if (agent.remainingDistance < stopDistance)  //敵に一定距離近づいたら
         {
@@ -222,6 +252,19 @@ public class CharacterController : MonoBehaviour
         if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
             target = castle[0];
+            detection = false;
+            agent.angularSpeed = 0;
+            timeStart = false;
+            timeCount = 0;
         }
+        else
+        {
+            transform.LookAt(target);
+        }
+
+        //if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
+        //{
+        //target = castle[0];
+        //}
     }
 }
