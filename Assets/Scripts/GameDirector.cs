@@ -37,7 +37,9 @@ public class GameDirector : MonoBehaviour
     [SerializeField] List<CharacterController> allyPrefabs;//–¡•û—p
     [SerializeField] List<CharacterController> enemyPrefabs;//“G—p
     [SerializeField] List<MonsterCard> deckCards;
+    [SerializeField] PlayerController playerController;
 
+    [SerializeField] GameObject myTower;
     string datapath;
 
     Action towerAction = null;
@@ -203,7 +205,7 @@ public class GameDirector : MonoBehaviour
 
     private void Update()
     {
-        if (costSlider.value < costSlider.maxValue)
+        if (costSlider.value < costSlider.maxValue && Time.timeScale != 0)
         {
             CostSlider();
         }
@@ -295,6 +297,14 @@ public class GameDirector : MonoBehaviour
         {
             monsterCard.ResetDisplay();
         }
+    }
+
+    public void BrainMuscleMode()
+    {
+        Time.timeScale = 0;
+        myTower.SetActive(false);
+        playerController.gameObject.SetActive(true);
+        Time.timeScale = 1;
     }
 
     public void ChengeScene(bool con)

@@ -71,6 +71,7 @@ public class SaveData : MonoBehaviour
     private String DataPath(bool load = false)
     {
         string path = null;
+        /*
 #if UNITY_WEBGL
         {
             if (load)
@@ -93,7 +94,8 @@ public class SaveData : MonoBehaviour
 
             
         }
-#endif
+#endif*/
+        path = Application.dataPath + "/SaveData.json";
         return path;
     }
 }

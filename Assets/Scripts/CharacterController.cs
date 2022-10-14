@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] string enemyTag;  //敵のタグ
     [SerializeField] string damageTag;  //敵の攻撃タグ
     [SerializeField] string fireBallTag;
+    [SerializeField] string kingName;
     [SerializeField] List<string> tower = new List<string>();  //敵の城のオブジェクト名
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
@@ -73,13 +74,8 @@ public class CharacterController : MonoBehaviour
         agent.speed = moveSpeed;
         agent.acceleration = moveSpeed;
         agent.angularSpeed = 0;
-        for(int i = 0; i < tower.Count; i++)
-        {
-            if (GameObject.Find(tower[i]))
-            {
-                castle.Add(GameObject.Find(tower[i]).GetComponent<Transform>());
-            }
-        }
+
+        SearchTower(enemy);
         target = castle[0];
     }
 
@@ -104,6 +100,44 @@ public class CharacterController : MonoBehaviour
         {
             timeCount -= Time.deltaTime;
         }
+    }
+
+    /// <summary>
+    /// 目標の城の名前を探す
+    /// </summary>
+    /// <param name="enemy"></param>
+    private void SearchTower(bool enemy)
+    {
+        //敵であるかどうか
+        if(enemy)
+        {
+            if (GameObject.Find(tower[0]))
+            {
+                AddCastle(tower[0]);
+            }
+            else
+            {
+                AddCastle(kingName);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < tower.Count; i++)
+            {
+                if (GameObject.Find(tower[i]))
+                {
+                    AddCastle(tower[i]);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// 目的の城を入れる
+    /// </summary>
+    /// <param name="name"></param>
+    private void AddCastle(string name)
+    {
+        castle.Add(GameObject.Find(name).GetComponent<Transform>());
     }
 
     /// <summary>

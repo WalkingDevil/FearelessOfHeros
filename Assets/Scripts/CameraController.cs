@@ -74,5 +74,11 @@ public class CameraController : MonoBehaviour
         transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); }) ;
     }
 
+    public void CameraMoveAction(Transform transform)
+    {
+        transform.DOMove(transform.position, 1f);
+        transform.DORotateQuaternion(transform.rotation, 1f).OnComplete(() => { endAction(); });
+    }
+
 
 }

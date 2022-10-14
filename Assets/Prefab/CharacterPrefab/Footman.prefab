@@ -212,16 +212,18 @@ MonoBehaviour:
   enemyTag: ally
   damageTag: allyAttack
   fireBallTag: fire
+  kingName: SlimeKing
   tower:
   - allyTower
   moveSpeed: 20
-  stopDistance: 15
+  stopDistance: 20
+  target: {fileID: 0}
   targets: []
   firePrefab: {fileID: 0}
-  throwSpeed: 0
+  throwSpeed: 0.1
   throwPos: 5
   plusCost: 2
-  enemy: 0
+  enemy: 1
 --- !u!195 &5150568867661170660
 NavMeshAgent:
   m_ObjectHideFlags: 0

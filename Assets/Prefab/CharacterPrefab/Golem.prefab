@@ -820,8 +820,9 @@ MonoBehaviour:
   - Fortrees2
   - Fortrees3
   - enemyTower
-  moveSpeed: 5
-  stopDistance: 15
+  moveSpeed: 10
+  stopDistance: 10
+  target: {fileID: 0}
   targets: []
   firePrefab: {fileID: 0}
   throwSpeed: 0
@@ -1153,7 +1154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: earlyAttack
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559478797721, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: earlyDefence
