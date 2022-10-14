@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5476781, g: 0.8551411, b: 0.9225128, a: 1}
+  m_IndirectSpecularColor: {r: 0.5485666, g: 0.85513043, b: 0.9221765, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -60655,14 +60655,14 @@ MonoBehaviour:
   - {x: 0, y: 156, z: 2140}
   - {x: 0, y: 156, z: 1582}
   - {x: 0, y: 10, z: 970}
-  - {x: 0, y: 10, z: 410}
+  - {x: 0, y: 10, z: 490}
   geneListsPlanLast: 050000000f00000028000000460000004b0000005000000055000000
   geneListsPlan1: 050000000f00000028000000460000004b0000005000000055000000
   geneListsPlan2: 0f0000002300000032000000460000004b0000005000000055000000
   geneListsPlan3: 140000002d0000003c000000460000004b0000005000000055000000
   maxValue: 5a0000004f0000004a00000045000000
   _coolTime: 20
-  maxCoolTime: 100
+  maxCoolTime: 25
   maxGenePosX: 80
   minGenePosX: -80
 --- !u!4 &1384673860
