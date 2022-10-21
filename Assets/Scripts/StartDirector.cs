@@ -53,6 +53,7 @@ public class StartDirector : MonoBehaviour
 
     public void OnGacha(int count)
     {
-
+        Gacha.gachaCount = count;
+        SceneManager.LoadScene("GachaScene");
     }
 }
