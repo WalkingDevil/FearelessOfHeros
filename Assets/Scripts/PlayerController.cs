@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     private float timeCount = 0;
     [SerializeField] private List<Transform> targets = new List<Transform>();
 
+    //‰“‹——£Œ^—p
+    [SerializeField] GameObject firePrefab;
+    [SerializeField] float throwSpeed;
+    [SerializeField] float throwPos = 5f;
+
     private bool _dieCheck;
     public bool dieCheck
     {
@@ -113,7 +118,7 @@ public class PlayerController : MonoBehaviour
         dieCheck = userInterface.DamegeValue(user.GetState(1));
     }
 
-  /*  public void FireBall()
+    public void FireBall()
     {
         if (target != null)
         {
@@ -125,7 +130,7 @@ public class PlayerController : MonoBehaviour
             // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
         }
 
-    }*/
+    }
 
     public UserInterface SetMyUserInterface()
     {
