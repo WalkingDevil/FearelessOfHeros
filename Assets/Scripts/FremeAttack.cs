@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FremeAttack : MonoBehaviour
 {
-    [SerializeField] string floorTag;
-    [SerializeField] string enemyTag;
-    [SerializeField] float stopTime;
     private float destoyTime;
     [SerializeField] float maxDestoyTime;
 
@@ -27,18 +24,4 @@ public class FremeAttack : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-  /*  private void OnCollisionEnter(Collision collision)
-    {
-        if(collision != null)
-        {
-            Debug.Log("ddd");
-
-        }  
-
-        if(collision.gameObject.tag == floorTag || collision.gameObject.tag == enemyTag)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("ddaaaw");
-        }
-    }*/
 }

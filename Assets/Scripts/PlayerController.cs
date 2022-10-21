@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] AnimeController animeController;
+    [SerializeField] AnimeController anime;
     [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         userInterface.ChengeState(gameDirector.level);
 
-        // anime.TransitionAnime("run");
+        anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
         agent.acceleration = moveSpeed;
@@ -122,15 +122,27 @@ public class PlayerController : MonoBehaviour
     {
         if (target != null)
         {
-            var worldTarget = transform.TransformDirection(target.localPosition);
-            worldTarget.y += throwPos;
+            //worldTarget.y += throwPos;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
-            //ball.transform.LookAt(target);
-            ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);
-            // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
         }
 
     }
+
+    public void TacticsButton(int tactics)
+    {
+        switch (tactics)
+        {
+            case 0:
+                anime.TransitionAnime("attack");
+                break;
+            case 1:
+                anime.TransitionAnime("magic");
+                break;
+            default:
+                break;
+        }
+    }
+
 
     public UserInterface SetMyUserInterface()
     {

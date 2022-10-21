@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Magic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] ParticleSystem myParticleSystem;
+    [SerializeField] GameObject parent;
+    [SerializeField] GameObject nextParticle;
 
-    // Update is called once per frame
-    void Update()
+    private void OnParticleSystemStopped()
     {
-        
+        if(nextParticle != null)
+        {
+            nextParticle.SetActive(true);
+        }
+        else
+        {
+            Destroy(parent);
+        }
     }
 }
