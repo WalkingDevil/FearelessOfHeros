@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GachaTest : MonoBehaviour
+public class GachaLottery : MonoBehaviour
 {
     public GachaTable[] gachaTables = new GachaTable[3];
     public System.Random random;
 
     const int maxIndex = 3; // レアリティの個数（Normal、Rare、SuperRareで３つ）
-    const int countPerGacha = 10; // 1回に引ける個数
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +20,9 @@ public class GachaTest : MonoBehaviour
         random = new System.Random((int)DateTime.Now.Ticks);
     }
 
-    public List<string> Lottery()
+    public List<int> Lottery(int countPerGacha)
     {
-        List<string> result = new List<string>();
+        List<int> result = new List<int>();
         int totalProbability = 0;
 
         for (int i = 0; i < maxIndex; i++)
@@ -31,18 +30,18 @@ public class GachaTest : MonoBehaviour
             totalProbability += gachaTables[i].probability;
         }
 
-        result = new List<string>();
+        result = new List<int>();
 
         for (int i = 0; i < countPerGacha; i++)
         {
-            string card = getCard(totalProbability);
+            int card = getCard(totalProbability);
             result.Add(card);
         }
 
         return result;
     }
 
-    private string getCard(int allProbability)
+    private int getCard(int allProbability)
     {
         int randamProbability = random.Next(0, allProbability);
         int totalProbability = 0;
@@ -52,11 +51,11 @@ public class GachaTest : MonoBehaviour
             totalProbability += gachaTables[i].probability;
             if (totalProbability >= randamProbability)
             {
-                string id = gachaTables[i].character[random.Next(0, gachaTables[i].character.Count)];
+                int id = gachaTables[i].character[random.Next(0, gachaTables[i].character.Count)];
                 return id;
             }
         }
 
-        return null;
+        return 0;
     }
 }
