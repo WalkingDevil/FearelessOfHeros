@@ -50,4 +50,9 @@ public class StartDirector : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+
+    public void OnGacha(int count)
+    {
+
+    }
 }
