@@ -154,7 +154,9 @@ public class CharacterController : MonoBehaviour
         }
         else if (ob != null)
         {
+          
             root = ob.transform.root.gameObject;//一番親のオブジェクトを渡す
+            Debug.Log(root.name);
         }
         UserInterface user = root.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
         dieCheck = userInterface.DamegeValue(user.GetState(1));

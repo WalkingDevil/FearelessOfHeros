@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimeController anime;
     [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
+    [SerializeField] UserInterface towerUI;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
     [SerializeField] string enemyTag;
