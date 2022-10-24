@@ -82,8 +82,30 @@ public class PlayerController : MonoBehaviour
         {
             agent.SetDestination(target.position);
         }
+        else
+        {
+            target = castle[0];
+        }
 
-        if (!detection)
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                if(hit.collider.tag == enemyTag)
+                {
+                    /*  if (!targets.Contains(hit.collider.gameObject.transform))
+                      {
+                          targets.Add(hit.collider.gameObject.transform);  //ターゲットをリストに設定
+                      }*/
+                    target = hit.collider.gameObject.transform;
+                }
+            }
+        }
+
+
+            if (!detection)
         {
             diff = transform.position - latestPos;   //前回からどこに進んだかをベクトルで取得
             latestPos = transform.position;  //前回のPositionの更新
@@ -173,7 +195,7 @@ public class PlayerController : MonoBehaviour
               HitDamage(null, other);
           }*/
 
-        if (other.gameObject.tag == enemyTag && other.gameObject != castle[0])
+       /* if (other.gameObject.tag == enemyTag && other.gameObject != castle[0])
         {
 
             if (other.isTrigger)
@@ -183,7 +205,7 @@ public class PlayerController : MonoBehaviour
                     targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
                 }
             }
-        }
+        }*/
     }
 
     private void OnTriggerStay(Collider other)
@@ -256,7 +278,6 @@ public class PlayerController : MonoBehaviour
 
         if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
         {
-            target = castle[0];
             detection = false;
             agent.angularSpeed = 0;
             timeStart = false;
