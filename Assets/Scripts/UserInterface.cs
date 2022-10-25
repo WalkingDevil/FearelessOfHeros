@@ -45,7 +45,14 @@ public class UserInterface : MonoBehaviour
     {
         if (cameraLook)
         {
-            transform.LookAt(Camera.main.transform.position);
+           // transform.LookAt(Camera.main.transform.position);
+             var direction = Camera.main.transform.position - transform.position;
+            direction.y = 0;
+
+            var lookRotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 0.1f);
+
+
         }
     }
     /// <summary>

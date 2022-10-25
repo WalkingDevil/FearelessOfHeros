@@ -44,6 +44,8 @@ public class GameDirector : MonoBehaviour
 
     Action towerAction = null;
     [SerializeField] Slider towerSlider;
+    [SerializeField] Slider cameraSlider;
+    [SerializeField] GameObject OwnPlayPanel;
     [SerializeField] GameObject scroll;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
     [SerializeField] int _towerCount = 3;
@@ -277,6 +279,10 @@ public class GameDirector : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// レベルアップ時にステータスを更新させる
+    /// </summary>
+    /// <param name="characters">各キャラクター</param>
     private void StateUpdate(List<CharacterController> characters)
     {
         foreach (CharacterController character in characters)
@@ -299,10 +305,13 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    public void BrainMuscleMode()
+    public void BrainMuscleMode()//ボタンが押されたらモードを変える
     {
         Time.timeScale = 0;
+        OwnPlayPanel.SetActive(true);
+        cameraController.ChengeSelfOperation(true);
         myTower.SetActive(false);
+        cameraSlider.gameObject.SetActive(false);
         playerController.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
