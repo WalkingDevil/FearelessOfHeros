@@ -99,7 +99,17 @@ public class CameraController : MonoBehaviour
         Transform nextTransform = null;
         if(over)
         {
-            nextTransform = overPosition;
+            if(selfOperation)
+            {
+                Transform opePos = null;
+                opePos.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 15f);
+                opePos.rotation = overPosition.rotation;
+                nextTransform = opePos;
+            }
+            else
+            {
+                nextTransform = overPosition;
+            }
         }
         else
         {

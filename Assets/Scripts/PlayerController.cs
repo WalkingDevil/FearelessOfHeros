@@ -49,7 +49,8 @@ public class PlayerController : MonoBehaviour
 
                 if (_dieCheck)
                 {
-                  //  anime.TransitionAnime("die");
+                    anime.TransitionAnime("die");
+                    gameDirector.loadState = GameDirector.GameState.Over;
                 }
             }
         }
