@@ -35,7 +35,7 @@ public class UserInterface : MonoBehaviour
     {
         if (gach)
         {
-            gameObject.GetComponentInChildren<GameObject>().SetActive(false);
+            gameObject.GetComponentInChildren<Slider>().gameObject.SetActive(false);
         }
 
 
