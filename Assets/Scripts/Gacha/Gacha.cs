@@ -58,8 +58,9 @@ public class Gacha : MonoBehaviour
             Destroy(game);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         cardPanel.SetActive(true);
+        yield return new WaitForSeconds(1f);
 
         foreach (MonsterCard obj in cards)
         {
