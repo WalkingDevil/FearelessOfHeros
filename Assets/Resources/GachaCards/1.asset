@@ -12,11 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10adc24ec8b4c86469ffa6bc463f415f, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  name: Nomal
+  name: 0
   probability: 80
-  character:
-  - Nomal1
-  - Nomal2
-  - Nomal3
-  - Nomal4
-  - Nomal5
+  character: 0100000002000000030000000400000005000000

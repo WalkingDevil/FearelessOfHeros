@@ -11,7 +11,7 @@ public class GachaLottery : MonoBehaviour
     const int maxIndex = 3; // レアリティの個数（Normal、Rare、SuperRareで３つ）
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < maxIndex; i++)
         {

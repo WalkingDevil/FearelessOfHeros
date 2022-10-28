@@ -158,8 +158,8 @@ Camera:
   m_GameObject: {fileID: 132723371}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132723371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -30.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639488483
 RectTransform:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1744495857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -967,7 +967,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gachaTest: {fileID: 160558324}
-  character: []
+  character: 
+  monsterCards:
+  - {fileID: 3420114202193304219, guid: ae3975bb81caff740a892b704a2dae22, type: 3}
+  - {fileID: 4694697869057934146, guid: bd707f0c41651004db43e1389ca96cf9, type: 3}
+  - {fileID: 668663938319391860, guid: 00b0540f8839b2248935d5b0d736fe74, type: 3}
+  - {fileID: 6907874816822663019, guid: 12f758243deffe549a8920ceb8e07004, type: 3}
+  - {fileID: 2697118209980564079, guid: 09620236b1338c14fa0a9f0c7979de63, type: 3}
+  - {fileID: 7191979371883756458, guid: ac0558a26bacfd9429e33766b899e221, type: 3}
+  - {fileID: 2337965972793089131, guid: 06554820e55c4f242b4f397ad8346c54, type: 3}
+  - {fileID: 5043326826790438303, guid: 8089b5f4050e9ee4ea9c78439f18dccc, type: 3}
 --- !u!4 &2016357827
 Transform:
   m_ObjectHideFlags: 0

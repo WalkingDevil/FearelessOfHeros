@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10adc24ec8b4c86469ffa6bc463f415f, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  name: Rare
+  name: 0
   probability: 17
-  character:
-  - Rare1
-  - Rare2
-  - Rare3
-  - Rare4
+  character: 0b0000000c0000000d0000000e000000
