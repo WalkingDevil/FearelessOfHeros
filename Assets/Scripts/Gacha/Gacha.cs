@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class Gacha : MonoBehaviour
 {
     [SerializeField] GachaLottery gachaTest;
+    [SerializeField] GameObject cardPanel;
     public List<int> character = new List<int>();
     [SerializeField] private List<MonsterCard> monsterCards = new List<MonsterCard>();
     public List<GameObject> objects = new List<GameObject>();
@@ -39,27 +40,32 @@ public class Gacha : MonoBehaviour
             }
         }
 
-        GachaInstance();
+        StartCoroutine("Performance");
 
-    }
-
-    void GachaInstance()
-    {
-        foreach(GameObject obj in objects)
-        {
-            GameObject game = Instantiate(obj);
-            game.GetComponent<CharacterController>().enabled = false;
-            game.GetComponent<NavMeshAgent>().enabled = false;
-            game.GetComponent<BoxCollider>().enabled = false;
-            game.GetComponentInChildren<Canvas>().gameObject.SetActive(false);
-            Destroy(game.GetComponent<Rigidbody>());
-            
-        }
     }
 
     IEnumerator Performance()
     {
+        foreach (GameObject obj in objects)
+        {
+            GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+            game.GetComponentInChildren<Canvas>().GetComponent<UserInterface>().ChengeGach();
+            game.GetComponent<CharacterController>().enabled = false;
+            game.GetComponent<NavMeshAgent>().enabled = false;
+            game.GetComponent<BoxCollider>().enabled = false;
+            Destroy(game.GetComponent<Rigidbody>());
+            yield return new WaitForSeconds(3f);
+            Destroy(game);
+        }
 
-        yield return null;
+        yield return new WaitForSeconds(2f);
+        cardPanel.SetActive(true);
+
+        foreach (MonsterCard obj in cards)
+        {
+            MonsterCard card = Instantiate(obj) as MonsterCard;
+            card.transform.parent = cardPanel.transform;
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
