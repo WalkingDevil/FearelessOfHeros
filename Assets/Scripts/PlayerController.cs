@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] TargetDisplay display;
     [SerializeField] AnimeController anime;
     [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
@@ -21,7 +22,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;  //ˆÚ“®‘¬“x
     [SerializeField] float stopDistance;  //UŒ‚‚ğŠJn‚·‚é‚Æ‚«‚Ì“G‚Æ‚Ì‹——£
     private NavMeshAgent agent;
-    [SerializeField] private Transform target;
+
+    private Transform _target;
+    public Transform target
+    {
+        get { return _target; }
+        set
+        {
+            if(_target != value)
+            {
+                _target = value;
+            }
+        }
+    }
     private Vector3 latestPos;
     private Vector3 diff;
     private bool detection = false;
