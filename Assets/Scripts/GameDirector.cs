@@ -44,6 +44,7 @@ public class GameDirector : MonoBehaviour
     string datapath;
 
     Action towerAction = null;
+    [SerializeField] Button sortieButton;//出撃用ボタン
     [SerializeField] Slider towerSlider;
     [SerializeField] Slider cameraSlider;
     [SerializeField] GameObject OwnPlayPanel;
@@ -308,7 +309,7 @@ public class GameDirector : MonoBehaviour
 
     public IEnumerator BarinChenge()
     {
-        //Time.timeScale = 0;
+        sortieButton.gameObject.SetActive(false);
         cameraController.FinishMove(true);
         cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる
         yield return new WaitForSeconds(2f);
@@ -320,8 +321,6 @@ public class GameDirector : MonoBehaviour
         cameraController.ChengeSelfOperation(true);
 
         cameraSlider.gameObject.SetActive(false);
-
-        Time.timeScale = 1;
 
         yield return null;
     }
