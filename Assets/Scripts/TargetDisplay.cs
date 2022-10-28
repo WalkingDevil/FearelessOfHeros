@@ -15,4 +15,9 @@ public class TargetDisplay : MonoBehaviour
     {
         
     }
+
+    public void GetTarget()
+    {
+
+    }
 }
