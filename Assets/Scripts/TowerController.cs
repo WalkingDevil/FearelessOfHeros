@@ -91,4 +91,10 @@ public class TowerController : MonoBehaviour
             HitDamage(null, other);
         }
     }
+
+    //モード変更時に行うアニメーション
+    public void ChengeMode()
+    {
+        animeController.TransitionAnime("chenge");
+    }
 }

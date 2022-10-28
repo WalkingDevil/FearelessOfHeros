@@ -21,7 +21,7 @@ public class UserInterface : MonoBehaviour
     [SerializeField] bool cameraLook = true;//カメラを見させるか
     [SerializeField] bool tower = false;//このHPがタワーであるかどうか
 
-
+    private bool gach = false;
     private int expRate = 5;
 
     private void Awake()
@@ -33,6 +33,13 @@ public class UserInterface : MonoBehaviour
 
     void Start()
     {
+        if (gach)
+        {
+            gameObject.SetActive(false);
+        }
+
+
+
         if (!tower)
         {
             statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
@@ -81,6 +88,12 @@ public class UserInterface : MonoBehaviour
             default:
                 return 1;
         }
+    }
+
+    //ガチャの時に表示をOffにする
+    public void ChengeGach()
+    {
+        gach = true;
     }
 
     public bool DamegeValue(int damege)

@@ -28,6 +28,7 @@ public class GameDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
+    [SerializeField] TowerController myTower;
     [SerializeField] LevelUpBonus levelUpBonus;
     [SerializeField] ResultManeger resultManeger;
     [SerializeField] CameraController cameraController;
@@ -39,7 +40,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] List<MonsterCard> deckCards;
     [SerializeField] PlayerController playerController;
 
-    [SerializeField] GameObject myTower;
+
     string datapath;
 
     Action towerAction = null;
@@ -305,15 +306,30 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    public void BrainMuscleMode()//ボタンが押されたらモードを変える
+    public IEnumerator BarinChenge()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        cameraController.FinishMove(true);
+        cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる
+        yield return new WaitForSeconds(2f);
+        playerController.gameObject.SetActive(true);
+        myTower.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        cameraController.CameraMoveAction();
         OwnPlayPanel.SetActive(true);
         cameraController.ChengeSelfOperation(true);
-        myTower.SetActive(false);
+
         cameraSlider.gameObject.SetActive(false);
-        playerController.gameObject.SetActive(true);
+
         Time.timeScale = 1;
+
+        yield return null;
+    }
+
+    public void BrainMuscleMode()//ボタンが押されたらモードを変える
+    {
+        StartCoroutine(BarinChenge());
+
     }
 
     public void ChengeScene(bool con)

@@ -17,10 +17,13 @@ public class CameraController : MonoBehaviour
     [SerializeField] float maxHeight;//最大のカメラの高さ
     [SerializeField] float criteriaZ;//基準のZ座標
 
+    
     [SerializeField] Transform overPosition;
     [SerializeField] Transform clearPosition;
     [SerializeField] float range = 20f;//差の範囲
     [SerializeField] float moveSpeed = 0.1f;//動かすスピード
+    private Vector3 defPos;//初期位置
+    private Quaternion defRot;//初期位置
     private float screenHeigth;//スクリーンの高さ
     private Vector3 distance;//Playerとカメラの差
     public Action endAction = null;
@@ -31,6 +34,8 @@ public class CameraController : MonoBehaviour
     {
         screenHeigth = Screen.height / 2;//スクリーンの中点を入れる
         distance = transform.position - player.gameObject.transform.position;
+        defPos = transform.position;
+        defRot = transform.rotation;
     }
 
     private void Update()
@@ -120,10 +125,12 @@ public class CameraController : MonoBehaviour
         transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); }) ;
     }
 
-    public void CameraMoveAction(Transform transform)
+    //位置を元に戻す
+    public void CameraMoveAction()
     {
-        transform.DOMove(transform.position, 1f);
-        transform.DORotateQuaternion(transform.rotation, 1f).OnComplete(() => { endAction(); });
+        Debug.Log(defPos);
+        transform.DOMove(defPos, 0.5f);
+        transform.DORotateQuaternion(defRot, 0.5f).OnComplete(() => { endAction = null; });
     }
 
 
