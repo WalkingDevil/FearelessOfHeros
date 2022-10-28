@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
             if(_target != value)
             {
                 _target = value;
+                display.GetTarget(_target);
             }
         }
     }

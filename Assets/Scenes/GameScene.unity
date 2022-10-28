@@ -7341,7 +7341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0844d862a6edd42b7a5479dbdd6689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display: {fileID: 0}
+  display: {fileID: 1274801405}
   anime: {fileID: 177082884}
   gameDirector: {fileID: 191557870}
   userInterface: {fileID: 182872694}
@@ -8602,6 +8602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a87485cc324a3549a75bf1b0267a59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetDisplay: {fileID: 1274801405}
   myTower: {fileID: 1923430002}
   levelUpBonus: {fileID: 1846510149}
   resultManeger: {fileID: 1846510148}
@@ -56727,14 +56728,13 @@ GameObject:
   - component: {fileID: 1274801403}
   - component: {fileID: 1274801402}
   - component: {fileID: 1274801405}
-  - component: {fileID: 1274801404}
   m_Layer: 5
   m_Name: target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1274801401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56751,7 +56751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -476.8178, y: 19.217102}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 140, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274801402
@@ -56792,18 +56792,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274801400}
   m_CullTransparentMesh: 1
---- !u!114 &1274801404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274801400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d5de12baab2944d91c02db4538dff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1274801405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56816,6 +56804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d5de12baab2944d91c02db4538dff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tageImage: {fileID: 1274801401}
 --- !u!1 &1275159074
 GameObject:
   m_ObjectHideFlags: 0

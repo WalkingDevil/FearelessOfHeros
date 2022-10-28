@@ -28,6 +28,7 @@ public class GameDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
+    [SerializeField] TargetDisplay targetDisplay;
     [SerializeField] TowerController myTower;
     [SerializeField] LevelUpBonus levelUpBonus;
     [SerializeField] ResultManeger resultManeger;
@@ -319,6 +320,7 @@ public class GameDirector : MonoBehaviour
         cameraController.CameraMoveAction();
         OwnPlayPanel.SetActive(true);
         cameraController.ChengeSelfOperation(true);
+        targetDisplay.gameObject.SetActive(true);
 
         cameraSlider.gameObject.SetActive(false);
 
