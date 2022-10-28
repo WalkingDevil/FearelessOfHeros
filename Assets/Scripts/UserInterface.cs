@@ -35,7 +35,7 @@ public class UserInterface : MonoBehaviour
     {
         if (gach)
         {
-            gameObject.SetActive(false);
+            gameObject.GetComponentInChildren<GameObject>().SetActive(false);
         }
 
 
