@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CharacterGenerator : MonoBehaviour
 {
     [SerializeField] GameDirector gameDirector;
+    [SerializeField] PlayerController player;
     [SerializeField] List<CharacterController> geneObject;//生成するオブジェクト
     [SerializeField] List<CharacterController> bsObject;//ボスの生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
@@ -57,6 +58,7 @@ public class CharacterGenerator : MonoBehaviour
     public void GenerateChara(int obNum)
     {
         int genNum = 0;
+        Vector3 gene = Vector3.zero;
         CharacterController ob = geneObject[obNum];
         if (maxCoolTime != 0)//敵である場合
         {
@@ -79,9 +81,18 @@ public class CharacterGenerator : MonoBehaviour
         }
 
         //生成位置をX座標ランダムで決める
-        Vector3 gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
+        if(maxCoolTime == 0 && gameDirector.selfOperation)
+        {
+            Vector3 playerPos = player.gameObject.transform.position;
+            gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), playerPos.y, playerPos.z);
+        }
+        else
+        {
+            gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
+        }
 
-            Instantiate(ob.gameObject, gene, Quaternion.identity);
+
+        Instantiate(ob.gameObject, gene, Quaternion.identity);
         
 
     }

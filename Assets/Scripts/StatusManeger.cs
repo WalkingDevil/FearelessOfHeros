@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StatusManeger
 {
-    public StatusManeger(int maxhp, int attack, int defence, int cost = 0)
+    public StatusManeger(int maxhp, int attack, float defence, int cost = 0)
     {
         this.maxHp = maxhp;
         this.attack = attack;
@@ -55,8 +55,8 @@ public class StatusManeger
         }
     }
 
-    private int _defence;
-    public int defence
+    private float _defence;
+    public float defence
     {
         get { return _defence; }
         set
@@ -81,7 +81,7 @@ public class StatusManeger
         }
     }
 
-    public float DamageCalculation(int damege)
+    public float DamageCalculation(float damege)
     {
         var num = damege / defence;
 

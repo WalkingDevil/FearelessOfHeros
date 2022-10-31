@@ -121,6 +121,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] string lv;
     [SerializeField] float chengeMaxHp;
     [SerializeField] float _maxExp;
+    public bool selfOperation = false;//自操作状態か
     public float maxExp
     {
         get { return _maxExp; }
@@ -228,6 +229,7 @@ public class GameDirector : MonoBehaviour
             case GameState.Pouse:
                 break;
             case GameState.Clear:
+                cameraController.ChengeSelfOperation(false);
                 cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる
                 levelUpBonus.LevelBonus(level);
                 scroll.SetActive(true);
@@ -237,6 +239,7 @@ public class GameDirector : MonoBehaviour
                 NewData();
                 break;
             case GameState.Over:
+                cameraController.ChengeSelfOperation(false);
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
                 cameraController.FinishMove(true);
                 enemyGene.gameObject.SetActive(false);
@@ -310,6 +313,7 @@ public class GameDirector : MonoBehaviour
 
     public IEnumerator BarinChenge()
     {
+        selfOperation = true;
         sortieButton.gameObject.SetActive(false);
         cameraController.FinishMove(true);
         cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる

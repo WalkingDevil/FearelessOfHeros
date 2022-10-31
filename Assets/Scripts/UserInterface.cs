@@ -12,8 +12,8 @@ public class UserInterface : MonoBehaviour
     private int maxHp;
     [SerializeField] int earlyAttack;
     private int attack;
-    [SerializeField] int earlyDefence;
-    private int defence;
+    [SerializeField] float earlyDefence;
+    private float defence;
     [SerializeField] int cost;
     private int level = 1;
     [SerializeField] float magnification = 1.1f;
@@ -71,7 +71,7 @@ public class UserInterface : MonoBehaviour
     /// </summary>
     /// <param name="stateNum"></param>
     /// <returns></returns>
-    public int GetState(int stateNum = 0)
+    public float GetState(int stateNum = 0)
     {
         switch (stateNum)
         {
@@ -96,7 +96,7 @@ public class UserInterface : MonoBehaviour
         gach = true;
     }
 
-    public bool DamegeValue(int damege)
+    public bool DamegeValue(float damege)
     {
         slider.value = statusManeger.DamageCalculation(damege);
         return slider.value <= 0;

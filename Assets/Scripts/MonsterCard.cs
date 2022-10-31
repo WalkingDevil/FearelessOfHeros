@@ -57,10 +57,10 @@ public class MonsterCard : MonoBehaviour
     private void NewState()
     {
         user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
-        maxHp = user.GetState(0);
-        attack = user.GetState(1);
-        defence = user.GetState(2);
-        cost = user.GetState(3);
+        maxHp = (int)user.GetState(0);
+        attack = (int)user.GetState(1);
+        defence = (int)user.GetState(2);
+        cost = (int)user.GetState(3);
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
         costText.text = cost.ToString();//コストを表示
 
@@ -135,9 +135,9 @@ public class MonsterCard : MonoBehaviour
 
     public void ResetDisplay()
     {
-        maxHp = user.GetState(4);
-        attack = user.GetState(1);
-        defence = user.GetState(2);
+        maxHp = (int)user.GetState(4);
+        attack = (int)user.GetState(1);
+        defence = (int)user.GetState(2);
 
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
     }
