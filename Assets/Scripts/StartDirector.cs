@@ -13,23 +13,11 @@ public class StartDirector : MonoBehaviour
     [SerializeField] int deckCount = 4;
     [SerializeField] RectTransform selectPanel;
 
-    private void Awake()
-    {
-        
-    }
 
-    // Start is called before the first frame update
     void Start()
     {
         savePath = saveData.Load();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Sortie()
     {
         List<int> list = new List<int>();

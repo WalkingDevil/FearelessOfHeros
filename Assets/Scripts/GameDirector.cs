@@ -28,6 +28,7 @@ public class GameDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
+    private AudioController audioController;
     [SerializeField] TargetDisplay targetDisplay;
     [SerializeField] TowerController myTower;
     [SerializeField] LevelUpBonus levelUpBonus;
@@ -51,7 +52,10 @@ public class GameDirector : MonoBehaviour
     [SerializeField] GameObject OwnPlayPanel;
     [SerializeField] GameObject scroll;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
+    [SerializeField] AudioSource bgm;
+    [SerializeField] List<AudioClip> bgms;
     [SerializeField] int _towerCount = 3;
+    [SerializeField] float audioVolume = 0.5f;
     public int towerCount
     {
         get { return _towerCount; }
@@ -194,17 +198,31 @@ public class GameDirector : MonoBehaviour
 
     private void Start()
     {
+        //Audioの初期設定
+        audioController = new AudioController(bgm, bgms[0]);
+        audioController.ChengePlayAudio(true);
+        audioController.SettingVolume(audioVolume);
+
+        //敵HPの設定
         towerAction = enemyGene.GenerateBs;
         towerUser[0].SetSlider();
 
+        //コストの設定
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
+
+        //レベルの設定
         _level = savePath.level;
+        levelUpBonus.SetStartLevel(level);
+        levelText.text = lv + level.ToString();
+
+        //敵、味方のステータスをレベルに応じた設定
         StateUpdate(allyPrefabs);
         StateUpdate(enemyPrefabs);
-        levelUpBonus.SetStartLevel(level);
+        
+        //経験値の設定
         expSlider.maxValue = maxExp;
-        levelText.text = lv + level.ToString();
+        
         
 
     }
@@ -222,12 +240,6 @@ public class GameDirector : MonoBehaviour
     {
         switch(loadState)
         {
-            case GameState.Ready:
-                break;
-            case GameState.InGame:
-                break;
-            case GameState.Pouse:
-                break;
             case GameState.Clear:
                 cameraController.ChengeSelfOperation(false);
                 cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる
@@ -236,6 +248,7 @@ public class GameDirector : MonoBehaviour
                 cameraController.FinishMove(false);         
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
+                OwnPlayPanel.SetActive(false);
                 NewData();
                 break;
             case GameState.Over:
@@ -244,6 +257,7 @@ public class GameDirector : MonoBehaviour
                 cameraController.FinishMove(true);
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
+                OwnPlayPanel.SetActive(false);
                 break;
             default:
                 break;
@@ -270,6 +284,9 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// データの更新
+    /// </summary>
     private void NewData()
     {
         savePath.level = level;
@@ -293,7 +310,8 @@ public class GameDirector : MonoBehaviour
     {
         foreach (CharacterController character in characters)
         {
-            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
+            //UserInterfaceスクリプトを受け取る
+            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();
             user.ChengeState(level);
         }
     }
@@ -303,6 +321,9 @@ public class GameDirector : MonoBehaviour
         deckCards.Add(card);
     }
 
+    /// <summary>
+    /// レベルアップ時にデッキのステータスを変更
+    /// </summary>
     private void DisplayUpdate()
     {
         foreach(MonsterCard monsterCard in deckCards)
@@ -311,23 +332,35 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    //モードチェンジ時
     public IEnumerator BarinChenge()
     {
         selfOperation = true;
         sortieButton.gameObject.SetActive(false);
-        cameraController.FinishMove(true);
+
+        audioController.ChengePlayAudio(false);//BGMを止める
+
+        cameraController.FinishMove(true);//カメラを移動させる
         cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる
+
         yield return new WaitForSeconds(2f);
+
         playerController.gameObject.SetActive(true);
         myTower.gameObject.SetActive(false);
+
         yield return new WaitForSeconds(1f);
+
+        //カメラをもとの位置に
         cameraController.CameraMoveAction();
+
         OwnPlayPanel.SetActive(true);
         cameraController.ChengeSelfOperation(true);
         targetDisplay.gameObject.SetActive(true);
-
         cameraSlider.gameObject.SetActive(false);
 
+        //BGMを変えて再生
+        audioController.ChengeClip(bgms[1]);
+        audioController.ChengePlayAudio(true);
         yield return null;
     }
 
