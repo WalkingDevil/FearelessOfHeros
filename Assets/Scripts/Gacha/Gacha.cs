@@ -11,11 +11,14 @@ public class Gacha : MonoBehaviour
     [SerializeField] GameObject effectObj;  // モンスター登場時のエフェクト
     [SerializeField] GameObject skipBotton;  // スキップボタン
     [SerializeField] GameObject titleBotton;  // タイトルに戻るボタン
+    [SerializeField] float effectTime = 1f;  // エフェクトを表示する時間
+    [SerializeField] int monsterDisplayTime = 3;  // モンスターの表示時間
+    [SerializeField] float cardDisplayIntervalTime = 0.5f;  // カードを表示する間隔の時間
+    static public int gachaCount = 10;  //ガチャの回数
     public List<int> character = new List<int>();  // ガチャの抽選結果
     [SerializeField] private List<MonsterCard> monsterCards = new List<MonsterCard>();  // モンスターの種類
     public List<GameObject> objects = new List<GameObject>();  // 抽選されたモンスター
     public List<MonsterCard> cards = new List<MonsterCard>();  // 抽選されたモンスターカード
-    static public int gachaCount = 10;  //ガチャの回数
     private bool skip = false;  // スキップするかどうか
     private bool skippable = false;  // スキップ可能か
     // Start is called before the first frame update
@@ -38,7 +41,7 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    public void BackTitle()
+    public void BackTitle()  // タイトルシーンに戻るボタン
     {
         SceneManager.LoadScene("TitleScene");
     }
@@ -93,7 +96,7 @@ public class Gacha : MonoBehaviour
         {
             MonsterCard card = Instantiate(obj) as MonsterCard;
             card.transform.parent = cardPanel.transform;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(cardDisplayIntervalTime);
         }
 
         titleBotton.SetActive(true);
@@ -102,7 +105,7 @@ public class Gacha : MonoBehaviour
     IEnumerator Effect()  // モンスター登場時のエフェクト
     {
         GameObject effect = Instantiate(effectObj, new Vector3(0,5,0), Quaternion.identity) as GameObject;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(effectTime);
         Destroy(effect);
     }
 

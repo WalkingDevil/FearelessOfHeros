@@ -1087,6 +1087,7 @@ MonoBehaviour:
   effectObj: {fileID: 100012, guid: a905d8e5159ffeb46baa8d2a7624717f, type: 3}
   skipBotton: {fileID: 1974416460}
   titleBotton: {fileID: 1435850657}
+  effectTime: 1
   character: 
   monsterCards:
   - {fileID: 3420114202193304219, guid: ae3975bb81caff740a892b704a2dae22, type: 3}
@@ -1099,8 +1100,6 @@ MonoBehaviour:
   - {fileID: 5043326826790438303, guid: 8089b5f4050e9ee4ea9c78439f18dccc, type: 3}
   objects: []
   cards: []
-  skip: 0
-  skippable: 0
 --- !u!4 &2016357827
 Transform:
   m_ObjectHideFlags: 0
