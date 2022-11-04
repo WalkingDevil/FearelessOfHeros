@@ -76,6 +76,11 @@ public class Gacha : MonoBehaviour
             game.GetComponent<BoxCollider>().enabled = false;
             Destroy(game.GetComponent<Rigidbody>());
             yield return StartCoroutine(PerformanceSkip(3));
+            skippable = false;
+            if (skip)
+            {
+                skip = false;
+            }
             Destroy(game);
         }
 
@@ -110,13 +115,12 @@ public class Gacha : MonoBehaviour
     {
         for(int i = 0; i < count; i++)
         {
-            if (skip)
+            if (skip && skippable)
             {
                 skip = false;
                 break;
             }
             yield return new WaitForSeconds(1f);
         }
-        skippable = false;
     }
 }
