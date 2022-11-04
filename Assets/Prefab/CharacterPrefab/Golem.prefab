@@ -795,6 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47394212e16d94d9a7672c6e89d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 445165010422245356}
   animator: {fileID: 539477427210637508}
 --- !u!114 &445364273073369272
 MonoBehaviour:
@@ -815,6 +816,7 @@ MonoBehaviour:
   enemyTag: enemy
   damageTag: enemyAttack
   fireBallTag: fireEnemy
+  kingName: 
   tower:
   - Fortrees1
   - Fortrees2

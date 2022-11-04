@@ -8,6 +8,7 @@ using DG.Tweening;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] PlayerController player;
+    [SerializeField] Transform playerDiePos;
 
     [SerializeField] float defPosY;//標準のY座標
     [SerializeField] float defPosZ;//標準のZ座標
@@ -45,12 +46,11 @@ public class CameraController : MonoBehaviour
             //Playerをスクリーン座標に変換
             Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(player.gameObject.transform.position);
             Debug.Log(playerScreenPoint.y - screenHeigth);
-            //Playerと中心の差を絶対値で返し、決めた範囲以内であるか
-         //   if (Mathf.Abs(playerScreenPoint.y - screenHeigth) <= range)
-             if (playerScreenPoint.y - screenHeigth >= range)
-                {
-              Vector3 move = Vector3.Lerp(transform.position, player.gameObject.transform.position + distance, moveSpeed * Time.deltaTime);
-              transform.position = new Vector3(transform.position.x, move.y, move.z);
+            //Playerと中心の差が、決めた範囲より上にいるか
+            if (playerScreenPoint.y - screenHeigth >= range)
+            {
+                Vector3 move = Vector3.Lerp(transform.position, player.gameObject.transform.position + distance, moveSpeed * Time.deltaTime);
+                transform.position = new Vector3(transform.position.x, move.y, move.z);
             }
         }
     }
@@ -99,17 +99,15 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void FinishMove(bool over)
+    public void FinishMove(bool over, bool stop = false)
     {
         Transform nextTransform = null;
         if(over)
         {
-            if(selfOperation)
+            Debug.Log(5665);
+            if (stop)
             {
-                Transform opePos = null;
-                opePos.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 15f);
-                opePos.rotation = overPosition.rotation;
-                nextTransform = opePos;
+                nextTransform = playerDiePos;
             }
             else
             {

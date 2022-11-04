@@ -807,6 +807,7 @@ MonoBehaviour:
   enemyTag: enemy
   damageTag: enemyAttack
   fireBallTag: fireEnemy
+  kingName: 
   tower:
   - Fortrees1
   - Fortrees2
@@ -814,6 +815,7 @@ MonoBehaviour:
   - enemyTower
   moveSpeed: 20
   stopDistance: 10
+  target: {fileID: 0}
   targets: []
   firePrefab: {fileID: 0}
   throwSpeed: 0
@@ -832,6 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47394212e16d94d9a7672c6e89d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 7552744252707857145}
   animator: {fileID: 7552744252717338941}
 --- !u!195 &8081376019020259264
 NavMeshAgent:

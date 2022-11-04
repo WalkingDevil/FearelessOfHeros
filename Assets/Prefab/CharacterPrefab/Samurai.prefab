@@ -1244,6 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47394212e16d94d9a7672c6e89d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 9184710335937641163}
   animator: {fileID: 9184710335976306341}
 --- !u!114 &9184710335976306345
 MonoBehaviour:
@@ -1267,8 +1268,9 @@ MonoBehaviour:
   kingName: SlimeKing
   tower:
   - allyTower
+  - SlimeKing
   moveSpeed: 20
-  stopDistance: 10
+  stopDistance: 20
   target: {fileID: 0}
   targets: []
   firePrefab: {fileID: 0}
@@ -3268,6 +3270,10 @@ PrefabInstance:
     - target: {fileID: 4413076559478797725, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413076559478797727, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4413076559566956388, guid: a7a2a75f594fce141a9af50afcd6022f, type: 3}
       propertyPath: m_Sprite

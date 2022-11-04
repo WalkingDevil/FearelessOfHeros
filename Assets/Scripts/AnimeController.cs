@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimeController : MonoBehaviour
 {
+    [SerializeField] GameObject monster;
     [SerializeField] Animator animator;
 
     /// <summary>
@@ -17,7 +18,7 @@ public class AnimeController : MonoBehaviour
 
     public void DieIvent()
     {
-        Destroy(this.transform.root.gameObject);
+        Destroy(monster.gameObject);
     }
 
 }

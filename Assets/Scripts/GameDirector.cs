@@ -254,7 +254,7 @@ public class GameDirector : MonoBehaviour
             case GameState.Over:
                 cameraController.ChengeSelfOperation(false);
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
-                cameraController.FinishMove(true);
+                cameraController.FinishMove(true, selfOperation);
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
                 OwnPlayPanel.SetActive(false);

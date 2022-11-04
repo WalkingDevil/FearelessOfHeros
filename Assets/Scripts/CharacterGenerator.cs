@@ -12,6 +12,10 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] List<CharacterController> bsObject;//ボスの生成するオブジェクト
     [SerializeField] List<Vector3> genePos;//生成する位置
 
+    private AudioController audioController;
+    [SerializeField] AudioSource seSource;
+    [SerializeField] AudioClip seClip;
+    [SerializeField] bool enemy = false;
     //生成確率
     [SerializeField] List<int> geneListsPlanLast = new List<int>(7);
     [SerializeField] List<int> geneListsPlan1 = new List<int>(7);
@@ -30,19 +34,24 @@ public class CharacterGenerator : MonoBehaviour
 
             if (_coolTime <= 0)
             {
-                _coolTime = maxCoolTime;
+                _coolTime = maxCoolTimes[gameDirector.towerCount];
                 GenerateChara(GetRandom(0, geneObject.Count));
             }
         }
     }
 
-    [SerializeField] float maxCoolTime;//最大値のクールタイム
+    [SerializeField] List<float> maxCoolTimes;//最大値のクールタイム
     [SerializeField] int maxGenePosX;//最大値の生成位置のX座標
     [SerializeField] int minGenePosX;//最小値の生成位置のX座標
 
+    private void Start()
+    {
+        audioController = new AudioController(seSource, seClip);
+    }
+
     void Update()
     {
-        if (maxCoolTime != 0)
+        if (enemy)
         {
             if (coolTime > 0)
             {
@@ -51,16 +60,21 @@ public class CharacterGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 生成するモンスターの一覧を取得
+    /// </summary>
+    /// <param name="monsters"></param>
     public void GetGenerationObject(CharacterController monsters)
     {
         geneObject.Add(monsters);
     }
+
     public void GenerateChara(int obNum)
     {
         int genNum = 0;
         Vector3 gene = Vector3.zero;
         CharacterController ob = geneObject[obNum];
-        if (maxCoolTime != 0)//敵である場合
+        if (enemy)//敵である場合
         {
             genNum = gameDirector.towerCount;
             ob = GenereationObject(genNum);
@@ -81,7 +95,7 @@ public class CharacterGenerator : MonoBehaviour
         }
 
         //生成位置をX座標ランダムで決める
-        if(maxCoolTime == 0 && gameDirector.selfOperation)
+        if(!enemy && gameDirector.selfOperation)
         {
             Vector3 playerPos = player.gameObject.transform.position;
             gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), playerPos.y, playerPos.z);
@@ -91,8 +105,8 @@ public class CharacterGenerator : MonoBehaviour
             gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), genePos[genNum].y, genePos[genNum].z);
         }
 
-
-        Instantiate(ob.gameObject, gene, Quaternion.identity);
+        audioController.ChengePlayAudio(true);
+        Instantiate(ob.gameObject, gene, Quaternion.identity, gameObject.transform);
         
 
     }
@@ -103,7 +117,8 @@ public class CharacterGenerator : MonoBehaviour
     public void GenerateBs()
     {
         var count = gameDirector.towerCount;
-        Instantiate(bsObject[count], genePos[count], Quaternion.identity);
+        audioController.ChengePlayAudio(true);
+        Instantiate(bsObject[count], genePos[count], Quaternion.identity ,gameObject.transform);
     }
 
     private int GetRandom(int min, int max)
@@ -144,7 +159,7 @@ public class CharacterGenerator : MonoBehaviour
         List<int> generators = null;
         generators = GetGenereationLists(num);
         int ran = GetRandom(0, maxValue[num]);
-       // Debug.Log(ran);
+
 
         if(0 <= ran && ran < generators[0])
         {

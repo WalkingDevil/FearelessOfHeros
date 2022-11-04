@@ -339,8 +339,9 @@ MonoBehaviour:
   kingName: SlimeKing
   tower:
   - allyTower
+  - SlimeKing
   moveSpeed: 20
-  stopDistance: 10
+  stopDistance: 20
   target: {fileID: 0}
   targets: []
   firePrefab: {fileID: 0}
@@ -360,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47394212e16d94d9a7672c6e89d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 4355713504875588648}
   animator: {fileID: 4355713505171104323}
 --- !u!195 &4355713505171104317
 NavMeshAgent:

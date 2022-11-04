@@ -1071,6 +1071,7 @@ MonoBehaviour:
   kingName: SlimeKing
   tower:
   - allyTower
+  - SlimeKing
   moveSpeed: 30
   stopDistance: 10
   target: {fileID: 0}
@@ -1092,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc47394212e16d94d9a7672c6e89d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 3066127877276554101}
   animator: {fileID: 3066127877276554105}
 --- !u!65 &4195137112061363712
 BoxCollider:
