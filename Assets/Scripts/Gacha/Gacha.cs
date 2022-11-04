@@ -16,8 +16,8 @@ public class Gacha : MonoBehaviour
     public List<GameObject> objects = new List<GameObject>();  // 抽選されたモンスター
     public List<MonsterCard> cards = new List<MonsterCard>();  // 抽選されたモンスターカード
     static public int gachaCount = 10;  //ガチャの回数
-    public bool skip = false;  // スキップするかどうか
-    public bool skippable = false;  // スキップ可能か
+    private bool skip = false;  // スキップするかどうか
+    private bool skippable = false;  // スキップ可能か
     // Start is called before the first frame update
     void Start()
     {
