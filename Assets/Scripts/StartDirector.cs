@@ -12,11 +12,13 @@ public class StartDirector : MonoBehaviour
     //  SavePath savePath = new SavePath();
     [SerializeField] int deckCount = 4;
     [SerializeField] RectTransform selectPanel;
+    static public int level = 1;
 
 
     void Start()
     {
         savePath = saveData.Load();
+        level = savePath.level;
     }
     public void Sortie()
     {

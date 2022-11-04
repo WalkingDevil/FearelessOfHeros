@@ -64,10 +64,12 @@ public class UserInterface : MonoBehaviour
     }
     /// <summary>
     /// ステータスを返す
-    /// 0:HP
+    /// 0:初期HP
     /// 1:攻撃力
     /// 2:防御力
     /// 3:コスト
+    /// 4:初期攻撃力
+    /// 5:初期防御力
     /// </summary>
     /// <param name="stateNum"></param>
     /// <returns></returns>
@@ -85,6 +87,10 @@ public class UserInterface : MonoBehaviour
                 return cost;
             case 4:
                 return maxHp;
+            case 5:
+                return earlyAttack;
+            case 6:
+                return earlyDefence;
             default:
                 return 1;
         }
