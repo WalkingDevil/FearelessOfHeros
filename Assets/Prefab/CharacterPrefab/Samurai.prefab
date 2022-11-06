@@ -1146,6 +1146,7 @@ GameObject:
   - component: {fileID: 9184710335976306344}
   - component: {fileID: 9184710335976306345}
   - component: {fileID: 9184710335976306343}
+  - component: {fileID: -1154668191024480004}
   m_Layer: 0
   m_Name: Samurai
   m_TagString: enemy
@@ -1300,6 +1301,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1154668191024480004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9184710335937641163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRender: {fileID: 0}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  tiling: {x: 0, y: 15}
 --- !u!1 &9184710335937641165
 GameObject:
   m_ObjectHideFlags: 0

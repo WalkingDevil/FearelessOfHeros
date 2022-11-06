@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!137 &327257970 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 559651672629600384, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+  m_PrefabInstance: {fileID: 1010535383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &444068071
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +211,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &486771032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 445165010422245356, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+  m_PrefabInstance: {fileID: 1010535383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &486771033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486771032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264d9d31400cced4696d2a3586654c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ren: {fileID: 327257970}
+  ma: {fileID: 2100000, guid: d8793231f9b42d845a40803bb19e412c, type: 2}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  vector: {x: 0, y: 15}
+  material: {fileID: 0}
+--- !u!114 &486771037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486771032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRenderes: []
+  shader: {fileID: 0}
+  texture: {fileID: 0}
+  tiling: {x: 0, y: 0}
 --- !u!1001 &1010535383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,11 +332,11 @@ PrefabInstance:
     - target: {fileID: 559651672629600384, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 63d68c3ba5d7b90418069b96d9c35a4a, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 559651672629600384, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: d8793231f9b42d845a40803bb19e412c, type: 2}
+      objectReference: {fileID: 2100000, guid: 63d68c3ba5d7b90418069b96d9c35a4a, type: 2}
     - target: {fileID: 4255943213970813743, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -301,7 +345,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 445364273073369274, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+    - {fileID: 445364273073369272, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+    - {fileID: 445364273073369273, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
+    - {fileID: 445364273073369275, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ada4ee3ad291af4f8d6b808e8b5e328, type: 3}
 --- !u!1 &1752384810
 GameObject:

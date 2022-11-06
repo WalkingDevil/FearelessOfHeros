@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
     StatusManeger statusManeger;
+    [SerializeField] DamegeShader damegeShader;
     [SerializeField] Slider slider;
     [SerializeField] int earlyMaxHp;
     private int maxHp;
@@ -18,7 +19,6 @@ public class UserInterface : MonoBehaviour
     private int level = 1;
     [SerializeField] float magnification = 1.1f;
    // public List<int> state;
-    [SerializeField] bool cameraLook = true;//カメラを見させるか
     [SerializeField] bool tower = false;//このHPがタワーであるかどうか
 
     private bool gach = false;
@@ -48,20 +48,6 @@ public class UserInterface : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (cameraLook)
-        {
-           // transform.LookAt(Camera.main.transform.position);
-             var direction = Camera.main.transform.position - transform.position;
-            direction.y = 0;
-
-            var lookRotation = Quaternion.LookRotation(direction, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 0.1f);
-
-
-        }
-    }
     /// <summary>
     /// ステータスを返す
     /// 0:初期HP
@@ -127,11 +113,6 @@ public class UserInterface : MonoBehaviour
             defence = earlyDefence;
         }
 
-    }
-
-    public void HeelValue(int heel)
-    {
-       // playerSlider.value = hpManager.PlusHp(heel);
     }
 
     public void SetSlider()//スライダーをセットする

@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: 7156632168108045556}
   - component: {fileID: 7156632168108045557}
   - component: {fileID: 7156632168108045566}
+  - component: {fileID: -1974125435745628696}
   m_Layer: 0
   m_Name: Infantry
   m_TagString: enemy
@@ -890,6 +891,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1974125435745628696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156632168108078025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRenderes:
+  - {fileID: 7156632168119646247}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  tiling: {x: 0, y: 15}
 --- !u!1 &7156632168108078027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1170,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 3294e93619ef21548b5276a6fd7c5ad9, type: 2}
   - {fileID: 2100000, guid: 3294e93619ef21548b5276a6fd7c5ad9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

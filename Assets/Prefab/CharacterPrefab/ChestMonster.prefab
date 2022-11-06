@@ -716,6 +716,7 @@ GameObject:
   - component: {fileID: 8081376019020259269}
   - component: {fileID: 8081376019020259270}
   - component: {fileID: 8081376019020259264}
+  - component: {fileID: 2775209792162164354}
   m_Layer: 0
   m_Name: ChestMonster
   m_TagString: ally
@@ -858,6 +859,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2775209792162164354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552744252707857145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRenderes:
+  - {fileID: 7552744252721524733}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  tiling: {x: 0, y: 15}
 --- !u!1 &7552744252707857147
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1007,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: cce105f52f5504843a9896a9e1aeccd6, type: 2}
   - {fileID: 2100000, guid: cce105f52f5504843a9896a9e1aeccd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

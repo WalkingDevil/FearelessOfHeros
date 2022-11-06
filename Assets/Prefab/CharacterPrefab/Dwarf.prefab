@@ -2415,6 +2415,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 19c34471aca42124daf6c104a6c1ea9b, type: 2}
+  - {fileID: 2100000, guid: 19c34471aca42124daf6c104a6c1ea9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3061,6 +3062,7 @@ GameObject:
   - component: {fileID: 839590090474467168}
   - component: {fileID: 839590090474467169}
   - component: {fileID: 839590090474467204}
+  - component: {fileID: -7191745683786544671}
   m_Layer: 0
   m_Name: Dwarf
   m_TagString: enemy
@@ -3201,6 +3203,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 838496295079106884}
   animator: {fileID: 788968112317194308}
+--- !u!114 &-7191745683786544671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838496295079106884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRenderes:
+  - {fileID: 742825718230668722}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  tiling: {x: 0, y: 15}
 --- !u!1 &838501760183067032
 GameObject:
   m_ObjectHideFlags: 0

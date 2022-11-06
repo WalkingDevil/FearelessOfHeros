@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1718832640713082547}
   - component: {fileID: 1718832640713082552}
   - component: {fileID: 1718832640713082549}
+  - component: {fileID: -247502637492021078}
   m_Layer: 0
   m_Name: GolemAttacker
   m_TagString: ally
@@ -136,6 +137,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-247502637492021078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971828181701510021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRenderes:
+  - {fileID: 7971828182469018011}
+  shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
+  texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
+  tiling: {x: 0, y: 15}
 --- !u!1001 &1718832641501939562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,7 +603,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: aed76dcbd62b8f54fbc7ed373b0fb48f, type: 2}
     - target: {fileID: 13700000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 54fa9d339cfb28a44be2c2dcbe16797b, type: 2}
+    - target: {fileID: 13700000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 54fa9d339cfb28a44be2c2dcbe16797b, type: 2}
     m_RemovedComponents: []
@@ -603,6 +629,11 @@ Transform:
 --- !u!95 &7971828182473146203 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
+  m_PrefabInstance: {fileID: 7971828182465808955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7971828182469018011 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
   m_PrefabInstance: {fileID: 7971828182465808955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7971828182465842315 stripped

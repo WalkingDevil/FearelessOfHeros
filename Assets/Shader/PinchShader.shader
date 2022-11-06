@@ -2,12 +2,16 @@ Shader "Unlit/PinchShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+       _MainTex("Texture", 2D) = "white" {}
+       _Color("Color", Color) = (1, 0, 0, 1)
+       _Alpha("Alpha", Range(0, 0.8)) = 0
+       _Scroll("Scrool Speed", float) = 0
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { "RenderType" = "Transparent" }
+        Blend SrcAlpha OneMinusSrcAlpha
+
 
         Pass
         {
@@ -16,6 +20,7 @@ Shader "Unlit/PinchShader"
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
+           #pragma multi_compile _TARGET_VERTEX _TARGET_FRAGMENT
 
             #include "UnityCG.cginc"
 
@@ -35,6 +40,11 @@ Shader "Unlit/PinchShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            
+            half _Alpha;
+            float4 _Color;
+            float _Scroll;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -47,10 +57,11 @@ Shader "Unlit/PinchShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+                fixed4 col = tex2D(_MainTex, i.uv + (_Time * _Scroll));
+                col.a *= _Alpha;
+
+               // UNITY_APPLY_FOG(i.fogCoord, col);
+                return col * _Color;
             }
             ENDCG
         }
