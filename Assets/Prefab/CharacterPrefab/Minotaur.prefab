@@ -843,7 +843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f4089cb58e3ff459dbde5fba6cb25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRender: {fileID: 0}
+  myRenderes:
+  - {fileID: 7660147587091113454}
+  - {fileID: 7660147587091113450}
+  - {fileID: 7660147587091113452}
   shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
   texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
   tiling: {x: 0, y: 15}
@@ -2167,6 +2170,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f0e120c5dec577b41839809885d558d5, type: 2}
+  - {fileID: 2100000, guid: f0e120c5dec577b41839809885d558d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2253,6 +2257,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: f58d90f3a31b7fb43857d962fa58ee0b, type: 2}
   - {fileID: 2100000, guid: f58d90f3a31b7fb43857d962fa58ee0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2344,6 +2349,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: f0e120c5dec577b41839809885d558d5, type: 2}
   - {fileID: 2100000, guid: f0e120c5dec577b41839809885d558d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
