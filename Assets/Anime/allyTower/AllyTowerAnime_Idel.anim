@@ -28551,7 +28551,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (6)
+    path: Blocks/Castle Block 1x5 (5)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28561,7 +28561,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (6)
+    path: Blocks/Castle Block 1x5 (5)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28571,7 +28571,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (6)
+    path: Blocks/Castle Block 1x5 (5)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Blocks/Castle Block 1x5 (7)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Blocks/Castle Block 1x5 (7)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Blocks/Castle Block 1x5 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28791,7 +28821,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
+    path: Blocks/Castle Block 1x5 (6)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28801,7 +28831,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
+    path: Blocks/Castle Block 1x5 (6)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28811,7 +28841,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
+    path: Blocks/Castle Block 1x5 (6)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28821,7 +28851,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (7)
+    path: Blocks/Castle Block 1x5 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28831,7 +28861,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (7)
+    path: Blocks/Castle Block 1x5 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28841,7 +28871,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (7)
+    path: Blocks/Castle Block 1x5 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28851,7 +28881,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (5)
+    path: Wall Tiles/Castle Wall Tile (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28861,7 +28891,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (5)
+    path: Wall Tiles/Castle Wall Tile (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -28871,7 +28901,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (5)
+    path: Wall Tiles/Castle Wall Tile (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29211,7 +29241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 10 (5)
+    path: Walls/Castle Wall 17 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29221,7 +29251,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 10 (5)
+    path: Walls/Castle Wall 17 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29231,7 +29261,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 10 (5)
+    path: Walls/Castle Wall 17 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29241,7 +29271,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 17 (9)
+    path: Walls/Castle Wall 10 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29251,7 +29281,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 17 (9)
+    path: Walls/Castle Wall 10 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29261,7 +29291,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 17 (9)
+    path: Walls/Castle Wall 10 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29331,6 +29361,36 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: Walls/Castle Wall 10 (5)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Walls/Castle Wall 10 (5)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Walls/Castle Wall 10 (5)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: Walls/Castle Wall 17
     classID: 4
     script: {fileID: 0}
@@ -29361,7 +29421,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 10 (7)
+    path: Walls/Castle Wall 17 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29371,7 +29431,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 10 (7)
+    path: Walls/Castle Wall 17 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29381,7 +29441,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 10 (7)
+    path: Walls/Castle Wall 17 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29412,36 +29472,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Walls/Castle Wall 17 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 7
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 7
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 7
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29631,7 +29661,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 17 (8)
+    path: Ground Bright/Castle Ground + Bright 4x4 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29641,7 +29671,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 17 (8)
+    path: Ground Bright/Castle Ground + Bright 4x4 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29651,7 +29681,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 17 (8)
+    path: Ground Bright/Castle Ground + Bright 4x4 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29751,66 +29781,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (8)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (8)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (8)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Towers/Castle Tower 3 (4)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Towers/Castle Tower 3 (4)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Towers/Castle Tower 3 (4)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
     path: Towers/Castle Tower 3 (3)
     classID: 4
     script: {fileID: 0}
@@ -29862,6 +29832,66 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Towers/Castle Tower 3 (2)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Towers
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Towers
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Towers
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Ground Bright/Castle Ground + Bright 4x4 (8)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Ground Bright/Castle Ground + Bright 4x4 (8)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Ground Bright/Castle Ground + Bright 4x4 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29961,7 +29991,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Towers
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29971,7 +30001,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Towers
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29981,7 +30011,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Towers
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -29991,7 +30021,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
+    path: Walls/Castle Wall 7
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30001,7 +30031,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
+    path: Walls/Castle Wall 7
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30011,7 +30041,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
+    path: Walls/Castle Wall 7
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30051,7 +30081,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Walls/Castle Wall 7 (2)
+    path: Blocks/Castle Block 1x5 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30061,7 +30091,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Walls/Castle Wall 7 (2)
+    path: Blocks/Castle Block 1x5 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30071,7 +30101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Walls/Castle Wall 7 (2)
+    path: Blocks/Castle Block 1x5 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30081,7 +30111,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (15)
+    path: Blocks/Castle Block 1x5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30091,7 +30121,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (15)
+    path: Blocks/Castle Block 1x5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30101,7 +30131,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (15)
+    path: Blocks/Castle Block 1x5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30291,7 +30321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (4)
+    path: Walls/Castle Wall 7 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30301,7 +30331,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (4)
+    path: Walls/Castle Wall 7 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30311,7 +30341,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (4)
+    path: Walls/Castle Wall 7 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30591,7 +30621,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (14)
+    path: Blocks/Castle Block 1x5 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30601,7 +30631,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (14)
+    path: Blocks/Castle Block 1x5 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30611,7 +30641,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (14)
+    path: Blocks/Castle Block 1x5 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30741,7 +30771,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Blocks/Castle Block 1x5 (2)
+    path: Towers/Castle Tower 3 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30751,7 +30781,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Blocks/Castle Block 1x5 (2)
+    path: Towers/Castle Tower 3 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30761,7 +30791,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Blocks/Castle Block 1x5 (2)
+    path: Towers/Castle Tower 3 (4)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30831,7 +30861,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Towers/Castle Tower 3 (7)
+    path: Wall Tiles
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30841,7 +30871,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Towers/Castle Tower 3 (7)
+    path: Wall Tiles
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30851,7 +30881,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Towers/Castle Tower 3 (7)
+    path: Wall Tiles
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30861,7 +30891,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Wall Tiles/Castle Wall Tile
+    path: Wall Tiles/Castle Wall Tile (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30871,7 +30901,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Wall Tiles/Castle Wall Tile
+    path: Wall Tiles/Castle Wall Tile (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30881,7 +30911,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Wall Tiles/Castle Wall Tile
+    path: Wall Tiles/Castle Wall Tile (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30921,7 +30951,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Wall Tiles/Castle Wall Tile (11)
+    path: Wall Tiles/Castle Wall Tile
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30931,7 +30961,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Wall Tiles/Castle Wall Tile (11)
+    path: Wall Tiles/Castle Wall Tile
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30941,7 +30971,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Wall Tiles/Castle Wall Tile (11)
+    path: Wall Tiles/Castle Wall Tile
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30951,7 +30981,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Wall Tiles/Castle Wall Tile (1)
+    path: Wall Tiles/Castle Wall Tile (11)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30961,7 +30991,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Wall Tiles/Castle Wall Tile (1)
+    path: Wall Tiles/Castle Wall Tile (11)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -30971,7 +31001,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Wall Tiles/Castle Wall Tile (1)
+    path: Wall Tiles/Castle Wall Tile (11)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31071,7 +31101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Wall Tiles/Castle Wall Tile (4)
+    path: Towers/Castle Tower 3 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31081,7 +31111,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Wall Tiles/Castle Wall Tile (4)
+    path: Towers/Castle Tower 3 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31091,7 +31121,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Wall Tiles/Castle Wall Tile (4)
+    path: Towers/Castle Tower 3 (7)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31161,7 +31191,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Wall Tiles
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31171,7 +31201,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Wall Tiles
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31181,7 +31211,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Wall Tiles
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31191,7 +31221,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
+    path: Ground Bright/Castle Ground + Bright 1x2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31201,7 +31231,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
+    path: Ground Bright/Castle Ground + Bright 1x2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31211,7 +31241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
+    path: Ground Bright/Castle Ground + Bright 1x2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31251,7 +31281,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 1x2 (3)
+    path: Ground Bright/Castle Ground + Bright 4x4 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31261,7 +31291,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 1x2 (3)
+    path: Ground Bright/Castle Ground + Bright 4x4 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31271,7 +31301,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 1x2 (3)
+    path: Ground Bright/Castle Ground + Bright 4x4 (14)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31281,7 +31311,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (15)
+    path: Ground Bright/Castle Ground + Bright 4x4 (17)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31291,7 +31321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (15)
+    path: Ground Bright/Castle Ground + Bright 4x4 (17)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31301,7 +31331,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (15)
+    path: Ground Bright/Castle Ground + Bright 4x4 (17)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31371,7 +31401,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (2)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31381,7 +31411,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (2)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31391,7 +31421,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (2)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31401,7 +31431,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
+    path: Ground Bright/Castle Ground + Bright 4x4 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31411,7 +31441,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
+    path: Ground Bright/Castle Ground + Bright 4x4 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31421,7 +31451,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
+    path: Ground Bright/Castle Ground + Bright 4x4 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31521,7 +31551,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (4)
+    path: Ground Bright/Castle Ground + Bright 1x2 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31531,7 +31561,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (4)
+    path: Ground Bright/Castle Ground + Bright 1x2 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31541,7 +31571,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (4)
+    path: Ground Bright/Castle Ground + Bright 1x2 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31821,7 +31851,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (14)
+    path: Ground Bright/Castle Ground + Bright 4x4 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31831,7 +31861,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (14)
+    path: Ground Bright/Castle Ground + Bright 4x4 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31841,7 +31871,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (14)
+    path: Ground Bright/Castle Ground + Bright 4x4 (15)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31881,7 +31911,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 4x4 (17)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31891,7 +31921,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 4x4 (17)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -31901,7 +31931,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 4x4 (17)
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32031,7 +32061,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Ground Bright/Castle Ground + Bright 1x2
+    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32041,7 +32071,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Ground Bright/Castle Ground + Bright 1x2
+    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32051,7 +32081,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Ground Bright/Castle Ground + Bright 1x2
+    path: Castle Ground + Dark 8x8/Castle Wall Tile (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32211,7 +32241,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32221,7 +32252,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32231,7 +32263,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32301,7 +32334,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32311,7 +32345,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32321,7 +32356,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
+    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
+      2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32331,8 +32367,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2 (1)
+    path: Deco Pilars
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32342,8 +32377,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2 (1)
+    path: Deco Pilars
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32353,8 +32387,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2 (1)
+    path: Deco Pilars
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32424,8 +32457,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2
+    path: Deco Pilars/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32435,8 +32467,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2
+    path: Deco Pilars/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32446,8 +32477,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5/Castle Deco Pilar 5 (2)/Castle Deco Pilar
-      2
+    path: Deco Pilars/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32457,7 +32487,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32467,7 +32497,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32477,7 +32507,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32487,7 +32517,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32497,7 +32527,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32507,7 +32537,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32667,7 +32697,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32677,7 +32707,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32687,7 +32717,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (2)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32727,7 +32757,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (3)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32737,7 +32767,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (3)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -32747,7 +32777,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (3)
+    path: Deco Pilars/Castle Deco Pilar 5 (3)/Castle Deco Pilar 5 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33147,7 +33177,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33157,7 +33187,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33167,67 +33197,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (9)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (9)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (9)
+    path: Deco Pilars/Castle Deco Pilar 5 (8)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33297,6 +33267,66 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Deco Pilar 5 (8)/Castle Deco Pilar 5 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (2)
     classID: 4
     script: {fileID: 0}
@@ -33357,7 +33387,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33367,7 +33397,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33377,7 +33407,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 4x8 (1)
+    path: Deco Pilars/Castle Deco Pilar 5 (7)/Castle Deco Pilar 5 (2)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33417,7 +33447,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (8)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33427,7 +33457,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (8)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33437,7 +33467,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (8)
+    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 1 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33537,7 +33567,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33547,7 +33577,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
+    path: Deco Pilars/Castle Deco Pilar 5 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33557,157 +33587,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (1)/Castle Deco Pilar 5 (2)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 2x4 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
+    path: Deco Pilars/Castle Deco Pilar 5 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33747,7 +33627,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33757,7 +33637,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33767,7 +33647,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 8x8 (1)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33777,7 +33657,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
+    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33787,7 +33667,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
+    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -33797,7 +33677,127 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 4x8
+    path: Deco Pilars/Castle Deco Pilar 5 (9)/Castle Deco Pilar 5 (9)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Ground + Dark 8x8 (1)/Castle Ground + Dark 1x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Ground + Dark 8x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Ground + Dark 8x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Ground + Dark 8x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Deco Pilars/Castle Ground + Dark 8x8/Castle Ground + Dark 1x8
     classID: 4
     script: {fileID: 0}
   - curve:

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamegeShader : MonoBehaviour
 {
     [SerializeField] List<Renderer> myRenderes;
+    [SerializeField] Color color = Color.magenta;
     [SerializeField] Shader shader;
     [SerializeField] Texture2D texture;
     [SerializeField] Vector2 tiling;
@@ -27,7 +28,7 @@ public class DamegeShader : MonoBehaviour
     /// <param name="ma">ê›íËÇ∑ÇÈMaterial</param>
     private void SetMaterial(Material ma)
     {
-        ma.SetColor("_Color", Color.magenta);//êF
+        ma.SetColor("_Color", color);//êF
         ma.SetTexture("_MainTex", texture);//texture
         ma.SetTextureScale("_MainTex", tiling);//Tiling
         ma.SetFloat("_Scroll", 2f);//ë¨ìx

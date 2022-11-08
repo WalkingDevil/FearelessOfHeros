@@ -40,11 +40,6 @@ public class UserInterface : MonoBehaviour
 
         statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
 
-        if(tower)
-        {
-            slider.maxValue = earlyMaxHp;
-            slider.value = earlyMaxHp;
-        }
     }
 
     /// <summary>

@@ -52,6 +52,8 @@ public class GameDirector : MonoBehaviour
     [SerializeField] GameObject OwnPlayPanel;
     [SerializeField] GameObject scroll;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
+    [SerializeField] UserInterface myTowerUser;//自分の
+                                                     
     [SerializeField] AudioSource bgm;
     [SerializeField] List<AudioClip> bgms;
     [SerializeField] int _towerCount = 3;
@@ -206,6 +208,9 @@ public class GameDirector : MonoBehaviour
         //敵HPの設定
         towerAction = enemyGene.GenerateBs;
         towerUser[0].SetSlider();
+
+        //陣地の設定
+        myTowerUser.SetSlider();
 
         //コストの設定
         costSlider.maxValue = maxCost;

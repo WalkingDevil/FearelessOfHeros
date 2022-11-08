@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimeController anime;
     [SerializeField] GameDirector gameDirector;
     [SerializeField] UserInterface userInterface;
-    [SerializeField] UserInterface towerUI;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
     [SerializeField] string enemyTag;
@@ -74,7 +73,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
-        userInterface.ChengeState(gameDirector.level);
+        userInterface.SetSlider();
 
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();

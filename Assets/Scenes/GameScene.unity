@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -3713,7 +3713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -7383,7 +7383,6 @@ MonoBehaviour:
   anime: {fileID: 177082884}
   gameDirector: {fileID: 191557870}
   userInterface: {fileID: 177082886}
-  towerUI: {fileID: 182872694}
   damageTag: enemyAttack
   fireBallTag: fireEnemy
   enemyTag: enemy
@@ -7479,7 +7478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 182872692}
-  earlyMaxHp: 500
+  earlyMaxHp: 5000
   earlyAttack: 100
   earlyDefence: 1
   cost: 5
@@ -8695,10 +8694,11 @@ MonoBehaviour:
   OwnPlayPanel: {fileID: 1532994588}
   scroll: {fileID: 485385415}
   towerUser:
-  - {fileID: 477571387}
-  - {fileID: 1458975391}
-  - {fileID: 1682639277}
-  - {fileID: 1420761165}
+  - {fileID: 748382502}
+  - {fileID: 333577549}
+  - {fileID: 1843571703}
+  - {fileID: 1084909361}
+  myTowerUser: {fileID: 1923430008}
   bgm: {fileID: 532303383}
   bgms:
   - {fileID: 8300000, guid: 2986c3eb45947f448955d540c66d3e53, type: 3}
@@ -14978,7 +14978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -15740,9 +15740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 1420761164}
-  earlyMaxHp: 50000
-  earlyAttack: 1
-  earlyDefence: 100
+  earlyMaxHp: 5000
+  earlyAttack: 0
+  earlyDefence: 20
   cost: 0
   magnification: 5
   tower: 1
@@ -21807,17 +21807,6 @@ Transform:
   m_Father: {fileID: 723103287}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &477571387 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
-  m_PrefabInstance: {fileID: 1318936068}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389b31683342ee6429673f282364f424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &483840235
 GameObject:
   m_ObjectHideFlags: 0
@@ -24024,7 +24013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 41
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -32371,7 +32360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 43
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -33397,9 +33386,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 1420761164}
-  earlyMaxHp: 5000
-  earlyAttack: 1
-  earlyDefence: 100
+  earlyMaxHp: 1000
+  earlyAttack: 0
+  earlyDefence: 20
   cost: 0
   magnification: 5
   tower: 1
@@ -43327,7 +43316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -47433,8 +47422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 1420761164}
-  earlyMaxHp: 500000
-  earlyAttack: 1
+  earlyMaxHp: 50000
+  earlyAttack: 0
   earlyDefence: 100
   cost: 0
   magnification: 5
@@ -64187,17 +64176,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455646506}
   m_Mesh: {fileID: 4300000, guid: b9007bf074b5d404bbc4eb8b5d7cfed0, type: 3}
---- !u!114 &1458975391 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
-  m_PrefabInstance: {fileID: 513449148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389b31683342ee6429673f282364f424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1460435034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68027,7 +68005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535566267}
   m_LocalRotation: {x: 5.3717026e-12, y: 1, z: -0.0000018099948, w: 0.0000029504295}
-  m_LocalPosition: {x: 2, y: 12.75, z: -3.25}
+  m_LocalPosition: {x: 2, y: 5.1, z: -3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1865605310}
@@ -73733,17 +73711,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679496417}
   m_Mesh: {fileID: 4300382, guid: c76cb0fcb00ed1a4ba2882ed65d660f7, type: 3}
---- !u!114 &1682639277 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2359921895398052063, guid: 048dd9c4c2c41634ca6e31b916f81ad4, type: 3}
-  m_PrefabInstance: {fileID: 1197535285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389b31683342ee6429673f282364f424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1684224904
 GameObject:
   m_ObjectHideFlags: 0
@@ -75449,7 +75416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8f9a95ec139a95c4781f7fe5f9d9a19f, type: 3}
       propertyPath: m_LocalScale.x
@@ -80255,9 +80222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 1420761164}
-  earlyMaxHp: 500000
-  earlyAttack: 1
-  earlyDefence: 500
+  earlyMaxHp: 10000
+  earlyAttack: 0
+  earlyDefence: 20
   cost: 0
   magnification: 5
   tower: 1
@@ -84521,7 +84488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damegeShader: {fileID: 0}
   slider: {fileID: 182872692}
-  earlyMaxHp: 500
+  earlyMaxHp: 50000
   earlyAttack: 100
   earlyDefence: 100
   cost: 1
