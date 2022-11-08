@@ -38,11 +38,10 @@ public class UserInterface : MonoBehaviour
             gameObject.GetComponentInChildren<Slider>().gameObject.SetActive(false);
         }
 
+        statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
 
-
-        if (!tower)
+        if(tower)
         {
-            statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
             slider.maxValue = earlyMaxHp;
             slider.value = earlyMaxHp;
         }
@@ -90,8 +89,18 @@ public class UserInterface : MonoBehaviour
 
     public bool DamegeValue(float damege)
     {
-        slider.value = statusManeger.DamageCalculation(damege);
-        return slider.value <= 0;
+        float returnHp = statusManeger.DamageCalculation(damege);
+        if (tower)
+        {
+            slider.value = returnHp;
+          //  return slider.value <= 0;
+        }
+        else
+        {
+            damegeShader.ChengeAlpha(statusManeger.GetRatio());
+            
+        }
+        return returnHp <= 0;
     }
 
     /// <summary>
@@ -120,20 +129,20 @@ public class UserInterface : MonoBehaviour
         if (!tower)
         {
             statusManeger = new StatusManeger(maxHp, attack, defence);
-            slider.maxValue = maxHp;
-            slider.value = maxHp;
         }
         else
         {
             statusManeger = new StatusManeger(earlyMaxHp, attack, defence);
             slider.maxValue = earlyMaxHp;
             slider.value = earlyMaxHp;
+
+            if (slider.value <= 0)//セットされていなかったときの保険
+            {
+                slider.value = slider.maxValue;
+            }
         }
 
-        if(slider.value <= 0)//セットされていなかったときの保険
-        {
-            slider.value = slider.maxValue;
-        }
+
     }
 
     public int ExpCalculation()

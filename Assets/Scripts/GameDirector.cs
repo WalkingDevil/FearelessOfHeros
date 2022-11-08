@@ -311,7 +311,7 @@ public class GameDirector : MonoBehaviour
         foreach (CharacterController character in characters)
         {
             //UserInterfaceスクリプトを受け取る
-            UserInterface user = character.gameObject.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();
+            UserInterface user = character.gameObject.GetComponent<UserInterface>();
             user.ChengeState(level);
         }
     }

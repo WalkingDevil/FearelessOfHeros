@@ -56,7 +56,7 @@ public class MonsterCard : MonoBehaviour
     }
     private void NewState()
     {
-        user = monster.GetComponentInChildren<Canvas>().GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
+        user = monster.gameObject.GetComponent<UserInterface>();//モンスターオブジェクトの子にあるキャンバスからUserInterfaceを受け取る
         if(!checkScene)
         {
             SetState(StartDirector.level == 1);

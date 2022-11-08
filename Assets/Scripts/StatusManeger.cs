@@ -16,6 +16,7 @@ public class StatusManeger
     private int _maxHp;
     public int maxHp
     {
+        get { return _maxHp; }
         set
         {
             if (_maxHp != value)
@@ -100,15 +101,8 @@ public class StatusManeger
         return hp += heel;
     }
 
-/*
-    /// <summary>
-    /// レベルアップするために必要な経験値の上限を変える
-    /// </summary>
-    /// <param name="maxExp">レベルアップに必要な経験値</param>
-    public void MaxExp(int maxExp)
+    public float GetRatio()
     {
-        this.maxExp += maxExp;
+        return hp / maxHp;
     }
-
-    */
 }

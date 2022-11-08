@@ -35,6 +35,7 @@ public class DamegeShader : MonoBehaviour
 
     public void ChengeAlpha(float value)
     {
-        material.SetFloat("_Alpha", value);
+        float alpha = (1 - value) * 0.8f;
+        material.SetFloat("_Alpha", alpha);
     }
 }

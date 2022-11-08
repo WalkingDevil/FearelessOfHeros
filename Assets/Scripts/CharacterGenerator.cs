@@ -106,7 +106,7 @@ public class CharacterGenerator : MonoBehaviour
         }
 
         audioController.ChengePlayAudio(true);
-        Instantiate(ob.gameObject, gene, Quaternion.identity, gameObject.transform);
+        Instantiate(ob.gameObject, gene, Quaternion.identity);
         
 
     }
@@ -118,7 +118,7 @@ public class CharacterGenerator : MonoBehaviour
     {
         var count = gameDirector.towerCount;
         audioController.ChengePlayAudio(true);
-        Instantiate(bsObject[count], genePos[count], Quaternion.identity ,gameObject.transform);
+        Instantiate(bsObject[count], genePos[count], Quaternion.identity);
     }
 
     private int GetRandom(int min, int max)

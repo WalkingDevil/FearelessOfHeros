@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
         {
             //Playerをスクリーン座標に変換
             Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(player.gameObject.transform.position);
-            Debug.Log(playerScreenPoint.y - screenHeigth);
+           
             //Playerと中心の差が、決めた範囲より上にいるか
             if (playerScreenPoint.y - screenHeigth >= range)
             {
