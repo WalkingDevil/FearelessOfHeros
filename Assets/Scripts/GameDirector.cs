@@ -28,7 +28,8 @@ public class GameDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
-    private AudioController audioController;
+    private AudioController bgmAudioCo;
+    private AudioController seAudioCo;
     [SerializeField] TargetDisplay targetDisplay;
     [SerializeField] TowerController myTower;
     [SerializeField] LevelUpBonus levelUpBonus;
@@ -53,9 +54,13 @@ public class GameDirector : MonoBehaviour
     [SerializeField] GameObject scroll;
     [SerializeField] List<UserInterface> towerUser;//タワー用のスクリプト
     [SerializeField] UserInterface myTowerUser;//自分の
-                                                     
+
+    [SerializeField] AudioSource se;
     [SerializeField] AudioSource bgm;
     [SerializeField] List<AudioClip> bgms;
+    [SerializeField] List<AudioClip> ses;
+
+
     [SerializeField] int _towerCount = 3;
     [SerializeField] float audioVolume = 0.5f;
     public int towerCount
@@ -201,9 +206,10 @@ public class GameDirector : MonoBehaviour
     private void Start()
     {
         //Audioの初期設定
-        audioController = new AudioController(bgm, bgms[0]);
-        audioController.ChengePlayAudio(true);
-        audioController.SettingVolume(audioVolume);
+        bgmAudioCo = new AudioController(bgm, bgms[0]);
+        bgmAudioCo.ChengePlayAudio(true);
+        bgmAudioCo.SettingVolume(audioVolume);
+        seAudioCo = new AudioController(se);
 
         //敵HPの設定
         towerAction = enemyGene.GenerateBs;
@@ -246,27 +252,52 @@ public class GameDirector : MonoBehaviour
         switch(loadState)
         {
             case GameState.Clear:
-                cameraController.ChengeSelfOperation(false);
-                cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる
+                ProcessCommon(0, false);
+          /*      cameraController.ChengeSelfOperation(false);
+                cameraController.endAction = () => resultManeger.ChengeText(false);//actionにテキストを入れる*/
                 levelUpBonus.LevelBonus(level);
                 scroll.SetActive(true);
-                cameraController.FinishMove(false);         
+               /* cameraController.FinishMove(false);         
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
                 OwnPlayPanel.SetActive(false);
+                seAudioCo.ChengeClip(ses[0]);
+                seAudioCo.ChengePlayAudio(true);*/
                 NewData();
                 break;
             case GameState.Over:
+                ProcessCommon(1, true);
+            /*
                 cameraController.ChengeSelfOperation(false);
                 cameraController.endAction = () => resultManeger.ChengeText(true);//actionにテキストを入れる
                 cameraController.FinishMove(true, selfOperation);
                 enemyGene.gameObject.SetActive(false);
                 allyGene.gameObject.SetActive(false);
-                OwnPlayPanel.SetActive(false);
+                OwnPlayPanel.SetActive(false);*/
                 break;
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// 共通している処理
+    /// </summary>
+    /// <param name="seNum">SEの番号</param>
+    /// <param name="over">ゲームオーバーかどうか</param>
+    private void ProcessCommon(int seNum = 0, bool over = true)
+    {
+        bgmAudioCo.ChengePlayAudio(false);
+        cameraController.ChengeSelfOperation(false);//追従を切る
+        cameraController.endAction = () => resultManeger.ChengeText(over);//actionにテキストを入れる
+        cameraController.FinishMove(over, selfOperation);
+
+        enemyGene.gameObject.SetActive(false);
+        allyGene.gameObject.SetActive(false);
+
+        OwnPlayPanel.SetActive(false);
+        seAudioCo.ChengeClip(ses[seNum]);
+        seAudioCo.ChengePlayAudio(true);
     }
 
     /// <summary>
@@ -343,7 +374,7 @@ public class GameDirector : MonoBehaviour
         selfOperation = true;
         sortieButton.gameObject.SetActive(false);
 
-        audioController.ChengePlayAudio(false);//BGMを止める
+        bgmAudioCo.ChengePlayAudio(false);//BGMを止める
 
         cameraController.FinishMove(true);//カメラを移動させる
         cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる
@@ -364,8 +395,8 @@ public class GameDirector : MonoBehaviour
         cameraSlider.gameObject.SetActive(false);
 
         //BGMを変えて再生
-        audioController.ChengeClip(bgms[1]);
-        audioController.ChengePlayAudio(true);
+        bgmAudioCo.ChengeClip(bgms[1]);
+        bgmAudioCo.ChengePlayAudio(true);
         yield return null;
     }
 

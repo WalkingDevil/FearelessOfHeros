@@ -10,6 +10,7 @@ public class DamegeShader : MonoBehaviour
     [SerializeField] Texture2D texture;
     [SerializeField] Vector2 tiling;
     private Material material;
+    [SerializeField] float maxAlpha = 0.8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,7 @@ public class DamegeShader : MonoBehaviour
 
     public void ChengeAlpha(float value)
     {
-        float alpha = (1 - value) * 0.8f;
+        float alpha = (1 - value) * maxAlpha;
         material.SetFloat("_Alpha", alpha);
     }
 }

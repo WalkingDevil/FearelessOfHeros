@@ -1319,6 +1319,7 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
   texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
   tiling: {x: 0, y: 15}
+  maxAlpha: 0.8
 --- !u!114 &-2436897208882016035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,6 +1338,7 @@ MonoBehaviour:
   earlyAttack: 200
   earlyDefence: 80
   cost: 4
+  attributes: 3
   magnification: 5
   tower: 0
 --- !u!1 &9184710335937641165
@@ -1762,6 +1764,7 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: da2b74ac11ca6a24e9f7e299a829ac85, type: 2}
   - {fileID: 2100000, guid: da2b74ac11ca6a24e9f7e299a829ac85, type: 2}
+  - {fileID: 2100000, guid: da2b74ac11ca6a24e9f7e299a829ac85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1784,7 +1787,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: e156495aa9aa3424d85dac51d5fdbd21, type: 3}
   m_Bones:
@@ -1866,7 +1869,7 @@ SkinnedMeshRenderer:
   - {fileID: 9184710335937668857}
   - {fileID: 9184710335937668859}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
+  m_RootBone: {fileID: 9184710335937668903}
   m_AABB:
     m_Center: {x: -0.00954026, y: -0.114145726, z: 0.9179112}
     m_Extent: {x: 0.37320557, y: 0.4696826, z: 0.91750264}

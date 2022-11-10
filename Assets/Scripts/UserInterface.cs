@@ -9,6 +9,7 @@ public class UserInterface : MonoBehaviour
     StatusManeger statusManeger;
     [SerializeField] DamegeShader damegeShader;
     [SerializeField] Slider slider;
+    //ステータス
     [SerializeField] int earlyMaxHp;
     private int maxHp;
     [SerializeField] int earlyAttack;
@@ -16,6 +17,8 @@ public class UserInterface : MonoBehaviour
     [SerializeField] float earlyDefence;
     private float defence;
     [SerializeField] int cost;
+    [SerializeField] int attributes;
+
     private int level = 1;
     [SerializeField] float magnification = 1.1f;
    // public List<int> state;
@@ -50,6 +53,7 @@ public class UserInterface : MonoBehaviour
     /// 3:コスト
     /// 4:初期攻撃力
     /// 5:初期防御力
+    /// 6:属性
     /// </summary>
     /// <param name="stateNum"></param>
     /// <returns></returns>
@@ -71,6 +75,8 @@ public class UserInterface : MonoBehaviour
                 return earlyAttack;
             case 6:
                 return earlyDefence;
+            case 7:
+                return attributes;
             default:
                 return 1;
         }
