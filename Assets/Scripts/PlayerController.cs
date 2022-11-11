@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioController audioController;
     [SerializeField] TargetDisplay display;
     [SerializeField] AnimeController anime;
     [SerializeField] GameDirector gameDirector;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody myRigidbody;
     [SerializeField] List<Transform> castle = new List<Transform>();
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
     [SerializeField] List<string> tower = new List<string>();  //敵の城のオブジェクト名
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float stopDistance;  //攻撃を開始するときの敵との距離
@@ -74,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         userInterface.SetSlider();
-
+        audioController = new AudioController(audioSource, clip);
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
@@ -152,14 +155,13 @@ public class PlayerController : MonoBehaviour
             root = ob.transform.gameObject.transform.root.gameObject;//オブジェクトを渡す
         }
         UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-        dieCheck = userInterface.DamegeValue(user.GetState(1));
+        dieCheck = userInterface.DamegeValue(user.GetState(1), (int)user.GetState(6));
     }
 
     public void FireBall()
     {
         if (target != null)
         {
-            //worldTarget.y += throwPos;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
         }
 

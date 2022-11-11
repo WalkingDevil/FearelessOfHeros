@@ -74,7 +74,7 @@ public class TowerController : MonoBehaviour
         }
         Debug.Log(56666666);
         UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-        dieCheck = userInterface.DamegeValue(user.GetState(1));
+        dieCheck = userInterface.DamegeValue(user.GetState(1) , (int)user.GetState(6));
     }
 
     private void OnCollisionEnter(Collision collision)

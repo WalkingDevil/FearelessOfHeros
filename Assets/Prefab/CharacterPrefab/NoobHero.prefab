@@ -1169,7 +1169,8 @@ MonoBehaviour:
   color: {r: 1, g: 0, b: 0, a: 1}
   shader: {fileID: 4800000, guid: a52bf3d8d0816f649b67003bd2613d6c, type: 3}
   texture: {fileID: 2800000, guid: cf10278aaa2b0334cacc47e77754ea42, type: 3}
-  tiling: {x: 0, y: 15}
+  tiling: {x: 0, y: 6}
+  maxAlpha: 0.8
 --- !u!114 &-8800268714565115068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   earlyAttack: 10
   earlyDefence: 10
   cost: 2
+  attributes: 0
   magnification: 5
   tower: 0
 --- !u!1 &3066127877285766084

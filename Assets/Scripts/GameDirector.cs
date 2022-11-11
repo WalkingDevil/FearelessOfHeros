@@ -181,6 +181,7 @@ public class GameDirector : MonoBehaviour
         {
             Destroy(this);
         }
+        loadState = GameState.InGame;
         savePath = saveData.Load();
 
         maxCost = savePath.cost;

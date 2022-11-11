@@ -41,7 +41,7 @@ public class UserInterface : MonoBehaviour
             gameObject.GetComponentInChildren<Slider>().gameObject.SetActive(false);
         }
 
-        statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost);
+        statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost, attributes);
 
     }
 
@@ -88,9 +88,9 @@ public class UserInterface : MonoBehaviour
         gach = true;
     }
 
-    public bool DamegeValue(float damege)
+    public bool DamegeValue(float damege, int enemyAttributes)
     {
-        float returnHp = statusManeger.DamageCalculation(damege);
+        float returnHp = statusManeger.DamageCalculation(damege, attributes);
         if (tower)
         {
             slider.value = returnHp;
@@ -129,11 +129,11 @@ public class UserInterface : MonoBehaviour
     {
         if (!tower)
         {
-            statusManeger = new StatusManeger(maxHp, attack, defence);
+            statusManeger = new StatusManeger(maxHp, attack, defence, cost, attributes);
         }
         else
         {
-            statusManeger = new StatusManeger(earlyMaxHp, attack, defence);
+            statusManeger = new StatusManeger(earlyMaxHp, attack, defence, cost, attributes);
             slider.maxValue = earlyMaxHp;
             slider.value = earlyMaxHp;
 
@@ -142,8 +142,6 @@ public class UserInterface : MonoBehaviour
                 slider.value = slider.maxValue;
             }
         }
-
-
     }
 
     public int ExpCalculation()

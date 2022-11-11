@@ -23,7 +23,7 @@ public class CharacterGenerator : MonoBehaviour
     [SerializeField] List<int> geneListsPlan3 = new List<int>(7);
     [SerializeField] List<int> maxValue;
 
-
+    const int one = 1;
     [SerializeField] float _coolTime;
     public float coolTime
     {
@@ -98,7 +98,7 @@ public class CharacterGenerator : MonoBehaviour
         if(!enemy && gameDirector.selfOperation)
         {
             Vector3 playerPos = player.gameObject.transform.position;
-            gene = new Vector3(GetRandom(minGenePosX, maxGenePosX), playerPos.y, playerPos.z);
+            gene = new Vector3(playerPos.x + GetRandom(-one, one), playerPos.y, playerPos.z);
         }
         else
         {
@@ -106,6 +106,7 @@ public class CharacterGenerator : MonoBehaviour
         }
 
         audioController.ChengePlayAudio(true);
+
         Instantiate(ob.gameObject, gene, Quaternion.identity);
         
 

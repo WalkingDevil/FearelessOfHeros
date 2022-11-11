@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] GameDirector.GameState gameState = GameDirector.GameState.InGame;
     [SerializeField] AnimeController anime;
     [SerializeField] UserInterface userInterface;
     private GameDirector gameDirector;
@@ -101,6 +102,12 @@ public class CharacterController : MonoBehaviour
         {
             timeCount -= Time.deltaTime;
         }
+
+        if(gameDirector.loadState != gameState)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     /// <summary>
@@ -158,7 +165,7 @@ public class CharacterController : MonoBehaviour
             root = ob.transform.gameObject.transform.root.gameObject;//オブジェクトを渡す
         }
         UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceスクリプトを受け取る
-        dieCheck = userInterface.DamegeValue(user.GetState(1));
+        dieCheck = userInterface.DamegeValue(user.GetState(1), (int)user.GetState(6));
     }
 
     public void FireBall()
