@@ -7,6 +7,7 @@ public class AnimeController : MonoBehaviour
     [SerializeField] GameObject monster;
     [SerializeField] Animator animator;
 
+
     /// <summary>
     /// アニメーションの変移
     /// </summary>

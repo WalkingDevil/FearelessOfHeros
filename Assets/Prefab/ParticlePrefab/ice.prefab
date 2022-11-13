@@ -34484,11 +34484,11 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 169
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 25
@@ -34613,6 +34613,7 @@ MonoBehaviour:
   earlyAttack: 60
   earlyDefence: 1
   cost: 2
+  attributes: 0
   magnification: 1.1
   tower: 0
 --- !u!1 &6588386069734491630
