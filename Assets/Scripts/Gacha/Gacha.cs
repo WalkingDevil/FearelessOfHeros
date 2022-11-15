@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Gacha : MonoBehaviour
 {
+    private SaveData saveData = new SaveData();
+    private SavePath savePath = new SavePath();
+    private List<int> idDatas;
     [SerializeField] GachaLottery gachaLottery;
     [SerializeField] GameObject cardPanel;
     [SerializeField] GameObject effectObj;  // モンスター登場時のエフェクト
@@ -24,6 +28,9 @@ public class Gacha : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        saveData = new SaveData();
+        savePath = saveData.Load();
+        idDatas = savePath.idData;
         GachaStart(gachaCount);
         skipBotton.SetActive(true);
         titleBotton.SetActive(false);
@@ -62,6 +69,12 @@ public class Gacha : MonoBehaviour
             }
         }
 
+        //List<int> list = character;
+        //List<int> list2 = character.Union(idDatas).ToList();
+        idDatas.AddRange(character.Union(idDatas).ToList());
+        savePath.idData = idDatas;
+        saveData.Save(savePath);
+
         StartCoroutine("Performance");
 
     }
@@ -73,7 +86,7 @@ public class Gacha : MonoBehaviour
             yield return StartCoroutine("Effect");
             skippable = true;
             GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
-            game.GetComponentInChildren<Canvas>().GetComponent<UserInterface>().ChengeGach();
+            game.GetComponent<UserInterface>().ChengeGach();
             game.GetComponent<CharacterController>().enabled = false;
             game.GetComponent<NavMeshAgent>().enabled = false;
             game.GetComponent<BoxCollider>().enabled = false;
