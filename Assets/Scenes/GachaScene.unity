@@ -1088,6 +1088,8 @@ MonoBehaviour:
   skipBotton: {fileID: 1974416460}
   titleBotton: {fileID: 1435850657}
   effectTime: 1
+  monsterDisplayTime: 3
+  cardDisplayIntervalTime: 0.5
   character: 
   monsterCards:
   - {fileID: 3420114202193304219, guid: ae3975bb81caff740a892b704a2dae22, type: 3}
@@ -1098,6 +1100,10 @@ MonoBehaviour:
   - {fileID: 7191979371883756458, guid: ac0558a26bacfd9429e33766b899e221, type: 3}
   - {fileID: 2337965972793089131, guid: 06554820e55c4f242b4f397ad8346c54, type: 3}
   - {fileID: 5043326826790438303, guid: 8089b5f4050e9ee4ea9c78439f18dccc, type: 3}
+  - {fileID: 846076930320601618, guid: cc19c514b2ed6dd4cae515af1eddb084, type: 3}
+  - {fileID: 5289925596835362256, guid: e1d16d44fbcedbe44bb31ba59fb915ff, type: 3}
+  - {fileID: 8421512816110186070, guid: 322326d2836fa5a4a9c25ed27f869752, type: 3}
+  - {fileID: 8579807356907145031, guid: 26ba8e310428cc141a70743ed6f67d47, type: 3}
   objects: []
   cards: []
 --- !u!4 &2016357827
