@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         userInterface.SetSlider();
-        audioController = new AudioController(audioSource, clip);
+
         anime.TransitionAnime("run");
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
