@@ -116273,7 +116273,7 @@ MonoBehaviour:
   earlyAttack: 50
   earlyDefence: 1
   cost: 2
-  attributes: 0
+  attributes: 2
   magnification: 5
   tower: 0
 --- !u!82 &3203579340174538691

@@ -6,8 +6,7 @@ public class AnimeController : MonoBehaviour
 {
     [SerializeField] GameObject monster;
     [SerializeField] Animator animator;
-
-
+    [SerializeField] GameObject paticle;
     /// <summary>
     /// アニメーションの変移
     /// </summary>
@@ -22,4 +21,13 @@ public class AnimeController : MonoBehaviour
         Destroy(monster.gameObject);
     }
 
+    public void OnParticle()
+    {
+        paticle.SetActive(true);
+    }
+
+    public void OffParticle()
+    {
+        paticle.SetActive(false);
+    }
 }
