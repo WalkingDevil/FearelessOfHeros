@@ -140,7 +140,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d357a802e5ef4d44d829d89dfb1a341c, type: 2}
+  - {fileID: 0}
   - {fileID: 2100000, guid: d357a802e5ef4d44d829d89dfb1a341c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   gameState: 1
   anime: {fileID: 5119650888088506643}
   userInterface: {fileID: 5119650888088506642}
-  myRigidbody: {fileID: 184122389993611221, guid: 0c7869099edd59c48ba1671b4f28bd2c, type: 3}
+  myRigidbody: {fileID: 5119650888088506670}
   castle:
   - {fileID: 0}
   - {fileID: 0}
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 5119033734970943288}
   animator: {fileID: 5070687661437539668}
+  paticle: {fileID: 0}
 --- !u!195 &5119650888088506668
 NavMeshAgent:
   m_ObjectHideFlags: 0

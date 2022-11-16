@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8321620886074784304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03, y: 0.8, z: 325.57}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 8321620886074610454}
@@ -671,6 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 8321620886074784304}
   animator: {fileID: 8321620886065337756}
+  paticle: {fileID: 0}
 --- !u!114 &8321620885953867805
 MonoBehaviour:
   m_ObjectHideFlags: 0

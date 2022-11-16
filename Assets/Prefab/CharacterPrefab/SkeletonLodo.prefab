@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0563992610e38048a1b9ed03f9f98cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 1
   anime: {fileID: 7089456369611848022}
   userInterface: {fileID: 9132218182850041032}
   myRigidbody: {fileID: 7089456369611848020}
@@ -1077,6 +1078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 7089970816129608129}
   animator: {fileID: 7148151045132469151}
+  paticle: {fileID: 0}
 --- !u!114 &-4209445491765759182
 MonoBehaviour:
   m_ObjectHideFlags: 0

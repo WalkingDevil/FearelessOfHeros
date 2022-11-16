@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 0
   probability: 3
-  character: 0b0000000d000000
+  character: 0b0000000c0000000d000000

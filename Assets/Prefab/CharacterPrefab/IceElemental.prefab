@@ -1852,7 +1852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9184639299587044208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.44999695, z: 10.52002}
+  m_LocalPosition: {x: 0, y: 0.44999695, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 5452844851584919521}
@@ -1912,6 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0563992610e38048a1b9ed03f9f98cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 1
   anime: {fileID: 184122389993611222}
   userInterface: {fileID: -7950902995552321856}
   myRigidbody: {fileID: 184122389993611221}
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 9184639299587044208}
   animator: {fileID: 2512332116574335920}
+  paticle: {fileID: 0}
 --- !u!136 &6125721185018983691
 CapsuleCollider:
   m_ObjectHideFlags: 0
