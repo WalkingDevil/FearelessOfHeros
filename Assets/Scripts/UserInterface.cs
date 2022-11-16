@@ -36,10 +36,6 @@ public class UserInterface : MonoBehaviour
 
     void Start()
     {
-        if (gach)
-        {
-            gameObject.GetComponentInChildren<Slider>().gameObject.SetActive(false);
-        }
 
         statusManeger = new StatusManeger(earlyMaxHp, earlyAttack, earlyDefence, cost, attributes);
 

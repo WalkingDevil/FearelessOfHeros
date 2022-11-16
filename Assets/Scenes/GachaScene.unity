@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1092,18 +1092,14 @@ MonoBehaviour:
   cardDisplayIntervalTime: 0.5
   character: 
   monsterCards:
-  - {fileID: 3420114202193304219, guid: ae3975bb81caff740a892b704a2dae22, type: 3}
-  - {fileID: 4694697869057934146, guid: bd707f0c41651004db43e1389ca96cf9, type: 3}
-  - {fileID: 668663938319391860, guid: 00b0540f8839b2248935d5b0d736fe74, type: 3}
-  - {fileID: 6907874816822663019, guid: 12f758243deffe549a8920ceb8e07004, type: 3}
-  - {fileID: 2697118209980564079, guid: 09620236b1338c14fa0a9f0c7979de63, type: 3}
-  - {fileID: 7191979371883756458, guid: ac0558a26bacfd9429e33766b899e221, type: 3}
-  - {fileID: 2337965972793089131, guid: 06554820e55c4f242b4f397ad8346c54, type: 3}
-  - {fileID: 5043326826790438303, guid: 8089b5f4050e9ee4ea9c78439f18dccc, type: 3}
   - {fileID: 846076930320601618, guid: cc19c514b2ed6dd4cae515af1eddb084, type: 3}
   - {fileID: 5289925596835362256, guid: e1d16d44fbcedbe44bb31ba59fb915ff, type: 3}
   - {fileID: 8421512816110186070, guid: 322326d2836fa5a4a9c25ed27f869752, type: 3}
   - {fileID: 8579807356907145031, guid: 26ba8e310428cc141a70743ed6f67d47, type: 3}
+  - {fileID: 1579046544981199994, guid: 40b952033f01cc54f9647002d9dc89f0, type: 3}
+  - {fileID: 3550321727920156968, guid: 750ace4b058610f47a745599a264b035, type: 3}
+  - {fileID: 1453111042811916664, guid: b3583bc702605b546b1d5a67af3f0eb8, type: 3}
+  - {fileID: 5627572525240847254, guid: 7052e56b9d22b314eb728e63c86795d1, type: 3}
   objects: []
   cards: []
 --- !u!4 &2016357827
