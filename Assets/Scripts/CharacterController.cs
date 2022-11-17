@@ -176,7 +176,7 @@ public class CharacterController : MonoBehaviour
             worldTarget.y += throwPos;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
             //ball.transform.LookAt(target);
-            ball.GetComponent<Rigidbody>().AddForce(worldTarget * throwSpeed, ForceMode.Impulse);
+            ball.GetComponent<Rigidbody>().AddForce(Vector3.forward + worldTarget * throwSpeed, ForceMode.Impulse);
             // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
         }
 

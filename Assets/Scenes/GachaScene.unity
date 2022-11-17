@@ -1100,6 +1100,7 @@ MonoBehaviour:
   - {fileID: 3550321727920156968, guid: 750ace4b058610f47a745599a264b035, type: 3}
   - {fileID: 1453111042811916664, guid: b3583bc702605b546b1d5a67af3f0eb8, type: 3}
   - {fileID: 5627572525240847254, guid: 7052e56b9d22b314eb728e63c86795d1, type: 3}
+  - {fileID: 6012450001231633161, guid: 4b2f7bb2d3340be4292bdbc64c44a4e2, type: 3}
   objects: []
   cards: []
 --- !u!4 &2016357827
