@@ -35,7 +35,7 @@ public class Gacha : MonoBehaviour
         savePath = saveData.Load();
         idDatas = savePath.idData;
         GachaStart(gachaCount);
-        skipBotton.SetActive(true);
+        skipBotton.SetActive(false);
         titleBotton.SetActive(false);
         cardPanel.SetActive(false);
     }
@@ -87,11 +87,11 @@ public class Gacha : MonoBehaviour
     {
         foreach (GameObject obj in objects)  // モンスターを表示
         {
+            skipBotton.SetActive(false);
             //yield return StartCoroutine("Effect");
             float attribute = obj.GetComponent<CharacterController>().SetMyUserInterface().GetState(7);
             fadeImage.color = GetColor(attribute);
             fadeImage.UpdateMaskTexture(fadeTexture);
-            yield return new WaitForSeconds(0.5f);
             fade.FadeIn(1.5f, () => print("フェードイン完了"));
             yield return new WaitForSeconds(1.5f);
             fade.FadeOut(1.5f, () => print("フェードアウト完了"));
@@ -102,11 +102,14 @@ public class Gacha : MonoBehaviour
             game.GetComponent<NavMeshAgent>().enabled = false;
             game.GetComponent<BoxCollider>().enabled = false;
             Destroy(game.GetComponent<Rigidbody>());
+            skipBotton.SetActive(true);
             yield return StartCoroutine(PerformanceSkip(3));
             skippable = false;
             if (skip)
             {
                 skip = false;
+                Destroy(game);
+                break;
             }
             Destroy(game);
         }
@@ -144,7 +147,7 @@ public class Gacha : MonoBehaviour
         {
             if (skip && skippable)
             {
-                skip = false;
+                //skip = false;
                 break;
             }
             yield return new WaitForSeconds(1f);
