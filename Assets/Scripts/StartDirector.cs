@@ -1,25 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.IO;
+using DG.Tweening;
 
 public class StartDirector : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
-    //  SavePath savePath = new SavePath();
+    [SerializeField] RawImage banner;
+    [SerializeField] GameObject rod;
     [SerializeField] int deckCount = 4;
+    [SerializeField] float scaleSpeed = 0.5f;
     [SerializeField] RectTransform selectPanel;
     static public int level = 1;
-
+    private const int one = 1;
 
     void Start()
     {
         savePath = saveData.Load();
         level = savePath.level;
     }
+
+    private void Update()
+    {
+        if(banner.texture != null)
+        {
+            rod.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// デッキを編成しゲームを開始する
+    /// </summary>
     public void Sortie()
     {
         List<int> list = new List<int>();
@@ -36,11 +52,29 @@ public class StartDirector : MonoBehaviour
         }
     }
 
-    public void OnDisplay(GameObject gameObject)
+    /// <summary>
+    /// 表示する
+    /// </summary>
+    /// <param name="rect"></param>
+    public void OnDisplay(RectTransform rect)
     {
-        gameObject.SetActive(true);
+        rect.gameObject.SetActive(true);
+        rect.DOScaleY(one, scaleSpeed);
     }
 
+    /// <summary>
+    /// 非表示にする
+    /// </summary>
+    /// <param name="rect"></param>
+    public void OffDisplay(RectTransform rect)
+    {
+        rect.DOScaleY(0, scaleSpeed);
+    }
+
+    /// <summary>
+    /// ガチャの連数を設定しガチャを引く
+    /// </summary>
+    /// <param name="count"></param>
     public void OnGacha(int count)
     {
         Gacha.gachaCount = count;
