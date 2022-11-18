@@ -56,7 +56,11 @@ public class Gacha : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
     }
 
-    public void GachaStart(int countPerGacha)  //ガチャの抽選
+    /// <summary>
+    /// ガチャの抽選を開始する
+    /// </summary>
+    /// <param name="countPerGacha">ガチャを回す回数</param>
+    public void GachaStart(int countPerGacha)
     {
         Debug.Log(countPerGacha);
         character = gachaLottery.Lottery(countPerGacha);
@@ -129,13 +133,6 @@ public class Gacha : MonoBehaviour
         titleBotton.SetActive(true);
     }
 
-    IEnumerator Effect()  // モンスター登場時のエフェクト
-    {
-        GameObject effect = Instantiate(effectObj, new Vector3(0,5,0), Quaternion.identity) as GameObject;
-        yield return new WaitForSeconds(effectTime);
-        Destroy(effect);
-    }
-
     /// <summary>
     /// スキップ
     /// </summary>
@@ -147,14 +144,13 @@ public class Gacha : MonoBehaviour
         {
             if (skip && skippable)
             {
-                //skip = false;
                 break;
             }
             yield return new WaitForSeconds(1f);
         }
     }
 
-    private Color GetColor(float num)
+    private Color GetColor(float num)  // モンスターの属性によってフェードの色を変える
     {
         switch(num)
         {

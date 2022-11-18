@@ -20,6 +20,11 @@ public class GachaLottery : MonoBehaviour
         random = new System.Random((int)DateTime.Now.Ticks);
     }
 
+    /// <summary>
+    /// ガチャの抽選
+    /// </summary>
+    /// <param name="countPerGacha">ガチャを回す回数</param>
+    /// <returns>ガチャの抽選結果</returns>
     public List<int> Lottery(int countPerGacha)
     {
         List<int> result = new List<int>();
@@ -41,6 +46,11 @@ public class GachaLottery : MonoBehaviour
         return result;
     }
 
+    /// <summary>
+    /// キャラクターの抽選
+    /// </summary>
+    /// <param name="allProbability">全体の確率</param>
+    /// <returns>モンスターのID</returns>
     private int getCard(int allProbability)
     {
         int randamProbability = random.Next(0, allProbability);
