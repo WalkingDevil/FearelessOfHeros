@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class MonsterCard : MonoBehaviour
 {
-    private MonsterId monsterId;
     [SerializeField] GameDirector gameDirector;
     private CharacterGenerator allyGene;
     private UserInterface user;
@@ -70,8 +69,6 @@ public class MonsterCard : MonoBehaviour
         cost = (int)user.GetState(3);
         statasText.text = "HP：" + maxHp.ToString("D4") + "\nAT：" + attack.ToString("D4") + "\nDF：" + defence.ToString("D4");//ステータス表示
         costText.text = cost.ToString();//コストを表示
-
-        monsterId = new MonsterId(id, attributes, maxHp, attack, defence, cost);
     }
 
     private void SetState(bool scene)
