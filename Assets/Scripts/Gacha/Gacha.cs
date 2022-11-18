@@ -11,6 +11,9 @@ public class Gacha : MonoBehaviour
     private SavePath savePath = new SavePath();
     private List<int> idDatas;
     [SerializeField] GachaLottery gachaLottery;
+    [SerializeField] Fade fade;
+    [SerializeField] FadeImage fadeImage;
+    [SerializeField] Texture2D fadeTexture;
     [SerializeField] GameObject cardPanel;
     [SerializeField] GameObject effectObj;  // モンスター登場時のエフェクト
     [SerializeField] GameObject skipBotton;  // スキップボタン
@@ -84,7 +87,14 @@ public class Gacha : MonoBehaviour
     {
         foreach (GameObject obj in objects)  // モンスターを表示
         {
-            yield return StartCoroutine("Effect");
+            //yield return StartCoroutine("Effect");
+            float attribute = obj.GetComponent<CharacterController>().SetMyUserInterface().GetState(7);
+            fadeImage.color = GetColor(attribute);
+            fadeImage.UpdateMaskTexture(fadeTexture);
+            yield return new WaitForSeconds(0.5f);
+            fade.FadeIn(1.5f, () => print("フェードイン完了"));
+            yield return new WaitForSeconds(1.5f);
+            fade.FadeOut(1.5f, () => print("フェードアウト完了"));
             skippable = true;
             GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
             game.GetComponent<UserInterface>().ChengeGach();
@@ -138,6 +148,23 @@ public class Gacha : MonoBehaviour
                 break;
             }
             yield return new WaitForSeconds(1f);
+        }
+    }
+
+    private Color GetColor(float num)
+    {
+        switch(num)
+        {
+            case 0:
+                return Color.red;
+            case 1:
+                return Color.blue;
+            case 2:
+                return Color.green;
+            case 3:
+                return Color.magenta;
+            default:
+                return Color.white;
         }
     }
 }
