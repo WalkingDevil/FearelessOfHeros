@@ -71,8 +71,9 @@ public class Gacha : MonoBehaviour
 
         //List<int> list = character;
         //List<int> list2 = character.Union(idDatas).ToList();
-        idDatas.AddRange(character.Union(idDatas).ToList());
-        savePath.idData = idDatas;
+        idDatas.AddRange(idDatas.Union(character).ToList());
+        var newData = idDatas.Distinct().ToList();// d•¡‚·‚é—v‘f‚ğíœ
+        savePath.idData = newData;
         saveData.Save(savePath);
 
         StartCoroutine("Performance");
