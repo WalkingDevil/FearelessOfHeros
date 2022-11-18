@@ -102,7 +102,7 @@ public class CameraController : MonoBehaviour
     public void FinishMove(bool over, bool stop = false)
     {
         Transform nextTransform = null;
-        if(over)
+        if(over)//状態によって位置を与える
         {
             Debug.Log(5665);
             if (stop)
@@ -119,8 +119,8 @@ public class CameraController : MonoBehaviour
             nextTransform = clearPosition;
         }
 
-        transform.DOMove(nextTransform.position, 1f);
-        transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); }) ;
+        transform.DOMove(nextTransform.position, 1f);//指定した位置に移動
+        transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); });//指定した角度にする
     }
 
     //位置を元に戻す
