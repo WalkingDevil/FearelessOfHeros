@@ -11,6 +11,9 @@ public class StartDirector : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
+    [SerializeField] Fade fade;
+    [SerializeField] FadeImage fadeImage;
+    [SerializeField] Texture2D fadeTexture;
     [SerializeField] RawImage banner;
     [SerializeField] GameObject rod;
     [SerializeField] int deckCount = 4;
@@ -23,13 +26,16 @@ public class StartDirector : MonoBehaviour
     {
         savePath = saveData.Load();
         level = savePath.level;
+        fadeImage.Range = 1;
+        fadeImage.UpdateMaskTexture(fadeTexture);
     }
 
     private void Update()
     {
         if(banner.texture != null)
         {
-            rod.SetActive(false);
+            //rod.SetActive(false);
+            fade.FadeOut(0.01f);
         }
     }
 

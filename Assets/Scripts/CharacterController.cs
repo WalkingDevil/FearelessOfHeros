@@ -110,6 +110,12 @@ public class CharacterController : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        //倒れた回数か倒した回数をカウントする
+        gameDirector.SetDestroyCount(enemy);
+    }
+
     /// <summary>
     /// 目標の城の名前を探す
     /// </summary>

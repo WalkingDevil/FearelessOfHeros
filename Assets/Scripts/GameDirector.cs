@@ -171,6 +171,12 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
+    //倒した体数
+    private int enemyDefeatCount;
+    //味方が死んだ数
+    private int allyDieCount;
+
+
     static GameDirector gameDire = null;
     private void Awake()
     {
@@ -260,8 +266,11 @@ public class GameDirector : MonoBehaviour
         {
             case GameState.Clear:
                 ProcessCommon(0, false);
+                //スコア表示
                 levelUpBonus.LevelBonus(level);
+                levelUpBonus.ClearBonus(enemyDefeatCount, allyDieCount);
                 scroll.SetActive(true);
+                //データを更新
                 NewData();
                 break;
             case GameState.Over:
@@ -321,13 +330,13 @@ public class GameDirector : MonoBehaviour
         savePath.exp = exp;
         savePath.maxExp = (int)maxExp;
         savePath.idData = levelUpBonus.SetIdData();
+        savePath.krystaal = levelUpBonus.SetKrystaal();
         if (maxCost != levelUpBonus.SetCost())
         {
             savePath.cost = levelUpBonus.SetCost();
         }
 
         saveData.Save(savePath);
-
     }
 
     /// <summary>
@@ -398,6 +407,17 @@ public class GameDirector : MonoBehaviour
 
     }
 
+    public void SetDestroyCount(bool enemy)
+    {
+        if(enemy)
+        {
+            enemyDefeatCount++;
+        }
+        else
+        {
+            allyDieCount++;
+        }
+    }
     public void ChengeScene(bool con)
     {
         if(con)

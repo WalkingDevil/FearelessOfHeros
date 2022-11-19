@@ -20,6 +20,7 @@ public class SaveData : MonoBehaviour
             savePath.idData = defIdData;
             savePath.myDeckData = defIdData;
             savePath.cost = 6;
+            savePath.krystaal = 0;
             Save(savePath);
         }
 
@@ -109,6 +110,7 @@ public class SavePath
     public float exp = 0;
     public int maxExp = 50;
     public int cost = 6;
+    public int krystaal = 0;
     public List<int> idData;
     public List<int> myDeckData;
 }
