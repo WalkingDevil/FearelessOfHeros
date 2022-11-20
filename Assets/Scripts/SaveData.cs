@@ -111,6 +111,7 @@ public class SavePath
     public int maxExp = 50;
     public int cost = 6;
     public int krystaal = 0;
+    public bool fast = true;
     public List<int> idData;
     public List<int> myDeckData;
 }

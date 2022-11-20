@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5485666, g: 0.85513043, b: 0.9221765, a: 1}
+  m_IndirectSpecularColor: {r: 0.5476781, g: 0.8551411, b: 0.9225128, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -75138,6 +75138,7 @@ GameObject:
   - component: {fileID: 1719956711}
   - component: {fileID: 1719956710}
   - component: {fileID: 1719956709}
+  - component: {fileID: 1719956712}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -75260,6 +75261,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719956707}
   m_CullTransparentMesh: 1
+--- !u!114 &1719956712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719956707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1723723256
 GameObject:
   m_ObjectHideFlags: 0
@@ -80516,6 +80532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df10f7dd8a0668042aa9d231801c31bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kystaalRate: 10
+  clearKrystaal: 10
   content: {fileID: 240283348}
   resultPrefab: {fileID: 3876131048078646992, guid: 43a6112fa721f7345bed0a88d563b342, type: 3}
 --- !u!1 &1848572841
