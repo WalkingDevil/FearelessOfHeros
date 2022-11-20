@@ -330,7 +330,7 @@ public class GameDirector : MonoBehaviour
         savePath.exp = exp;
         savePath.maxExp = (int)maxExp;
         savePath.idData = levelUpBonus.SetIdData();
-        savePath.krystaal = levelUpBonus.SetKrystaal();
+        savePath.krystaal += levelUpBonus.SetKrystaal();
         if (maxCost != levelUpBonus.SetCost())
         {
             savePath.cost = levelUpBonus.SetCost();
