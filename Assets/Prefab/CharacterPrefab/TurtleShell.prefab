@@ -288,10 +288,7 @@ MonoBehaviour:
   moveSpeed: 15
   stopDistance: 30
   target: {fileID: 0}
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  targets: []
   firePrefab: {fileID: 0}
   throwSpeed: 0.25
   throwPos: 100
