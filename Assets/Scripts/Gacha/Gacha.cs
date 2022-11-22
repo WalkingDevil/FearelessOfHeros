@@ -62,7 +62,6 @@ public class Gacha : MonoBehaviour
     /// <param name="countPerGacha">ガチャを回す回数</param>
     public void GachaStart(int countPerGacha)
     {
-        Debug.Log(countPerGacha);
         character = gachaLottery.Lottery(countPerGacha);
         for (int i = 0; i < character.Count; i++)
         {
@@ -70,6 +69,7 @@ public class Gacha : MonoBehaviour
             {
                 if (character[i] == monsterCards[j].GetState(0))  // 抽選結果をモンスターとモンスターカードのリストに入れる
                 {
+                    Debug.Log(i);
                     objects.Add(monsterCards[j].GetObject().gameObject);
                     cards.Add(monsterCards[j]);
                 }
