@@ -239,6 +239,7 @@ public class CharacterController : MonoBehaviour
                     }
                     else if (attributes == 3)
                     {
+                        Debug.Log("a");
                         targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
                     }
                 }
