@@ -24,6 +24,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform target;
     private Vector3 latestPos;
     private Vector3 diff;
+    private float attributes;  // 自分の属性
+    private float advantageousAttributes;  // 敵の属性
+    private float compatibility;  // 自分と敵の属性の相性
     private bool detection = false;
     private float distance = 0;  //ターゲットとの距離
     private float keepDistance = 10000;  //一番近いターゲットとの距離を保存
@@ -66,6 +69,11 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         userInterface = GetComponent<UserInterface>();
+        attributes = userInterface.GetState(7);
+        if (attributes == 3)
+        {
+            advantageousAttributes = 3;
+        }
         gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         if(!enemy)
         {
@@ -223,7 +231,16 @@ public class CharacterController : MonoBehaviour
             {
                 if (!targets.Contains(other.gameObject.transform))
                 {
-                    targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
+                    advantageousAttributes = other.GetComponent<UserInterface>().GetState(7);
+                    compatibility = (attributes - advantageousAttributes + 3) % 3;
+                    if (compatibility == 1 || advantageousAttributes == 3)
+                    {
+                        targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
+                    }
+                    else if (attributes == 3)
+                    {
+                        targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
+                    }
                 }
             }
         }
@@ -242,7 +259,7 @@ public class CharacterController : MonoBehaviour
 
             if (timeCount < 0)
             {
-                for (int i = 0; i < targets.Count; i++)  //敵との距離を測る
+                for (int i = 0; i < targets.Count; i++)
                 {
 
                     if (targets[i] == null)
@@ -259,6 +276,10 @@ public class CharacterController : MonoBehaviour
                             target = targets[i];
                             keepDistance = distance;
                         }
+                    }
+                    if (target == null)
+                    {
+                        target = castle[0];
                     }
                 }
                 timeCount = timeCalculate;

@@ -415,11 +415,7 @@ MonoBehaviour:
   anime: {fileID: 5119650888088506643}
   userInterface: {fileID: 5119650888088506642}
   myRigidbody: {fileID: 5119650888088506670}
-  castle:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  castle: []
   enemyTag: enemy
   damageTag: enemyAttack
   fireBallTag: fireEnemy
