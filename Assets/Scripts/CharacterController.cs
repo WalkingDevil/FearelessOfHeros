@@ -314,6 +314,7 @@ public class CharacterController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        targets.Remove(null);
         if (castle.Any(n => n == null))
         {
             castle.RemoveAt(0);
