@@ -20,7 +20,7 @@ public class SaveData : MonoBehaviour
             savePath.idData = defIdData;
             savePath.myDeckData = defIdData;
             savePath.cost = 6;
-            savePath.krystaal = 0;
+            savePath.krystaal = 1000;
             Save(savePath);
         }
 

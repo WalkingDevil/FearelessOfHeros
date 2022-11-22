@@ -26,23 +26,9 @@ public class StartDirector : MonoBehaviour
 
 
     static public int level = 1;
-    private int _krystaal = 0;
-    public int krystaal
-    {
-        get { return _krystaal; }
-        set
-        {
-            _krystaal = value;
-            if(savePath.fast)
-            {
-                _krystaal += loginBouns;
-                savePath.fast = false;
-                saveData.Save(savePath);
-                displayTexts[3].text = _krystaal.ToString();
-            }
 
-        }     
-    }
+    private int krystaal;
+
     private const int one = 1;
 
     void Start()
@@ -127,7 +113,7 @@ public class StartDirector : MonoBehaviour
         expSlider.value = savePath.exp;
         displayTexts[1].text = savePath.exp + "/" + savePath.maxExp;
         displayTexts[2].text = "コスト：" + savePath.cost;
-        displayTexts[3].text = krystaal.ToString();
+        displayTexts[3].text = savePath.krystaal.ToString();
     }
 
 }
