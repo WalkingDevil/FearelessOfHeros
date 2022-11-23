@@ -28,6 +28,8 @@ public class UniGifImage : MonoBehaviour
         Pause,
     }
 
+    [SerializeField]
+    private StartDirector start;
     // Target row image
     [SerializeField]
     private RawImage m_rawImage;
@@ -104,6 +106,7 @@ public class UniGifImage : MonoBehaviour
         {
             m_rawImage = GetComponent<RawImage>();
         }
+
         if (m_loadOnStart)
         {
             SetGifFromUrl(m_loadOnStartUrl);

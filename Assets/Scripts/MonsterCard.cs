@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,13 +49,9 @@ public class MonsterCard : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-       // Debug.Log(this.gameObject.GetComponent<Button>().onClick.GetPersistentEventCount());
-    }
     private void NewState()
     {
-        user = monster.gameObject.GetComponent<UserInterface>();//ƒ‚ƒ“ƒXƒ^[ƒIƒuƒWƒFƒNƒg‚Ìq‚É‚ ‚éƒLƒƒƒ“ƒoƒX‚©‚çUserInterface‚ğó‚¯æ‚é
+        user = monster.gameObject.GetComponent<UserInterface>();//ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å­ã«ã‚ã‚‹ã‚­ãƒ£ãƒ³ãƒã‚¹ã‹ã‚‰UserInterfaceã‚’å—ã‘å–ã‚‹
         if(!checkScene)
         {
             SetState(StartDirector.level == 1);
@@ -67,8 +63,8 @@ public class MonsterCard : MonoBehaviour
 
 
         cost = (int)user.GetState(3);
-        statasText.text = "HPF" + maxHp.ToString("D4") + "\nATF" + attack.ToString("D4") + "\nDFF" + defence.ToString("D4");//ƒXƒe[ƒ^ƒX•\¦
-        costText.text = cost.ToString();//ƒRƒXƒg‚ğ•\¦
+        statasText.text = "HPï¼š" + maxHp.ToString("D4") + "\nATï¼š" + attack.ToString("D4") + "\nDFï¼š" + defence.ToString("D4");//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤º
+        costText.text = cost.ToString();//ã‚³ã‚¹ãƒˆã‚’è¡¨ç¤º
     }
 
     private void SetState(bool scene)
@@ -88,13 +84,13 @@ public class MonsterCard : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒXƒe[ƒ^ƒX‚ğ•Ô‚·
-    /// 0FID
-    /// 1F‘®«
-    /// 2FUŒ‚—Í
-    /// 3F–hŒä—Í
-    /// 4F‚g‚o
-    /// 5FƒRƒXƒg
+    /// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’è¿”ã™
+    /// 0ï¼šID
+    /// 1ï¼šå±æ€§
+    /// 2ï¼šæ”»æ’ƒåŠ›
+    /// 3ï¼šé˜²å¾¡åŠ›
+    /// 4ï¼šï¼¨ï¼°
+    /// 5ï¼šã‚³ã‚¹ãƒˆ
     /// </summary>
     /// <param name="num"></param>
     /// <returns></returns>
@@ -119,7 +115,7 @@ public class MonsterCard : MonoBehaviour
                 return 0;
         }
     }
-    public void CardClick(Image clock)//ƒN[ƒ‹ƒ^ƒCƒ€
+    public void CardClick(Image clock)//ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ 
     {
         if (checkScene)
         {
@@ -147,18 +143,22 @@ public class MonsterCard : MonoBehaviour
     {
         return monster;
     }
+
     private void ResetButton(Image clock)
     {
         cardButton.interactable = true;
         clock.fillAmount = 0;
     }
 
+    /// <summary>
+    /// è¡¨ç¤ºã‚’ãƒªã‚»ãƒƒãƒˆ
+    /// </summary>
     public void ResetDisplay()
     {
         maxHp = (int)user.GetState(4);
         attack = (int)user.GetState(1);
         defence = (int)user.GetState(2);
 
-        statasText.text = "HPF" + maxHp.ToString("D4") + "\nATF" + attack.ToString("D4") + "\nDFF" + defence.ToString("D4");//ƒXƒe[ƒ^ƒX•\¦
+        statasText.text = "HPï¼š" + maxHp.ToString("D4") + "\nATï¼š" + attack.ToString("D4") + "\nDFï¼š" + defence.ToString("D4");//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤º
     }
 }

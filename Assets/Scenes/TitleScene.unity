@@ -835,11 +835,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221935855}
   m_CullTransparentMesh: 1
---- !u!1 &225927714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 141186, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
-  m_PrefabInstance: {fileID: 1465077724}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255765627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a962ef61c26864486fed7b06ca2919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {fileID: 1941248807}
   m_rawImage: {fileID: 633018570}
   m_imgAspectCtrl: {fileID: 633018569}
   m_filterMode: 0
@@ -2068,7 +2064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &640560544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3253,7 +3249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &971413187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5246,7 +5242,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11491604, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
   m_PrefabInstance: {fileID: 1465077724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225927714}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d416d1715bbc06d4789612d1211da8d4, type: 3}
@@ -5257,8 +5253,8 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
   m_PrefabInstance: {fileID: 1465077724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225927714}
-  m_Enabled: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 448623d86f85950479f00cc5367d0ca9, type: 3}
   m_Name: 
@@ -5293,16 +5289,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
       propertyPath: cutoutRange
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
       propertyPath: maskTexture
       value: 
-      objectReference: {fileID: 2800000, guid: ab8bc9fdc24c0df41be4ec696e4a1db7, type: 3}
+      objectReference: {fileID: 2800000, guid: b8b96983a6bcc2a4fab6f3284b623523, type: 3}
+    - target: {fileID: 11486218, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491604, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
+      propertyPath: startFafe
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22424616, guid: 53c22e1773be7f84aad8ed8b7b58fa6e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7010,9 +7014,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 1460781742}
   fadeImage: {fileID: 1460781743}
-  fadeTexture: {fileID: 2800000, guid: 38d1bbb5fbd2fda42acd968d721a8d27, type: 3}
+  fadeTexture: {fileID: 2800000, guid: ab8bc9fdc24c0df41be4ec696e4a1db7, type: 3}
   banner: {fileID: 633018570}
-  rod: {fileID: 225927714}
+  rod: {fileID: 971413186}
   selectPanel: {fileID: 1227206271}
   displayTexts:
   - {fileID: 447356921}

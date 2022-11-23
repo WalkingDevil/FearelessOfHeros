@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,8 +17,8 @@ public class StartDirector : MonoBehaviour
     [SerializeField] RawImage banner;
     [SerializeField] GameObject rod;
     [SerializeField] RectTransform selectPanel;
-    [SerializeField] List<Text> displayTexts;//‰æ–Ê•\¦—pƒeƒLƒXƒg
-    [SerializeField] Slider expSlider;//‰æ–Ê•\¦—p‚ÌEXPƒXƒ‰ƒCƒ_[
+    [SerializeField] List<Text> displayTexts;//ç”»é¢è¡¨ç¤ºç”¨ãƒ†ã‚­ã‚¹ãƒˆ
+    [SerializeField] Slider expSlider;//ç”»é¢è¡¨ç¤ºç”¨ã®EXPã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼
     [SerializeField] int deckCount = 4;
     [SerializeField] int gachaKrystaal = 5;
     [SerializeField] int loginBouns = 1000;
@@ -33,27 +33,28 @@ public class StartDirector : MonoBehaviour
 
     void Start()
     {
-        //•Û‘¶ƒf[ƒ^‚ğ‘ã“ü
+        //ä¿å­˜ãƒ‡ãƒ¼ã‚¿ã‚’ä»£å…¥
         savePath = saveData.Load();
         level = savePath.level;
         krystaal = savePath.krystaal;
-        fadeImage.Range = 1;
         fadeImage.UpdateMaskTexture(fadeTexture);
-
+        
         SetDisplay();
+
+        StartCoroutine(StartSubstitute());
     }
 
-    private void Update()
+    IEnumerator StartSubstitute()
     {
-        if(banner.texture != null)
-        {
-            rod.SetActive(false);
-            //fade.FadeOut(0.01f);
-        }
+        yield return new WaitUntil(() => banner.texture != null);
+        rod.SetActive(false);
+        fade.FadeOut(1.5f);
     }
+
+
 
     /// <summary>
-    /// ƒfƒbƒL‚ğ•Ò¬‚µƒQ[ƒ€‚ğŠJn‚·‚é
+    /// ãƒ‡ãƒƒã‚­ã‚’ç·¨æˆã—ã‚²ãƒ¼ãƒ ã‚’é–‹å§‹ã™ã‚‹
     /// </summary>
     public void Sortie()
     {
@@ -72,7 +73,7 @@ public class StartDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// •\¦‚·‚é
+    /// è¡¨ç¤ºã™ã‚‹
     /// </summary>
     /// <param name="rect"></param>
     public void OnDisplay(RectTransform rect)
@@ -82,7 +83,7 @@ public class StartDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ”ñ•\¦‚É‚·‚é
+    /// éè¡¨ç¤ºã«ã™ã‚‹
     /// </summary>
     /// <param name="rect"></param>
     public void OffDisplay(RectTransform rect)
@@ -91,7 +92,7 @@ public class StartDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒKƒ`ƒƒ‚Ì˜A”‚ğİ’è‚µƒKƒ`ƒƒ‚ğˆø‚­
+    /// ã‚¬ãƒãƒ£ã®é€£æ•°ã‚’è¨­å®šã—ã‚¬ãƒãƒ£ã‚’å¼•ã
     /// </summary>
     /// <param name="count"></param>
     public void OnGacha(int count)
@@ -106,13 +107,13 @@ public class StartDirector : MonoBehaviour
         }
     }
 
-    private void SetDisplay()//‰æ–Ê•\¦‚·‚é
+    private void SetDisplay()//ç”»é¢è¡¨ç¤ºã™ã‚‹
     {
         displayTexts[0].text = "Lv." + level;
         expSlider.maxValue = savePath.maxExp;
         expSlider.value = savePath.exp;
         displayTexts[1].text = savePath.exp + "/" + savePath.maxExp;
-        displayTexts[2].text = "ƒRƒXƒgF" + savePath.cost;
+        displayTexts[2].text = "ã‚³ã‚¹ãƒˆï¼š" + savePath.cost;
         displayTexts[3].text = savePath.krystaal.ToString();
     }
 

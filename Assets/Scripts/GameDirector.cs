@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -9,7 +9,7 @@ using DG.Tweening;
 
 public class GameDirector : MonoBehaviour
 {
-    public enum GameState { Ready,@InGame, Pouse, Clear, Over };
+    public enum GameState { Ready,ã€€InGame, Pouse, Clear, Over };
     private GameState _loadState = GameState.Ready;
     public GameState loadState
     {
@@ -38,8 +38,8 @@ public class GameDirector : MonoBehaviour
     [SerializeField] CharacterGenerator enemyGene;
     [SerializeField] CharacterGenerator allyGene;
     [SerializeField] CardsGeneration cardsGeneration;
-    [SerializeField] List<CharacterController> allyPrefabs;//–¡•û—p
-    [SerializeField] List<CharacterController> enemyPrefabs;//“G—p
+    [SerializeField] List<CharacterController> allyPrefabs;//å‘³æ–¹ç”¨
+    [SerializeField] List<CharacterController> enemyPrefabs;//æ•µç”¨
     [SerializeField] List<MonsterCard> deckCards;
     [SerializeField] PlayerController playerController;
 
@@ -47,13 +47,13 @@ public class GameDirector : MonoBehaviour
     string datapath;
 
     Action towerAction = null;
-    [SerializeField] Button sortieButton;//oŒ‚—pƒ{ƒ^ƒ“
+    [SerializeField] Button sortieButton;//å‡ºæ’ƒç”¨ãƒœã‚¿ãƒ³
     [SerializeField] Slider towerSlider;
     [SerializeField] Slider cameraSlider;
     [SerializeField] GameObject OwnPlayPanel;
     [SerializeField] GameObject scroll;
-    [SerializeField] List<UserInterface> towerUser;//ƒ^ƒ[—p‚ÌƒXƒNƒŠƒvƒg
-    [SerializeField] UserInterface myTowerUser;//©•ª‚Ì
+    [SerializeField] List<UserInterface> towerUser;//ã‚¿ãƒ¯ãƒ¼ç”¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+    [SerializeField] UserInterface myTowerUser;//è‡ªåˆ†ã®
 
     [SerializeField] AudioSource se;
     [SerializeField] AudioSource bgm;
@@ -61,7 +61,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] List<AudioClip> ses;
 
     [SerializeField] float audioVolume = 0.5f;
-    //Ô‚Ìc‚è”
+    //ç ¦ã®æ®‹ã‚Šæ•°
     [SerializeField] int _towerCount = 3;
 
     public int towerCount
@@ -73,13 +73,13 @@ public class GameDirector : MonoBehaviour
             {
                 _towerCount = value;
                 towerUser.RemoveAt(0);
-                towerUser[0].SetSlider();//Ÿ‚ÌÔ‚ÌƒXƒ‰ƒCƒ_[‚ğƒZƒbƒg‚·‚é
+                towerUser[0].SetSlider();//æ¬¡ã®ç ¦ã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
                 towerAction = enemyGene.GenerateBs;
             }
         }
     }
     [SerializeField] Slider costSlider;
-    [SerializeField] float _costSpeed = 0.001f;//ƒRƒXƒg‚ğ‘‚â‚·ƒXƒs[ƒh’l
+    [SerializeField] float _costSpeed = 0.001f;//ã‚³ã‚¹ãƒˆã‚’å¢—ã‚„ã™ã‚¹ãƒ”ãƒ¼ãƒ‰å€¤
     public float costSpeed
     {
         get { return _costSpeed; }
@@ -91,7 +91,7 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
-    [SerializeField] int maxCost = 0;//ƒRƒXƒg‚ÌMax’l
+    [SerializeField] int maxCost = 0;//ã‚³ã‚¹ãƒˆã®Maxå€¤
 
     private float _cost;
     public float cost
@@ -133,7 +133,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] string lv;
     [SerializeField] float chengeMaxHp;
     [SerializeField] float _maxExp;
-    public bool selfOperation = false;//©‘€ìó‘Ô‚©
+    public bool selfOperation = false;//è‡ªæ“ä½œçŠ¶æ…‹ã‹
     public float maxExp
     {
         get { return _maxExp; }
@@ -171,9 +171,9 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
-    //“|‚µ‚½‘Ì”
+    //å€’ã—ãŸä½“æ•°
     private int enemyDefeatCount;
-    //–¡•û‚ª€‚ñ‚¾”
+    //å‘³æ–¹ãŒæ­»ã‚“ã æ•°
     private int allyDieCount;
 
 
@@ -192,7 +192,7 @@ public class GameDirector : MonoBehaviour
 
         savePath = saveData.Load();
 
-        //ƒRƒXƒg‚ğƒZƒbƒg‚·‚é
+        //ã‚³ã‚¹ãƒˆã‚’ã‚»ãƒƒãƒˆã™ã‚‹
         maxCost = savePath.cost;
         cost = maxCost;
 
@@ -206,7 +206,7 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒRƒXƒg‚ÌƒXƒ‰ƒCƒ_[‚Ì’l‚ğ•Ï‚¦‚é
+    /// ã‚³ã‚¹ãƒˆã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å€¤ã‚’å¤‰ãˆã‚‹
     /// </summary>
     private void CostSlider()
     {
@@ -215,33 +215,33 @@ public class GameDirector : MonoBehaviour
 
     private void Start()
     {
-        //Audio‚Ì‰Šúİ’è
+        //Audioã®åˆæœŸè¨­å®š
         bgmAudioCo = new AudioController(bgm, bgms[0]);
         bgmAudioCo.ChengePlayAudio(true);
         bgmAudioCo.SettingVolume(audioVolume);
         seAudioCo = new AudioController(se);
 
-        //“GHP‚Ìİ’è
+        //æ•µHPã®è¨­å®š
         towerAction = enemyGene.GenerateBs;
         towerUser[0].SetSlider();
 
-        //w’n‚Ìİ’è
+        //é™£åœ°ã®è¨­å®š
         myTowerUser.SetSlider();
 
-        //ƒRƒXƒg‚Ìİ’è
+        //ã‚³ã‚¹ãƒˆã®è¨­å®š
         costSlider.maxValue = maxCost;
         costSlider.value = maxCost;
 
-        //ƒŒƒxƒ‹‚Ìİ’è
+        //ãƒ¬ãƒ™ãƒ«ã®è¨­å®š
         _level = savePath.level;
         levelUpBonus.SetStartLevel(level);
         levelText.text = lv + level.ToString();
 
-        //“GA–¡•û‚ÌƒXƒe[ƒ^ƒX‚ğƒŒƒxƒ‹‚É‰‚¶‚½İ’è
+        //æ•µã€å‘³æ–¹ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’ãƒ¬ãƒ™ãƒ«ã«å¿œã˜ãŸè¨­å®š
         StateUpdate(allyPrefabs);
         StateUpdate(enemyPrefabs);
         
-        //ŒoŒ±’l‚Ìİ’è
+        //çµŒé¨“å€¤ã®è¨­å®š
         expSlider.maxValue = maxExp;
         
         
@@ -250,7 +250,7 @@ public class GameDirector : MonoBehaviour
 
     private void Update()
     {
-        //ƒRƒXƒg‚¼‘‰Á‚³‚¹‚é
+        //ã‚³ã‚¹ãƒˆãå¢—åŠ ã•ã›ã‚‹
         if (costSlider.value < costSlider.maxValue)
         {
             CostSlider();
@@ -258,7 +258,7 @@ public class GameDirector : MonoBehaviour
 
     }
     /// <summary>
-    /// ƒQ[ƒ€ƒXƒe[ƒg
+    /// ã‚²ãƒ¼ãƒ ã‚¹ãƒ†ãƒ¼ãƒˆ
     /// </summary>
     private void ChangeState()
     {
@@ -266,11 +266,11 @@ public class GameDirector : MonoBehaviour
         {
             case GameState.Clear:
                 ProcessCommon(0, false);
-                //ƒXƒRƒA•\¦
+                //ã‚¹ã‚³ã‚¢è¡¨ç¤º
                 levelUpBonus.LevelBonus(level);
                 levelUpBonus.ClearBonus(enemyDefeatCount, allyDieCount);
                 scroll.SetActive(true);
-                //ƒf[ƒ^‚ğXV
+                //ãƒ‡ãƒ¼ã‚¿ã‚’æ›´æ–°
                 NewData();
                 break;
             case GameState.Over:
@@ -282,15 +282,15 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ‹¤’Ê‚µ‚Ä‚¢‚éˆ—
+    /// å…±é€šã—ã¦ã„ã‚‹å‡¦ç†
     /// </summary>
-    /// <param name="seNum">SE‚Ì”Ô†</param>
-    /// <param name="over">ƒQ[ƒ€ƒI[ƒo[‚©‚Ç‚¤‚©</param>
+    /// <param name="seNum">SEã®ç•ªå·</param>
+    /// <param name="over">ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã‹ã©ã†ã‹</param>
     private void ProcessCommon(int seNum = 0, bool over = true)
     {
         bgmAudioCo.ChengePlayAudio(false);
-        cameraController.ChengeSelfOperation(false);//’Ç]‚ğØ‚é
-        cameraController.endAction = () => resultManeger.ChengeText(over);//action‚ÉƒeƒLƒXƒg‚ğ“ü‚ê‚é
+        cameraController.ChengeSelfOperation(false);//è¿½å¾“ã‚’åˆ‡ã‚‹
+        cameraController.endAction = () => resultManeger.ChengeText(over);//actionã«ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥ã‚Œã‚‹
         cameraController.FinishMove(over, selfOperation);
 
         enemyGene.gameObject.SetActive(false);
@@ -302,9 +302,9 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// “Gƒ^ƒ[‚ÌƒXƒ‰ƒCƒ_[ó‹µ‚ğó‚¯æ‚é
+    /// æ•µã‚¿ãƒ¯ãƒ¼ã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼çŠ¶æ³ã‚’å—ã‘å–ã‚‹
     /// </summary>
-    /// <param name="slider">ƒ^ƒ[ƒXƒ‰ƒCƒ_[</param>
+    /// <param name="slider">ã‚¿ãƒ¯ãƒ¼ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼</param>
     public void GetTowerValue(Slider slider)
     {
         if(slider.value < slider.maxValue / 2)
@@ -322,7 +322,7 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒf[ƒ^‚ÌXV
+    /// ãƒ‡ãƒ¼ã‚¿ã®æ›´æ–°
     /// </summary>
     private void NewData()
     {
@@ -340,14 +340,14 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒŒƒxƒ‹ƒAƒbƒv‚ÉƒXƒe[ƒ^ƒX‚ğXV‚³‚¹‚é
+    /// ãƒ¬ãƒ™ãƒ«ã‚¢ãƒƒãƒ—æ™‚ã«ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’æ›´æ–°ã•ã›ã‚‹
     /// </summary>
-    /// <param name="characters">ŠeƒLƒƒƒ‰ƒNƒ^[</param>
+    /// <param name="characters">å„ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼</param>
     private void StateUpdate(List<CharacterController> characters)
     {
         foreach (CharacterController character in characters)
         {
-            //UserInterfaceƒXƒNƒŠƒvƒg‚ğó‚¯æ‚é
+            //UserInterfaceã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å—ã‘å–ã‚‹
             UserInterface user = character.gameObject.GetComponent<UserInterface>();
             user.ChengeState(level);
         }
@@ -359,7 +359,7 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒŒƒxƒ‹ƒAƒbƒv‚ÉƒfƒbƒL‚ÌƒXƒe[ƒ^ƒX‚ğ•ÏX
+    /// ãƒ¬ãƒ™ãƒ«ã‚¢ãƒƒãƒ—æ™‚ã«ãƒ‡ãƒƒã‚­ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å¤‰æ›´
     /// </summary>
     private void DisplayUpdate()
     {
@@ -369,16 +369,16 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    //ƒ‚[ƒhƒ`ƒFƒ“ƒW
+    //ãƒ¢ãƒ¼ãƒ‰ãƒã‚§ãƒ³ã‚¸æ™‚
     public IEnumerator BarinChenge()
     {
         selfOperation = true;
         sortieButton.gameObject.SetActive(false);
 
-        bgmAudioCo.ChengePlayAudio(false);//BGM‚ğ~‚ß‚é
+        bgmAudioCo.ChengePlayAudio(false);//BGMã‚’æ­¢ã‚ã‚‹
 
-        cameraController.FinishMove(true);//ƒJƒƒ‰‚ğˆÚ“®‚³‚¹‚é
-        cameraController.endAction = () => myTower.ChengeMode();//action‚ÉƒeƒLƒXƒg‚ğ“ü‚ê‚é
+        cameraController.FinishMove(true);//ã‚«ãƒ¡ãƒ©ã‚’ç§»å‹•ã•ã›ã‚‹
+        cameraController.endAction = () => myTower.ChengeMode();//actionã«ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥ã‚Œã‚‹
 
         yield return new WaitForSeconds(2f);
 
@@ -387,7 +387,7 @@ public class GameDirector : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        //ƒJƒƒ‰‚ğ‚à‚Æ‚ÌˆÊ’u‚É
+        //ã‚«ãƒ¡ãƒ©ã‚’ã‚‚ã¨ã®ä½ç½®ã«
         cameraController.CameraMoveAction();
 
         OwnPlayPanel.SetActive(true);
@@ -395,13 +395,13 @@ public class GameDirector : MonoBehaviour
         targetDisplay.gameObject.SetActive(true);
         cameraSlider.gameObject.SetActive(false);
 
-        //BGM‚ğ•Ï‚¦‚ÄÄ¶
+        //BGMã‚’å¤‰ãˆã¦å†ç”Ÿ
         bgmAudioCo.ChengeClip(bgms[1]);
         bgmAudioCo.ChengePlayAudio(true);
         yield return null;
     }
 
-    public void BrainMuscleMode()//ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚çƒ‚[ƒh‚ğ•Ï‚¦‚é
+    public void BrainMuscleMode()//ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã‚‰ãƒ¢ãƒ¼ãƒ‰ã‚’å¤‰ãˆã‚‹
     {
         StartCoroutine(BarinChenge());
 

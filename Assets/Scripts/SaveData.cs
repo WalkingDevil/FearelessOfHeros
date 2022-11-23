@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.IO;
@@ -12,7 +12,7 @@ public class SaveData : MonoBehaviour
     {
         string dataPath = DataPath(true);
 
-        if (!File.Exists(dataPath))//ƒZ[ƒuƒf[ƒ^‚ğì¬
+        if (!File.Exists(dataPath))//ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’ä½œæˆ
         {
             // File.Create(dataPath);
             savePath.level = 1;
@@ -43,25 +43,11 @@ public class SaveData : MonoBehaviour
     public void Save(SavePath newSave)
     {
         string dataPath = DataPath();
-        string jsonstr = JsonUtility.ToJson(newSave);//ó‚¯æ‚Á‚½PlayerData‚ğJSON‚É•ÏŠ·
-        StreamWriter writer = new StreamWriter(dataPath, false);//‰‚ß‚Éw’è‚µ‚½ƒf[ƒ^‚Ì•Û‘¶æ‚ğŠJ‚­
-        writer.WriteLine(jsonstr);//JSONƒf[ƒ^‚ğ‘‚«‚İ
-        writer.Flush();//ƒoƒbƒtƒ@‚ğƒNƒŠƒA‚·‚é
-        writer.Close();//ƒtƒ@ƒCƒ‹‚ğƒNƒ[ƒY‚·‚é
-        //File.WriteAllText(dataPath, jsonstr);
-        /*
-#if UNITY_EDITOR
-        {
-            StreamWriter writer = new StreamWriter(dataPath, false);//‰‚ß‚Éw’è‚µ‚½ƒf[ƒ^‚Ì•Û‘¶æ‚ğŠJ‚­
-            writer.WriteLine(jsonstr);//JSONƒf[ƒ^‚ğ‘‚«‚İ
-            writer.Flush();//ƒoƒbƒtƒ@‚ğƒNƒŠƒA‚·‚é
-            writer.Close();//ƒtƒ@ƒCƒ‹‚ğƒNƒ[ƒY‚·‚é
-        }
-#endif
-        {
-            File.WriteAllText(dataPath, jsonstr);
-        }*/
-
+        string jsonstr = JsonUtility.ToJson(newSave);//å—ã‘å–ã£ãŸPlayerDataã‚’JSONã«å¤‰æ›
+        StreamWriter writer = new StreamWriter(dataPath, false);//åˆã‚ã«æŒ‡å®šã—ãŸãƒ‡ãƒ¼ã‚¿ã®ä¿å­˜å…ˆã‚’é–‹ã
+        writer.WriteLine(jsonstr);//JSONãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿
+        writer.Flush();//ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
+        writer.Close();//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¯ãƒ­ãƒ¼ã‚ºã™ã‚‹
     }
 
     /*  public void SetData(List<MonsterCard> cards)
@@ -72,31 +58,8 @@ public class SaveData : MonoBehaviour
     private String DataPath(bool load = false)
     {
         string path = null;
-        /*
-#if UNITY_WEBGL
-        {
-            if (load)
-            {
-                path = Application.streamingAssetsPath + "/SaveData.csv";
-            }
-            else
-            {
-                path = Application.persistentDataPath + "/SaveData.csv";
-            }
-
-        }
-#endif
-
-#if UNITY_EDITOR || UNITY_EDITOR_WIN
-        {
-            {
-                path = Application.dataPath + "/SaveData.json";
-            }
-
-            
-        }
-#endif*/
-        path = Application.dataPath + "/SaveData.json";
+        //path = Application.dataPath + "/SaveData.json";
+        path = Application.persistentDataPath + "/SaveData.json";
         return path;
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
@@ -18,7 +18,7 @@ public class LevelUpBonus : MonoBehaviour
     [SerializeField] RectTransform content;
     [SerializeField] RectTransform resultPrefab;
     const int zero = 0;
-    //ŠJn‚ÌƒŒƒxƒ‹‚ğ“ü‚ê‚é
+    //é–‹å§‹æ™‚ã®ãƒ¬ãƒ™ãƒ«ã‚’å…¥ã‚Œã‚‹
     public void SetStartLevel(int startLevel = 0)
     {
         this.startLevel = startLevel;
@@ -33,7 +33,7 @@ public class LevelUpBonus : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒŒƒxƒ‹ƒAƒbƒv‚Ì•\¦
+    /// ãƒ¬ãƒ™ãƒ«ã‚¢ãƒƒãƒ—æ™‚ã®è¡¨ç¤º
     /// </summary>
     /// <param name="endLevel"></param>
     public void LevelBonus(int endLevel = 0)
@@ -45,34 +45,34 @@ public class LevelUpBonus : MonoBehaviour
             {
                 SetBonus(l);
             }
-            string massege = startLevel + " ¨ " + endLevel + "‚ÉƒŒƒxƒ‹ƒAƒbƒv‚µ‚½";
+            string massege = startLevel + " â†’ " + endLevel + "ã«ãƒ¬ãƒ™ãƒ«ã‚¢ãƒƒãƒ—ã—ãŸ";
             GenerationText(massege);
         }
     }
 
     /// <summary>
-    /// ƒNƒŠƒA‚Ìƒ{[ƒiƒX
+    /// ã‚¯ãƒªã‚¢æ™‚ã®ãƒœãƒ¼ãƒŠã‚¹
     /// </summary>
-    /// <param name="enemyCount">“G‚ğ“|‚µ‚½‰ñ”</param>
-    /// <param name="allyCount">–¡•û‚ª“|‚ê‚½‰ñ”</param>
+    /// <param name="enemyCount">æ•µã‚’å€’ã—ãŸå›æ•°</param>
+    /// <param name="allyCount">å‘³æ–¹ãŒå€’ã‚ŒãŸå›æ•°</param>
     public void ClearBonus(int enemyCount, int allyCount)
     {
-        GenerationText("“G‚ğ" + enemyCount + "‘Ì“|‚µ‚Ü‚µ‚½B");
-        GenerationText("–¡•û‚ª" + enemyCount + "‘Ì“|‚ê‚Ü‚µ‚½B");
+        GenerationText("æ•µã‚’" + enemyCount + "ä½“å€’ã—ã¾ã—ãŸã€‚");
+        GenerationText("å‘³æ–¹ãŒ" + enemyCount + "ä½“å€’ã‚Œã¾ã—ãŸã€‚");
 
-        //“G‚ğ“|‚µ‚½” - “|‚³‚ê‚½”‚ğ0ˆÈã‚Ì”‚ÅŒvZ
+        //æ•µã‚’å€’ã—ãŸæ•° - å€’ã•ã‚ŒãŸæ•°ã‚’0ä»¥ä¸Šã®æ•°ã§è¨ˆç®—
         var diff = Mathf.Clamp(enemyCount - allyCount, zero, Mathf.Infinity);
-        //·‚ğŠ„‚èA¬”“_ˆÈ‰ºØ‚èã‚°‚ÅŒvZ
+        //å·®ã‚’å‰²ã‚Šã€å°æ•°ç‚¹ä»¥ä¸‹åˆ‡ã‚Šä¸Šã’ã§è¨ˆç®—
         krystal =  (int)Mathf.Ceil(diff / kystaalRate) + clearKrystaal;
 
-        GenerationText("ƒNƒŠƒXƒ^ƒ‹‚ğ" + krystal + "è‚É“ü‚ê‚½B");
+        GenerationText("ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã‚’" + krystal + "æ‰‹ã«å…¥ã‚ŒãŸã€‚");
 
     }
 
     /// <summary>
-    /// ƒŒƒxƒ‹‚É‡‚í‚¹‚½ƒ{[ƒiƒX
+    /// ãƒ¬ãƒ™ãƒ«ã«åˆã‚ã›ãŸãƒœãƒ¼ãƒŠã‚¹
     /// </summary>
-    /// <param name="num">ƒŒƒxƒ‹</param>
+    /// <param name="num">ãƒ¬ãƒ™ãƒ«</param>
     private void SetBonus(int num)
     {
         List<int> list;
@@ -81,14 +81,14 @@ public class LevelUpBonus : MonoBehaviour
             case 3:
                 list = new List<int>() { 5, 6};
                 idDatas.AddRange(list);
-                GenerationText("V‚½‚É2ƒLƒƒƒ‰’Ç‰Á‚³‚ê‚Ü‚µ‚½B");
+                GenerationText("æ–°ãŸã«2ã‚­ãƒ£ãƒ©è¿½åŠ ã•ã‚Œã¾ã—ãŸã€‚");
                 break;
             case 5:
                 list = new List<int>(){ 7, 8};
                 idDatas.AddRange(list);
-                GenerationText("V‚½‚É2ƒLƒƒƒ‰’Ç‰Á‚³‚ê‚Ü‚µ‚½B");
+                GenerationText("æ–°ãŸã«2ã‚­ãƒ£ãƒ©è¿½åŠ ã•ã‚Œã¾ã—ãŸã€‚");
                 cost++;
-                GenerationText("ƒRƒXƒg‚ª‚P‚Â‘‰Á‚µ‚Ü‚µ‚½B");
+                GenerationText("ã‚³ã‚¹ãƒˆãŒï¼‘ã¤å¢—åŠ ã—ã¾ã—ãŸã€‚");
                 break;
             default:
                 Debug.Log(num);
@@ -97,9 +97,9 @@ public class LevelUpBonus : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒƒbƒZ[ƒW‚ğ’Ç‰Á‚·‚é
+    /// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¿½åŠ ã™ã‚‹
     /// </summary>
-    /// <param name="r">ƒƒbƒZ[ƒW</param>
+    /// <param name="r">ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
     private void GenerationText(string r)
     {
         GameObject ob = Instantiate(resultPrefab.gameObject, content);
@@ -107,7 +107,7 @@ public class LevelUpBonus : MonoBehaviour
     }
 
     /// <summary>
-    /// V‚µ‚­•Û‘¶‚·‚éƒ‚ƒ“ƒXƒ^[ƒf[ƒ^
+    /// æ–°ã—ãä¿å­˜ã™ã‚‹ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿
     /// </summary>
     /// <returns></returns>
     public List<int> SetIdData()
@@ -116,7 +116,7 @@ public class LevelUpBonus : MonoBehaviour
     }
 
     /// <summary>
-    /// V‚µ‚­•Û‘¶‚·‚éƒRƒXƒg
+    /// æ–°ã—ãä¿å­˜ã™ã‚‹ã‚³ã‚¹ãƒˆ
     /// </summary>
     /// <returns></returns>
     public int SetCost()
