@@ -32,6 +32,8 @@ public class FadeUI : MonoBehaviour, IFade
 	[SerializeField, Range (0, 1)]
 	private float cutoutRange;
 
+
+
 	public float Range {
 		get {
 			return cutoutRange;
@@ -47,6 +49,7 @@ public class FadeUI : MonoBehaviour, IFade
 
 	[SerializeField] Texture texture = null;
 
+	[SerializeField]	private Texture maskTexture = null;
 	private void UpdateMaskCutout (float range)
 	{
 		mat.SetFloat ("_Range", range);
@@ -56,5 +59,10 @@ public class FadeUI : MonoBehaviour, IFade
 		var mask = GetComponent<Mask> ();
 		mask.enabled = false;
 		mask.enabled = true;
+	}
+
+	public void UpdateMaskTexture(Texture texture)
+	{
+		mat.SetTexture("_MaskTex", texture);
 	}
 }

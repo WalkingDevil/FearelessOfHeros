@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using System;
 using System.IO;
@@ -11,11 +12,19 @@ public class StartDirector : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
-    [SerializeField] Fade fade;
-    [SerializeField] FadeImage fadeImage;
-    [SerializeField] Texture2D fadeTexture;
+    private AudioController audio;
+    [SerializeField] AudioSource source;
+    [SerializeField] List<AudioClip> bgm;
+
+    //開始時の演出
+    [SerializeField] VideoPlayer videoPlayer;
+    [SerializeField] RectTransform opPanel;
+    [SerializeField] RectTransform rogo;
     [SerializeField] RawImage banner;
     [SerializeField] GameObject rod;
+    [SerializeField] Button skipButton;
+
+
     [SerializeField] RectTransform selectPanel;
     [SerializeField] List<Text> displayTexts;//画面表示用テキスト
     [SerializeField] Slider expSlider;//画面表示用のEXPスライダー
@@ -23,7 +32,8 @@ public class StartDirector : MonoBehaviour
     [SerializeField] int gachaKrystaal = 5;
     [SerializeField] int loginBouns = 1000;
     [SerializeField] float scaleSpeed = 0.5f;
-
+    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float fastStopSpeed = 10f;
 
     static public int level = 1;
 
@@ -37,21 +47,52 @@ public class StartDirector : MonoBehaviour
         savePath = saveData.Load();
         level = savePath.level;
         krystaal = savePath.krystaal;
-        fadeImage.UpdateMaskTexture(fadeTexture);
+
+        audio = new AudioController(source, bgm[0]);
+        audio.ChengePlayAudio(true);
         
         SetDisplay();
 
         StartCoroutine(StartSubstitute());
     }
 
+    /// <summary>
+    /// スタート時のコルーチン
+    /// </summary>
+    /// <returns></returns>
     IEnumerator StartSubstitute()
     {
         yield return new WaitUntil(() => banner.texture != null);
-        rod.SetActive(false);
-        fade.FadeOut(1.5f);
+
+        skipButton.gameObject.SetActive(true);
+
+        yield return new WaitUntil(() => videoPlayer.isPlaying != true);
+
+        rogo.DOAnchorPosY(0, moveSpeed);
+
+        yield return new WaitForSeconds(fastStopSpeed);
+
+        FeidOpeningPanel();
+
     }
-
-
+    /// <summary>
+    /// フェード時に行う処理
+    /// </summary>
+    private void FeidOpeningPanel()
+    {
+        opPanel.DOAnchorPosX(-Screen.width, moveSpeed).OnComplete(() => rod.SetActive(false));
+        audio.ChengePlayAudio(false);
+        audio.ChengeClip(bgm[1]);
+        audio.ChengePlayAudio(true);
+    }
+    /// <summary>
+    /// スキップボタン
+    /// </summary>
+    public void OnSkip()
+    {
+        StopCoroutine(StartSubstitute());
+        FeidOpeningPanel();
+    }
 
     /// <summary>
     /// デッキを編成しゲームを開始する
