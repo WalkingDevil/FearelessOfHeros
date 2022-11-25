@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public class Gacha : MonoBehaviour
 {
@@ -91,16 +92,17 @@ public class Gacha : MonoBehaviour
     {
         foreach (GameObject obj in objects)  // モンスターを表示
         {
+            AnimeController animeController = obj.GetComponent<AnimeController>();
             skipBotton.SetActive(false);
             //yield return StartCoroutine("Effect");
             float attribute = obj.GetComponent<CharacterController>().SetMyUserInterface().GetState(7);
             fadeImage.color = GetColor(attribute);
             fadeImage.UpdateMaskTexture(fadeTexture);
-            fade.FadeIn(1.5f, () => print("フェードイン完了"));
+            fade.FadeIn(1.5f);
             yield return new WaitForSeconds(1.5f);
-            fade.FadeOut(1.5f, () => print("フェードアウト完了"));
+            fade.FadeOut(1.5f);
             skippable = true;
-            GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+            GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 9.0f), Quaternion.identity) as GameObject;
             game.GetComponent<UserInterface>().ChengeGach();
             game.GetComponent<CharacterController>().enabled = false;
             game.GetComponent<NavMeshAgent>().enabled = false;
@@ -115,7 +117,9 @@ public class Gacha : MonoBehaviour
                 Destroy(game);
                 break;
             }
-            Destroy(game);
+            //Destroy(game);
+            animeController.TransitionAnime("run");
+            game.transform.DOMoveZ(50f, 3f).OnComplete(() => Destroy(game));
         }
 
         yield return new WaitForSeconds(0.5f);
