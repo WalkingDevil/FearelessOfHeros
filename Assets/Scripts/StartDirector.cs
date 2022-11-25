@@ -21,9 +21,10 @@ public class StartDirector : MonoBehaviour
     [SerializeField] RectTransform opPanel;
     [SerializeField] RectTransform rogo;
     [SerializeField] RawImage banner;
+    [SerializeField] RawImage organization;
     [SerializeField] GameObject rod;
     [SerializeField] Button skipButton;
-
+    [SerializeField] GameObject organizationScroll;
 
     [SerializeField] RectTransform selectPanel;
     [SerializeField] List<Text> displayTexts;//画面表示用テキスト
@@ -62,9 +63,10 @@ public class StartDirector : MonoBehaviour
     /// <returns></returns>
     IEnumerator StartSubstitute()
     {
-        yield return new WaitUntil(() => banner.texture != null);
+        yield return new WaitUntil(() => banner.texture != null && organization.texture != null);
 
         skipButton.gameObject.SetActive(true);
+        organizationScroll.SetActive(false);
 
         yield return new WaitUntil(() => videoPlayer.isPlaying != true);
 
@@ -148,6 +150,10 @@ public class StartDirector : MonoBehaviour
         }
     }
 
+    public void ExplanationDisplay(GameObject ob)
+    {
+        ob.SetActive(!ob.activeInHierarchy);
+    }
     private void SetDisplay()//画面表示する
     {
         displayTexts[0].text = "Lv." + level;

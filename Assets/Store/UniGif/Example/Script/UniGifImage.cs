@@ -28,8 +28,6 @@ public class UniGifImage : MonoBehaviour
         Pause,
     }
 
-    [SerializeField]
-    private StartDirector start;
     // Target row image
     [SerializeField]
     private RawImage m_rawImage;
