@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -10,30 +10,30 @@ public class CameraController : MonoBehaviour
     [SerializeField] PlayerController player;
     [SerializeField] Transform playerDiePos;
 
-    [SerializeField] float defPosY;//•W€‚ÌYÀ•W
-    [SerializeField] float defPosZ;//•W€‚ÌZÀ•W
-    [SerializeField] float criteriaPro;//Šî€‚ÌŠ„‡
-    [SerializeField] float maxCriteriaPro;//Å‘åŠî€‚ÌŠ„‡
-    [SerializeField] float maxRange;//Å‘å‚Ì‰œs
-    [SerializeField] float maxHeight;//Å‘å‚ÌƒJƒƒ‰‚Ì‚‚³
-    [SerializeField] float criteriaZ;//Šî€‚ÌZÀ•W
+    [SerializeField] float defPosY;//æ¨™æº–ã®Yåº§æ¨™
+    [SerializeField] float defPosZ;//æ¨™æº–ã®Zåº§æ¨™
+    [SerializeField] float criteriaPro;//åŸºæº–ã®å‰²åˆ
+    [SerializeField] float maxCriteriaPro;//æœ€å¤§åŸºæº–ã®å‰²åˆ
+    [SerializeField] float maxRange;//æœ€å¤§ã®å¥¥è¡Œ
+    [SerializeField] float maxHeight;//æœ€å¤§ã®ã‚«ãƒ¡ãƒ©ã®é«˜ã•
+    [SerializeField] float criteriaZ;//åŸºæº–ã®Zåº§æ¨™
 
     
     [SerializeField] Transform overPosition;
     [SerializeField] Transform clearPosition;
-    [SerializeField] float range = 20f;//·‚Ì”ÍˆÍ
-    [SerializeField] float moveSpeed = 0.1f;//“®‚©‚·ƒXƒs[ƒh
-    private Vector3 defPos;//‰ŠúˆÊ’u
-    private Quaternion defRot;//‰ŠúˆÊ’u
-    private float screenHeigth;//ƒXƒNƒŠ[ƒ“‚Ì‚‚³
-    private Vector3 distance;//Player‚ÆƒJƒƒ‰‚Ì·
+    [SerializeField] float range = 20f;//å·®ã®ç¯„å›²
+    [SerializeField] float moveSpeed = 0.1f;//å‹•ã‹ã™ã‚¹ãƒ”ãƒ¼ãƒ‰
+    private Vector3 defPos;//åˆæœŸä½ç½®
+    private Quaternion defRot;//åˆæœŸä½ç½®
+    private float screenHeigth;//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®é«˜ã•
+    private Vector3 distance;//Playerã¨ã‚«ãƒ¡ãƒ©ã®å·®
     public Action endAction = null;
     int one = 1;
-    bool selfOperation = false;//©‘€ìó‘Ô‚©
+    bool selfOperation = false;//è‡ªæ“ä½œçŠ¶æ…‹ã‹
 
     private void Start()
     {
-        screenHeigth = Screen.height / 2;//ƒXƒNƒŠ[ƒ“‚Ì’†“_‚ğ“ü‚ê‚é
+        screenHeigth = Screen.height / 2;//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®ä¸­ç‚¹ã‚’å…¥ã‚Œã‚‹
         distance = transform.position - player.gameObject.transform.position;
         defPos = transform.position;
         defRot = transform.rotation;
@@ -43,10 +43,10 @@ public class CameraController : MonoBehaviour
     {
         if (selfOperation)
         {
-            //Player‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·
+            //Playerã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›
             Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(player.gameObject.transform.position);
            
-            //Player‚Æ’†S‚Ì·‚ªAŒˆ‚ß‚½”ÍˆÍ‚æ‚èã‚É‚¢‚é‚©
+            //Playerã¨ä¸­å¿ƒã®å·®ãŒã€æ±ºã‚ãŸç¯„å›²ã‚ˆã‚Šä¸Šã«ã„ã‚‹ã‹
             if (playerScreenPoint.y - screenHeigth >= range)
             {
                 Vector3 move = Vector3.Lerp(transform.position, player.gameObject.transform.position + distance, moveSpeed * Time.deltaTime);
@@ -55,16 +55,16 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    //ƒ‚[ƒh•ÏX‚Éó‚¯æ‚é
+    //ãƒ¢ãƒ¼ãƒ‰å¤‰æ›´æ™‚ã«å—ã‘å–ã‚‹
     public void ChengeSelfOperation(bool ope)
     {
         selfOperation = ope;
     }
 
     /// <summary>
-    /// ƒJƒƒ‰‚ÌˆÊ’u‚ğƒXƒ‰ƒCƒ_[‚Å“®‚©‚·
+    /// ã‚«ãƒ¡ãƒ©ã®ä½ç½®ã‚’ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã§å‹•ã‹ã™
     /// </summary>
-    /// <param name="slider">“®‚©‚·—p‚ÌƒXƒ‰ƒCƒ_[</param>
+    /// <param name="slider">å‹•ã‹ã™ç”¨ã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼</param>
     public void MoveCamera(Slider slider)
     {
         float proportion = 0;
@@ -81,11 +81,11 @@ public class CameraController : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒXƒ‰ƒCƒ_[‚Ì’l‚ÌŠ„‡‚ğ•ÏŠ·‚µ‚Ä’l‚ğ•Ô‚·
+    /// ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å€¤ã®å‰²åˆã‚’å¤‰æ›ã—ã¦å€¤ã‚’è¿”ã™
     /// </summary>
-    /// <param name="check">À•W‚ğ’´‚¦‚Ä‚¢‚é‚©</param>
-    /// <param name="value">ƒXƒ‰ƒCƒ_[‚Ì’l</param>
-    /// <param name="def">Šî€‚ÌÀ•W’l</param>
+    /// <param name="check">åº§æ¨™ã‚’è¶…ãˆã¦ã„ã‚‹ã‹</param>
+    /// <param name="value">ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å€¤</param>
+    /// <param name="def">åŸºæº–ã®åº§æ¨™å€¤</param>
     /// <returns></returns>
     private float GetCoordinates(bool check ,float value, float def)
     {
@@ -102,9 +102,8 @@ public class CameraController : MonoBehaviour
     public void FinishMove(bool over, bool stop = false)
     {
         Transform nextTransform = null;
-        if(over)//ó‘Ô‚É‚æ‚Á‚ÄˆÊ’u‚ğ—^‚¦‚é
+        if(over)//çŠ¶æ…‹ã«ã‚ˆã£ã¦ä½ç½®ã‚’ä¸ãˆã‚‹
         {
-            Debug.Log(5665);
             if (stop)
             {
                 nextTransform = playerDiePos;
@@ -119,11 +118,11 @@ public class CameraController : MonoBehaviour
             nextTransform = clearPosition;
         }
 
-        transform.DOMove(nextTransform.position, 1f);//w’è‚µ‚½ˆÊ’u‚ÉˆÚ“®
-        transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); });//w’è‚µ‚½Šp“x‚É‚·‚é
+        transform.DOMove(nextTransform.position, 1f);//æŒ‡å®šã—ãŸä½ç½®ã«ç§»å‹•
+        transform.DORotateQuaternion(nextTransform.rotation, 1f).OnComplete(() => { endAction(); });//æŒ‡å®šã—ãŸè§’åº¦ã«ã™ã‚‹
     }
 
-    //ˆÊ’u‚ğŒ³‚É–ß‚·
+    //ä½ç½®ã‚’å…ƒã«æˆ»ã™
     public void CameraMoveAction()
     {
         Debug.Log(defPos);

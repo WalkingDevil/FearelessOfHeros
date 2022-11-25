@@ -144,6 +144,10 @@ public class MonsterCard : MonoBehaviour
         return monster;
     }
 
+    /// <summary>
+    /// CardのinteractableをTrueにする
+    /// </summary>
+    /// <param name="clock">Card画像</param>
     private void ResetButton(Image clock)
     {
         cardButton.interactable = true;

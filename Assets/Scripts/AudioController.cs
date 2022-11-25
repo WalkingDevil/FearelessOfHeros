@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,10 +7,10 @@ public class AudioController : MonoBehaviour
     private AudioSource source;
 
     /// <summary>
-    /// Audio�̏����ݒ�
+    /// Audioの初期設定
     /// </summary>
-    /// <param name="source">AudioSource�̐ݒ�</param>
-    /// <param name="clip">AudioClip�̏����ݒ�</param>
+    /// <param name="source">AudioSourceの設定</param>
+    /// <param name="clip">AudioClipの初期設定</param>
     public AudioController(AudioSource source ,AudioClip clip = null)
     {
         this.source = source;
@@ -19,7 +19,7 @@ public class AudioController : MonoBehaviour
     }
 
     /// <summary>
-    /// Audio�̍Đ�
+    /// Audioの再生
     /// </summary>
     public void ChengePlayAudio(bool on)
     {
@@ -33,11 +33,19 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ボリュームを変える
+    /// </summary>
+    /// <param name="volume">ボリュームの値</param>
     public void SettingVolume(float volume)
     {
         source.volume = volume;
     }
 
+    /// <summary>
+    /// 音を変える
+    /// </summary>
+    /// <param name="clip">変更するClip</param>
     public void ChengeClip(AudioClip clip)
     {
         source.clip = clip;

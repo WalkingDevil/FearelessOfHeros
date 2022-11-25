@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,10 +7,11 @@ public class AnimeController : MonoBehaviour
     [SerializeField] GameObject monster;
     [SerializeField] Animator animator;
     [SerializeField] GameObject paticle;
+
     /// <summary>
-    /// ƒAƒjƒ[ƒVƒ‡ƒ“‚Ì•ÏˆÚ
+    /// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å¤‰ç§»
     /// </summary>
-    /// <param name="parame">ƒgƒŠƒK[‚Ì–¼‘O</param>
+    /// <param name="parame">ãƒˆãƒªã‚¬ãƒ¼ã®åå‰</param>
     public void TransitionAnime(string parame)
     {
         animator.SetTrigger(parame);

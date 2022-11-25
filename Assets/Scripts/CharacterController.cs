@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
@@ -34,6 +35,8 @@ public class CharacterController : MonoBehaviour
     private bool timeStart = false;
     private float timeCount = 0;
     [SerializeField] private List<Transform> targets = new List<Transform>();
+
+    [SerializeField] string scene = "GameScene";
 
     //‰“‹——£Œ^—p
     [SerializeField] GameObject firePrefab;
@@ -120,8 +123,11 @@ public class CharacterController : MonoBehaviour
 
     private void OnDestroy()
     {
-        //“|‚ê‚½‰ñ”‚©“|‚µ‚½‰ñ”‚ğƒJƒEƒ“ƒg‚·‚é
-        gameDirector.SetDestroyCount(enemy);
+        if(SceneManager.GetActiveScene().name == scene)
+        {
+            //“|‚ê‚½‰ñ”‚©“|‚µ‚½‰ñ”‚ğƒJƒEƒ“ƒg‚·‚é
+            gameDirector.SetDestroyCount(enemy);
+        }
     }
 
     /// <summary>

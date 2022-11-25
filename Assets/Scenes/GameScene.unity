@@ -77058,8 +77058,8 @@ MonoBehaviour:
   bsObject: []
   genePos:
   - {x: 0, y: 2, z: 295}
-  - {x: 30, y: 2, z: 295}
-  - {x: -30, y: 2, z: 295}
+  - {x: 10, y: 2, z: 295}
+  - {x: -10, y: 2, z: 295}
   seSource: {fileID: 48183202}
   seClip: {fileID: 8300000, guid: dfd8e04841aedd440acae0ef48c40e57, type: 3}
   enemy: 0
