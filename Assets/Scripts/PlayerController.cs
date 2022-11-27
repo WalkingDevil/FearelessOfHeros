@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clip;
-    [SerializeField] List<string> tower = new List<string>();  //“G‚Ìé‚ÌƒIƒuƒWƒFƒNƒg–¼
-    [SerializeField] float moveSpeed;  //ˆÚ“®‘¬“x
-    [SerializeField] float stopDistance;  //UŒ‚‚ğŠJn‚·‚é‚Æ‚«‚Ì“G‚Æ‚Ì‹——£
+    [SerializeField] List<string> tower = new List<string>();  //æ•µã®åŸã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå
+    [SerializeField] float moveSpeed;  //ç§»å‹•é€Ÿåº¦
+    [SerializeField] float stopDistance;  //æ”»æ’ƒã‚’é–‹å§‹ã™ã‚‹ã¨ãã®æ•µã¨ã®è·é›¢
     private NavMeshAgent agent;
 
     private Transform _target;
@@ -41,14 +41,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 latestPos;
     private Vector3 diff;
     private bool detection = false;
-    private float distance = 0;  //ƒ^[ƒQƒbƒg‚Æ‚Ì‹——£
-    private float keepDistance = 10000;  //ˆê”Ô‹ß‚¢ƒ^[ƒQƒbƒg‚Æ‚Ì‹——£‚ğ•Û‘¶
-    private float timeCalculate = 1f;  //ƒ^[ƒQƒbƒg‚Æ‚Ì‹——£‚ğÄ“x‘ª‚è‚È‚¨‚·‚Ü‚Å‚ÌŠÔ
+    private float distance = 0;  //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã®è·é›¢
+    private float keepDistance = 10000;  //ä¸€ç•ªè¿‘ã„ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã®è·é›¢ã‚’ä¿å­˜
+    private float timeCalculate = 1f;  //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã®è·é›¢ã‚’å†åº¦æ¸¬ã‚ŠãªãŠã™ã¾ã§ã®æ™‚é–“
     private bool timeStart = false;
     private float timeCount = 0;
     [SerializeField] private List<Transform> targets = new List<Transform>();
 
-    //‰“‹——£Œ^—p
+    //é è·é›¢å‹ç”¨
     [SerializeField] GameObject firePrefab;
     [SerializeField] float throwSpeed;
     [SerializeField] float throwPos = 5f;
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
                 {
                     /*  if (!targets.Contains(hit.collider.gameObject.transform))
                       {
-                          targets.Add(hit.collider.gameObject.transform);  //ƒ^[ƒQƒbƒg‚ğƒŠƒXƒg‚Éİ’è
+                          targets.Add(hit.collider.gameObject.transform);  //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ãƒªã‚¹ãƒˆã«è¨­å®š
                       }*/
                     target = hit.collider.gameObject.transform;
                 }
@@ -124,11 +124,11 @@ public class PlayerController : MonoBehaviour
 
             if (!detection)
         {
-            diff = transform.position - latestPos;   //‘O‰ñ‚©‚ç‚Ç‚±‚Éi‚ñ‚¾‚©‚ğƒxƒNƒgƒ‹‚Åæ“¾
-            latestPos = transform.position;  //‘O‰ñ‚ÌPosition‚ÌXV
+            diff = transform.position - latestPos;   //å‰å›ã‹ã‚‰ã©ã“ã«é€²ã‚“ã ã‹ã‚’ãƒ™ã‚¯ãƒˆãƒ«ã§å–å¾—
+            latestPos = transform.position;  //å‰å›ã®Positionã®æ›´æ–°
             if (diff.magnitude > 0.01f)
             {
-                transform.rotation = Quaternion.LookRotation(diff); //Œü‚«‚ğ•ÏX‚·‚é
+                transform.rotation = Quaternion.LookRotation(diff); //å‘ãã‚’å¤‰æ›´ã™ã‚‹
             }
         }
 
@@ -139,22 +139,22 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ó‚¯‚éƒ_ƒ[ƒW
+    /// å—ã‘ã‚‹ãƒ€ãƒ¡ãƒ¼ã‚¸
     /// </summary>
-    /// <param name="collision">ƒRƒ‰ƒCƒ_[‚ªƒgƒŠƒK[‚Å‚Í‚È‚¢ê‡</param>
-    /// <param name="collider">ƒRƒ‰ƒCƒ_[‚ªƒgƒŠƒK[‚Ìê‡</param>
+    /// <param name="collision">ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ãŒãƒˆãƒªã‚¬ãƒ¼ã§ã¯ãªã„å ´åˆ</param>
+    /// <param name="collider">ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ãŒãƒˆãƒªã‚¬ãƒ¼ã®å ´åˆ</param>
     private void HitDamage(Collision collision = null, GameObject ob = null)
     {
-        GameObject root = null;//ƒIƒuƒWƒFƒNƒg
+        GameObject root = null;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
         if (collision != null)
         {
-            root = collision.gameObject.transform.root.gameObject;//ƒIƒuƒWƒFƒNƒg‚ğ“n‚·
+            root = collision.gameObject.transform.root.gameObject;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¸¡ã™
         }
         else if (ob != null)
         {
-            root = ob.transform.gameObject.transform.root.gameObject;//ƒIƒuƒWƒFƒNƒg‚ğ“n‚·
+            root = ob.transform.gameObject.transform.root.gameObject;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¸¡ã™
         }
-        UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceƒXƒNƒŠƒvƒg‚ğó‚¯æ‚é
+        UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å—ã‘å–ã‚‹
         dieCheck = userInterface.DamegeValue(user.GetState(1), (int)user.GetState(6));
     }
 
@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (!targets.Contains(other.gameObject.transform))
                 {
-                    targets.Add(other.gameObject.transform);  //ƒ^[ƒQƒbƒg‚ğƒŠƒXƒg‚Éİ’è
+                    targets.Add(other.gameObject.transform);  //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ãƒªã‚¹ãƒˆã«è¨­å®š
                 }
             }
         }*/
@@ -237,19 +237,19 @@ public class PlayerController : MonoBehaviour
 
             if (timeCount < 0)
             {
-                for (int i = 0; i < targets.Count; i++)  //“G‚Æ‚Ì‹——£‚ğ‘ª‚é
+                for (int i = 0; i < targets.Count; i++)  //æ•µã¨ã®è·é›¢ã‚’æ¸¬ã‚‹
                 {
 
                     if (targets[i] == null)
                     {
-                        Debug.Log("ƒ~ƒbƒVƒ“ƒO");
+                        Debug.Log("ãƒŸãƒƒã‚·ãƒ³ã‚°");
                         targets.RemoveAt(i);
                     }
                     else
                     {
                         distance = (transform.position - targets[i].position).magnitude;
 
-                        if (distance < keepDistance)  //ˆê”Ô‹ß‚¢“G‚ğƒ^[ƒQƒbƒg‚É‚·‚é
+                        if (distance < keepDistance)  //ä¸€ç•ªè¿‘ã„æ•µã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«ã™ã‚‹
                         {
                             target = targets[i];
                             keepDistance = distance;
@@ -258,10 +258,10 @@ public class PlayerController : MonoBehaviour
                 }
                 timeCount = timeCalculate;
             }
-            //target = targets[0];  //ƒŠƒXƒg‚Ì0”Ô–Ú‚Ì“G‚ğƒ^[ƒQƒbƒg‚Éİ’è
+            //target = targets[0];  //ãƒªã‚¹ãƒˆã®0ç•ªç›®ã®æ•µã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«è¨­å®š
         }
 
-        //if (target == null)  //“Gƒ^[ƒQƒbƒg‚ª‚¢‚È‚­‚È‚Á‚½‚çé‚ğƒ^[ƒQƒbƒg‚Éİ’è
+        //if (target == null)  //æ•µã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒã„ãªããªã£ãŸã‚‰åŸã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«è¨­å®š
         //{
         //target = castle[0];
         //detection = false;
@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour
         //transform.LookAt(target);
         //}
 
-       /* if (agent.remainingDistance < stopDistance)  //“G‚Éˆê’è‹——£‹ß‚Ã‚¢‚½‚ç
+       /* if (agent.remainingDistance < stopDistance)  //æ•µã«ä¸€å®šè·é›¢è¿‘ã¥ã„ãŸã‚‰
         {
             agent.isStopped = true;
             // myRigidbody.isKinematic = false;
@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
             castle.RemoveAt(0);
         }
 
-        if (target == null)  //“Gƒ^[ƒQƒbƒg‚ª‚¢‚È‚­‚È‚Á‚½‚çé‚ğƒ^[ƒQƒbƒg‚Éİ’è
+        if (target == null)  //æ•µã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒã„ãªããªã£ãŸã‚‰åŸã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«è¨­å®š
         {
             detection = false;
             agent.angularSpeed = 0;
@@ -304,7 +304,7 @@ public class PlayerController : MonoBehaviour
             transform.LookAt(target);
         }
 
-        //if (target == null)  //“Gƒ^[ƒQƒbƒg‚ª‚¢‚È‚­‚È‚Á‚½‚çé‚ğƒ^[ƒQƒbƒg‚Éİ’è
+        //if (target == null)  //æ•µã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒã„ãªããªã£ãŸã‚‰åŸã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«è¨­å®š
         //{
         //target = castle[0];
         //}

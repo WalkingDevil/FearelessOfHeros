@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -13,6 +13,10 @@ public class ResultManeger : MonoBehaviour
     [SerializeField] List<string> animeParameters;
     [SerializeField] List<Text> chengeTexts;
 
+    /// <summary>
+    /// リザルト画面に表示する文字とアニメーション
+    /// </summary>
+    /// <param name="over">ゲームオーバーしたか</param>
     public void ChengeText(bool over = true)
     {
         string display = "";
@@ -35,7 +39,5 @@ public class ResultManeger : MonoBehaviour
         }
 
         anime.TransitionAnime(animeName);
-        Debug.Log(96);
-
     }
 }

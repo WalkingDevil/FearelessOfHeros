@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,7 +11,7 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private string serchField = "SerchField";
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // ƒhƒ‰ƒbƒO‘O‚ÌˆÊ’u‚ğ‹L‰¯‚µ‚Ä‚¨‚­
+        // ãƒ‰ãƒ©ãƒƒã‚°å‰ã®ä½ç½®ã‚’è¨˜æ†¶ã—ã¦ãŠã
         parent = transform.parent;
         defParent = transform.parent;
         this.gameObject.transform.parent = GameObject.Find("SelectionsPanel").transform;
@@ -19,7 +19,7 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnDrag(PointerEventData eventData)
     {
-        // ƒhƒ‰ƒbƒO’†‚ÍˆÊ’u‚ğXV‚·‚é
+        // ãƒ‰ãƒ©ãƒƒã‚°ä¸­ã¯ä½ç½®ã‚’æ›´æ–°ã™ã‚‹
         transform.position = eventData.position;
     }
 

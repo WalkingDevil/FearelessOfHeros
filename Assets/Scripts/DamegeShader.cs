@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,30 +11,34 @@ public class DamegeShader : MonoBehaviour
     [SerializeField] Vector2 tiling;
     private Material material;
     [SerializeField] float maxAlpha = 0.8f;
-    // Start is called before the first frame update
+
     void Start()
     {
-        material = new Material(shader);//V‚µ‚­Material‚ğ‚Â‚­‚é
+        material = new Material(shader);//æ–°ã—ãMaterialã‚’ã¤ãã‚‹
         SetMaterial(material);
         foreach (Renderer r in myRenderes)
         {
-            r.material = material;//Material‚ğİ’è‚·‚é
+            r.material = material;//Materialã‚’è¨­å®šã™ã‚‹
         }
 
     }
 
     /// <summary>
-    /// ƒ}ƒeƒŠƒAƒ‹İ’è
+    /// ãƒãƒ†ãƒªã‚¢ãƒ«è¨­å®š
     /// </summary>
-    /// <param name="ma">İ’è‚·‚éMaterial</param>
+    /// <param name="ma">è¨­å®šã™ã‚‹Material</param>
     private void SetMaterial(Material ma)
     {
-        ma.SetColor("_Color", color);//F
+        ma.SetColor("_Color", color);//è‰²
         ma.SetTexture("_MainTex", texture);//texture
         ma.SetTextureScale("_MainTex", tiling);//Tiling
-        ma.SetFloat("_Scroll", 2f);//‘¬“x
+        ma.SetFloat("_Scroll", 2f);//é€Ÿåº¦
     }
 
+    /// <summary>
+    /// ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸæ™‚ã«é€æ˜åº¦ã‚’ä¸Šã’ã‚‹
+    /// </summary>
+    /// <param name="value"></param>
     public void ChengeAlpha(float value)
     {
         float alpha = (1 - value) * maxAlpha;

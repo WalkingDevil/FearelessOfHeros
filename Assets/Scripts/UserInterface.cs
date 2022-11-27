@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +9,7 @@ public class UserInterface : MonoBehaviour
     StatusManeger statusManeger;
     [SerializeField] DamegeShader damegeShader;
     [SerializeField] Slider slider;
-    //ƒXƒe[ƒ^ƒX
+    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
     [SerializeField] int earlyMaxHp;
     private int maxHp;
     [SerializeField] int earlyAttack;
@@ -22,7 +22,7 @@ public class UserInterface : MonoBehaviour
     private int level = 1;
     [SerializeField] float magnification = 1.1f;
    // public List<int> state;
-    [SerializeField] bool tower = false;//‚±‚ÌHP‚ªƒ^ƒ[‚Å‚ ‚é‚©‚Ç‚¤‚©
+    [SerializeField] bool tower = false;//ã“ã®HPãŒã‚¿ãƒ¯ãƒ¼ã§ã‚ã‚‹ã‹ã©ã†ã‹
 
     private bool gach = false;
     private int expRate = 5;
@@ -42,14 +42,14 @@ public class UserInterface : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒXƒe[ƒ^ƒX‚ğ•Ô‚·
-    /// 0:‰ŠúHP
-    /// 1:UŒ‚—Í
-    /// 2:–hŒä—Í
-    /// 3:ƒRƒXƒg
-    /// 4:‰ŠúUŒ‚—Í
-    /// 5:‰Šú–hŒä—Í
-    /// 6:‘®«
+    /// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’è¿”ã™
+    /// 0:åˆæœŸHP
+    /// 1:æ”»æ’ƒåŠ›
+    /// 2:é˜²å¾¡åŠ›
+    /// 3:ã‚³ã‚¹ãƒˆ
+    /// 4:åˆæœŸæ”»æ’ƒåŠ›
+    /// 5:åˆæœŸé˜²å¾¡åŠ›
+    /// 6:å±æ€§
     /// </summary>
     /// <param name="stateNum"></param>
     /// <returns></returns>
@@ -78,7 +78,7 @@ public class UserInterface : MonoBehaviour
         }
     }
 
-    //ƒKƒ`ƒƒ‚Ì‚É•\¦‚ğOff‚É‚·‚é
+    //ã‚¬ãƒãƒ£ã®æ™‚ã«è¡¨ç¤ºã‚’Offã«ã™ã‚‹
     public void ChengeGach()
     {
         gach = true;
@@ -101,9 +101,9 @@ public class UserInterface : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒŒƒxƒ‹‚É‰‚¶‚ÄƒXƒe[ƒ^ƒX‚ğXV‚·‚é
+    /// ãƒ¬ãƒ™ãƒ«ã«å¿œã˜ã¦ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’æ›´æ–°ã™ã‚‹
     /// </summary>
-    /// <param name="level">Œ»İ‚ÌƒŒ‚×ƒ‹</param>
+    /// <param name="level">ç¾åœ¨ã®ãƒ¬ã¹ãƒ«</param>
     public void ChengeState(int level = 1)
     {
         if (level != 1)
@@ -121,7 +121,7 @@ public class UserInterface : MonoBehaviour
 
     }
 
-    public void SetSlider()//ƒXƒ‰ƒCƒ_[‚ğƒZƒbƒg‚·‚é
+    public void SetSlider()//ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
     {
         if (!tower)
         {
@@ -133,7 +133,7 @@ public class UserInterface : MonoBehaviour
             slider.maxValue = earlyMaxHp;
             slider.value = earlyMaxHp;
 
-            if (slider.value <= 0)//ƒZƒbƒg‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚Æ‚«‚Ì•ÛŒ¯
+            if (slider.value <= 0)//ã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã‹ã£ãŸã¨ãã®ä¿é™º
             {
                 slider.value = slider.maxValue;
             }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class TowerController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     [SerializeField] string damageTag;
     [SerializeField] string fireBallTag;
-    [SerializeField] string animePara;//ƒAƒjƒ‚Ìƒpƒ‰ƒ[ƒ^[
+    [SerializeField] string animePara;//ã‚¢ãƒ‹ãƒ¡ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
     [SerializeField] int plusCost;
 
     [SerializeField] bool enemy;
@@ -57,23 +57,23 @@ public class TowerController : MonoBehaviour
 
 
     /// <summary>
-    /// ó‚¯‚éƒ_ƒ[ƒW
+    /// å—ã‘ã‚‹ãƒ€ãƒ¡ãƒ¼ã‚¸
     /// </summary>
-    /// <param name="collision">ƒRƒ‰ƒCƒ_[‚ªƒgƒŠƒK[‚Å‚Í‚È‚¢ê‡</param>
-    /// <param name="collider">ƒRƒ‰ƒCƒ_[‚ªƒgƒŠƒK[‚Ìê‡</param>
+    /// <param name="collision">ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ãŒãƒˆãƒªã‚¬ãƒ¼ã§ã¯ãªã„å ´åˆ</param>
+    /// <param name="collider">ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ãŒãƒˆãƒªã‚¬ãƒ¼ã®å ´åˆ</param>
     private void HitDamage(Collision collision = null, GameObject ob = null)
     {
-        GameObject root = null;//ƒIƒuƒWƒFƒNƒg
+        GameObject root = null;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
         if (collision != null)
         {
-            root = collision.gameObject.transform.root.gameObject;//ƒIƒuƒWƒFƒNƒg‚ğ“n‚·
+            root = collision.gameObject.transform.root.gameObject;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¸¡ã™
         }
         else if (ob != null)
         {
-            root = ob.transform.gameObject.transform.root.gameObject;//ƒIƒuƒWƒFƒNƒg‚ğ“n‚·
+            root = ob.transform.gameObject.transform.root.gameObject;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¸¡ã™
         }
         Debug.Log(56666666);
-        UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceƒXƒNƒŠƒvƒg‚ğó‚¯æ‚é
+        UserInterface user = root.GetComponent<UserInterface>();//UserInterfaceã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å—ã‘å–ã‚‹
         dieCheck = userInterface.DamegeValue(user.GetState(1) , (int)user.GetState(6));
     }
 
@@ -93,7 +93,7 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    //ƒ‚[ƒh•ÏX‚És‚¤ƒAƒjƒ[ƒVƒ‡ƒ“
+    //ãƒ¢ãƒ¼ãƒ‰å¤‰æ›´æ™‚ã«è¡Œã†ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
     public void ChengeMode()
     {
         animeController.TransitionAnime("chenge");

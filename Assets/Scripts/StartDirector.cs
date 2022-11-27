@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
@@ -8,16 +9,19 @@ using System;
 using System.IO;
 using DG.Tweening;
 
+
 public class StartDirector : MonoBehaviour
 {
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
+
     private AudioController audio;
     [SerializeField] AudioSource source;
     [SerializeField] List<AudioClip> bgm;
 
     //開始時の演出
     [SerializeField] VideoPlayer videoPlayer;
+    [SerializeField] string videoPlayerUrl;
     [SerializeField] RectTransform opPanel;
     [SerializeField] RectTransform rogo;
     [SerializeField] RawImage banner;
