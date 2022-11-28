@@ -53,12 +53,23 @@ public class StartDirector : MonoBehaviour
         level = savePath.level;
         krystaal = savePath.krystaal;
 
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = videoPlayerUrl;
+        videoPlayer.prepareCompleted += PrepareCompleted;
+        videoPlayer.Prepare();
+
         audio = new AudioController(source, bgm[0]);
         audio.ChengePlayAudio(true);
         
         SetDisplay();
 
         StartCoroutine(StartSubstitute());
+    }
+
+    void PrepareCompleted(VideoPlayer vp)
+    {
+        vp.prepareCompleted -= PrepareCompleted;
+        vp.Play();
     }
 
     /// <summary>
