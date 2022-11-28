@@ -54,7 +54,7 @@ public class StartDirector : MonoBehaviour
         krystaal = savePath.krystaal;
 
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = videoPlayerUrl;
+        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoPlayerUrl); 
         videoPlayer.prepareCompleted += PrepareCompleted;
         videoPlayer.Prepare();
 

@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000085831, y: 114440650}
+  m_AnchoredPosition: {x: 0.0000085831, y: 137891280}
   m_SizeDelta: {x: 0, y: 790.4794}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &10268579
@@ -3609,7 +3609,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: https://github.com/WalkingDevil/DevilWin/raw/main/Assets/StreamingAssets/gacha.gif
+  m_loadOnStartUrl: gacha.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &633018569
@@ -4648,7 +4648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00027540096, y: 230314.3}
+  m_AnchoredPosition: {x: -0.00027540096, y: 253329.44}
   m_SizeDelta: {x: -21.3468, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &739024195
@@ -7601,7 +7601,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: https://github.com/WalkingDevil/DevilWin/raw/main/Assets/StreamingAssets/select.gif
+  m_loadOnStartUrl: select.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &1308281943
@@ -8255,7 +8255,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: https://drive.google.com/uc?id=1qPBiUuK52KPq9IYvq8UJwQ9cNx_d9tvE
+  m_Url: s.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
