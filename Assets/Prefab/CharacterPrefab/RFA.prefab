@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 3170657468490024184}
   animator: {fileID: 2154065591602002960}
+  paticle: {fileID: 0}
 --- !u!114 &8696224316014430079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0563992610e38048a1b9ed03f9f98cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 1
   anime: {fileID: 8696224316014430078}
   userInterface: {fileID: -6535578475335785311}
   myRigidbody: {fileID: 8696224316014430074}
@@ -143,6 +145,7 @@ MonoBehaviour:
   stopDistance: 20
   target: {fileID: 0}
   targets: []
+  scene: GameScene
   firePrefab: {fileID: 0}
   throwSpeed: 0
   throwPos: 5

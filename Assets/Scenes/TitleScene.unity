@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000085831, y: 137891280}
+  m_AnchoredPosition: {x: 0.0000085831, y: 370659840}
   m_SizeDelta: {x: 0, y: 790.4794}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &10268579
@@ -3609,7 +3609,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: gacha.gif
+  m_loadOnStartUrl: http://127.0.0.1:8887/gacha.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &633018569
@@ -4648,7 +4648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00027540096, y: 253329.44}
+  m_AnchoredPosition: {x: -0.00027540096, y: 422190.78}
   m_SizeDelta: {x: -21.3468, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &739024195
@@ -7601,7 +7601,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: select.gif
+  m_loadOnStartUrl: http://127.0.0.1:8887/select.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &1308281943
@@ -8255,11 +8255,11 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: s.mp4
+  m_Url: 
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -12320,7 +12320,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1047048374f0e2941abfd37b225e5d0a, type: 3}
   - {fileID: 8300000, guid: 00ee2365576901c4892c9cbe9da3f12c, type: 3}
   videoPlayer: {fileID: 1380511356}
-  videoPlayerUrl: https://drive.google.com/uc?id=1XMicAQzmfXGQiyj8wozBYK4iu__gQbJX
+  videoPlayerUrl: http://127.0.0.1:8887/s.mp4
   opPanel: {fileID: 852185300}
   rogo: {fileID: 705997127}
   banner: {fileID: 633018570}

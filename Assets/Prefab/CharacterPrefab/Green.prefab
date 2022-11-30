@@ -1825,6 +1825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 3406452840936684970}
   animator: {fileID: 3406452840946032796}
+  paticle: {fileID: 0}
 --- !u!114 &3406452840836630921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,6 +1856,7 @@ MonoBehaviour:
   stopDistance: 20
   target: {fileID: 0}
   targets: []
+  scene: GameScene
   firePrefab: {fileID: 0}
   throwSpeed: 0
   throwPos: 5

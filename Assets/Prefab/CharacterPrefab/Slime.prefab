@@ -429,6 +429,7 @@ MonoBehaviour:
   stopDistance: 30
   target: {fileID: 0}
   targets: []
+  scene: GameScene
   firePrefab: {fileID: 0}
   throwSpeed: 0.25
   throwPos: 100

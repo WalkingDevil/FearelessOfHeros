@@ -1933,6 +1933,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  scene: GameScene
   firePrefab: {fileID: 6588386069529391624, guid: 4901ce92e0a427c4aac0390200b788de, type: 3}
   throwSpeed: 0.25
   throwPos: 100

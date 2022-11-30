@@ -11,6 +11,7 @@ public class DamegeShader : MonoBehaviour
     [SerializeField] Vector2 tiling;
     private Material material;
     [SerializeField] float maxAlpha = 0.8f;
+    [SerializeField] float speed = 2.0f;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class DamegeShader : MonoBehaviour
         ma.SetColor("_Color", color);//色
         ma.SetTexture("_MainTex", texture);//texture
         ma.SetTextureScale("_MainTex", tiling);//Tiling
-        ma.SetFloat("_Scroll", 2f);//速度
+        ma.SetFloat("_Scroll", speed);//速度
     }
 
     /// <summary>
