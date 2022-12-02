@@ -13,7 +13,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] UserInterface userInterface;
     private GameDirector gameDirector;
     [SerializeField] Rigidbody myRigidbody;
-    [SerializeField] List<Transform> castle = new List<Transform>();
+    [SerializeField] List<Transform> castle = new List<Transform>();  // 敵の城や城壁のTransform
     [SerializeField] string enemyTag;  //敵のタグ
     [SerializeField] string damageTag;  //敵の攻撃タグ
     [SerializeField] string fireBallTag;
@@ -96,7 +96,11 @@ public class CharacterController : MonoBehaviour
     {
         if (target != null)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.position);  // ターゲットに向かって移動
+        }
+        else
+        {
+            target = castle[0];
         }
 
         if (!detection)
@@ -195,9 +199,7 @@ public class CharacterController : MonoBehaviour
             var worldTarget = transform.TransformDirection(target.localPosition);
             worldTarget.y += throwPos;
             GameObject ball = Instantiate(firePrefab, transform.position, firePrefab.transform.rotation);
-            //ball.transform.LookAt(target);
             ball.GetComponent<Rigidbody>().AddForce(Vector3.forward + worldTarget * throwSpeed, ForceMode.Impulse);
-            // ball.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
         }
 
     }
@@ -225,10 +227,6 @@ public class CharacterController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-      /*  if (other.gameObject.tag == fireBallTag)
-        {
-            HitDamage(null, other);
-        }*/
 
         if (other.gameObject.tag == enemyTag && other.gameObject != castle[0])
         {
@@ -238,14 +236,13 @@ public class CharacterController : MonoBehaviour
                 if (!targets.Contains(other.gameObject.transform))
                 {
                     advantageousAttributes = other.GetComponent<UserInterface>().GetState(7);
-                    compatibility = (attributes - advantageousAttributes + 3) % 3;
-                    if (compatibility == 1 || advantageousAttributes == 3)
+                    compatibility = (attributes - advantageousAttributes + 3) % 3;  // 敵との相性を確認
+                    if (attributes == 3)  // 自分がレジェンドだったら
                     {
                         targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
                     }
-                    else if (attributes == 3)
+                    else if(compatibility == 1 || advantageousAttributes == 3)  // 相性が良ければ
                     {
-                        Debug.Log("a");
                         targets.Add(other.gameObject.transform);  //ターゲットをリストに設定
                     }
                 }
@@ -262,8 +259,7 @@ public class CharacterController : MonoBehaviour
             agent.angularSpeed = 120;
             detection = true;
 
-            //castle.RemoveAll(null);
-
+            // 一定時間ごとに敵との距離を測る
             if (timeCount < 0)
             {
                 for (int i = 0; i < targets.Count; i++)
@@ -291,30 +287,16 @@ public class CharacterController : MonoBehaviour
                 }
                 timeCount = timeCalculate;
             }
-            //target = targets[0];  //リストの0番目の敵をターゲットに設定
         }
-
-        //if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
-        //{
-            //target = castle[0];
-            //detection = false;
-            //agent.angularSpeed = 0;
-        //}
-        //else
-        //{
-            //transform.LookAt(target);
-        //}
 
         if (agent.remainingDistance < stopDistance)  //敵に一定距離近づいたら
         {
             agent.isStopped = true;
-            // myRigidbody.isKinematic = false;
             anime.TransitionAnime("attack");
         }
         else
         {
             agent.isStopped = false;
-            // myRigidbody.isKinematic = true;
             anime.TransitionAnime("run");
         }
     }
@@ -338,10 +320,5 @@ public class CharacterController : MonoBehaviour
         {
             transform.LookAt(target);
         }
-
-        //if (target == null)  //敵ターゲットがいなくなったら城をターゲットに設定
-        //{
-        //target = castle[0];
-        //}
     }
 }

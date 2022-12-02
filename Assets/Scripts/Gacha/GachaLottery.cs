@@ -17,7 +17,7 @@ public class GachaLottery : MonoBehaviour
         {
             gachaTables[i] = Resources.Load<GachaTable>("GachaCards/" + (i + 1).ToString());
         }
-        random = new System.Random((int)DateTime.Now.Ticks);
+        random = new System.Random((int)DateTime.Now.Ticks);  // 重複した乱数が生成されないようにする
     }
 
     /// <summary>
@@ -32,12 +32,12 @@ public class GachaLottery : MonoBehaviour
 
         for (int i = 0; i < maxIndex; i++)
         {
-            totalProbability += gachaTables[i].probability;
+            totalProbability += gachaTables[i].probability;  // すべてのレアリティの確率の合計
         }
 
         result = new List<int>();
 
-        for (int i = 0; i < countPerGacha; i++)
+        for (int i = 0; i < countPerGacha; i++)  // ガチャの回数分抽選する
         {
             int card = getCard(totalProbability);
             result.Add(card);
@@ -53,14 +53,15 @@ public class GachaLottery : MonoBehaviour
     /// <returns>モンスターのID</returns>
     private int getCard(int allProbability)
     {
-        int randamProbability = random.Next(0, allProbability);
+        int randamProbability = random.Next(0, allProbability);  // レアリティの抽選
         int totalProbability = 0;
 
         for (int i = 0; i < maxIndex; i++)
         {
             totalProbability += gachaTables[i].probability;
-            if (totalProbability >= randamProbability)
+            if (totalProbability >= randamProbability)  // レアリティの確認
             {
+                // モンスターの抽選
                 int id = gachaTables[i].character[random.Next(0, gachaTables[i].character.Count)];
                 return id;
             }

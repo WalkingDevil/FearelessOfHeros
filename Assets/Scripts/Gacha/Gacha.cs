@@ -17,7 +17,7 @@ public class Gacha : MonoBehaviour
     [SerializeField] FadeImage fadeImage;
     [SerializeField] Texture2D fadeTexture;
     [SerializeField] AudioSource seSource;
-    [SerializeField] List<AudioClip> se;
+    [SerializeField] List<AudioClip> se;  // 演出用のSE
     [SerializeField] GameObject cardPanel;
     [SerializeField] GameObject effectObj;  // モンスター登場時のエフェクト
     [SerializeField] GameObject skipBotton;  // スキップボタン
@@ -67,7 +67,7 @@ public class Gacha : MonoBehaviour
     /// <param name="countPerGacha">ガチャを回す回数</param>
     public void GachaStart(int countPerGacha)
     {
-        character = gachaLottery.Lottery(countPerGacha);
+        character = gachaLottery.Lottery(countPerGacha);  // ガチャの抽選結果をリストに入れる
         for (int i = 0; i < character.Count; i++)
         {
             for (int j = 0; j < monsterCards.Count; j++)

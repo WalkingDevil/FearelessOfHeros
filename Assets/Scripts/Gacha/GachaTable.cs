@@ -7,7 +7,6 @@ using UnityEngine;
 public class GachaTable : ScriptableObject
 {
     [SerializeField]
-    public int name;
-    public int probability;
-    public List<int> character;
+    public int probability;  // 確率
+    public List<int> character;  // モンスターID
 }
