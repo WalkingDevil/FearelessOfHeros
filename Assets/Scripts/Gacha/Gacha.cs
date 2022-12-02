@@ -11,10 +11,13 @@ public class Gacha : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
     private List<int> idDatas;
+    private AudioController seAudioCo;
     [SerializeField] GachaLottery gachaLottery;
     [SerializeField] Fade fade;
     [SerializeField] FadeImage fadeImage;
     [SerializeField] Texture2D fadeTexture;
+    [SerializeField] AudioSource seSource;
+    [SerializeField] List<AudioClip> se;
     [SerializeField] GameObject cardPanel;
     [SerializeField] GameObject effectObj;  // モンスター登場時のエフェクト
     [SerializeField] GameObject skipBotton;  // スキップボタン
@@ -35,6 +38,7 @@ public class Gacha : MonoBehaviour
         saveData = new SaveData();
         savePath = saveData.Load();
         idDatas = savePath.idData;
+        seAudioCo = new AudioController(seSource);
         GachaStart(gachaCount);
         skipBotton.SetActive(false);
         titleBotton.SetActive(false);
@@ -96,13 +100,18 @@ public class Gacha : MonoBehaviour
             skipBotton.SetActive(false);
             //yield return StartCoroutine("Effect");
             float attribute = obj.GetComponent<CharacterController>().SetMyUserInterface().GetState(7);
+            seAudioCo.ChengeClip(se[0]);
+            seAudioCo.ChengePlayAudio(true);
             fadeImage.color = GetColor(attribute);
             fadeImage.UpdateMaskTexture(fadeTexture);
             fade.FadeIn(1.5f);
             yield return new WaitForSeconds(1.5f);
             fade.FadeOut(1.5f);
             skippable = true;
+            seAudioCo.ChengePlayAudio(false);
             GameObject game = Instantiate(obj, new Vector3(0.0f, 0.0f, 9.0f), Quaternion.identity) as GameObject;
+            seAudioCo.ChengeClip(se[1]);
+            seAudioCo.ChengePlayAudio(true);
             game.GetComponent<UserInterface>().ChengeGach();
             game.GetComponent<CharacterController>().enabled = false;
             game.GetComponent<NavMeshAgent>().enabled = false;
@@ -114,12 +123,13 @@ public class Gacha : MonoBehaviour
             if (skip)
             {
                 skip = false;
+                seAudioCo.ChengePlayAudio(false);
                 Destroy(game);
                 break;
             }
-            //Destroy(game);
             animeController.TransitionAnime("run");
             game.transform.DOMoveZ(50f, 3f).OnComplete(() => Destroy(game));
+            seAudioCo.ChengePlayAudio(false);
         }
 
         yield return new WaitForSeconds(0.5f);
