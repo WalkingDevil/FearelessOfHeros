@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000085831, y: 26851.445}
+  m_AnchoredPosition: {x: 0.0000085831, y: 4830389.5}
   m_SizeDelta: {x: 0, y: 298.87}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &10268579
@@ -3571,7 +3571,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: http://127.0.0.1:8887/gacha.gif
+  m_loadOnStartUrl: gacha.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &633018569
@@ -4535,7 +4535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00027540096, y: 3564.1023}
+  m_AnchoredPosition: {x: -0.00027540096, y: 49153.082}
   m_SizeDelta: {x: -21.3468, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &739024195
@@ -7351,7 +7351,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: http://127.0.0.1:8887/select.gif
+  m_loadOnStartUrl: select.gif
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &1308281943
