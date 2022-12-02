@@ -15,9 +15,11 @@ public class StartDirector : MonoBehaviour
     private SaveData saveData = new SaveData();
     private SavePath savePath = new SavePath();
 
-    private AudioController audio;
-    [SerializeField] AudioSource source;
+    private AudioController bgmCo;
+    private AudioController seCo;
+    [SerializeField] List<AudioSource> sources;
     [SerializeField] List<AudioClip> bgm;
+    [SerializeField] AudioClip se;
 
     //開始時の演出
     [SerializeField] VideoPlayer videoPlayer;
@@ -54,14 +56,15 @@ public class StartDirector : MonoBehaviour
         krystaal = savePath.krystaal;
 
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoPlayerUrl); 
-        //videoPlayer.url =  videoPlayerUrl;
+      //  videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoPlayerUrl); 
+        videoPlayer.url =  videoPlayerUrl;
         videoPlayer.prepareCompleted += PrepareCompleted;
         videoPlayer.Prepare();
 
-        audio = new AudioController(source, bgm[0]);
-        audio.ChengePlayAudio(true);
-        
+        bgmCo = new AudioController(sources[0], bgm[0]);
+        bgmCo.ChengePlayAudio(true);
+        seCo = new AudioController(sources[1], se);
+
         SetDisplay();
 
         StartCoroutine(StartSubstitute());
@@ -99,9 +102,9 @@ public class StartDirector : MonoBehaviour
     private void FeidOpeningPanel()
     {
         opPanel.DOAnchorPosX(-Screen.width, moveSpeed).OnComplete(() => rod.SetActive(false));
-        audio.ChengePlayAudio(false);
-        audio.ChengeClip(bgm[1]);
-        audio.ChengePlayAudio(true);
+        bgmCo.ChengePlayAudio(false);
+        bgmCo.ChengeClip(bgm[1]);
+        bgmCo.ChengePlayAudio(true);
     }
     /// <summary>
     /// スキップボタン
@@ -137,6 +140,7 @@ public class StartDirector : MonoBehaviour
     /// <param name="rect"></param>
     public void OnDisplay(RectTransform rect)
     {
+        seCo.ChengePlayAudio(true);
         rect.gameObject.SetActive(true);
         rect.DOScaleY(one, scaleSpeed);
     }

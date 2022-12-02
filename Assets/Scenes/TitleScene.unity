@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000085831, y: 4830389.5}
+  m_AnchoredPosition: {x: 0.0000085831, y: 222443.3}
   m_SizeDelta: {x: 0, y: 298.87}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &10268579
@@ -3571,7 +3571,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: gacha.gif
+  m_loadOnStartUrl: https://drive.google.com/uc?id=1r9yuc3C9mguzHfURrK2ToCQGHcrd_mU6
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &633018569
@@ -4400,6 +4400,7 @@ GameObject:
   - component: {fileID: 738480404}
   - component: {fileID: 738480403}
   - component: {fileID: 738480402}
+  - component: {fileID: 738480406}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4494,6 +4495,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &738480406
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738480401}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &739024193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,7 +4632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00027540096, y: 49153.082}
+  m_AnchoredPosition: {x: -0.00027540096, y: 42286.203}
   m_SizeDelta: {x: -21.3468, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &739024195
@@ -6725,7 +6822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u753B\u50CF\u4E0A\u306E\u756A\u53F7\n\u2460\uFF1A\u4E0A\u304B\u3089HP\u3001EXP\uFF08\u7D4C\u9A13\u5024\uFF09\u3001\u30B3\u30B9\u30C8\n\u2461\uFF1A\u81EA\u5206\u306E\u7DE8\u6210\u3057\u305F\u30C7\u30C3\u30AD\n\u300C\u2192\u300D\u3068\u66F8\u304B\u308C\u3066\u3044\u308B\u30DC\u30BF\u30F3\u3092\u62BC\u3059\u3068\u8868\u793A\u3092\u5207\u308A\u66FF\u3048\u308C\u307E\u3059\u3002\n\u2462\uFF1A\u6575\u306E\u57CE\u58C1\u3084\u57CE\u306EHP\n\u2463\uFF1A\u901A\u5E38\u30E2\u30FC\u30C9\u6642\u306B\u30AB\u30E1\u30E9\u30DC\u30BF\u30F3\u3092\u9577\u62BC\u3057\u3057\u306A\u304C\u3089\u30B9\u30E9\u30A4\u30C9\u3055\u305B\u308B\u3068\u30B9\u30C6\u30FC\u30B8\u306E\u5168\u4F53\u50CF\u3092\u898B\u308C\u307E\u3059\u3002\n\u2464\uFF1A\uFF11\u56DE\u3060\u3051\u4F7F\u3048\u308B\u30E2\u30FC\u30C9\u5909\u66F4\u30DC\u30BF\u30F3\u62BC\u3057\u305F\u3089\u305D\u306E\u307E\u307E\u3067\u3059\u3002"
+  m_Text: "\u753B\u50CF\u4E0A\u306E\u756A\u53F7\n\u25CF\uFF1A\u4E0A\u304B\u3089HP\u3001EXP\uFF08\u7D4C\u9A13\u5024\uFF09\u3001\u30B3\u30B9\u30C8\n\u25A0\uFF1A\u81EA\u5206\u306E\u7DE8\u6210\u3057\u305F\u30C7\u30C3\u30AD\n\u300C\u2192\u300D\u3068\u66F8\u304B\u308C\u3066\u3044\u308B\u30DC\u30BF\u30F3\u3092\u62BC\u3059\u3068\u8868\u793A\u3092\u5207\u308A\u66FF\u3048\u308C\u307E\u3059\u3002\n\u25C6\uFF1A\u6575\u306E\u57CE\u58C1\u3084\u57CE\u306EHP\n\u25B2\uFF1A\u901A\u5E38\u30E2\u30FC\u30C9\u6642\u306B\u30AB\u30E1\u30E9\u30DC\u30BF\u30F3\u3092\u9577\u62BC\u3057\u3057\u306A\u304C\u3089\u30B9\u30E9\u30A4\u30C9\u3055\u305B\u308B\u3068\u30B9\u30C6\u30FC\u30B8\u306E\u5168\u4F53\u50CF\u3092\u898B\u308C\u307E\u3059\u3002\n\u2605\uFF1A\uFF11\u56DE\u3060\u3051\u4F7F\u3048\u308B\u30E2\u30FC\u30C9\u5909\u66F4\u30DC\u30BF\u30F3\u62BC\u3057\u305F\u3089\u305D\u306E\u307E\u307E\u3067\u3059\u3002"
 --- !u!222 &1156147909
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7351,7 +7448,7 @@ MonoBehaviour:
   m_filterMode: 0
   m_wrapMode: 1
   m_loadOnStart: 1
-  m_loadOnStartUrl: select.gif
+  m_loadOnStartUrl: https://drive.google.com/uc?id=1z_Aw6EAbvF1Eenjeh3agbAc8wf4_bV1j
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &1308281943
@@ -8679,6 +8776,7 @@ GameObject:
   - component: {fileID: 1499698828}
   - component: {fileID: 1499698830}
   - component: {fileID: 1499698829}
+  - component: {fileID: 1499698831}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -8738,7 +8836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2460"
+  m_Text: "\u25CF"
 --- !u!222 &1499698830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8747,6 +8845,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499698827}
   m_CullTransparentMesh: 1
+--- !u!114 &1499698831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499698827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1505856309
 GameObject:
   m_ObjectHideFlags: 0
@@ -8758,6 +8871,7 @@ GameObject:
   - component: {fileID: 1505856310}
   - component: {fileID: 1505856312}
   - component: {fileID: 1505856311}
+  - component: {fileID: 1505856313}
   m_Layer: 5
   m_Name: Text (4)
   m_TagString: Untagged
@@ -8817,7 +8931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2464"
+  m_Text: "\u2605"
 --- !u!222 &1505856312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8826,6 +8940,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505856309}
   m_CullTransparentMesh: 1
+--- !u!114 &1505856313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505856309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1506321771
 GameObject:
   m_ObjectHideFlags: 0
@@ -9362,6 +9491,7 @@ GameObject:
   - component: {fileID: 1643378085}
   - component: {fileID: 1643378087}
   - component: {fileID: 1643378086}
+  - component: {fileID: 1643378088}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -9385,7 +9515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.1, y: -47.7}
+  m_AnchoredPosition: {x: 19.7, y: -54.2}
   m_SizeDelta: {x: 21.7339, y: 30}
   m_Pivot: {x: 0.4999991, y: 0.50000006}
 --- !u!114 &1643378086
@@ -9421,7 +9551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2461"
+  m_Text: "\u25A0"
 --- !u!222 &1643378087
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9430,6 +9560,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643378084}
   m_CullTransparentMesh: 1
+--- !u!114 &1643378088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643378084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1645010642
 GameObject:
   m_ObjectHideFlags: 0
@@ -10193,6 +10338,7 @@ GameObject:
   - component: {fileID: 1746263728}
   - component: {fileID: 1746263730}
   - component: {fileID: 1746263729}
+  - component: {fileID: 1746263731}
   m_Layer: 5
   m_Name: Text (2)
   m_TagString: Untagged
@@ -10252,7 +10398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2462"
+  m_Text: "\u25C6"
 --- !u!222 &1746263730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10261,6 +10407,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746263727}
   m_CullTransparentMesh: 1
+--- !u!114 &1746263731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746263727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1747403322
 GameObject:
   m_ObjectHideFlags: 0
@@ -11827,12 +11988,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b978bce3077dd5469c7a19299913de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1941248809}
+  sources:
+  - {fileID: 1941248809}
+  - {fileID: 738480406}
   bgm:
   - {fileID: 8300000, guid: 1047048374f0e2941abfd37b225e5d0a, type: 3}
   - {fileID: 8300000, guid: 00ee2365576901c4892c9cbe9da3f12c, type: 3}
+  se: {fileID: 8300000, guid: 8953c7dbd1d14cd4d9d5977843099c8a, type: 3}
   videoPlayer: {fileID: 1380511356}
-  videoPlayerUrl: http://127.0.0.1:8887/s.mp4
+  videoPlayerUrl: https://drive.google.com/uc?id=1XMicAQzmfXGQiyj8wozBYK4iu__gQbJX
   opPanel: {fileID: 852185300}
   rogo: {fileID: 705997127}
   banner: {fileID: 633018570}
@@ -12389,6 +12553,7 @@ GameObject:
   - component: {fileID: 2112465947}
   - component: {fileID: 2112465949}
   - component: {fileID: 2112465948}
+  - component: {fileID: 2112465950}
   m_Layer: 5
   m_Name: Text (3)
   m_TagString: Untagged
@@ -12448,7 +12613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2463"
+  m_Text: "\u25B2"
 --- !u!222 &2112465949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12457,6 +12622,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112465946}
   m_CullTransparentMesh: 1
+--- !u!114 &2112465950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112465946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2128018821
 GameObject:
   m_ObjectHideFlags: 0
