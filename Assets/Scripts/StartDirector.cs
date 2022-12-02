@@ -174,6 +174,7 @@ public class StartDirector : MonoBehaviour
     {
         ob.SetActive(!ob.activeInHierarchy);
     }
+
     private void SetDisplay()//画面表示する
     {
         displayTexts[0].text = "Lv." + level;

@@ -65,7 +65,7 @@ public class LevelUpBonus : MonoBehaviour
         //差を割り、小数点以下切り上げで計算
         krystal =  (int)Mathf.Ceil(diff / kystaalRate) + clearKrystaal;
 
-        GenerationText("クリスタルを" + krystal + "手に入れた。");
+        GenerationText("クリスタルを" + krystal + "個手に入れた。");
 
     }
 

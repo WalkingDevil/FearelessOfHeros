@@ -17,16 +17,25 @@ public class AnimeController : MonoBehaviour
         animator.SetTrigger(parame);
     }
 
+　　/// <summary>
+　　/// アニメーション側からアニメーション終了後にキャラクターをDestroyする
+　　/// </summary>
     public void DieIvent()
     {
         Destroy(monster.gameObject);
     }
 
+    /// <summary>
+    /// パーティクルをONにする
+    /// </summary>
     public void OnParticle()
     {
         paticle.SetActive(true);
     }
 
+    /// <summary>
+    /// パーティクルをOFFにする
+    /// </summary>
     public void OffParticle()
     {
         paticle.SetActive(false);

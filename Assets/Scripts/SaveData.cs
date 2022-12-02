@@ -14,7 +14,6 @@ public class SaveData : MonoBehaviour
 
         if (!File.Exists(dataPath))//セーブデータを作成
         {
-            // File.Create(dataPath);
             savePath.level = 1;
             savePath.exp = 0;
             savePath.idData = defIdData;
@@ -25,11 +24,12 @@ public class SaveData : MonoBehaviour
         }
 
         savePath = Load();
-
-
     }
 
-
+    /// <summary>
+    /// データを呼び出す
+    /// </summary>
+    /// <returns></returns>
     public SavePath Load()
     {
         string dataPath = DataPath(true);
@@ -50,15 +50,9 @@ public class SaveData : MonoBehaviour
         writer.Close();//ファイルをクローズする
     }
 
-    /*  public void SetData(List<MonsterCard> cards)
-      {
-          savePath.myMonsterCards = cards;
-          Save();
-      }*/
     private String DataPath(bool load = false)
     {
         string path = null;
-        //path = Application.dataPath + "/SaveData.json";
         path = Application.persistentDataPath + "/SaveData.json";
         return path;
     }
