@@ -19,7 +19,7 @@ public class StartDirector : MonoBehaviour
     private AudioController seCo;
     [SerializeField] List<AudioSource> sources;
     [SerializeField] List<AudioClip> bgm;
-    [SerializeField] AudioClip se;
+    [SerializeField] List<AudioClip> se;
 
     //開始時の演出
     [SerializeField] VideoPlayer videoPlayer;
@@ -30,7 +30,6 @@ public class StartDirector : MonoBehaviour
     [SerializeField] RawImage organization;
     [SerializeField] GameObject rod;
     [SerializeField] Button skipButton;
-    [SerializeField] GameObject organizationScroll;
 
     [SerializeField] RectTransform selectPanel;
     [SerializeField] List<Text> displayTexts;//画面表示用テキスト
@@ -63,7 +62,7 @@ public class StartDirector : MonoBehaviour
 
         bgmCo = new AudioController(sources[0], bgm[0]);
         bgmCo.ChengePlayAudio(true);
-        seCo = new AudioController(sources[1], se);
+        seCo = new AudioController(sources[1], se[0]);
 
         SetDisplay();
 
@@ -85,7 +84,6 @@ public class StartDirector : MonoBehaviour
         yield return new WaitUntil(() => banner.texture != null && organization.texture != null);
 
         skipButton.gameObject.SetActive(true);
-        organizationScroll.SetActive(false);
 
         yield return new WaitUntil(() => videoPlayer.isPlaying != true);
 
@@ -130,6 +128,8 @@ public class StartDirector : MonoBehaviour
         {
             savePath.myDeckData = list;
             saveData.Save(savePath);
+            seCo.ChengeClip(se[2]);
+            seCo.ChengePlayAudio(true);
             SceneManager.LoadScene("GameScene");
         }
     }
@@ -140,6 +140,7 @@ public class StartDirector : MonoBehaviour
     /// <param name="rect"></param>
     public void OnDisplay(RectTransform rect)
     {
+        seCo.ChengeClip(se[0]);
         seCo.ChengePlayAudio(true);
         rect.gameObject.SetActive(true);
         rect.DOScaleY(one, scaleSpeed);
@@ -151,6 +152,8 @@ public class StartDirector : MonoBehaviour
     /// <param name="rect"></param>
     public void OffDisplay(RectTransform rect)
     {
+        seCo.ChengeClip(se[1]);
+        seCo.ChengePlayAudio(true);
         rect.DOScaleY(0, scaleSpeed);
     }
 
@@ -166,12 +169,25 @@ public class StartDirector : MonoBehaviour
             savePath.krystaal = krystaal;
             saveData.Save(savePath);
             Gacha.gachaCount = count;
+            seCo.ChengeClip(se[3]);
+            seCo.ChengePlayAudio(true);
             SceneManager.LoadScene("GachaScene");
         }
     }
 
     public void ExplanationDisplay(GameObject ob)
     {
+        if(ob.activeInHierarchy)
+        {
+            seCo.ChengeClip(se[1]);
+
+        }
+        else
+        {
+            seCo.ChengeClip(se[0]);
+        }
+
+        seCo.ChengePlayAudio(true);
         ob.SetActive(!ob.activeInHierarchy);
     }
 

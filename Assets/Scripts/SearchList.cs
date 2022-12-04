@@ -18,7 +18,6 @@ public class SearchList : MonoBehaviour
     [SerializeField] List<MonsterCard> cardsList;
     [SerializeField] List<int> myCardsId = new List<int>();
     private List<MonsterCard> defMonsterCards = new List<MonsterCard>();
-    string datapath;
     void Start()
     {
         savePath = saveData.Load();
@@ -32,16 +31,9 @@ public class SearchList : MonoBehaviour
             }
         }
         Search(false);
-        //monsterCards = 
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //検索する
     public void Search(bool def = true)
     {
         List<MonsterCard> monsterCards = new List<MonsterCard>();
@@ -75,6 +67,7 @@ public class SearchList : MonoBehaviour
             monsterCards = SortSearch(monsterCards, sortNumber);
         }
 
+        //カードを生成し、DragObjectをAddComponentする
         foreach (MonsterCard cards in monsterCards)
         {
             GameObject ob = Instantiate(cards.gameObject, content);
@@ -108,10 +101,12 @@ public class SearchList : MonoBehaviour
     private List<MonsterCard> GenerationMonsters(List<int> attributes, List<int> select)
     {
         List<MonsterCard> cards = new List<MonsterCard>();
+        //持っているカードの中から条件にあっているカードを選出する
         foreach (MonsterCard card in defMonsterCards)
         {
             int cardId = card.GetState(0);
             int cardAtt = card.GetState(1);
+
             if (attributes.Contains(cardAtt) && !select.Contains(cardId))
             {
                 cards.Add(card);
@@ -129,6 +124,9 @@ public class SearchList : MonoBehaviour
 
         return list;
     }
+    /// <summary>
+    /// 押されているボタンをすべて戻し検索結果も戻す
+    /// </summary>
     public void ResetSearch()
     {
         ResetButtons(refineButtons);
@@ -136,7 +134,6 @@ public class SearchList : MonoBehaviour
         DestroyCards();
 
         Search(false);
-       // monsterCards = defMonsterCards;
     }
 
     private List<MonsterCard> SortSearch(List<MonsterCard> ts, int num = 0)
@@ -144,7 +141,8 @@ public class SearchList : MonoBehaviour
         return ts.OrderBy(x => x.GetState(num)).ToList();
     }
 
-    private void DestroyCards()
+
+    private void DestroyCards()//カード消す
     {
         if (content.childCount != 0)
         {

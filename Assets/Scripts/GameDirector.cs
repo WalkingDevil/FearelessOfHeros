@@ -380,7 +380,7 @@ public class GameDirector : MonoBehaviour
         cameraController.FinishMove(true);//カメラを移動させる
         cameraController.endAction = () => myTower.ChengeMode();//actionにテキストを入れる
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         playerController.gameObject.SetActive(true);
         myTower.gameObject.SetActive(false);
