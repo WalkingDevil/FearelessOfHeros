@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
@@ -17,21 +17,21 @@ public class Gacha : MonoBehaviour
     [SerializeField] FadeImage fadeImage;
     [SerializeField] Texture2D fadeTexture;
     [SerializeField] AudioSource seSource;
-    [SerializeField] List<AudioClip> se;  // ‰‰o—p‚ÌSE
+    [SerializeField] List<AudioClip> se;  // æ¼”å‡ºç”¨ã®SE
     [SerializeField] GameObject cardPanel;
-    [SerializeField] GameObject effectObj;  // ƒ‚ƒ“ƒXƒ^[“oê‚ÌƒGƒtƒFƒNƒg
-    [SerializeField] GameObject skipBotton;  // ƒXƒLƒbƒvƒ{ƒ^ƒ“
-    [SerializeField] GameObject titleBotton;  // ƒ^ƒCƒgƒ‹‚É–ß‚éƒ{ƒ^ƒ“
-    [SerializeField] float effectTime = 1f;  // ƒGƒtƒFƒNƒg‚ğ•\¦‚·‚éŠÔ
-    [SerializeField] int monsterDisplayTime = 3;  // ƒ‚ƒ“ƒXƒ^[‚Ì•\¦ŠÔ
-    [SerializeField] float cardDisplayIntervalTime = 0.5f;  // ƒJ[ƒh‚ğ•\¦‚·‚éŠÔŠu‚ÌŠÔ
-    static public int gachaCount = 10;  //ƒKƒ`ƒƒ‚Ì‰ñ”
-    public List<int> character = new List<int>();  // ƒKƒ`ƒƒ‚Ì’Š‘IŒ‹‰Ê
-    [SerializeField] private List<MonsterCard> monsterCards = new List<MonsterCard>();  // ƒ‚ƒ“ƒXƒ^[‚Ìí—Ş
-    public List<GameObject> objects = new List<GameObject>();  // ’Š‘I‚³‚ê‚½ƒ‚ƒ“ƒXƒ^[
-    public List<MonsterCard> cards = new List<MonsterCard>();  // ’Š‘I‚³‚ê‚½ƒ‚ƒ“ƒXƒ^[ƒJ[ƒh
-    private bool skip = false;  // ƒXƒLƒbƒv‚·‚é‚©‚Ç‚¤‚©
-    private bool skippable = false;  // ƒXƒLƒbƒv‰Â”\‚©
+    [SerializeField] GameObject effectObj;  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç™»å ´æ™‚ã®ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
+    [SerializeField] GameObject skipBotton;  // ã‚¹ã‚­ãƒƒãƒ—ãƒœã‚¿ãƒ³
+    [SerializeField] GameObject titleBotton;  // ã‚¿ã‚¤ãƒˆãƒ«ã«æˆ»ã‚‹ãƒœã‚¿ãƒ³
+    [SerializeField] float effectTime = 1f;  // ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’è¡¨ç¤ºã™ã‚‹æ™‚é–“
+    [SerializeField] int monsterDisplayTime = 3;  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®è¡¨ç¤ºæ™‚é–“
+    [SerializeField] float cardDisplayIntervalTime = 0.5f;  // ã‚«ãƒ¼ãƒ‰ã‚’è¡¨ç¤ºã™ã‚‹é–“éš”ã®æ™‚é–“
+    static public int gachaCount = 10;  //ã‚¬ãƒãƒ£ã®å›æ•°
+    public List<int> character = new List<int>();  // ã‚¬ãƒãƒ£ã®æŠ½é¸çµæœ
+    [SerializeField] private List<MonsterCard> monsterCards = new List<MonsterCard>();  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ç¨®é¡
+    public List<GameObject> objects = new List<GameObject>();  // æŠ½é¸ã•ã‚ŒãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼
+    public List<MonsterCard> cards = new List<MonsterCard>();  // æŠ½é¸ã•ã‚ŒãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚«ãƒ¼ãƒ‰
+    private bool skip = false;  // ã‚¹ã‚­ãƒƒãƒ—ã™ã‚‹ã‹ã©ã†ã‹
+    private bool skippable = false;  // ã‚¹ã‚­ãƒƒãƒ—å¯èƒ½ã‹
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class Gacha : MonoBehaviour
         cardPanel.SetActive(false);
     }
 
-    public void SkipButton()  // ƒXƒLƒbƒvƒ{ƒ^ƒ“
+    public void SkipButton()  // ã‚¹ã‚­ãƒƒãƒ—ãƒœã‚¿ãƒ³
     {
         if (skippable)
         {
@@ -56,23 +56,23 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    public void BackTitle()  // ƒ^ƒCƒgƒ‹ƒV[ƒ“‚É–ß‚éƒ{ƒ^ƒ“
+    public void BackTitle()  // ã‚¿ã‚¤ãƒˆãƒ«ã‚·ãƒ¼ãƒ³ã«æˆ»ã‚‹ãƒœã‚¿ãƒ³
     {
         SceneManager.LoadScene("TitleScene");
     }
 
     /// <summary>
-    /// ƒKƒ`ƒƒ‚Ì’Š‘I‚ğŠJn‚·‚é
+    /// ã‚¬ãƒãƒ£ã®æŠ½é¸ã‚’é–‹å§‹ã™ã‚‹
     /// </summary>
-    /// <param name="countPerGacha">ƒKƒ`ƒƒ‚ğ‰ñ‚·‰ñ”</param>
+    /// <param name="countPerGacha">ã‚¬ãƒãƒ£ã‚’å›ã™å›æ•°</param>
     public void GachaStart(int countPerGacha)
     {
-        character = gachaLottery.Lottery(countPerGacha);  // ƒKƒ`ƒƒ‚Ì’Š‘IŒ‹‰Ê‚ğƒŠƒXƒg‚É“ü‚ê‚é
+        character = gachaLottery.Lottery(countPerGacha);  // ã‚¬ãƒãƒ£ã®æŠ½é¸çµæœã‚’ãƒªã‚¹ãƒˆã«å…¥ã‚Œã‚‹
         for (int i = 0; i < character.Count; i++)
         {
             for (int j = 0; j < monsterCards.Count; j++)
             {
-                if (character[i] == monsterCards[j].GetState(0))  // ’Š‘IŒ‹‰Ê‚ğƒ‚ƒ“ƒXƒ^[‚Æƒ‚ƒ“ƒXƒ^[ƒJ[ƒh‚ÌƒŠƒXƒg‚É“ü‚ê‚é
+                if (character[i] == monsterCards[j].GetState(0))  // æŠ½é¸çµæœã‚’ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¨ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚«ãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã«å…¥ã‚Œã‚‹
                 {
                     Debug.Log(i);
                     objects.Add(monsterCards[j].GetObject().gameObject);
@@ -84,7 +84,7 @@ public class Gacha : MonoBehaviour
         //List<int> list = character;
         //List<int> list2 = character.Union(idDatas).ToList();
         idDatas.AddRange(idDatas.Union(character).ToList());
-        var newData = idDatas.Distinct().ToList();// d•¡‚·‚é—v‘f‚ğíœ
+        var newData = idDatas.Distinct().ToList();// é‡è¤‡ã™ã‚‹è¦ç´ ã‚’å‰Šé™¤
         savePath.idData = newData;
         saveData.Save(savePath);
 
@@ -92,9 +92,9 @@ public class Gacha : MonoBehaviour
 
     }
 
-    IEnumerator Performance()  // ƒKƒ`ƒƒ‰‰o
+    IEnumerator Performance()  // ã‚¬ãƒãƒ£æ¼”å‡º
     {
-        foreach (GameObject obj in objects)  // ƒ‚ƒ“ƒXƒ^[‚ğ•\¦
+        foreach (GameObject obj in objects)  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’è¡¨ç¤º
         {
             AnimeController animeController = obj.GetComponent<AnimeController>();
             skipBotton.SetActive(false);
@@ -137,7 +137,7 @@ public class Gacha : MonoBehaviour
         cardPanel.SetActive(true);
         yield return new WaitForSeconds(1f);
 
-        foreach (MonsterCard obj in cards)  // ƒ‚ƒ“ƒXƒ^[ƒJ[ƒh‚ğ•\¦
+        foreach (MonsterCard obj in cards)  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚«ãƒ¼ãƒ‰ã‚’è¡¨ç¤º
         {
             MonsterCard card = Instantiate(obj) as MonsterCard;
             card.transform.parent = cardPanel.transform;
@@ -148,9 +148,9 @@ public class Gacha : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒXƒLƒbƒv
+    /// ã‚¹ã‚­ãƒƒãƒ—
     /// </summary>
-    /// <param name="count">‘Ò‚¿ŠÔi•bj</param>
+    /// <param name="count">å¾…ã¡æ™‚é–“ï¼ˆç§’ï¼‰</param>
     /// <returns></returns>
     IEnumerator PerformanceSkip(int count)
     {
@@ -164,7 +164,7 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    private Color GetColor(float num)  // ƒ‚ƒ“ƒXƒ^[‚Ì‘®«‚É‚æ‚Á‚ÄƒtƒF[ƒh‚ÌF‚ğ•Ï‚¦‚é
+    private Color GetColor(float num)  // ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®å±æ€§ã«ã‚ˆã£ã¦ãƒ•ã‚§ãƒ¼ãƒ‰ã®è‰²ã‚’å¤‰ãˆã‚‹
     {
         switch(num)
         {
