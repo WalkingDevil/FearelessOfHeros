@@ -81,8 +81,6 @@ public class Gacha : MonoBehaviour
             }
         }
 
-        //List<int> list = character;
-        //List<int> list2 = character.Union(idDatas).ToList();
         idDatas.AddRange(idDatas.Union(character).ToList());
         var newData = idDatas.Distinct().ToList();// 重複する要素を削除
         savePath.idData = newData;
@@ -98,7 +96,6 @@ public class Gacha : MonoBehaviour
         {
             AnimeController animeController = obj.GetComponent<AnimeController>();
             skipBotton.SetActive(false);
-            //yield return StartCoroutine("Effect");
             float attribute = obj.GetComponent<CharacterController>().SetMyUserInterface().GetState(7);
             seAudioCo.ChengeClip(se[0]);
             seAudioCo.ChengePlayAudio(true);
